@@ -36,6 +36,15 @@ export default function StopPage() {
           minute: "numeric",
         })}
       </span>
+
+      {data.Notices.map((element, key) => {
+        return (
+          <div style={{ border: "1px solid red", padding: 5 }}>
+            {element.LineNote}
+          </div>
+        );
+      })}
+
       {data.Services.map((element, key) => {
         return element.DestinationStopName !== "School Bus" ? (
           <div style={{ marginBottom: 30 }} key={key}>
