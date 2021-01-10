@@ -1,24 +1,26 @@
 import Link from "next/link";
-import 
+import useSWR from "swr";
 
-function timeConvert(n) {
-  var hours = n / 60;
-  var rhours = Math.floor(hours);
-  var minutes = (hours - rhours) * 60;
-  var rminutes = Math.round(minutes);
-  return rhours + "h : " + rminutes + " m";
-}
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default function IndexPage() {
+export default function RoutesPage() {
+  const { data, error } = useSWR(`/api/routes`, fetcher, {
+    refreshInterval: 0,
+  });
+
+  if (error) return <div>failed to load {JSON.stringify(error)}</div>;
+  if (!data) return <div>loading...</div>;
+
   return (
     <div>
-      <Link as={`/stop/4917`} href="/stop/[sms]">
-        <a>Upland</a>
-      </Link>
-      <br />
-      <Link as={`/stop/5010`} href="/stop/[sms]">
-        <a>Lamb</a>
-      </Link>
+      {data.map((element, key) => {
+        return (
+          <div key={key}>
+            <strong>{element.route_short_name}</strong>{" "}
+            {element.route_long_name}
+          </div>
+        );
+      })}
     </div>
   );
 }
