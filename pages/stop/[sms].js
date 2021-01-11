@@ -71,7 +71,7 @@ export default function StopPage() {
 
   return (
     <div>
-      <h1>{stop.stop_name}</h1>
+      <h1 className="text-2xl font-bold">{stop.stop_name}</h1>
       {/* {time.toString()} */}
 
       {departures.alerts.map((element, key) => {
