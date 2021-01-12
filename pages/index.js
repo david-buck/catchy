@@ -1,24 +1,44 @@
 import { useState, useEffect } from "react";
-
 import Link from "next/link";
 
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 export default function IndexPage() {
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
+  const [lat, setLat] = useState(null);
+  const [long, setLong] = useState(null);
+
+  const locate = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLat(position.coords.latitude);
+      setLong(position.coords.longitude);
     });
-  }, []);
+  };
+
+  const { data, error } = useSWR(
+    lat ? `/api/stops/${lat}/${long}` : null,
+    fetcher,
+    {
+      refreshInterval: 0,
+    }
+  );
 
   return (
     <div>
-      <Link as={`/stop/4917`} href="/stop/[sms]">
-        <a>Upland</a>
-      </Link>
-      <br />
-      <Link as={`/stop/5010`} href="/stop/[sms]">
-        <a>Lamb</a>
-      </Link>
+      <div role="button" onClick={() => locate()}>
+        Click me to find stops nearby
+      </div>
+      {data &&
+        data.map((element, key) => {
+          return (
+            <div>
+              <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
+                <a>{element.stop_name}</a>
+              </Link>
+            </div>
+          );
+        })}
     </div>
   );
 }

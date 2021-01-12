@@ -1,4 +1,4 @@
-import { bus_routes } from "../../../data/routes";
+import { bus_routes } from "../../../data/bus_routes";
 
 export default function busRouteHandler({ query: { id } }, res) {
   const filtered = bus_routes.filter((p) => p.route_short_name === id);
