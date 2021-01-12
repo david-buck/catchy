@@ -21,7 +21,7 @@ export default function IndexPage() {
   }, []);
 
   const { data, error } = useSWR(
-    lat ? `/api/stops/${lat}/${long}` : null,
+    lat && long ? `/api/stops/${lat}/${long}` : null,
     fetcher,
     {
       refreshInterval: 0,
