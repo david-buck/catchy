@@ -8,8 +8,8 @@ export default function RoutesPage() {
     refreshInterval: 0,
   });
 
-  if (error) return <div>failed to load {JSON.stringify(error)}</div>;
-  if (!data) return <div>loading...</div>;
+  if (error) return <div>Failed to load: {JSON.stringify(error)}</div>;
+  if (!data) return <div>Loading...</div>;
 
   return (
     <div>

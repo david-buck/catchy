@@ -16,6 +16,10 @@ export default function IndexPage() {
     });
   };
 
+  useEffect(() => {
+    locate();
+  });
+
   const { data, error } = useSWR(
     lat ? `/api/stops/${lat}/${long}` : null,
     fetcher,
@@ -24,21 +28,20 @@ export default function IndexPage() {
     }
   );
 
+  if (error) return <div>failed to load {JSON.stringify(error)}</div>;
+  if (!data) return <div>loading...</div>;
+
   return (
     <div>
-      <div role="button" onClick={() => locate()}>
-        Click me to find stops nearby
-      </div>
-      {data &&
-        data.map((element, key) => {
-          return (
-            <div>
-              <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
-                <a>{element.stop_name}</a>
-              </Link>
-            </div>
-          );
-        })}
+      {data.map((element, key) => {
+        return (
+          <div key={key}>
+            <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
+              <a>{element.stop_name}</a>
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 }

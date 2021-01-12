@@ -1,6 +1,6 @@
 import { bus_stops } from "../../../../data/bus_stops";
 
-function distance(lat1, lon1, lat2, lon2, unit) {
+function getDistance(lat1, lon1, lat2, lon2, unit) {
   if (lat1 == lat2 && lon1 == lon2) {
     return 0;
   } else {
@@ -25,7 +25,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 export default function handler({ query: { lat, long } }, res) {
   const nearest = bus_stops
     .map((element, key) => {
-      let dist = distance(lat, long, element.stop_lat, element.stop_lon);
+      let dist = getDistance(lat, long, element.stop_lat, element.stop_lon);
       if (dist < 3) return { distance: dist.toFixed(4), ...element };
       else return null;
     })

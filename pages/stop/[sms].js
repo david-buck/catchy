@@ -76,7 +76,7 @@ export default function StopPage() {
 
       {departures.alerts.map((element, key) => {
         return (
-          <div style={{ border: "1px solid red", padding: 5 }}>
+          <div style={{ border: "1px solid red", padding: 5 }} key={key}>
             {element.alert}
           </div>
         );
