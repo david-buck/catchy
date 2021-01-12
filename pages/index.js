@@ -18,7 +18,7 @@ export default function IndexPage() {
 
   useEffect(() => {
     locate();
-  });
+  }, []);
 
   const { data, error } = useSWR(
     lat ? `/api/stops/${lat}/${long}` : null,
