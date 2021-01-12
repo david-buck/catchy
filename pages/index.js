@@ -25,6 +25,7 @@ export default function IndexPage() {
     fetcher,
     {
       refreshInterval: 0,
+      revalidateOnFocus: false,
     }
   );
 
