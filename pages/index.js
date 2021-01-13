@@ -33,16 +33,22 @@ export default function IndexPage() {
   if (!data) return <div>loading...</div>;
 
   return (
-    <div>
-      {data.map((element, key) => {
-        return (
-          <div key={key}>
-            <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
-              <a>{element.stop_name}</a>
-            </Link>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <h1 className="text-xl font-bold mb-6">Stops near you</h1>
+      <div>
+        {data.map((element, key) => {
+          return (
+            <div key={key} className="mb-6">
+              <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
+                <a style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span>{element.stop_name}</span>
+                  <span>{parseFloat(element.distance).toFixed(2)}km</span>
+                </a>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }

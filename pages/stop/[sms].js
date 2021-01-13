@@ -11,17 +11,17 @@ const Expected = ({
   aimed,
   time,
   status,
-  key,
 }) => {
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
+
   return (
-    <div style={{ marginBottom: 30 }} key={key}>
+    <div className="flex justify-between mb-6">
       <h2>
         {service_id} {destination_name}
       </h2>
       <p>
         {expected !== "" ? (
-          seconds < 90 ? (
+          seconds < 70 ? (
             <>Due</>
           ) : (
             <>{Math.round(seconds / 60)}m</>
@@ -29,18 +29,16 @@ const Expected = ({
         ) : (
           <>
             {new Date(aimed).toLocaleString("en-US", {
-              // weekday: "long",
-              // year: "numeric",
-              // month: "long",
-              // day: "numeric",
+              //  weekday: "long",
+              //  year: "numeric",
+              //  month: "long",
+              //  day: "numeric",
               hour: "numeric",
               minute: "numeric",
             })}
           </>
         )}
       </p>
-
-      {status && <p>{status}</p>}
     </div>
   );
 };
@@ -58,21 +56,26 @@ export default function StopPage() {
   const router = useRouter();
   const { sms } = router.query;
 
-  const { data: departures } = useSWR(`/proxy/stopdepartures/${sms}`, {
-    fetcher: fetcher,
-    refreshInterval: 30000,
-  });
-  const { data: stop } = useSWR(`/proxy/stops/${sms}`, {
+  const { data: departures, isValidating } = useSWR(
+    sms ? `/proxy/stopdepartures/${sms}` : null,
+    {
+      fetcher: fetcher,
+      refreshInterval: 30000,
+    }
+  );
+  const { data: stop } = useSWR(sms ? `/proxy/stops/${sms}` : null, {
     fetcher: fetcher,
     refreshInterval: 0,
+    revalidateOnFocus: false,
   });
 
   if (!departures || !stop) return <div>Loading...</div>;
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">{stop.stop_name}</h1>
+      <h1 className="text-xl font-bold mb-6">{stop.stop_name}</h1>
       {/* {time.toString()} */}
+      {isValidating && <div className="absolute top-4 left-4">Refreshing</div>}
 
       {departures.alerts.map((element, key) => {
         return (
