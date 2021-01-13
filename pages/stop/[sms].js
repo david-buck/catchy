@@ -56,7 +56,7 @@ export default function StopPage() {
   const router = useRouter();
   const { sms } = router.query;
 
-  const { data: departures, isValidating } = useSWR(
+  const { data: departures, isValidating, error } = useSWR(
     sms ? `/proxy/stopdepartures/${sms}` : null,
     {
       fetcher: fetcher,
@@ -69,13 +69,21 @@ export default function StopPage() {
     revalidateOnFocus: false,
   });
 
+  if (error)
+    return stop ? (
+      <div>
+        Unable to get realtime updates for {stop.stop_name}. Try again later
+      </div>
+    ) : (
+      <div>Unable to get realtime updates for stop {sms}. Try again later</div>
+    );
+
   if (!departures || !stop) return <div>Loading...</div>;
 
   return (
     <div>
       <h1 className="text-xl font-bold mb-6">{stop.stop_name}</h1>
       {/* {time.toString()} */}
-      {isValidating && <div className="absolute top-4 left-4">Refreshing</div>}
 
       {departures.alerts.map((element, key) => {
         return (
@@ -98,6 +106,7 @@ export default function StopPage() {
           />
         ) : null;
       })}
+      {isValidating && <div className="absolute top-4 left-4">Refreshing</div>}
     </div>
   );
 }
