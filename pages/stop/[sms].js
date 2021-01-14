@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
+import Delay from "../../components/Delay";
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Expected = ({
@@ -10,6 +12,7 @@ const Expected = ({
   expected,
   aimed,
   time,
+  delay,
   status,
 }) => {
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
@@ -39,6 +42,7 @@ const Expected = ({
           </>
         )}
       </p>
+      <Delay delay={delay} />
     </div>
   );
 };
@@ -91,9 +95,14 @@ export default function StopPage() {
             service_id={element.service_id}
             destination_name={element.destination.name}
             expected={element.arrival.expected}
-            aimed={element.arrival.aimed}
+            aimed={
+              element.arrival.aimed !== ""
+                ? element.arrival.aimed
+                : element.departure.aimed
+            }
             time={time}
             status={element.status}
+            delay={element.delay}
             key={key}
           />
         ) : null;
