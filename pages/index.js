@@ -10,10 +10,14 @@ export default function IndexPage() {
   const [long, setLong] = useState(null);
 
   const locate = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setLat(position.coords.latitude);
-      setLong(position.coords.longitude);
-    });
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setLat(position.coords.latitude);
+        setLong(position.coords.longitude);
+      },
+      (error) => {},
+      { maximumAge: 30000 }
+    );
   };
 
   useEffect(() => {

@@ -18,11 +18,13 @@ const durationToSeconds = (iso8601Duration) => {
   return matches[1] ? -1 * durationSeconds : durationSeconds;
 };
 
-export default function Delay({ delay }) {
+export default function Delay({ delay, status }) {
   let offset = Math.round(durationToSeconds(delay) / 60);
   return offset !== 0 ? (
     <div className="bg-blue-100 rounded-lg px-2">
-      {offset} {offset > 0 ? "early" : "late"}
+      {Math.abs(offset)} m {offset > 0 ? "early" : "late"}
     </div>
-  ) : null;
+  ) : (
+    status && <div className="bg-green-100 rounded-lg px-2">On time</div>
+  );
 }

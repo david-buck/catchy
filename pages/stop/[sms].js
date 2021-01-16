@@ -14,13 +14,14 @@ const Expected = ({
   time,
   delay,
   status,
+  wheelchair_accessible,
 }) => {
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
     <div className="flex justify-between mb-6">
       <h2>
-        {service_id} {destination_name}
+        {service_id} {destination_name} {wheelchair_accessible && <>♿</>}
       </h2>
       <p>
         {expected !== "" ? (
@@ -42,7 +43,7 @@ const Expected = ({
           </>
         )}
       </p>
-      <Delay delay={delay} />
+      <Delay delay={delay} status={status} />
     </div>
   );
 };
@@ -112,6 +113,7 @@ export default function StopPage() {
             status={element.status}
             delay={element.delay}
             key={key}
+            wheelchair_accessible={element.wheelchair_accessible}
           />
         ) : null;
       })}
