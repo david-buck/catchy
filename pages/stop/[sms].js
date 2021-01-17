@@ -24,7 +24,7 @@ const Expected = ({
         {service_id} {destination_name} {wheelchair_accessible && <>♿</>}
       </h2>
       <p>
-        {expected !== "" ? (
+        {expected ? (
           seconds < 70 ? (
             <>Due</>
           ) : (
@@ -32,11 +32,7 @@ const Expected = ({
           )
         ) : (
           <>
-            {new Date(aimed).toLocaleString("en-US", {
-              //  weekday: "long",
-              //  year: "numeric",
-              //  month: "long",
-              //  day: "numeric",
+            {new Date(aimed).toLocaleString("en-NZ", {
               hour: "numeric",
               minute: "numeric",
             })}
@@ -104,11 +100,7 @@ export default function StopPage() {
             service_id={element.service_id}
             destination_name={element.destination.name}
             expected={element.arrival.expected}
-            aimed={
-              element.arrival.aimed !== ""
-                ? element.arrival.aimed
-                : element.departure.aimed
-            }
+            aimed={element.arrival.aimed ?? element.departure.aimed}
             time={time}
             status={element.status}
             delay={element.delay}

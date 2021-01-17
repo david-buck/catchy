@@ -16,7 +16,7 @@ export default function IndexPage() {
         setLong(position.coords.longitude);
       },
       (error) => {},
-      { maximumAge: 30000 }
+      { maximumAge: 60000 }
     );
   };
 
