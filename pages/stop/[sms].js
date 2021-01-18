@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
 import Delay from "../../components/Delay";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
+
+const getRouteDetails = (id, arr) => {
+  const match = arr.find((e) => e.route_short_name === id);
+  return { color: "#" + match.route_color, type: match.type };
+};
 
 const Expected = ({
   service_id,
@@ -15,13 +21,24 @@ const Expected = ({
   delay,
   status,
   wheelchair_accessible,
+  color,
+  type,
 }) => {
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
     <div className="flex justify-between mb-6">
+      <div
+        style={
+          (type === "frequent" && { background: color, color: "white" }) ||
+          (type === "standard" && { border: "1px solid ", color: color })
+        }
+        className="font-bold rounded-full w-10 h-10 place-items-center grid"
+      >
+        {service_id}
+      </div>{" "}
       <h2>
-        {service_id} {destination_name} {wheelchair_accessible && <>♿</>}
+        {destination_name} {wheelchair_accessible && <>♿</>}
       </h2>
       <p>
         {expected ? (
@@ -70,6 +87,12 @@ export default function StopPage() {
     revalidateOnFocus: false,
   });
 
+  const { data: routes } = useSWR(sms ? `/api/routes` : null, {
+    fetcher: fetcher,
+    refreshInterval: 0,
+    revalidateOnFocus: false,
+  });
+
   if (error)
     return stop ? (
       <div>
@@ -79,12 +102,15 @@ export default function StopPage() {
       <div>Unable to get realtime updates for stop {sms}. Try again later</div>
     );
 
-  if (!departures || !stop) return <div>Loading...</div>;
+  if (!departures || !stop || !routes) return <div>Loading...</div>;
 
   return (
     <div>
-      <h1 className="text-xl font-bold mb-6">{stop.stop_name}</h1>
-      {/* {time.toString()} */}
+      <Link href="/">
+        <a>Back</a>
+      </Link>
+      <h1 className="text-4xl font-bold mb-6">{stop.stop_name}</h1>
+      {time.toString()}
 
       {departures.alerts.map((element, key) => {
         return (
@@ -95,17 +121,25 @@ export default function StopPage() {
       })}
 
       {departures.departures.map((element, key) => {
+        let routeDetails = getRouteDetails(element.service_id, routes);
+
         return element.destination.name !== "School Bus" ? (
           <Expected
             service_id={element.service_id}
             destination_name={element.destination.name}
             expected={element.arrival.expected}
-            aimed={element.arrival.aimed ?? element.departure.aimed}
+            aimed={
+              element.arrival.aimed !== ""
+                ? element.arrival.aimed
+                : element.departure.aimed
+            }
             time={time}
             status={element.status}
             delay={element.delay}
             key={key}
             wheelchair_accessible={element.wheelchair_accessible}
+            color={routeDetails.color}
+            type={routeDetails.type}
           />
         ) : null;
       })}
