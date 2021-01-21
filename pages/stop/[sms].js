@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
 import Delay from "../../components/Delay";
+
+import Chair from "../../svgs/chair.svg";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -38,7 +41,15 @@ const Expected = ({
         {service_id}
       </div>{" "}
       <h2>
-        {destination_name} {wheelchair_accessible && <>♿</>}
+        {destination_name}{" "}
+        {wheelchair_accessible && (
+          <Chair
+            width="16"
+            height="16"
+            title="Wheelchair accessible."
+            style={{ display: "inline" }}
+          />
+        )}
       </h2>
       <p>
         {expected ? (
@@ -49,6 +60,7 @@ const Expected = ({
           )
         ) : (
           <>
+            Sched:
             {new Date(aimed).toLocaleString("en-NZ", {
               hour: "numeric",
               minute: "numeric",
@@ -64,12 +76,10 @@ const Expected = ({
 export default function StopPage() {
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date());
+      setTime(new Date(time.setSeconds(time.getSeconds() + 1)));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-
-  const [time, setTime] = useState(new Date());
 
   const router = useRouter();
   const { sms } = router.query;
@@ -93,6 +103,15 @@ export default function StopPage() {
     revalidateOnFocus: false,
   });
 
+  const { data: date } = useSWR(`/api/local-time`, {
+    fetcher: fetcher,
+    revalidateOnFocus: false,
+  });
+
+  const [time, setTime] = useState(
+    date !== undefined ? new Date(date.date) : new Date()
+  );
+
   if (error)
     return stop ? (
       <div>
@@ -106,6 +125,14 @@ export default function StopPage() {
 
   return (
     <div>
+      <Head>
+        <link
+          rel="preload"
+          href="/api/routes"
+          as="fetch"
+          crossorigin="anonymous"
+        ></link>
+      </Head>
       <Link href="/">
         <a>Back</a>
       </Link>
