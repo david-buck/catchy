@@ -38,7 +38,7 @@ export default function IndexPage() {
 
   return (
     <>
-      <h1 className="text-xl font-bold mb-6">Stops near you</h1>
+      <h1 className="text-4xl font-bold mb-6">Stops near you</h1>
       <div>
         {data.map((element, key) => {
           return (

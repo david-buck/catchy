@@ -35,13 +35,6 @@ export default class extends Document {
           />
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/icons/favicon.ico" />
-
-          <link
-            rel="preload"
-            href="/api/routes"
-            as="fetch"
-            crossorigin="anonymous"
-          ></link>
         </Head>
         <body>
           <Main />
