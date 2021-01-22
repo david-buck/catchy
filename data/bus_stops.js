@@ -97,7 +97,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7914",
-    stop_name: "Massey University - Wallace Street (opposite)",
+    stop_name: "Massey University — Wallace Street (opposite)",
     stop_lat: -41.30190388,
     stop_lon: 174.7740434,
   },
@@ -109,7 +109,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8096",
-    stop_name: "Korokoro - Singers Road",
+    stop_name: "Korokoro — Singers Road",
     stop_lat: -41.22049129,
     stop_lon: 174.8644133,
   },
@@ -241,7 +241,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7296",
-    stop_name: "Beacon Hill - Sidlaw Street",
+    stop_name: "Beacon Hill — Sidlaw Street",
     stop_lat: -41.33157525,
     stop_lon: 174.8234837,
   },
@@ -259,7 +259,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2168",
-    stop_name: "Windley School - Mungavin Avenue",
+    stop_name: "Windley School — Mungavin Avenue",
     stop_lat: -41.14039569,
     stop_lon: 174.860117,
   },
@@ -271,7 +271,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6163",
-    stop_name: "Houghton Bay - The Esplanade (near 86)",
+    stop_name: "Houghton Bay — The Esplanade (near 86)",
     stop_lat: -41.341733,
     stop_lon: 174.784566,
   },
@@ -385,7 +385,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1922",
-    stop_name: "Greytown - Main Street (near 73)",
+    stop_name: "Greytown — Main Street (near 73)",
     stop_lat: -41.07929591,
     stop_lon: 175.4617807,
   },
@@ -397,7 +397,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7720",
-    stop_name: "Brooklyn - Stop B",
+    stop_name: "Brooklyn — Stop B",
     stop_lat: -41.30514192,
     stop_lon: 174.76534143,
   },
@@ -409,7 +409,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4396",
-    stop_name: "Karori Mall - Beauchamp Street (Recreation Centre)",
+    stop_name: "Karori Mall — Beauchamp Street (Recreation Centre)",
     stop_lat: -41.28530028,
     stop_lon: 174.73724338,
   },
@@ -439,13 +439,13 @@ export const bus_stops = [
   },
   {
     stop_id: "8579",
-    stop_name: "Upper Hutt Station - Stop A",
+    stop_name: "Upper Hutt Station — Stop A",
     stop_lat: -41.12597969,
     stop_lon: 175.07058065,
   },
   {
     stop_id: "4459",
-    stop_name: "Khandallah - Box Hill at Station Road East",
+    stop_name: "Khandallah — Box Hill at Station Road East",
     stop_lat: -41.24228705,
     stop_lon: 174.79241281,
   },
@@ -511,7 +511,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1560",
-    stop_name: "Waikanae Beach - Rauparaha Street",
+    stop_name: "Waikanae Beach — Rauparaha Street",
     stop_lat: -40.8658842,
     stop_lon: 175.0287313,
   },
@@ -583,7 +583,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9731",
-    stop_name: "Seaview - Seaview Road (near 43)",
+    stop_name: "Seaview — Seaview Road (near 43)",
     stop_lat: -41.238795,
     stop_lon: 174.907669,
   },
@@ -595,7 +595,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7224",
-    stop_name: "Kilbirnie - Stop B",
+    stop_name: "Kilbirnie — Stop B",
     stop_lat: -41.31760422,
     stop_lon: 174.79593749,
   },
@@ -619,13 +619,13 @@ export const bus_stops = [
   },
   {
     stop_id: "7424",
-    stop_name: "Berhampore Shops - Adelaide Road",
+    stop_name: "Berhampore Shops — Adelaide Road",
     stop_lat: -41.31962957,
     stop_lon: 174.775241,
   },
   {
     stop_id: "4922",
-    stop_name: "Northland Village - Northland Road",
+    stop_name: "Northland Village — Northland Road",
     stop_lat: -41.28352121,
     stop_lon: 174.7569474,
   },
@@ -667,7 +667,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1147",
-    stop_name: "Paraparaumu Beach Shops - Stop B",
+    stop_name: "Paraparaumu Beach Shops — Stop B",
     stop_lat: -40.89309815,
     stop_lon: 174.9814885,
   },
@@ -715,7 +715,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5506",
-    stop_name: "Lambton Central - Stop B",
+    stop_name: "Lambton Central — Stop B",
     stop_lat: -41.28296166,
     stop_lon: 174.7757989,
   },
@@ -745,13 +745,13 @@ export const bus_stops = [
   },
   {
     stop_id: "8328",
-    stop_name: "The Glen - Horoeka Street at Glen Road (near 5)",
+    stop_name: "The Glen — Horoeka Street at Glen Road (near 5)",
     stop_lat: -41.17088703,
     stop_lon: 174.9867388,
   },
   {
     stop_id: "5917",
-    stop_name: "Kelburn Village - Upland Road (St Michael's)",
+    stop_name: "Kelburn Village — Upland Road (St Michael’s)",
     stop_lat: -41.28928589,
     stop_lon: 174.7628342,
   },
@@ -829,7 +829,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8462",
-    stop_name: "Silverstream Station - Fergusson Drive",
+    stop_name: "Silverstream Station — Fergusson Drive",
     stop_lat: -41.14685583,
     stop_lon: 175.0116322,
   },
@@ -847,7 +847,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1828",
-    stop_name: "Waingawa - SH2 at Norfolk Road",
+    stop_name: "Waingawa — SH2 at Norfolk Road",
     stop_lat: -40.9691008,
     stop_lon: 175.6028907,
   },
@@ -871,7 +871,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6733",
-    stop_name: "Kingston - Stop A",
+    stop_name: "Kingston — Stop A",
     stop_lat: -41.323477,
     stop_lon: 174.763686,
   },
@@ -985,7 +985,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1730",
-    stop_name: "Otaki School - Mill Road",
+    stop_name: "Otaki School — Mill Road",
     stop_lat: -40.75426766,
     stop_lon: 175.143905,
   },
@@ -1021,7 +1021,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5114",
-    stop_name: "Molesworth Street - Motorway",
+    stop_name: "Molesworth Street — Motorway",
     stop_lat: -41.27266086,
     stop_lon: 174.7779074,
   },
@@ -1051,13 +1051,13 @@ export const bus_stops = [
   },
   {
     stop_id: "7241",
-    stop_name: "Miramar - Darlington Road (near 124)",
+    stop_name: "Miramar — Darlington Road (near 124)",
     stop_lat: -41.30571237,
     stop_lon: 174.82612269,
   },
   {
     stop_id: "4113",
-    stop_name: "Murphy Street - Wellington Girls' College",
+    stop_name: "Murphy Street — Wellington Girls’ College",
     stop_lat: -41.27533423,
     stop_lon: 174.7797709,
   },
@@ -1105,7 +1105,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8548",
-    stop_name: "Upper Hutt College - Moonshine Road (near 34)",
+    stop_name: "Upper Hutt College — Moonshine Road (near 34)",
     stop_lat: -41.12713584,
     stop_lon: 175.0420015,
   },
@@ -1147,13 +1147,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1939",
-    stop_name: "Taratahi - SH2 at East Taratahi Road",
+    stop_name: "Taratahi — SH2 at East Taratahi Road",
     stop_lat: -40.98158186,
     stop_lon: 175.5846028,
   },
   {
     stop_id: "5918",
-    stop_name: "Kelburn Normal School - Upland Rd (opposite)",
+    stop_name: "Kelburn Normal School — Upland Rd (opposite)",
     stop_lat: -41.28724432,
     stop_lon: 174.7608686,
   },
@@ -1237,7 +1237,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2010",
-    stop_name: "Levin - Te Takere",
+    stop_name: "Levin — Te Takere",
     stop_lat: -40.623161,
     stop_lon: 175.283933,
   },
@@ -1255,7 +1255,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7017",
-    stop_name: "Wellington Hospital - Stop B",
+    stop_name: "Wellington Hospital — Stop B",
     stop_lat: -41.30877386,
     stop_lon: 174.7782912,
   },
@@ -1327,7 +1327,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8985",
-    stop_name: "Wainuiomata Shopping Centre - Fitzherbert Road",
+    stop_name: "Wainuiomata Shopping Centre — Fitzherbert Road",
     stop_lat: -41.26154601,
     stop_lon: 174.9471094,
   },
@@ -1351,13 +1351,13 @@ export const bus_stops = [
   },
   {
     stop_id: "7158",
-    stop_name: "Island Bay - Reef Street at Shorland Park",
+    stop_name: "Island Bay — Reef Street at Shorland Park",
     stop_lat: -41.34311939,
     stop_lon: 174.7706202,
   },
   {
     stop_id: "5128",
-    stop_name: "Izard Park - Wilton Road (near 41)",
+    stop_name: "Izard Park — Wilton Road (near 41)",
     stop_lat: -41.26449927,
     stop_lon: 174.76432626,
   },
@@ -1375,7 +1375,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6153",
-    stop_name: "Owhiro Bay - Happy Valley Road (near 4)",
+    stop_name: "Owhiro Bay — Happy Valley Road (near 4)",
     stop_lat: -41.34410014,
     stop_lon: 174.7595314,
   },
@@ -1399,7 +1399,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7553",
-    stop_name: "St Patrick's College - Evans Bay Parade (opposite)",
+    stop_name: "St Patrick’s College — Evans Bay Parade (opposite)",
     stop_lat: -41.31426519,
     stop_lon: 174.79528942,
   },
@@ -1465,7 +1465,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8147",
-    stop_name: "Waiwhetu - Wainui Road (near 50)",
+    stop_name: "Waiwhetu — Wainui Road (near 50)",
     stop_lat: -41.22836834,
     stop_lon: 174.9167748,
   },
@@ -1489,7 +1489,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5028",
-    stop_name: "Kaiwharawhara - Fore Street",
+    stop_name: "Kaiwharawhara — Fore Street",
     stop_lat: -41.25940794,
     stop_lon: 174.79032,
   },
@@ -1507,7 +1507,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1898",
-    stop_name: "Upper Plain Road - Western Plains Plaza",
+    stop_name: "Upper Plain Road — Western Plains Plaza",
     stop_lat: -40.94257009,
     stop_lon: 175.6328505,
   },
@@ -1525,7 +1525,7 @@ export const bus_stops = [
   },
   {
     stop_id: "0001",
-    stop_name: "Fare Zone Boundary 12/13 - Ruamahanga River Bridge (SH53)",
+    stop_name: "Fare Zone Boundary 12/13 — Ruamahanga River Bridge (SH53)",
     stop_lat: -41.19730779,
     stop_lon: 175.43980893,
   },
@@ -1579,7 +1579,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6530",
-    stop_name: "Hataitai School - Arawa Road",
+    stop_name: "Hataitai School — Arawa Road",
     stop_lat: -41.29868999,
     stop_lon: 174.801188,
   },
@@ -1609,7 +1609,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1938",
-    stop_name: "Clareville - SH2 at Chester Road (southbound)",
+    stop_name: "Clareville — SH2 at Chester Road (southbound)",
     stop_lat: -41.00863779,
     stop_lon: 175.5507031,
   },
@@ -1621,7 +1621,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1774",
-    stop_name: "State Highway 1 - Otaki (near 226)",
+    stop_name: "State Highway 1 — Otaki (near 226)",
     stop_lat: -40.76141338,
     stop_lon: 175.1568105,
   },
@@ -1633,13 +1633,13 @@ export const bus_stops = [
   },
   {
     stop_id: "3926",
-    stop_name: "SDA School - Raiha Street",
+    stop_name: "SDA School — Raiha Street",
     stop_lat: -41.14867352,
     stop_lon: 174.8325858,
   },
   {
     stop_id: "2568",
-    stop_name: "Postgate School - Postgate Drive",
+    stop_name: "Postgate School — Postgate Drive",
     stop_lat: -41.11203005,
     stop_lon: 174.8818252,
   },
@@ -1699,7 +1699,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1302",
-    stop_name: "Rimu Road - Rimu Village",
+    stop_name: "Rimu Road — Rimu Village",
     stop_lat: -40.92156156,
     stop_lon: 174.9971828,
   },
@@ -1735,7 +1735,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8352",
-    stop_name: "Belmont - Park Road",
+    stop_name: "Belmont — Park Road",
     stop_lat: -41.18846689,
     stop_lon: 174.91292324,
   },
@@ -1753,7 +1753,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1500",
-    stop_name: "Waikanae - Ngaio Road at Main Road",
+    stop_name: "Waikanae — Ngaio Road at Main Road",
     stop_lat: -40.8759552,
     stop_lon: 175.0652334,
   },
@@ -1771,7 +1771,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5515",
-    stop_name: "Manners Street at Cuba Street - Stop A",
+    stop_name: "Manners Street at Cuba Street — Stop A",
     stop_lat: -41.29140832,
     stop_lon: 174.7771028,
   },
@@ -1795,13 +1795,13 @@ export const bus_stops = [
   },
   {
     stop_id: "7711",
-    stop_name: "Willis Street - Abel Smith Street",
+    stop_name: "Willis Street — Abel Smith Street",
     stop_lat: -41.2947379,
     stop_lon: 174.7714606,
   },
   {
     stop_id: "7163",
-    stop_name: "Houghton Bay - The Esplanade",
+    stop_name: "Houghton Bay — The Esplanade",
     stop_lat: -41.34191307,
     stop_lon: 174.7845709,
   },
@@ -1867,7 +1867,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1933",
-    stop_name: "High Street South at St Mary's School",
+    stop_name: "High Street South at St Mary’s School",
     stop_lat: -41.03051995,
     stop_lon: 175.5222881,
   },
@@ -1915,7 +1915,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9910",
-    stop_name: "Wainuiomata Village - Main Road (near 143)",
+    stop_name: "Wainuiomata Village — Main Road (near 143)",
     stop_lat: -41.2732221,
     stop_lon: 174.954381,
   },
@@ -1963,7 +1963,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2331",
-    stop_name: "Cannons Creek Shops - Bedford Street",
+    stop_name: "Cannons Creek Shops — Bedford Street",
     stop_lat: -41.14201241,
     stop_lon: 174.86498318,
   },
@@ -1987,7 +1987,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5014",
-    stop_name: "Lambton Quay North - Stop B",
+    stop_name: "Lambton Quay North — Stop B",
     stop_lat: -41.27987847,
     stop_lon: 174.77630961,
   },
@@ -2011,7 +2011,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4352",
-    stop_name: "Karori West - Montgomery Avenue",
+    stop_name: "Karori West — Montgomery Avenue",
     stop_lat: -41.2779207,
     stop_lon: 174.7282606,
   },
@@ -2059,7 +2059,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2862",
-    stop_name: "Titahi Bay - Gloaming Hill at Onepoto Road",
+    stop_name: "Titahi Bay — Gloaming Hill at Onepoto Road",
     stop_lat: -41.11351825,
     stop_lon: 174.84758337,
   },
@@ -2089,7 +2089,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1754",
-    stop_name: "Koromiko Street - Alexander Rest Home",
+    stop_name: "Koromiko Street — Alexander Rest Home",
     stop_lat: -40.73623498,
     stop_lon: 175.1204706,
   },
@@ -2101,25 +2101,25 @@ export const bus_stops = [
   },
   {
     stop_id: "9960",
-    stop_name: "Frederick Wise Park - Parkway (opposite)",
+    stop_name: "Frederick Wise Park — Parkway (opposite)",
     stop_lat: -41.25597447,
     stop_lon: 174.9463471,
   },
   {
     stop_id: "5012",
-    stop_name: "Lambton Central - Stop A",
+    stop_name: "Lambton Central — Stop A",
     stop_lat: -41.28260336,
     stop_lon: 174.7756698,
   },
   {
     stop_id: "9416",
-    stop_name: "Silverstream Station - Kiln Street",
+    stop_name: "Silverstream Station — Kiln Street",
     stop_lat: -41.147486,
     stop_lon: 175.0116515,
   },
   {
     stop_id: "2930",
-    stop_name: "Titahi Bay - Pikarere Street (near 132)",
+    stop_name: "Titahi Bay — Pikarere Street (near 132)",
     stop_lat: -41.1115278,
     stop_lon: 174.8234536,
   },
@@ -2143,7 +2143,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5534",
-    stop_name: "Everest Street at St Benedict's School",
+    stop_name: "Everest Street at St Benedict’s School",
     stop_lat: -41.24911433,
     stop_lon: 174.7919484,
   },
@@ -2185,7 +2185,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9140",
-    stop_name: "Waterloo Station - Stop C",
+    stop_name: "Waterloo Station — Stop C",
     stop_lat: -41.21406237,
     stop_lon: 174.9212475,
   },
@@ -2275,7 +2275,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9147",
-    stop_name: "Waiwhetu - Wainui Road (near 61)",
+    stop_name: "Waiwhetu — Wainui Road (near 61)",
     stop_lat: -41.22853846,
     stop_lon: 174.9173763,
   },
@@ -2323,7 +2323,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8416",
-    stop_name: "Silverstream Station - Gard Street",
+    stop_name: "Silverstream Station — Gard Street",
     stop_lat: -41.14747352,
     stop_lon: 175.012366,
   },
@@ -2359,7 +2359,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2868",
-    stop_name: "Whitireia Polytechnic - Te Hiko Street Medical Centre",
+    stop_name: "Whitireia Polytechnic — Te Hiko Street Medical Centre",
     stop_lat: -41.12438609,
     stop_lon: 174.8361981,
   },
@@ -2389,7 +2389,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9361",
-    stop_name: "Stokes Valley Entrance - Stop A",
+    stop_name: "Stokes Valley Entrance — Stop A",
     stop_lat: -41.16163365,
     stop_lon: 174.9822581,
   },
@@ -2467,7 +2467,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5325",
-    stop_name: "Karori Normal School - Karori Road",
+    stop_name: "Karori Normal School — Karori Road",
     stop_lat: -41.28376246,
     stop_lon: 174.7410723,
   },
@@ -2479,7 +2479,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6064",
-    stop_name: "Worser Bay - Marine Parade (near 177)",
+    stop_name: "Worser Bay — Marine Parade (near 177)",
     stop_lat: -41.31475928,
     stop_lon: 174.8274351,
   },
@@ -2605,7 +2605,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7721",
-    stop_name: "Brooklyn School - Washington Avenue",
+    stop_name: "Brooklyn School — Washington Avenue",
     stop_lat: -41.30580105,
     stop_lon: 174.7666237,
   },
@@ -2641,7 +2641,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2954",
-    stop_name: "Titahi Bay School - Kura Street",
+    stop_name: "Titahi Bay School — Kura Street",
     stop_lat: -41.11137749,
     stop_lon: 174.8385747,
   },
@@ -2659,7 +2659,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3262",
-    stop_name: "Ngauranga - Hutt Road (opposite motorway)",
+    stop_name: "Ngauranga — Hutt Road (opposite motorway)",
     stop_lat: -41.24752696,
     stop_lon: 174.8127902,
   },
@@ -2845,13 +2845,13 @@ export const bus_stops = [
   },
   {
     stop_id: "7036",
-    stop_name: "Strathmore Park Shops - Broadway",
+    stop_name: "Strathmore Park Shops — Broadway",
     stop_lat: -41.32459439,
     stop_lon: 174.8206604,
   },
   {
     stop_id: "9323",
-    stop_name: "Tawhai School - Glen Road",
+    stop_name: "Tawhai School — Glen Road",
     stop_lat: -41.17347515,
     stop_lon: 174.9881283,
   },
@@ -2953,7 +2953,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9959",
-    stop_name: "Wainuiomata High School - Parkway (opposite)",
+    stop_name: "Wainuiomata High School — Parkway (opposite)",
     stop_lat: -41.25153206,
     stop_lon: 174.9373833,
   },
@@ -2977,7 +2977,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7083",
-    stop_name: "Miramar Shops - Stop A",
+    stop_name: "Miramar Shops — Stop A",
     stop_lat: -41.315824,
     stop_lon: 174.814952,
   },
@@ -3031,7 +3031,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1128",
-    stop_name: "Kotuku Park - Manly Street (near 280)",
+    stop_name: "Kotuku Park — Manly Street (near 280)",
     stop_lat: -40.87982259,
     stop_lon: 174.9991315,
   },
@@ -3049,7 +3049,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2014",
-    stop_name: "Porirua - Semple Street",
+    stop_name: "Porirua — Semple Street",
     stop_lat: -41.12971804,
     stop_lon: 174.83743276,
   },
@@ -3091,7 +3091,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1949",
-    stop_name: "Chapel Street - UCOL",
+    stop_name: "Chapel Street — UCOL",
     stop_lat: -40.95334471,
     stop_lon: 175.6539504,
   },
@@ -3187,7 +3187,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8694",
-    stop_name: "Akatarawa Road - Birchville Picnic Area (opposite)",
+    stop_name: "Akatarawa Road — Birchville Picnic Area (opposite)",
     stop_lat: -41.09153625,
     stop_lon: 175.0982844,
   },
@@ -3199,7 +3199,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9299",
-    stop_name: "Pomare Station - Eastern Hutt Road",
+    stop_name: "Pomare Station — Eastern Hutt Road",
     stop_lat: -41.16964727,
     stop_lon: 174.9697749,
   },
@@ -3253,13 +3253,13 @@ export const bus_stops = [
   },
   {
     stop_id: "4331",
-    stop_name: "Karori Park Pavilion - Karori Road",
+    stop_name: "Karori Park Pavilion — Karori Road",
     stop_lat: -41.28700485,
     stop_lon: 174.7252091,
   },
   {
     stop_id: "6917",
-    stop_name: "Hutchison Road - Stop B",
+    stop_name: "Hutchison Road — Stop B",
     stop_lat: -41.30716511,
     stop_lon: 174.77616395,
   },
@@ -3307,7 +3307,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9328",
-    stop_name: "The Glen - Horoeka Street at Glen Road (near 2)",
+    stop_name: "The Glen — Horoeka Street at Glen Road (near 2)",
     stop_lat: -41.17105783,
     stop_lon: 174.98635883,
   },
@@ -3319,7 +3319,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1726",
-    stop_name: "Otaki College - Mill Road",
+    stop_name: "Otaki College — Mill Road",
     stop_lat: -40.75788989,
     stop_lon: 175.1525505,
   },
@@ -3367,7 +3367,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1208",
-    stop_name: "Guildford Drive - Kapiti Village (opposite)",
+    stop_name: "Guildford Drive — Kapiti Village (opposite)",
     stop_lat: -40.90159725,
     stop_lon: 175.0018377,
   },
@@ -3433,7 +3433,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9001",
-    stop_name: "Petone Station - Stop A",
+    stop_name: "Petone Station — Stop A",
     stop_lat: -41.2223046,
     stop_lon: 174.8692367,
   },
@@ -3445,7 +3445,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1925",
-    stop_name: "Ahikouka - SH2 at Ahikouka Road (hail and ride)",
+    stop_name: "Ahikouka — SH2 at Ahikouka Road (hail and ride)",
     stop_lat: -41.06412852,
     stop_lon: 175.4885856,
   },
@@ -3475,7 +3475,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9837",
-    stop_name: "Seaview Marina - Marine Drive",
+    stop_name: "Seaview Marina — Marine Drive",
     stop_lat: -41.24977157,
     stop_lon: 174.907972,
   },
@@ -3655,7 +3655,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5380",
-    stop_name: "Zealandia - Birdwood Street",
+    stop_name: "Zealandia — Birdwood Street",
     stop_lat: -41.28671615,
     stop_lon: 174.7541671,
   },
@@ -3679,7 +3679,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9615",
-    stop_name: "Timberlea - Norana Road",
+    stop_name: "Timberlea — Norana Road",
     stop_lat: -41.10282108,
     stop_lon: 175.106741,
   },
@@ -3697,7 +3697,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1286",
-    stop_name: "Guildford Drive - Kapiti Village",
+    stop_name: "Guildford Drive — Kapiti Village",
     stop_lat: -40.90139251,
     stop_lon: 175.001918,
   },
@@ -3751,7 +3751,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4324",
-    stop_name: "Marsden Village - Karori Road",
+    stop_name: "Marsden Village — Karori Road",
     stop_lat: -41.28229753,
     stop_lon: 174.74606751,
   },
@@ -3769,7 +3769,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4915",
-    stop_name: "Victoria University - Stop A",
+    stop_name: "Victoria University — Stop A",
     stop_lat: -41.28866877,
     stop_lon: 174.7678332,
   },
@@ -3967,7 +3967,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5328",
-    stop_name: "Karori Road at St Teresa's School",
+    stop_name: "Karori Road at St Teresa’s School",
     stop_lat: -41.28556869,
     stop_lon: 174.7347914,
   },
@@ -4015,7 +4015,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9000",
-    stop_name: "Petone Station - Stop B",
+    stop_name: "Petone Station — Stop B",
     stop_lat: -41.2225863,
     stop_lon: 174.868529,
   },
@@ -4075,7 +4075,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1928",
-    stop_name: "Waingawa - SH2 at Cornwall Road",
+    stop_name: "Waingawa — SH2 at Cornwall Road",
     stop_lat: -40.9692781,
     stop_lon: 175.6030165,
   },
@@ -4153,7 +4153,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2172",
-    stop_name: "Trust Porirua Park - Mungavin Avenue",
+    stop_name: "Trust Porirua Park — Mungavin Avenue",
     stop_lat: -41.14306429,
     stop_lon: 174.8566178,
   },
@@ -4189,7 +4189,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1834",
-    stop_name: "Carterton - High Street South (St David's)",
+    stop_name: "Carterton — High Street South (St David’s)",
     stop_lat: -41.02776284,
     stop_lon: 175.5247994,
   },
@@ -4243,13 +4243,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1580",
-    stop_name: "Waikanae Park Pool - Ngarara Road",
+    stop_name: "Waikanae Park Pool — Ngarara Road",
     stop_lat: -40.87330309,
     stop_lon: 175.0523351,
   },
   {
     stop_id: "1000",
-    stop_name: "Paraparaumu Station - Stop A",
+    stop_name: "Paraparaumu Station — Stop A",
     stop_lat: -40.91700385,
     stop_lon: 175.00663498,
   },
@@ -4279,7 +4279,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6937",
-    stop_name: "Houghton Bay - Houghton Bay Road",
+    stop_name: "Houghton Bay — Houghton Bay Road",
     stop_lat: -41.34126986,
     stop_lon: 174.7853899,
   },
@@ -4339,7 +4339,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1501",
-    stop_name: "Waikanae Station - Main Road",
+    stop_name: "Waikanae Station — Main Road",
     stop_lat: -40.87706865,
     stop_lon: 175.06563368,
   },
@@ -4363,7 +4363,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3814",
-    stop_name: "Broadmeadows - Rajkot Terrace",
+    stop_name: "Broadmeadows — Rajkot Terrace",
     stop_lat: -41.23655,
     stop_lon: 174.79749,
   },
@@ -4399,7 +4399,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1332",
-    stop_name: "Kapiti Coast Airport - Toru Road (near 30)",
+    stop_name: "Kapiti Coast Airport — Toru Road (near 30)",
     stop_lat: -40.89929798,
     stop_lon: 174.9823859,
   },
@@ -4441,7 +4441,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1838",
-    stop_name: "Clareville - SH2 at Chester Road (northbound)",
+    stop_name: "Clareville — SH2 at Chester Road (northbound)",
     stop_lat: -41.00808205,
     stop_lon: 175.551395,
   },
@@ -4573,7 +4573,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5121",
-    stop_name: "Wadestown Library - Lennel Road",
+    stop_name: "Wadestown Library — Lennel Road",
     stop_lat: -41.26250167,
     stop_lon: 174.7766768,
   },
@@ -4603,7 +4603,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5369",
-    stop_name: "Karori South - Hazlewood Avenue",
+    stop_name: "Karori South — Hazlewood Avenue",
     stop_lat: -41.29863937,
     stop_lon: 174.7221191,
   },
@@ -4621,7 +4621,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1765",
-    stop_name: "Otaki Library - Aotaki Street",
+    stop_name: "Otaki Library — Aotaki Street",
     stop_lat: -40.75325333,
     stop_lon: 175.1403189,
   },
@@ -4645,7 +4645,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2500",
-    stop_name: "RNZ Police College - Papakowhai Road (opposite)",
+    stop_name: "RNZ Police College — Papakowhai Road (opposite)",
     stop_lat: -41.12061345,
     stop_lon: 174.8580097,
   },
@@ -4687,7 +4687,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9559",
-    stop_name: "Royal Street - St Joseph's School",
+    stop_name: "Royal Street — St Joseph’s School",
     stop_lat: -41.12308251,
     stop_lon: 175.0672474,
   },
@@ -4699,7 +4699,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8140",
-    stop_name: "Waterloo Station - Stop D",
+    stop_name: "Waterloo Station — Stop D",
     stop_lat: -41.21397035,
     stop_lon: 174.9213641,
   },
@@ -4741,7 +4741,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1708",
-    stop_name: "Main Road - New World",
+    stop_name: "Main Road — New World",
     stop_lat: -40.7635392,
     stop_lon: 175.1539175,
   },
@@ -4783,7 +4783,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3451",
-    stop_name: "Grenada Village - Grenada Drive",
+    stop_name: "Grenada Village — Grenada Drive",
     stop_lat: -41.20061296,
     stop_lon: 174.8301352,
   },
@@ -4795,7 +4795,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3610",
-    stop_name: "Newlands Shops - Bracken Road",
+    stop_name: "Newlands Shops — Bracken Road",
     stop_lat: -41.22267889,
     stop_lon: 174.8234369,
   },
@@ -4831,13 +4831,13 @@ export const bus_stops = [
   },
   {
     stop_id: "6546",
-    stop_name: "Greta Point - Evans Bay Parade",
+    stop_name: "Greta Point — Evans Bay Parade",
     stop_lat: -41.30213455,
     stop_lon: 174.80443918,
   },
   {
     stop_id: "5127",
-    stop_name: "Wadestown School - Wilton Road",
+    stop_name: "Wadestown School — Wilton Road",
     stop_lat: -41.26249236,
     stop_lon: 174.765575,
   },
@@ -4909,7 +4909,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9114",
-    stop_name: "Lower Hutt - Centre City Plaza",
+    stop_name: "Lower Hutt — Centre City Plaza",
     stop_lat: -41.21031207,
     stop_lon: 174.903008,
   },
@@ -4927,7 +4927,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4449",
-    stop_name: "Ngaio Town Hall - Ottawa Road (opposite)",
+    stop_name: "Ngaio Town Hall — Ottawa Road (opposite)",
     stop_lat: -41.25011915,
     stop_lon: 174.7735962,
   },
@@ -4939,7 +4939,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5135",
-    stop_name: "Wilton Park - Wilton Road (near 185)",
+    stop_name: "Wilton Park — Wilton Road (near 185)",
     stop_lat: -41.26970901,
     stop_lon: 174.75527057,
   },
@@ -5053,7 +5053,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5419",
-    stop_name: "Khandallah Village - Stop B",
+    stop_name: "Khandallah Village — Stop B",
     stop_lat: -41.24714471,
     stop_lon: 174.7911785,
   },
@@ -5197,7 +5197,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7026",
-    stop_name: "Kilbirnie - Stop C",
+    stop_name: "Kilbirnie — Stop C",
     stop_lat: -41.31730621,
     stop_lon: 174.79553243,
   },
@@ -5257,13 +5257,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1850",
-    stop_name: "Masterton - Queen Street",
+    stop_name: "Masterton — Queen Street",
     stop_lat: -40.95329822,
     stop_lon: 175.6559681,
   },
   {
     stop_id: "1890",
-    stop_name: "Panama Village - Ngaumutawa Road",
+    stop_name: "Panama Village — Ngaumutawa Road",
     stop_lat: -40.94475228,
     stop_lon: 175.6398268,
   },
@@ -5305,7 +5305,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9136",
-    stop_name: "Waterloo Road at St Bernard's College",
+    stop_name: "Waterloo Road at St Bernard’s College",
     stop_lat: -41.21069894,
     stop_lon: 174.9176901,
   },
@@ -5359,7 +5359,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2738",
-    stop_name: "Whitby - Navigation Drive",
+    stop_name: "Whitby — Navigation Drive",
     stop_lat: -41.11070239,
     stop_lon: 174.91135242,
   },
@@ -5401,7 +5401,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1956",
-    stop_name: "Manakau - Honi Taipua Street",
+    stop_name: "Manakau — Honi Taipua Street",
     stop_lat: -40.713955,
     stop_lon: 175.217066,
   },
@@ -5533,7 +5533,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6001",
-    stop_name: "Wellington Station - Stop C",
+    stop_name: "Wellington Station — Stop C",
     stop_lat: -41.27837975,
     stop_lon: 174.77943604,
   },
@@ -5575,7 +5575,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8326",
-    stop_name: "The Glen - Horoeka Street (near 95)",
+    stop_name: "The Glen — Horoeka Street (near 95)",
     stop_lat: -41.17480633,
     stop_lon: 174.9944867,
   },
@@ -5587,7 +5587,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6535",
-    stop_name: "Hataitai - Stop E",
+    stop_name: "Hataitai — Stop E",
     stop_lat: -41.30437278,
     stop_lon: 174.7948942,
   },
@@ -5689,7 +5689,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8219",
-    stop_name: "Kelson - Major Drive at Kaitangata Crescent",
+    stop_name: "Kelson — Major Drive at Kaitangata Crescent",
     stop_lat: -41.17196358,
     stop_lon: 174.9394471,
   },
@@ -5731,7 +5731,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3500",
-    stop_name: "Cashmere Hospital - Helston Road",
+    stop_name: "Cashmere Hospital — Helston Road",
     stop_lat: -41.22015863,
     stop_lon: 174.8119147,
   },
@@ -5815,7 +5815,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9401",
-    stop_name: "Blue Mountains Road - Fendalton Crescent",
+    stop_name: "Blue Mountains Road — Fendalton Crescent",
     stop_lat: -41.15694315,
     stop_lon: 175.0168269,
   },
@@ -5839,7 +5839,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3834",
-    stop_name: "Broadmeadows - John Sims Drive (near 16)",
+    stop_name: "Broadmeadows — John Sims Drive (near 16)",
     stop_lat: -41.23479778,
     stop_lon: 174.797404,
   },
@@ -5857,7 +5857,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9326",
-    stop_name: "The Glen - Horoeka Street (near 100)",
+    stop_name: "The Glen — Horoeka Street (near 100)",
     stop_lat: -41.17498638,
     stop_lon: 174.9944922,
   },
@@ -5923,7 +5923,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3081",
-    stop_name: "Johnsonville - Stop B",
+    stop_name: "Johnsonville — Stop B",
     stop_lat: -41.22289178,
     stop_lon: 174.80525996,
   },
@@ -5983,7 +5983,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4936",
-    stop_name: "Mairangi - Norwich Street",
+    stop_name: "Mairangi — Norwich Street",
     stop_lat: -41.26503531,
     stop_lon: 174.764211,
   },
@@ -6007,7 +6007,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7700",
-    stop_name: "Brooklyn - Stop A",
+    stop_name: "Brooklyn — Stop A",
     stop_lat: -41.30503322,
     stop_lon: 174.765401,
   },
@@ -6019,7 +6019,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1811",
-    stop_name: "Featherston - Fitzherbert Street (opposite 32)",
+    stop_name: "Featherston — Fitzherbert Street (opposite 32)",
     stop_lat: -41.11683,
     stop_lon: 175.32356,
   },
@@ -6037,7 +6037,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9297",
-    stop_name: "Taita Station - Eastern Hutt Road - Stop D",
+    stop_name: "Taita Station — Eastern Hutt Road — Stop D",
     stop_lat: -41.180867,
     stop_lon: 174.9615273,
   },
@@ -6109,7 +6109,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8115",
-    stop_name: "Lower Hutt - Queensgate - Stop B",
+    stop_name: "Lower Hutt — Queensgate — Stop B",
     stop_lat: -41.21001241,
     stop_lon: 174.9047884,
   },
@@ -6121,7 +6121,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9368",
-    stop_name: "Stokes Valley Shops - Evans Street",
+    stop_name: "Stokes Valley Shops — Evans Street",
     stop_lat: -41.17458455,
     stop_lon: 174.9812478,
   },
@@ -6133,7 +6133,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5319",
-    stop_name: "Karori Tunnel - Stop B",
+    stop_name: "Karori Tunnel — Stop B",
     stop_lat: -41.2873982,
     stop_lon: 174.7566931,
   },
@@ -6187,7 +6187,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1376",
-    stop_name: "Raumati Beach Shops - Raumati Road (near 15)",
+    stop_name: "Raumati Beach Shops — Raumati Road (near 15)",
     stop_lat: -40.91921769,
     stop_lon: 174.98293242,
   },
@@ -6217,7 +6217,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1856",
-    stop_name: "Worksop Road - Countdown",
+    stop_name: "Worksop Road — Countdown",
     stop_lat: -40.95270355,
     stop_lon: 175.6583203,
   },
@@ -6289,7 +6289,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9367",
-    stop_name: "Stokes Valley Shops - George Street",
+    stop_name: "Stokes Valley Shops — George Street",
     stop_lat: -41.17399305,
     stop_lon: 174.97977384,
   },
@@ -6337,19 +6337,19 @@ export const bus_stops = [
   },
   {
     stop_id: "9115",
-    stop_name: "Lower Hutt - Queensgate - Stop A",
+    stop_name: "Lower Hutt — Queensgate — Stop A",
     stop_lat: -41.2091982,
     stop_lon: 174.9050033,
   },
   {
     stop_id: "5492",
-    stop_name: "Thorndon Quay at Motorway (near 248 - Southbound)",
+    stop_name: "Thorndon Quay at Motorway (near 248 — Southbound)",
     stop_lat: -41.2699229,
     stop_lon: 174.78117391,
   },
   {
     stop_id: "3454",
-    stop_name: "Grenada Grounds - Mark Avenue (opposite)",
+    stop_name: "Grenada Grounds — Mark Avenue (opposite)",
     stop_lat: -41.207819,
     stop_lon: 174.819462,
   },
@@ -6421,13 +6421,13 @@ export const bus_stops = [
   },
   {
     stop_id: "9730",
-    stop_name: "Hutt Park - Seaview Road (near 1)",
+    stop_name: "Hutt Park — Seaview Road (near 1)",
     stop_lat: -41.23540454,
     stop_lon: 174.9052869,
   },
   {
     stop_id: "3256",
-    stop_name: "Ngauranga - Hutt Road (next to motorway)",
+    stop_name: "Ngauranga — Hutt Road (next to motorway)",
     stop_lat: -41.24820366,
     stop_lon: 174.81238285,
   },
@@ -6523,7 +6523,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1932",
-    stop_name: "Carterton - High Street South (near 281)",
+    stop_name: "Carterton — High Street South (near 281)",
     stop_lat: -41.03393037,
     stop_lon: 175.5187309,
   },
@@ -6601,7 +6601,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2548",
-    stop_name: "Whitby - The Crowsnest",
+    stop_name: "Whitby — The Crowsnest",
     stop_lat: -41.10668748,
     stop_lon: 174.894534,
   },
@@ -6649,7 +6649,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9251",
-    stop_name: "Taita Station - High Street - Stop B",
+    stop_name: "Taita Station — High Street — Stop B",
     stop_lat: -41.17955244,
     stop_lon: 174.96094477,
   },
@@ -6733,7 +6733,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2904",
-    stop_name: "Titahi Bay School - Kura Street (opposite)",
+    stop_name: "Titahi Bay School — Kura Street (opposite)",
     stop_lat: -41.11128935,
     stop_lon: 174.8384531,
   },
@@ -6757,7 +6757,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1310",
-    stop_name: "Raumati Beach Shops - Raumati Road (near 24)",
+    stop_name: "Raumati Beach Shops — Raumati Road (near 24)",
     stop_lat: -40.91920476,
     stop_lon: 174.982387,
   },
@@ -6787,19 +6787,19 @@ export const bus_stops = [
   },
   {
     stop_id: "0003",
-    stop_name: "Fare Zone Boundary 11/12 - Tauherenikau River Bridge (SH2)",
+    stop_name: "Fare Zone Boundary 11/12 — Tauherenikau River Bridge (SH2)",
     stop_lat: -41.11841239,
     stop_lon: 175.37498108,
   },
   {
     stop_id: "2929",
-    stop_name: "Titahi Bay - Pikarere Street",
+    stop_name: "Titahi Bay — Pikarere Street",
     stop_lat: -41.11171164,
     stop_lon: 174.8232205,
   },
   {
     stop_id: "3833",
-    stop_name: "Broadmeadows - John Sims Drive (near 23)",
+    stop_name: "Broadmeadows — John Sims Drive (near 23)",
     stop_lat: -41.23470559,
     stop_lon: 174.79732054,
   },
@@ -6823,7 +6823,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9268",
-    stop_name: "Fairfield Shops - Waiwhetu Road (near 197)",
+    stop_name: "Fairfield Shops — Waiwhetu Road (near 197)",
     stop_lat: -41.21180815,
     stop_lon: 174.9321551,
   },
@@ -6835,7 +6835,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1831",
-    stop_name: "Carterton - High Street South (near 318)",
+    stop_name: "Carterton — High Street South (near 318)",
     stop_lat: -41.03596221,
     stop_lon: 175.5164294,
   },
@@ -6955,7 +6955,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1911",
-    stop_name: "Featherston - Fitzherbert Street",
+    stop_name: "Featherston — Fitzherbert Street",
     stop_lat: -41.11693405,
     stop_lon: 175.3236015,
   },
@@ -6979,7 +6979,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1762",
-    stop_name: "Otaki Town - Tasman Road at Te Rauparaha Street",
+    stop_name: "Otaki Town — Tasman Road at Te Rauparaha Street",
     stop_lat: -40.75169874,
     stop_lon: 175.1367156,
   },
@@ -7027,19 +7027,19 @@ export const bus_stops = [
   },
   {
     stop_id: "4313",
-    stop_name: "Botanic Garden - Glenmore Street (opposite)",
+    stop_name: "Botanic Garden — Glenmore Street (opposite)",
     stop_lat: -41.28057662,
     stop_lon: 174.7668983,
   },
   {
     stop_id: "1847",
-    stop_name: "Queen Street - The Warehouse",
+    stop_name: "Queen Street — The Warehouse",
     stop_lat: -40.95511162,
     stop_lon: 175.6530839,
   },
   {
     stop_id: "8173",
-    stop_name: "Waiwhetu Marae - Riverside Drive",
+    stop_name: "Waiwhetu Marae — Riverside Drive",
     stop_lat: -41.22434548,
     stop_lon: 174.9203556,
   },
@@ -7057,7 +7057,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3929",
-    stop_name: "SDA School - Raiha Street (opposite)",
+    stop_name: "SDA School — Raiha Street (opposite)",
     stop_lat: -41.14831528,
     stop_lon: 174.8324567,
   },
@@ -7111,7 +7111,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6553",
-    stop_name: "St Patrick's College - Evans Bay Parade",
+    stop_name: "St Patrick’s College — Evans Bay Parade",
     stop_lat: -41.31401,
     stop_lon: 174.79561,
   },
@@ -7129,7 +7129,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7939",
-    stop_name: "Sinclair Park - Houghton Bay Road (near 27)",
+    stop_name: "Sinclair Park — Houghton Bay Road (near 27)",
     stop_lat: -41.33083341,
     stop_lon: 174.7846269,
   },
@@ -7141,7 +7141,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5459",
-    stop_name: "Khandallah - Burma Road at Baroda Street",
+    stop_name: "Khandallah — Burma Road at Baroda Street",
     stop_lat: -41.24181112,
     stop_lon: 174.79239842,
   },
@@ -7207,7 +7207,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9207",
-    stop_name: "Naenae College - Daysh Street (near 26)",
+    stop_name: "Naenae College — Daysh Street (near 26)",
     stop_lat: -41.19836179,
     stop_lon: 174.9390339,
   },
@@ -7279,7 +7279,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6017",
-    stop_name: "Wellington Hospital - Stop C",
+    stop_name: "Wellington Hospital — Stop C",
     stop_lat: -41.308939,
     stop_lon: 174.778593,
   },
@@ -7333,7 +7333,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5018",
-    stop_name: "Thorndon Quay - Capital Gateway (opposite)",
+    stop_name: "Thorndon Quay — Capital Gateway (opposite)",
     stop_lat: -41.27593123,
     stop_lon: 174.7819363,
   },
@@ -7369,7 +7369,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3622",
-    stop_name: "Helston Park - Helston Road",
+    stop_name: "Helston Park — Helston Road",
     stop_lat: -41.21923952,
     stop_lon: 174.8130823,
   },
@@ -7435,7 +7435,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4325",
-    stop_name: "Karori Normal School - Karori Road (opposite)",
+    stop_name: "Karori Normal School — Karori Road (opposite)",
     stop_lat: -41.28361466,
     stop_lon: 174.7411492,
   },
@@ -7495,7 +7495,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6219",
-    stop_name: "Kilbirnie School - Moxham Avenue",
+    stop_name: "Kilbirnie School — Moxham Avenue",
     stop_lat: -41.30879333,
     stop_lon: 174.7925706,
   },
@@ -7531,7 +7531,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9462",
-    stop_name: "Silverstream Station - Fergusson Drive (St Patrick's College)",
+    stop_name: "Silverstream Station — Fergusson Drive (St Patrick’s College)",
     stop_lat: -41.14656495,
     stop_lon: 175.0128149,
   },
@@ -7603,7 +7603,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6223",
-    stop_name: "Kilbirnie Library - Kilbirnie Crescent",
+    stop_name: "Kilbirnie Library — Kilbirnie Crescent",
     stop_lat: -41.3161616,
     stop_lon: 174.7941379,
   },
@@ -7627,7 +7627,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9693",
-    stop_name: "Akatarawa Road - Akatarawa Store",
+    stop_name: "Akatarawa Road — Akatarawa Store",
     stop_lat: -41.09501336,
     stop_lon: 175.0952994,
   },
@@ -7639,7 +7639,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5000",
-    stop_name: "Courtenay Place - Stop A",
+    stop_name: "Courtenay Place — Stop A",
     stop_lat: -41.29379439,
     stop_lon: 174.7823273,
   },
@@ -7663,7 +7663,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3928",
-    stop_name: "Kenepuru Hospital - Ambulance Drive",
+    stop_name: "Kenepuru Hospital — Ambulance Drive",
     stop_lat: -41.14640371,
     stop_lon: 174.8337142,
   },
@@ -7699,7 +7699,7 @@ export const bus_stops = [
   },
   {
     stop_id: "0002",
-    stop_name: "Fare Zone Boundary 11/12 - Tauherenikau River Bridge (SH53)",
+    stop_name: "Fare Zone Boundary 11/12 — Tauherenikau River Bridge (SH53)",
     stop_lat: -41.14335092,
     stop_lon: 175.36021609,
   },
@@ -7741,7 +7741,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3466",
-    stop_name: "Newlands College - Bracken Road",
+    stop_name: "Newlands College — Bracken Road",
     stop_lat: -41.2188169,
     stop_lon: 174.8227332,
   },
@@ -7765,7 +7765,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1710",
-    stop_name: "State Highway 1 - Otaki (near 239)",
+    stop_name: "State Highway 1 — Otaki (near 239)",
     stop_lat: -40.76132779,
     stop_lon: 175.1565708,
   },
@@ -8029,7 +8029,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8112",
-    stop_name: "Victoria Street at Weltec - Block F (near 64)",
+    stop_name: "Victoria Street at Weltec — Block F (near 64)",
     stop_lat: -41.21377101,
     stop_lon: 174.8953549,
   },
@@ -8113,7 +8113,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7917",
-    stop_name: "Hutchison Road - Stop A",
+    stop_name: "Hutchison Road — Stop A",
     stop_lat: -41.3075639,
     stop_lon: 174.77518928,
   },
@@ -8203,7 +8203,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7746",
-    stop_name: "Hutchison Road - Stop C",
+    stop_name: "Hutchison Road — Stop C",
     stop_lat: -41.307634,
     stop_lon: 174.77507937,
   },
@@ -8257,7 +8257,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3600",
-    stop_name: "Newlands Bus Depot - Newlands Road (opposite)",
+    stop_name: "Newlands Bus Depot — Newlands Road (opposite)",
     stop_lat: -41.23132657,
     stop_lon: 174.8119845,
   },
@@ -8323,7 +8323,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6081",
-    stop_name: "Miramar Shops - Stop B",
+    stop_name: "Miramar Shops — Stop B",
     stop_lat: -41.31585051,
     stop_lon: 174.8153993,
   },
@@ -8347,7 +8347,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3462",
-    stop_name: "Paparangi School - Beazley Avenue",
+    stop_name: "Paparangi School — Beazley Avenue",
     stop_lat: -41.21481444,
     stop_lon: 174.8195207,
   },
@@ -8449,7 +8449,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5500",
-    stop_name: "Wellington Station - Stop A",
+    stop_name: "Wellington Station — Stop A",
     stop_lat: -41.27858839,
     stop_lon: 174.7790235,
   },
@@ -8461,25 +8461,25 @@ export const bus_stops = [
   },
   {
     stop_id: "8971",
-    stop_name: "Wainuiomata North - Ipswich Grove",
+    stop_name: "Wainuiomata North — Ipswich Grove",
     stop_lat: -41.23135488,
     stop_lon: 174.948122,
   },
   {
     stop_id: "8511",
-    stop_name: "Totara Park Shops - California Drive",
+    stop_name: "Totara Park Shops — California Drive",
     stop_lat: -41.11083947,
     stop_lon: 175.0818689,
   },
   {
     stop_id: "4136",
-    stop_name: "Wilton - Surrey Street",
+    stop_name: "Wilton — Surrey Street",
     stop_lat: -41.27139189,
     stop_lon: 174.7549506,
   },
   {
     stop_id: "1853",
-    stop_name: "Masterton - Chapel Street (hail and ride)",
+    stop_name: "Masterton — Chapel Street (hail and ride)",
     stop_lat: -40.94760033,
     stop_lon: 175.662431,
   },
@@ -8545,7 +8545,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2112",
-    stop_name: "Cannons Creek Shops - Champion Street (opposite)",
+    stop_name: "Cannons Creek Shops — Champion Street (opposite)",
     stop_lat: -41.14098215,
     stop_lon: 174.86625655,
   },
@@ -8557,7 +8557,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8737",
-    stop_name: "Seaview Marina - Seaview Road",
+    stop_name: "Seaview Marina — Seaview Road",
     stop_lat: -41.24959152,
     stop_lon: 174.9079668,
   },
@@ -8569,7 +8569,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9627",
-    stop_name: "Te Marua - Plateau Road",
+    stop_name: "Te Marua — Plateau Road",
     stop_lat: -41.09703392,
     stop_lon: 175.14584597,
   },
@@ -8671,7 +8671,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2826",
-    stop_name: "Titahi Bay - Gloaming Hill",
+    stop_name: "Titahi Bay — Gloaming Hill",
     stop_lat: -41.10716018,
     stop_lon: 174.8488177,
   },
@@ -8707,13 +8707,13 @@ export const bus_stops = [
   },
   {
     stop_id: "8298",
-    stop_name: "Taita College - Eastern Hutt Road",
+    stop_name: "Taita College — Eastern Hutt Road",
     stop_lat: -41.17464558,
     stop_lon: 174.9671829,
   },
   {
     stop_id: "7774",
-    stop_name: "Kowhai Park - Mitchell Street",
+    stop_name: "Kowhai Park — Mitchell Street",
     stop_lat: -41.31547459,
     stop_lon: 174.7584027,
   },
@@ -8773,7 +8773,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9324",
-    stop_name: "The Glen - Tawhai Street (near 17)",
+    stop_name: "The Glen — Tawhai Street (near 17)",
     stop_lat: -41.17380232,
     stop_lon: 174.9900456,
   },
@@ -8827,7 +8827,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1221",
-    stop_name: "Aero Club - Kapiti Road",
+    stop_name: "Aero Club — Kapiti Road",
     stop_lat: -40.902003,
     stop_lon: 174.9926764,
   },
@@ -8941,7 +8941,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4128",
-    stop_name: "Izard Park - Wilton Road",
+    stop_name: "Izard Park — Wilton Road",
     stop_lat: -41.26440689,
     stop_lon: 174.7640748,
   },
@@ -8971,7 +8971,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8960",
-    stop_name: "Frederick Wise Park - Parkway",
+    stop_name: "Frederick Wise Park — Parkway",
     stop_lat: -41.25606652,
     stop_lon: 174.9462305,
   },
@@ -8983,7 +8983,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5922",
-    stop_name: "Northland Village - Northland Road",
+    stop_name: "Northland Village — Northland Road",
     stop_lat: -41.28331336,
     stop_lon: 174.75721769,
   },
@@ -9001,13 +9001,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1835",
-    stop_name: "Carterton - High Street South (near 80)",
+    stop_name: "Carterton — High Street South (near 80)",
     stop_lat: -41.02610907,
     stop_lon: 175.5262824,
   },
   {
     stop_id: "4332",
-    stop_name: "Karori - Allington Road",
+    stop_name: "Karori — Allington Road",
     stop_lat: -41.28897687,
     stop_lon: 174.72331063,
   },
@@ -9031,7 +9031,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2150",
-    stop_name: "Waitangirua Mall - Warspite Avenue (opposite)",
+    stop_name: "Waitangirua Mall — Warspite Avenue (opposite)",
     stop_lat: -41.12916722,
     stop_lon: 174.8804089,
   },
@@ -9049,7 +9049,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1851",
-    stop_name: "Masterton Club - Chapel Street",
+    stop_name: "Masterton Club — Chapel Street",
     stop_lat: -40.95112552,
     stop_lon: 175.6567614,
   },
@@ -9109,7 +9109,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2005",
-    stop_name: "North City Plaza - Walton Leigh Avenue",
+    stop_name: "North City Plaza — Walton Leigh Avenue",
     stop_lat: -41.1375412,
     stop_lon: 174.8415691,
   },
@@ -9139,7 +9139,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3956",
-    stop_name: "Tawa Mall - Main Road (near 206)",
+    stop_name: "Tawa Mall — Main Road (near 206)",
     stop_lat: -41.16978008,
     stop_lon: 174.8250683,
   },
@@ -9235,7 +9235,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5516",
-    stop_name: "Courtenay Place - Stop C",
+    stop_name: "Courtenay Place — Stop C",
     stop_lat: -41.29375246,
     stop_lon: 174.7827796,
   },
@@ -9247,7 +9247,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1917",
-    stop_name: "Tauherenikau - SH2 at Racecourse Road",
+    stop_name: "Tauherenikau — SH2 at Racecourse Road",
     stop_lat: -41.11855077,
     stop_lon: 175.3767789,
   },
@@ -9259,7 +9259,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3472",
-    stop_name: "Newlands Medical Centre - Stewart Drive",
+    stop_name: "Newlands Medical Centre — Stewart Drive",
     stop_lat: -41.22233952,
     stop_lon: 174.8221152,
   },
@@ -9301,19 +9301,19 @@ export const bus_stops = [
   },
   {
     stop_id: "2002",
-    stop_name: "Porirua Station - Stop B",
+    stop_name: "Porirua Station — Stop B",
     stop_lat: -41.1376946,
     stop_lon: 174.8432414,
   },
   {
     stop_id: "5016",
-    stop_name: "Wellington Station - Stop D",
+    stop_name: "Wellington Station — Stop D",
     stop_lat: -41.27841016,
     stop_lon: 174.7788993,
   },
   {
     stop_id: "4433",
-    stop_name: "Onslow Alms - Onslow Road",
+    stop_name: "Onslow Alms — Onslow Road",
     stop_lat: -41.25311065,
     stop_lon: 174.8013673,
   },
@@ -9355,7 +9355,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8580",
-    stop_name: "Upper Hutt Station - Stop B",
+    stop_name: "Upper Hutt Station — Stop B",
     stop_lat: -41.12583993,
     stop_lon: 175.07098741,
   },
@@ -9511,7 +9511,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2342",
-    stop_name: "Cannons Creek Shops - Bedford Street (near 225)",
+    stop_name: "Cannons Creek Shops — Bedford Street (near 225)",
     stop_lat: -41.14203118,
     stop_lon: 174.8648101,
   },
@@ -9547,7 +9547,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3542",
-    stop_name: "Newlands School - Newlands Road",
+    stop_name: "Newlands School — Newlands Road",
     stop_lat: -41.22442916,
     stop_lon: 174.8209802,
   },
@@ -9571,7 +9571,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6055",
-    stop_name: "Wellington Hospital - Stop A",
+    stop_name: "Wellington Hospital — Stop A",
     stop_lat: -41.308603,
     stop_lon: 174.77847,
   },
@@ -9595,7 +9595,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8504",
-    stop_name: "Totara Park - Tulsa Park",
+    stop_name: "Totara Park — Tulsa Park",
     stop_lat: -41.10769734,
     stop_lon: 175.0812932,
   },
@@ -9613,13 +9613,13 @@ export const bus_stops = [
   },
   {
     stop_id: "9223",
-    stop_name: "Hutt Hospital - High Street (opposite)",
+    stop_name: "Hutt Hospital — High Street (opposite)",
     stop_lat: -41.20320123,
     stop_lon: 174.9243883,
   },
   {
     stop_id: "5433",
-    stop_name: "Onslow Alms - Onslow Road (opposite)",
+    stop_name: "Onslow Alms — Onslow Road (opposite)",
     stop_lat: -41.25310691,
     stop_lon: 174.8016059,
   },
@@ -9655,13 +9655,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1386",
-    stop_name: "Rimu Road - Coastal Villas (near 97)",
+    stop_name: "Rimu Road — Coastal Villas (near 97)",
     stop_lat: -40.91991842,
     stop_lon: 174.9984396,
   },
   {
     stop_id: "6924",
-    stop_name: "Wellington Zoo - Stop B",
+    stop_name: "Wellington Zoo — Stop B",
     stop_lat: -41.31913091,
     stop_lon: 174.7841881,
   },
@@ -9685,7 +9685,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1935",
-    stop_name: "Carterton - High Street South (opposite 100)",
+    stop_name: "Carterton — High Street South (opposite 100)",
     stop_lat: -41.02656165,
     stop_lon: 175.5261807,
   },
@@ -9715,7 +9715,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4320",
-    stop_name: "Zealandia - Chaytor Street (at Tunnel)",
+    stop_name: "Zealandia — Chaytor Street (at Tunnel)",
     stop_lat: -41.28710344,
     stop_lon: 174.75478538,
   },
@@ -9739,13 +9739,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1800",
-    stop_name: "Martinborough - Kitchener Street (near 11)",
+    stop_name: "Martinborough — Kitchener Street (near 11)",
     stop_lat: -41.21735429,
     stop_lon: 175.4583648,
   },
   {
     stop_id: "9130",
-    stop_name: "Lower Hutt - Queensgate - Stop C",
+    stop_name: "Lower Hutt — Queensgate — Stop C",
     stop_lat: -41.21037055,
     stop_lon: 174.904918,
   },
@@ -9901,7 +9901,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1950",
-    stop_name: "Masterton - Queen Street (opposite Tranzit)",
+    stop_name: "Masterton — Queen Street (opposite Tranzit)",
     stop_lat: -40.95357365,
     stop_lon: 175.6557416,
   },
@@ -9979,7 +9979,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2136",
-    stop_name: "Ascot Park - Conclusion Street (near 141)",
+    stop_name: "Ascot Park — Conclusion Street (near 141)",
     stop_lat: -41.11901826,
     stop_lon: 174.8687853,
   },
@@ -10009,7 +10009,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6914",
-    stop_name: "Massey University - Wallace Street",
+    stop_name: "Massey University — Wallace Street",
     stop_lat: -41.3022585,
     stop_lon: 174.7744113,
   },
@@ -10033,7 +10033,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4419",
-    stop_name: "Khandallah Village - Stop A",
+    stop_name: "Khandallah Village — Stop A",
     stop_lat: -41.24732664,
     stop_lon: 174.7910641,
   },
@@ -10045,7 +10045,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1148",
-    stop_name: "Paraparaumu Beach Shops - Stop A",
+    stop_name: "Paraparaumu Beach Shops — Stop A",
     stop_lat: -40.89346234,
     stop_lon: 174.981262,
   },
@@ -10117,7 +10117,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8293",
-    stop_name: "Naenae - Kowhai Street (near 7)",
+    stop_name: "Naenae — Kowhai Street (near 7)",
     stop_lat: -41.19307242,
     stop_lon: 174.9535447,
   },
@@ -10231,7 +10231,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9846",
-    stop_name: "Days Bay - Moana Road (opposite)",
+    stop_name: "Days Bay — Moana Road (opposite)",
     stop_lat: -41.28277133,
     stop_lon: 174.905948,
   },
@@ -10303,7 +10303,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9548",
-    stop_name: "Upper Hutt College - Moonshine Road",
+    stop_name: "Upper Hutt College — Moonshine Road",
     stop_lat: -41.12712971,
     stop_lon: 175.04159474,
   },
@@ -10351,7 +10351,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3414",
-    stop_name: "Newlands College - Bracken Road (opposite)",
+    stop_name: "Newlands College — Bracken Road (opposite)",
     stop_lat: -41.21917703,
     stop_lon: 174.8227432,
   },
@@ -10399,7 +10399,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7072",
-    stop_name: "Scorching Bay - Massey Road",
+    stop_name: "Scorching Bay — Massey Road",
     stop_lat: -41.29640642,
     stop_lon: 174.8332161,
   },
@@ -10441,7 +10441,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2856",
-    stop_name: "Gloaming Hill - Mapplebeck Street",
+    stop_name: "Gloaming Hill — Mapplebeck Street",
     stop_lat: -41.1068939,
     stop_lon: 174.8485721,
   },
@@ -10471,7 +10471,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1953",
-    stop_name: "St Matthew's College (opposite)",
+    stop_name: "St Matthew’s College (opposite)",
     stop_lat: -40.94496793,
     stop_lon: 175.6500511,
   },
@@ -10483,7 +10483,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2722",
-    stop_name: "Whitby College - Discovery Drive",
+    stop_name: "Whitby College — Discovery Drive",
     stop_lat: -41.11578826,
     stop_lon: 174.8944147,
   },
@@ -10501,7 +10501,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7924",
-    stop_name: "Wellington Zoo - Stop A",
+    stop_name: "Wellington Zoo — Stop A",
     stop_lat: -41.31922279,
     stop_lon: 174.7840711,
   },
@@ -10531,7 +10531,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3550",
-    stop_name: "Newlands Bus Depot - Newlands Road",
+    stop_name: "Newlands Bus Depot — Newlands Road",
     stop_lat: -41.23150288,
     stop_lon: 174.812228,
   },
@@ -10579,7 +10579,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1168",
-    stop_name: "Kotuku Park - Manly Street",
+    stop_name: "Kotuku Park — Manly Street",
     stop_lat: -40.8797305,
     stop_lon: 174.9992474,
   },
@@ -10597,7 +10597,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5332",
-    stop_name: "Karori - Karori Road",
+    stop_name: "Karori — Karori Road",
     stop_lat: -41.2883212,
     stop_lon: 174.72390033,
   },
@@ -10621,7 +10621,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9366",
-    stop_name: "Stokes Valley Shops - Bowers Street",
+    stop_name: "Stokes Valley Shops — Bowers Street",
     stop_lat: -41.17341012,
     stop_lon: 174.9814508,
   },
@@ -10645,7 +10645,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3710",
-    stop_name: "Woodridge - Kentwood Drive",
+    stop_name: "Woodridge — Kentwood Drive",
     stop_lat: -41.21491443,
     stop_lon: 174.830259,
   },
@@ -10693,7 +10693,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8207",
-    stop_name: "Naenae College - Daysh Street",
+    stop_name: "Naenae College — Daysh Street",
     stop_lat: -41.19818174,
     stop_lon: 174.9390286,
   },
@@ -10777,13 +10777,13 @@ export const bus_stops = [
   },
   {
     stop_id: "8165",
-    stop_name: "Waterloo Station - Oxford Terrace (Stop B)",
+    stop_name: "Waterloo Station — Oxford Terrace (Stop B)",
     stop_lat: -41.21343416,
     stop_lon: 174.9211098,
   },
   {
     stop_id: "1732",
-    stop_name: "Otaki Town - Aotaki Street at Mill Road",
+    stop_name: "Otaki Town — Aotaki Street at Mill Road",
     stop_lat: -40.75324893,
     stop_lon: 175.1405557,
   },
@@ -10855,7 +10855,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9165",
-    stop_name: "Waterloo Station - Knights Road - Stop A",
+    stop_name: "Waterloo Station — Knights Road — Stop A",
     stop_lat: -41.21344808,
     stop_lon: 174.9202753,
   },
@@ -10873,13 +10873,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1845",
-    stop_name: "Queen Street - Pak n Save",
+    stop_name: "Queen Street — Pak n Save",
     stop_lat: -40.95759881,
     stop_lon: 175.6491309,
   },
   {
     stop_id: "9849",
-    stop_name: "Eastbourne Village - Muritai Road",
+    stop_name: "Eastbourne Village — Muritai Road",
     stop_lat: -41.29064395,
     stop_lon: 174.8982954,
   },
@@ -10897,7 +10897,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2912",
-    stop_name: "Titahi Bay Library - Tireti Road",
+    stop_name: "Titahi Bay Library — Tireti Road",
     stop_lat: -41.10830816,
     stop_lon: 174.8361099,
   },
@@ -10909,7 +10909,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9159",
-    stop_name: "Hutt Valley High School - Woburn Road",
+    stop_name: "Hutt Valley High School — Woburn Road",
     stop_lat: -41.21572959,
     stop_lon: 174.9022107,
   },
@@ -10987,7 +10987,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1712",
-    stop_name: "Te Manuao Road - Baptist Church",
+    stop_name: "Te Manuao Road — Baptist Church",
     stop_lat: -40.75704932,
     stop_lon: 175.1637768,
   },
@@ -11005,7 +11005,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8297",
-    stop_name: "Taita Station - Eastern Hutt Road - Stop E",
+    stop_name: "Taita Station — Eastern Hutt Road — Stop E",
     stop_lat: -41.18013257,
     stop_lon: 174.9623399,
   },
@@ -11053,7 +11053,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8730",
-    stop_name: "Hutt Park - Seaview Road",
+    stop_name: "Hutt Park — Seaview Road",
     stop_lat: -41.23442803,
     stop_lon: 174.9044233,
   },
@@ -11065,7 +11065,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7294",
-    stop_name: "Strathmore Community Hall - Strathmore Avenue",
+    stop_name: "Strathmore Community Hall — Strathmore Avenue",
     stop_lat: -41.33077605,
     stop_lon: 174.82198608,
   },
@@ -11119,7 +11119,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5920",
-    stop_name: "Zealandia - Northland Tunnel Road",
+    stop_name: "Zealandia — Northland Tunnel Road",
     stop_lat: -41.2865265,
     stop_lon: 174.75482182,
   },
@@ -11137,7 +11137,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5112",
-    stop_name: "Molesworth Street - Cathedral",
+    stop_name: "Molesworth Street — Cathedral",
     stop_lat: -41.27581576,
     stop_lon: 174.7777543,
   },
@@ -11149,7 +11149,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3050",
-    stop_name: "Johnsonville West - McLintock Street (near 74)",
+    stop_name: "Johnsonville West — McLintock Street (near 74)",
     stop_lat: -41.22308135,
     stop_lon: 174.7920724,
   },
@@ -11353,7 +11353,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2105",
-    stop_name: "Trust Porirua Park - Mungavin Avenue (opposite)",
+    stop_name: "Trust Porirua Park — Mungavin Avenue (opposite)",
     stop_lat: -41.14297234,
     stop_lon: 174.8567343,
   },
@@ -11371,7 +11371,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9546",
-    stop_name: "Upper Hutt College - Hikurangi Street",
+    stop_name: "Upper Hutt College — Hikurangi Street",
     stop_lat: -41.1281704,
     stop_lon: 175.039532,
   },
@@ -11401,7 +11401,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8959",
-    stop_name: "Wainuiomata High School - Parkway",
+    stop_name: "Wainuiomata High School — Parkway",
     stop_lat: -41.25145207,
     stop_lon: 174.9367842,
   },
@@ -11431,7 +11431,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9605",
-    stop_name: "Emerald Hill - Gemstone Drive",
+    stop_name: "Emerald Hill — Gemstone Drive",
     stop_lat: -41.09473525,
     stop_lon: 175.1105307,
   },
@@ -11593,7 +11593,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3279",
-    stop_name: "Churton Park - Melksham Drive (near 95)",
+    stop_name: "Churton Park — Melksham Drive (near 95)",
     stop_lat: -41.193162,
     stop_lon: 174.80826,
   },
@@ -11689,7 +11689,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8691",
-    stop_name: "Akatarawa Road - Brown Owl Shops (near 26)",
+    stop_name: "Akatarawa Road — Brown Owl Shops (near 26)",
     stop_lat: -41.10300352,
     stop_lon: 175.0967442,
   },
@@ -11701,13 +11701,13 @@ export const bus_stops = [
   },
   {
     stop_id: "5915",
-    stop_name: "Victoria University - Stop B",
+    stop_name: "Victoria University — Stop B",
     stop_lat: -41.28921081,
     stop_lon: 174.7677284,
   },
   {
     stop_id: "8228",
-    stop_name: "Naenae College - High Street",
+    stop_name: "Naenae College — High Street",
     stop_lat: -41.19655321,
     stop_lon: 174.9394575,
   },
@@ -11731,13 +11731,13 @@ export const bus_stops = [
   },
   {
     stop_id: "9090",
-    stop_name: "Petone Station - Korokoro Road",
+    stop_name: "Petone Station — Korokoro Road",
     stop_lat: -41.22057464,
     stop_lon: 174.8703804,
   },
   {
     stop_id: "7052",
-    stop_name: "Moa Point - Moa Point Road",
+    stop_name: "Moa Point — Moa Point Road",
     stop_lat: -41.33762729,
     stop_lon: 174.8109847,
   },
@@ -11809,7 +11809,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4327",
-    stop_name: "Karori Mall - Karori Road",
+    stop_name: "Karori Mall — Karori Road",
     stop_lat: -41.28443602,
     stop_lon: 174.7382243,
   },
@@ -11821,7 +11821,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6960",
-    stop_name: "Island Bay Shops - Medway Street",
+    stop_name: "Island Bay Shops — Medway Street",
     stop_lat: -41.33478363,
     stop_lon: 174.77274714,
   },
@@ -11881,7 +11881,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1881",
-    stop_name: "Wairarapa College - Pownall Street",
+    stop_name: "Wairarapa College — Pownall Street",
     stop_lat: -40.95028808,
     stop_lon: 175.6458685,
   },
@@ -11947,7 +11947,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5520",
-    stop_name: "Lambton Central (Brandon Street) - Stop C",
+    stop_name: "Lambton Central (Brandon Street) — Stop C",
     stop_lat: -41.28325506,
     stop_lon: 174.77589575,
   },
@@ -11983,7 +11983,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1554",
-    stop_name: "Waikanae Beach Domain - Tutere Street",
+    stop_name: "Waikanae Beach Domain — Tutere Street",
     stop_lat: -40.86280673,
     stop_lon: 175.02192645,
   },
@@ -12019,13 +12019,13 @@ export const bus_stops = [
   },
   {
     stop_id: "9841",
-    stop_name: "Mahina Bay - Rangiuru Road",
+    stop_name: "Mahina Bay — Rangiuru Road",
     stop_lat: -41.26752099,
     stop_lon: 174.9076532,
   },
   {
     stop_id: "5936",
-    stop_name: "Mairangi - Norwich Street (near 53)",
+    stop_name: "Mairangi — Norwich Street (near 53)",
     stop_lat: -41.2651527,
     stop_lon: 174.76404326,
   },
@@ -12121,13 +12121,13 @@ export const bus_stops = [
   },
   {
     stop_id: "4918",
-    stop_name: "Kelburn Normal School - Upland Road",
+    stop_name: "Kelburn Normal School — Upland Road",
     stop_lat: -41.28702265,
     stop_lon: 174.76084685,
   },
   {
     stop_id: "1832",
-    stop_name: "Carterton - High Street South (near 256)",
+    stop_name: "Carterton — High Street South (near 256)",
     stop_lat: -41.03245926,
     stop_lon: 175.5201022,
   },
@@ -12157,19 +12157,19 @@ export const bus_stops = [
   },
   {
     stop_id: "5024",
-    stop_name: "Thorndon Quay at Motorway (near 243 - Northbound)",
+    stop_name: "Thorndon Quay at Motorway (near 243 — Northbound)",
     stop_lat: -41.26971232,
     stop_lon: 174.78103369,
   },
   {
     stop_id: "2001",
-    stop_name: "Porirua Station - Stop A",
+    stop_name: "Porirua Station — Stop A",
     stop_lat: -41.1374245,
     stop_lon: 174.8432338,
   },
   {
     stop_id: "9694",
-    stop_name: "Akatarawa Road - Birchville Picnic Area",
+    stop_name: "Akatarawa Road — Birchville Picnic Area",
     stop_lat: -41.09154059,
     stop_lon: 175.0980464,
   },
@@ -12277,7 +12277,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1002",
-    stop_name: "Coastlands - Stop A",
+    stop_name: "Coastlands — Stop A",
     stop_lat: -40.9177206,
     stop_lon: 175.00365375,
   },
@@ -12379,7 +12379,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1884",
-    stop_name: "Mitre 10 Mega - Ngaumutawa Road",
+    stop_name: "Mitre 10 Mega — Ngaumutawa Road",
     stop_lat: -40.94804045,
     stop_lon: 175.634974,
   },
@@ -12403,7 +12403,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9112",
-    stop_name: "Victoria Street at Weltec - Block F",
+    stop_name: "Victoria Street at Weltec — Block F",
     stop_lat: -41.21368294,
     stop_lon: 174.8952331,
   },
@@ -12451,13 +12451,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1817",
-    stop_name: "Tauherenikau - SH2 at Moroa Road",
+    stop_name: "Tauherenikau — SH2 at Moroa Road",
     stop_lat: -41.11805406,
     stop_lon: 175.3790239,
   },
   {
     stop_id: "9219",
-    stop_name: "Kelson - Major Drive",
+    stop_name: "Kelson — Major Drive",
     stop_lat: -41.17178352,
     stop_lon: 174.9394417,
   },
@@ -12559,13 +12559,13 @@ export const bus_stops = [
   },
   {
     stop_id: "6217",
-    stop_name: "Hataitai - Stop B",
+    stop_name: "Hataitai — Stop B",
     stop_lat: -41.30387144,
     stop_lon: 174.7938613,
   },
   {
     stop_id: "1836",
-    stop_name: "Carterton - Broadway",
+    stop_name: "Carterton — Broadway",
     stop_lat: -41.02373533,
     stop_lon: 175.5277377,
   },
@@ -12613,7 +12613,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2814",
-    stop_name: "Whitireia Polytechnic - Titahi Bay Road (opposite)",
+    stop_name: "Whitireia Polytechnic — Titahi Bay Road (opposite)",
     stop_lat: -41.12411127,
     stop_lon: 174.83701187,
   },
@@ -12631,7 +12631,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8136",
-    stop_name: "Waterloo Road opposite St Bernard's College",
+    stop_name: "Waterloo Road opposite St Bernard’s College",
     stop_lat: -41.21071085,
     stop_lon: 174.9169748,
   },
@@ -12649,7 +12649,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6241",
-    stop_name: "Miramar - Darlington Road (near 155)",
+    stop_name: "Miramar — Darlington Road (near 155)",
     stop_lat: -41.3055,
     stop_lon: 174.82587,
   },
@@ -12697,7 +12697,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2108",
-    stop_name: "Holy Family School - Mungavin Avenue",
+    stop_name: "Holy Family School — Mungavin Avenue",
     stop_lat: -41.14031142,
     stop_lon: 174.8597571,
   },
@@ -12715,7 +12715,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2134",
-    stop_name: "Rangikura School - Conclusion Street",
+    stop_name: "Rangikura School — Conclusion Street",
     stop_lat: -41.1175586,
     stop_lon: 174.87113313,
   },
@@ -12751,7 +12751,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3000",
-    stop_name: "Johnsonville - Stop A",
+    stop_name: "Johnsonville — Stop A",
     stop_lat: -41.22279,
     stop_lon: 174.80508,
   },
@@ -12817,7 +12817,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7217",
-    stop_name: "Hataitai - Stop A",
+    stop_name: "Hataitai — Stop A",
     stop_lat: -41.3039399,
     stop_lon: 174.793724,
   },
@@ -12859,7 +12859,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1839",
-    stop_name: "Taratahi - SH2 at Wiltons Road",
+    stop_name: "Taratahi — SH2 at Wiltons Road",
     stop_lat: -40.98084328,
     stop_lon: 175.5854059,
   },
@@ -12871,7 +12871,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8359",
-    stop_name: "Belmont - Hill Road",
+    stop_name: "Belmont — Hill Road",
     stop_lat: -41.18383558,
     stop_lon: 174.91412064,
   },
@@ -12883,13 +12883,13 @@ export const bus_stops = [
   },
   {
     stop_id: "7064",
-    stop_name: "Worser Bay - Marine Parade (opposite 185)",
+    stop_name: "Worser Bay — Marine Parade (opposite 185)",
     stop_lat: -41.31463618,
     stop_lon: 174.827639,
   },
   {
     stop_id: "8570",
-    stop_name: "Trentham School - Fergusson Drive (opposite)",
+    stop_name: "Trentham School — Fergusson Drive (opposite)",
     stop_lat: -41.12967042,
     stop_lon: 175.0463687,
   },
@@ -13213,7 +13213,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4328",
-    stop_name: "Karori Road opposite St Teresa's School",
+    stop_name: "Karori Road opposite St Teresa’s School",
     stop_lat: -41.28536061,
     stop_lon: 174.7350564,
   },
@@ -13249,7 +13249,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8366",
-    stop_name: "Stokes Valley Shops - Stokes Valley Road",
+    stop_name: "Stokes Valley Shops — Stokes Valley Road",
     stop_lat: -41.17357991,
     stop_lon: 174.9820519,
   },
@@ -13285,7 +13285,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1776",
-    stop_name: "Main Road - New World (opposite)",
+    stop_name: "Main Road — New World (opposite)",
     stop_lat: -40.76381369,
     stop_lon: 175.1536895,
   },
@@ -13345,7 +13345,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3250",
-    stop_name: "Johnsonville - Stop C",
+    stop_name: "Johnsonville — Stop C",
     stop_lat: -41.22326106,
     stop_lon: 174.80450411,
   },
@@ -13387,7 +13387,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7557",
-    stop_name: "Hataitai - Stop C",
+    stop_name: "Hataitai — Stop C",
     stop_lat: -41.30381065,
     stop_lon: 174.79441146,
   },
@@ -13411,7 +13411,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6132",
-    stop_name: "Island Bay Shops - The Parade",
+    stop_name: "Island Bay Shops — The Parade",
     stop_lat: -41.33486,
     stop_lon: 174.77341,
   },
@@ -13483,7 +13483,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7042",
-    stop_name: "Seatoun Park - Hector Street",
+    stop_name: "Seatoun Park — Hector Street",
     stop_lat: -41.32536278,
     stop_lon: 174.8346616,
   },
@@ -13501,7 +13501,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1770",
-    stop_name: "Otaki College - Mill Road (opposite)",
+    stop_name: "Otaki College — Mill Road (opposite)",
     stop_lat: -40.75779765,
     stop_lon: 175.152666,
   },
@@ -13537,7 +13537,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6746",
-    stop_name: "Hutchison Road - Stop D",
+    stop_name: "Hutchison Road — Stop D",
     stop_lat: -41.30749036,
     stop_lon: 174.77528899,
   },
@@ -13573,7 +13573,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4369",
-    stop_name: "Karori South - Hazlewood Avenue (near 100)",
+    stop_name: "Karori South — Hazlewood Avenue (near 100)",
     stop_lat: -41.29873119,
     stop_lon: 174.7220021,
   },
@@ -13609,7 +13609,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8360",
-    stop_name: "Stokes Valley Entrance - Stop B",
+    stop_name: "Stokes Valley Entrance — Stop B",
     stop_lat: -41.16151517,
     stop_lon: 174.9821531,
   },
@@ -13627,7 +13627,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8841",
-    stop_name: "Mahina Bay - Rangiuru Road (opposite)",
+    stop_name: "Mahina Bay — Rangiuru Road (opposite)",
     stop_lat: -41.26699269,
     stop_lon: 174.9069215,
   },
@@ -13687,7 +13687,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4451",
-    stop_name: "Ngaio School - Colway Street",
+    stop_name: "Ngaio School — Colway Street",
     stop_lat: -41.24783517,
     stop_lon: 174.7756826,
   },
@@ -13729,13 +13729,13 @@ export const bus_stops = [
   },
   {
     stop_id: "1957",
-    stop_name: "Manakau - Honi Taipua Street (opposite)",
+    stop_name: "Manakau — Honi Taipua Street (opposite)",
     stop_lat: -40.713987,
     stop_lon: 175.217128,
   },
   {
     stop_id: "4135",
-    stop_name: "Wilton Park - Wilton Road",
+    stop_name: "Wilton Park — Wilton Road",
     stop_lat: -41.26967939,
     stop_lon: 174.7550241,
   },
@@ -13759,7 +13759,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4114",
-    stop_name: "Murphy Street - Motorway",
+    stop_name: "Murphy Street — Motorway",
     stop_lat: -41.27238623,
     stop_lon: 174.77793278,
   },
@@ -13831,7 +13831,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2142",
-    stop_name: "Ascot Park - Warspite Avenue",
+    stop_name: "Ascot Park — Warspite Avenue",
     stop_lat: -41.12209075,
     stop_lon: 174.8724643,
   },
@@ -13951,7 +13951,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2871",
-    stop_name: "Whitireia Polytechnic - Titahi Bay Road",
+    stop_name: "Whitireia Polytechnic — Titahi Bay Road",
     stop_lat: -41.1254551,
     stop_lon: 174.8369426,
   },
@@ -13987,7 +13987,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5513",
-    stop_name: "Manners Street at Cuba Street - Stop B",
+    stop_name: "Manners Street at Cuba Street — Stop B",
     stop_lat: -41.29096552,
     stop_lon: 174.7766131,
   },
@@ -14029,7 +14029,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5327",
-    stop_name: "Karori Mall - Karori Road (opposite)",
+    stop_name: "Karori Mall — Karori Road (opposite)",
     stop_lat: -41.28490242,
     stop_lon: 174.737162,
   },
@@ -14119,7 +14119,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3916",
-    stop_name: "Tawa Mall - Main Road (near 215)",
+    stop_name: "Tawa Mall — Main Road (near 215)",
     stop_lat: -41.16861933,
     stop_lon: 174.82503059,
   },
@@ -14137,7 +14137,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8692",
-    stop_name: "Akatarawa Road - Harcourt Park (opposite)",
+    stop_name: "Akatarawa Road — Harcourt Park (opposite)",
     stop_lat: -41.09907727,
     stop_lon: 175.0947142,
   },
@@ -14173,7 +14173,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9152",
-    stop_name: "Hutt Park Roundabout - Waione Street",
+    stop_name: "Hutt Park Roundabout — Waione Street",
     stop_lat: -41.23364144,
     stop_lon: 174.9029687,
   },
@@ -14197,7 +14197,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8846",
-    stop_name: "Days Bay - Moana Road",
+    stop_name: "Days Bay — Moana Road",
     stop_lat: -41.28259127,
     stop_lon: 174.9059428,
   },
@@ -14263,7 +14263,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8325",
-    stop_name: "The Glen - Tawhai Street (near 56)",
+    stop_name: "The Glen — Tawhai Street (near 56)",
     stop_lat: -41.17599317,
     stop_lon: 174.993569,
   },
@@ -14323,7 +14323,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8168",
-    stop_name: "Fairfield Shops - Waiwhetu Road (near 300)",
+    stop_name: "Fairfield Shops — Waiwhetu Road (near 300)",
     stop_lat: -41.2110619,
     stop_lon: 174.9336837,
   },
@@ -14335,7 +14335,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8335",
-    stop_name: "Stokes Valley Heights - Robson Street",
+    stop_name: "Stokes Valley Heights — Robson Street",
     stop_lat: -41.15777574,
     stop_lon: 174.9896797,
   },
@@ -14353,7 +14353,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1822",
-    stop_name: "Greytown - Main Street (near 74)",
+    stop_name: "Greytown — Main Street (near 74)",
     stop_lat: -41.07919296,
     stop_lon: 175.46167872,
   },
@@ -14365,7 +14365,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8251",
-    stop_name: "Taita Station - High Street - Stop A",
+    stop_name: "Taita Station — High Street — Stop A",
     stop_lat: -41.18016099,
     stop_lon: 174.9606716,
   },
@@ -14383,19 +14383,19 @@ export const bus_stops = [
   },
   {
     stop_id: "1930",
-    stop_name: "Carterton - High Street South (near 439)",
+    stop_name: "Carterton — High Street South (near 439)",
     stop_lat: -41.04047833,
     stop_lon: 175.5117241,
   },
   {
     stop_id: "1001",
-    stop_name: "Paraparaumu Station - Stop B",
+    stop_name: "Paraparaumu Station — Stop B",
     stop_lat: -40.9166498,
     stop_lon: 175.0067516,
   },
   {
     stop_id: "4134",
-    stop_name: "Otari School - Otari-Wilton's Bush",
+    stop_name: "Otari School — Otari-Wilton’s Bush",
     stop_lat: -41.26820968,
     stop_lon: 174.7568948,
   },
@@ -14413,7 +14413,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1354",
-    stop_name: "Kapiti Coast Airport - Toru Road (near 31)",
+    stop_name: "Kapiti Coast Airport — Toru Road (near 31)",
     stop_lat: -40.89920591,
     stop_lon: 174.9825019,
   },
@@ -14581,7 +14581,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5320",
-    stop_name: "Zealandia - Chaytor Street (Appleton Park)",
+    stop_name: "Zealandia — Chaytor Street (Appleton Park)",
     stop_lat: -41.28643876,
     stop_lon: 174.7546373,
   },
@@ -14635,7 +14635,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6062",
-    stop_name: "Worser Bay - Marine Parade (near 115)",
+    stop_name: "Worser Bay — Marine Parade (near 115)",
     stop_lat: -41.31761862,
     stop_lon: 174.827905,
   },
@@ -14659,7 +14659,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6000",
-    stop_name: "Wellington Station - Stop B",
+    stop_name: "Wellington Station — Stop B",
     stop_lat: -41.27844967,
     stop_lon: 174.77930103,
   },
@@ -14671,7 +14671,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1750",
-    stop_name: "Otaki Beach - Marine Parade",
+    stop_name: "Otaki Beach — Marine Parade",
     stop_lat: -40.739278,
     stop_lon: 175.114966,
   },
@@ -14695,7 +14695,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8377",
-    stop_name: "Stokes Valley Terminus - Rakau Grove",
+    stop_name: "Stokes Valley Terminus — Rakau Grove",
     stop_lat: -41.19371071,
     stop_lon: 174.9846864,
   },
@@ -14839,7 +14839,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7719",
-    stop_name: "Brooklyn Village - Cleveland Street",
+    stop_name: "Brooklyn Village — Cleveland Street",
     stop_lat: -41.30530663,
     stop_lon: 174.7636241,
   },
@@ -14881,7 +14881,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2022",
-    stop_name: "Porirua - Parumoana Street",
+    stop_name: "Porirua — Parumoana Street",
     stop_lat: -41.13038037,
     stop_lon: 174.8387479,
   },
@@ -14905,19 +14905,19 @@ export const bus_stops = [
   },
   {
     stop_id: "8911",
-    stop_name: "Wainuiomata Bus Depot - Main Road",
+    stop_name: "Wainuiomata Bus Depot — Main Road",
     stop_lat: -41.27565684,
     stop_lon: 174.9542149,
   },
   {
     stop_id: "7730",
-    stop_name: "Kingston - Stop C",
+    stop_name: "Kingston — Stop C",
     stop_lat: -41.32359282,
     stop_lon: 174.7635198,
   },
   {
     stop_id: "7535",
-    stop_name: "Hataitai - Stop D",
+    stop_name: "Hataitai — Stop D",
     stop_lat: -41.30427902,
     stop_lon: 174.7951305,
   },
@@ -14965,7 +14965,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4319",
-    stop_name: "Karori Tunnel - Stop A",
+    stop_name: "Karori Tunnel — Stop A",
     stop_lat: -41.28703441,
     stop_lon: 174.7569222,
   },
@@ -15007,7 +15007,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1936",
-    stop_name: "Carterton - Memorial Square",
+    stop_name: "Carterton — Memorial Square",
     stop_lat: -41.02352926,
     stop_lon: 175.5289191,
   },
@@ -15181,7 +15181,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2821",
-    stop_name: "Titahi Bay - Gloaming Hill (near 7)",
+    stop_name: "Titahi Bay — Gloaming Hill (near 7)",
     stop_lat: -41.11346319,
     stop_lon: 174.84755328,
   },
@@ -15229,7 +15229,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8615",
-    stop_name: "Timberlea - Norana Road (near 126)",
+    stop_name: "Timberlea — Norana Road (near 126)",
     stop_lat: -41.10262304,
     stop_lon: 175.10667167,
   },
@@ -15271,7 +15271,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9360",
-    stop_name: "Stokes Valley Entrance - Stop C",
+    stop_name: "Stokes Valley Entrance — Stop C",
     stop_lat: -41.16136913,
     stop_lon: 174.9820251,
   },
@@ -15283,7 +15283,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2164",
-    stop_name: "Cannons Creek Shops - Champion Street",
+    stop_name: "Cannons Creek Shops — Champion Street",
     stop_lat: -41.14110964,
     stop_lon: 174.8660946,
   },
@@ -15349,7 +15349,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6158",
-    stop_name: "Island Bay - Reef Street opposite Shorland Park",
+    stop_name: "Island Bay — Reef Street opposite Shorland Park",
     stop_lat: -41.34293748,
     stop_lon: 174.7707348,
   },
@@ -15391,7 +15391,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9377",
-    stop_name: "Stokes Valley Shops - Stokes Valley Road (opposite)",
+    stop_name: "Stokes Valley Shops — Stokes Valley Road (opposite)",
     stop_lat: -41.17448017,
     stop_lon: 174.9820791,
   },
@@ -15409,7 +15409,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8323",
-    stop_name: "Tawhai School - Glen Road (opposite)",
+    stop_name: "Tawhai School — Glen Road (opposite)",
     stop_lat: -41.17276729,
     stop_lon: 174.9873917,
   },
@@ -15445,13 +15445,13 @@ export const bus_stops = [
   },
   {
     stop_id: "9526",
-    stop_name: "Trentham Station - Ararino Street",
+    stop_name: "Trentham Station — Ararino Street",
     stop_lat: -41.13709535,
     stop_lon: 175.0390937,
   },
   {
     stop_id: "1855",
-    stop_name: "Masterton - Church Street",
+    stop_name: "Masterton — Church Street",
     stop_lat: -40.95000353,
     stop_lon: 175.6621322,
   },
@@ -15487,7 +15487,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1300",
-    stop_name: "Rimu Road - Coastal Villas (near 98)",
+    stop_name: "Rimu Road — Coastal Villas (near 98)",
     stop_lat: -40.92009848,
     stop_lon: 174.998445,
   },
@@ -15601,7 +15601,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2596",
-    stop_name: "RNZ Police College - Papakowhai Road",
+    stop_name: "RNZ Police College — Papakowhai Road",
     stop_lat: -41.12070157,
     stop_lon: 174.8581313,
   },
@@ -15649,7 +15649,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5011",
-    stop_name: "Lambton Quay North - Stop C",
+    stop_name: "Lambton Quay North — Stop C",
     stop_lat: -41.28011548,
     stop_lon: 174.77599965,
   },
@@ -15673,7 +15673,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6730",
-    stop_name: "Kingston - Stop B",
+    stop_name: "Kingston — Stop B",
     stop_lat: -41.32367919,
     stop_lon: 174.7637611,
   },
@@ -15685,13 +15685,13 @@ export const bus_stops = [
   },
   {
     stop_id: "5015",
-    stop_name: "Lambton Quay North - Stop A",
+    stop_name: "Lambton Quay North — Stop A",
     stop_lat: -41.27961564,
     stop_lon: 174.7766634,
   },
   {
     stop_id: "1596",
-    stop_name: "Waikanae - Ngaio Road at Main Road (near 1)",
+    stop_name: "Waikanae — Ngaio Road at Main Road (near 1)",
     stop_lat: -40.8759467,
     stop_lon: 175.0657079,
   },
@@ -15715,7 +15715,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9228",
-    stop_name: "Naenae College - High Street (near 899)",
+    stop_name: "Naenae College — High Street (near 899)",
     stop_lat: -41.19618707,
     stop_lon: 174.9398044,
   },
@@ -15775,7 +15775,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1880",
-    stop_name: "Wairarapa College - Renall Street",
+    stop_name: "Wairarapa College — Renall Street",
     stop_lat: -40.95068338,
     stop_lon: 175.6521806,
   },
@@ -15835,7 +15835,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5502",
-    stop_name: "Lambton Quay North - Stop D",
+    stop_name: "Lambton Quay North — Stop D",
     stop_lat: -41.27990181,
     stop_lon: 174.77653723,
   },
@@ -15853,7 +15853,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7153",
-    stop_name: "Owhiro Bay - Happy Valley Road",
+    stop_name: "Owhiro Bay — Happy Valley Road",
     stop_lat: -41.34419383,
     stop_lon: 174.7592948,
   },
@@ -15871,7 +15871,7 @@ export const bus_stops = [
   },
   {
     stop_id: "4917",
-    stop_name: "Kelburn Village - Upland Road (near 94)",
+    stop_name: "Kelburn Village — Upland Road (near 94)",
     stop_lat: -41.28902492,
     stop_lon: 174.7622301,
   },
@@ -15889,7 +15889,7 @@ export const bus_stops = [
   },
   {
     stop_id: "1219",
-    stop_name: "Aero Club - Kapiti Road (opposite)",
+    stop_name: "Aero Club — Kapiti Road (opposite)",
     stop_lat: -40.90191092,
     stop_lon: 174.9927924,
   },
@@ -15961,7 +15961,7 @@ export const bus_stops = [
   },
   {
     stop_id: "3420",
-    stop_name: "Paparangi School - Beazley Avenue (opposite)",
+    stop_name: "Paparangi School — Beazley Avenue (opposite)",
     stop_lat: -41.21481821,
     stop_lon: 174.8192822,
   },
@@ -16033,13 +16033,13 @@ export const bus_stops = [
   },
   {
     stop_id: "9237",
-    stop_name: "Reynolds Street at St Matthew's Church",
+    stop_name: "Reynolds Street at St Matthew’s Church",
     stop_lat: -41.17879353,
     stop_lon: 174.956339,
   },
   {
     stop_id: "7338",
-    stop_name: "Lyall Bay - Hungerford Road (near 2)",
+    stop_name: "Lyall Bay — Hungerford Road (near 2)",
     stop_lat: -41.33774275,
     stop_lon: 174.7921056,
   },
@@ -16117,7 +16117,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9057",
-    stop_name: "Maungaraki Shops - Dowse Drive",
+    stop_name: "Maungaraki Shops — Dowse Drive",
     stop_lat: -41.20855081,
     stop_lon: 174.8786254,
   },
@@ -16195,7 +16195,7 @@ export const bus_stops = [
   },
   {
     stop_id: "7040",
-    stop_name: "Seatoun Village - Dundas Street",
+    stop_name: "Seatoun Village — Dundas Street",
     stop_lat: -41.32269266,
     stop_lon: 174.83077699,
   },
@@ -16273,7 +16273,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9911",
-    stop_name: "Wainuiomata Bus Depot - Main Road (opposite)",
+    stop_name: "Wainuiomata Bus Depot — Main Road (opposite)",
     stop_lat: -41.27574484,
     stop_lon: 174.9543369,
   },
@@ -16321,7 +16321,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9173",
-    stop_name: "Waiwhetu Marae - Riverside Drive (opposite)",
+    stop_name: "Waiwhetu Marae — Riverside Drive (opposite)",
     stop_lat: -41.22397741,
     stop_lon: 174.920822,
   },
@@ -16351,7 +16351,7 @@ export const bus_stops = [
   },
   {
     stop_id: "2003",
-    stop_name: "Porirua Station - Stop C",
+    stop_name: "Porirua Station — Stop C",
     stop_lat: -41.1379647,
     stop_lon: 174.8432489,
   },
@@ -16393,7 +16393,7 @@ export const bus_stops = [
   },
   {
     stop_id: "9298",
-    stop_name: "Taita College - Eastern Hutt Road (opposite)",
+    stop_name: "Taita College — Eastern Hutt Road (opposite)",
     stop_lat: -41.17437346,
     stop_lon: 174.9672939,
   },
@@ -16411,7 +16411,7 @@ export const bus_stops = [
   },
   {
     stop_id: "5498",
-    stop_name: "Thorndon Quay - Capital Gateway",
+    stop_name: "Thorndon Quay — Capital Gateway",
     stop_lat: -41.27629691,
     stop_lon: 174.781588,
   },
@@ -16453,13 +16453,13 @@ export const bus_stops = [
   },
   {
     stop_id: "3012",
-    stop_name: "Johnsonville School - Ohariu Road",
+    stop_name: "Johnsonville School — Ohariu Road",
     stop_lat: -41.2185,
     stop_lon: 174.8058,
   },
   {
     stop_id: "2100",
-    stop_name: "Mungavin Park - Mungavin Avenue",
+    stop_name: "Mungavin Park — Mungavin Avenue",
     stop_lat: -41.13928107,
     stop_lon: 174.8510303,
   },
@@ -16525,7 +16525,7 @@ export const bus_stops = [
   },
   {
     stop_id: "6720",
-    stop_name: "Brooklyn - Stop C",
+    stop_name: "Brooklyn — Stop C",
     stop_lat: -41.30491941,
     stop_lon: 174.76492541,
   },
@@ -16543,7 +16543,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8099",
-    stop_name: "Korokoro - Titiro Moana Road",
+    stop_name: "Korokoro — Titiro Moana Road",
     stop_lat: -41.2117177,
     stop_lon: 174.866669,
   },
@@ -16585,13 +16585,13 @@ export const bus_stops = [
   },
   {
     stop_id: "6224",
-    stop_name: "Kilbirnie - Stop A",
+    stop_name: "Kilbirnie — Stop A",
     stop_lat: -41.31717,
     stop_lon: 174.79567,
   },
   {
     stop_id: "3297",
-    stop_name: "Churton Park - Melksham Drive (near 92)",
+    stop_name: "Churton Park — Melksham Drive (near 92)",
     stop_lat: -41.19319,
     stop_lon: 174.808361,
   },
@@ -16669,13 +16669,13 @@ export const bus_stops = [
   },
   {
     stop_id: "8921",
-    stop_name: "Wainuiomata South - Hine Road",
+    stop_name: "Wainuiomata South — Hine Road",
     stop_lat: -41.27640306,
     stop_lon: 174.9685646,
   },
   {
     stop_id: "1410",
-    stop_name: "Paekakariki - Wellington Road",
+    stop_name: "Paekakariki — Wellington Road",
     stop_lat: -40.987288,
     stop_lon: 174.951623,
   },
@@ -16693,7 +16693,7 @@ export const bus_stops = [
   },
   {
     stop_id: "0005",
-    stop_name: "Fare Zone Boundary 13/14 - Waingawa River Bridge (SH2)",
+    stop_name: "Fare Zone Boundary 13/14 — Waingawa River Bridge (SH2)",
     stop_lat: -40.96453713,
     stop_lon: 175.60913622,
   },
@@ -16729,7 +16729,7 @@ export const bus_stops = [
   },
   {
     stop_id: "8123",
-    stop_name: "Hutt Hospital - High Street",
+    stop_name: "Hutt Hospital — High Street",
     stop_lat: -41.20338328,
     stop_lon: 174.9242744,
   },
