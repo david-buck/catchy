@@ -88,7 +88,7 @@ export default function StopPage() {
     sms ? `/proxy/stopdepartures/${sms}` : null,
     {
       fetcher: fetcher,
-      refreshInterval: 30000,
+      refreshInterval: 20000,
     }
   );
   const { data: stop } = useSWR(sms ? `/proxy/stops/${sms}` : null, {
