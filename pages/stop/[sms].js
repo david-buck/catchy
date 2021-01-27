@@ -5,6 +5,7 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 
 import Delay from "../../components/Delay";
+import FavouriteButton from "../../components/FavouriteButton";
 
 import BackArrow from "../../svgs/navigation-left-arrow.svg";
 import Chair from "../../svgs/chair.svg";
@@ -138,7 +139,7 @@ export default function StopPage() {
   if (!departures || !stop || !routes) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="relative">
       <Head>
         <link
           rel="preload"
@@ -155,9 +156,8 @@ export default function StopPage() {
         </Link>
       </div>
       <h1 className="text-3xl font-semibold mb-6">{stop.stop_name}</h1>
-
+      <FavouriteButton sms={sms} />
       {time.toString()}
-
       {departures.alerts.map((element, key) => {
         return (
           <div style={{ border: "1px solid red", padding: 5 }} key={key}>
@@ -165,7 +165,6 @@ export default function StopPage() {
           </div>
         );
       })}
-
       {departures.departures.map((element, key) => {
         let routeDetails = getRouteDetails(element.service_id, routes);
 
@@ -189,7 +188,7 @@ export default function StopPage() {
           />
         ) : null;
       })}
-      {isValidating && <div className="absolute top-4 left-4">Refreshing</div>}
+      {isValidating && <div className="absolute top-4 right-4">Refreshing</div>}
     </div>
   );
 }
