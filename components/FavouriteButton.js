@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 
 export default function FavouriteButton({ sms }) {
-  const [favourites, setFavourites] = useState(
-    JSON.parse(window.localStorage.getItem("favourites"))
-  );
+  const initialState = () =>
+    JSON.parse(window.localStorage.getItem("favourites")) || [];
+
+  const [favourites, setFavourites] = useState(initialState);
+
   useEffect(() => {
     window.localStorage.setItem("favourites", JSON.stringify(favourites));
   }, [favourites]);
