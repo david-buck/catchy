@@ -31,5 +31,5 @@
 }
 
 body {
-  @apply font-body antialiased p-8 max-w-lg m-auto;
+  @apply font-body antialiased p-8 max-w-lg m-auto dark:bg-gray-800 dark:text-white;
 }
