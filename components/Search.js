@@ -2,11 +2,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 import AutoSuggest from "react-autosuggest";
-import useSWR from "swr";
 
 import SearchIcon from "../svgs/search.svg";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const theme = {
   container: "relative mb-8",
@@ -26,16 +23,8 @@ const theme = {
   sectionTitle: "",
 };
 
-const Unused = () => <div className=" outline-none" />;
-
-const Search = () => {
+const Search = ({ stops }) => {
   const router = useRouter();
-
-  const { data: stops, isValidating, error } = useSWR(`/api/stops`, {
-    fetcher: fetcher,
-    refreshInterval: 0,
-    revalidateOnFocus: false,
-  });
 
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);

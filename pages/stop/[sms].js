@@ -146,7 +146,7 @@ export default function StopPage() {
           href="/api/routes"
           as="fetch"
           crossorigin="anonymous"
-        ></link>
+        />
       </Head>
       <div className="mb-6">
         <Link href="/">
