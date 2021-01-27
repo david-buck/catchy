@@ -7,8 +7,6 @@ export default function busRouteHandler({ query: { id } }, res) {
   if (filtered.length > 0) {
     res.status(200).json(filtered[0]);
   } else {
-    res
-      .status(404)
-      .json({ message: `There is no route with id: ${id} not found.` });
+    res.status(404).json({ message: `There is no route with id: ${id}.` });
   }
 }

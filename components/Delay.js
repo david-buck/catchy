@@ -1,3 +1,5 @@
+import React from "react";
+
 const durationToSeconds = (iso8601Duration) => {
   const iso8601DurationRegex = /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
   let matches = iso8601Duration.match(iso8601DurationRegex);
@@ -18,13 +20,16 @@ const durationToSeconds = (iso8601Duration) => {
   return matches[1] ? -1 * durationSeconds : durationSeconds;
 };
 
-export default function Delay({ delay, status }) {
+const Delay = React.memo(({ delay, status }) => {
   let offset = Math.round(durationToSeconds(delay) / 60);
   return offset !== 0 ? (
-    <div className="bg-blue-100 rounded-lg px-2">
-      {Math.abs(offset)} m {offset > 0 ? "early" : "late"}
+    <div className=" bg-pink-800 rounded-lg px-2 text-white">
+      {Math.abs(offset)}m{" "}
+      {offset > 0 ? "earlier than scheduled" : "later than scheduled"}
     </div>
   ) : (
     status && <div className="bg-green-100 rounded-lg px-2">On time</div>
   );
-}
+});
+
+export default Delay;

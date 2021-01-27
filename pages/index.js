@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+import Search from "../components/Search";
+
 import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -10,6 +12,7 @@ export default function IndexPage() {
   const [long, setLong] = useState(null);
 
   const locate = () => {
+    console.log("locating...");
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setLat(position.coords.latitude);
@@ -34,11 +37,13 @@ export default function IndexPage() {
   );
 
   if (error) return <div>failed to load {JSON.stringify(error)}</div>;
-  if (!data) return <div>loading...</div>;
+  if (!data) return <div>Loading nearby stops...</div>;
 
   return (
     <>
-      <h1 className="text-4xl font-bold mb-6">Stops near you</h1>
+      <Search />
+      <h2 className="text-3xl font-semibold mb-6">Your Favourites</h2>
+      <h2 className="text-3xl font-semibold mb-6">Stops near you</h2>
       <div>
         {data.map((element, key) => {
           return (

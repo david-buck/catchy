@@ -8,13 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@rehooks/local-storage": "^2.4.0",
     "@svgr/webpack": "^5.5.0",
     "autoprefixer": "^10.2.1",
     "next": "10.0.4",
     "next-pwa": "^5.0.3",
     "postcss": "^8.2.4",
     "react": "17.0.1",
+    "react-autosuggest": "^10.1.0",
     "react-dom": "17.0.1",
     "swr": "^0.3.11",
     "tailwindcss": "^2.0.2"

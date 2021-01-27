@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import Delay from "../../components/Delay";
 
+import BackArrow from "../../svgs/navigation-left-arrow.svg";
 import Chair from "../../svgs/chair.svg";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -30,17 +31,29 @@ const Expected = ({
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <div className="flex justify-between mb-6">
+    <div className="flex justify-between mb-6 space-x-2 align-baseline">
       <div
         style={
           (type === "frequent" && { background: color, color: "white" }) ||
-          (type === "standard" && { border: "1px solid ", color: color })
+          (type === "standard" && {
+            background: "White",
+            border: "1px solid ",
+            color: color,
+          }) ||
+          (type === "night" && {
+            background: "black",
+            boxShadow: "-.5rem 0 0 0 inset currentColor",
+            color: "#fff200",
+            fontSize: "0.75rem ",
+            letterSpacing: "-0.075em",
+            paddingRight: ".5rem",
+          })
         }
         className="font-bold rounded-full w-10 h-10 place-items-center grid"
       >
         {service_id}
       </div>{" "}
-      <h2>
+      <h2 className="flex-1 font-bold">
         {destination_name}{" "}
         {wheelchair_accessible && (
           <Chair
@@ -60,7 +73,7 @@ const Expected = ({
           )
         ) : (
           <>
-            Sched:
+            Sched:{" "}
             {new Date(aimed).toLocaleString("en-NZ", {
               hour: "numeric",
               minute: "numeric",
@@ -76,7 +89,7 @@ const Expected = ({
 export default function StopPage() {
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date(time.setSeconds(time.getSeconds() + 1)));
+      setTime(new Date(Date.parse(new Date()) + dateOffset));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -91,7 +104,7 @@ export default function StopPage() {
       refreshInterval: 20000,
     }
   );
-  const { data: stop } = useSWR(sms ? `/proxy/stops/${sms}` : null, {
+  const { data: stop } = useSWR(sms ? `/api/stop/${sms}` : null, {
     fetcher: fetcher,
     refreshInterval: 0,
     revalidateOnFocus: false,
@@ -105,12 +118,13 @@ export default function StopPage() {
 
   const { data: date } = useSWR(`/api/local-time`, {
     fetcher: fetcher,
+    refreshInterval: 0,
     revalidateOnFocus: false,
+    onSuccess: () => setDateOffset(Date.parse(date.date) - Date.parse(time)),
   });
 
-  const [time, setTime] = useState(
-    date !== undefined ? new Date(date.date) : new Date()
-  );
+  const [time, setTime] = useState(new Date());
+  const [dateOffset, setDateOffset] = useState(0);
 
   if (error)
     return stop ? (
@@ -133,10 +147,15 @@ export default function StopPage() {
           crossorigin="anonymous"
         ></link>
       </Head>
-      <Link href="/">
-        <a>Back</a>
-      </Link>
-      <h1 className="text-4xl font-bold mb-6">{stop.stop_name}</h1>
+      <div className="mb-6">
+        <Link href="/">
+          <a>
+            <BackArrow width="24" />
+          </a>
+        </Link>
+      </div>
+      <h1 className="text-3xl font-semibold mb-6">{stop.stop_name}</h1>
+
       {time.toString()}
 
       {departures.alerts.map((element, key) => {
