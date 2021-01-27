@@ -4,7 +4,29 @@ import { useRouter } from "next/router";
 import AutoSuggest from "react-autosuggest";
 import useSWR from "swr";
 
+import SearchIcon from "../svgs/search.svg";
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
+
+const theme = {
+  container: "relative mb-8",
+  containerOpen: "",
+  input:
+    "bg-white shadow-md rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full ",
+  inputOpen: "",
+  inputFocused: "outline-none",
+  suggestionsContainer: "absolute bg-white shadow-lg rounded w-full mt-1",
+  suggestionsContainerOpen: "",
+  suggestionsList: "",
+  suggestion: "px-3 py-2",
+  suggestionFirst: "",
+  suggestionHighlighted: "bg-gray-200 rounded",
+  sectionContainer: "",
+  sectionContainerFirst: "",
+  sectionTitle: "",
+};
+
+const Unused = () => <div className=" outline-none" />;
 
 const Search = () => {
   const router = useRouter();
@@ -35,7 +57,13 @@ const Search = () => {
   }
 
   return (
-    <div>
+    <div className="relative">
+      <SearchIcon
+        width="24"
+        height="24"
+        role="display"
+        className="absolute z-10 top-3 left-3"
+      />
       <AutoSuggest
         suggestions={suggestions}
         onSuggestionsClearRequested={() => setSuggestions([])}
@@ -49,13 +77,14 @@ const Search = () => {
         getSuggestionValue={(suggestion) => suggestion.stop_name}
         renderSuggestion={(suggestion) => <span>{suggestion.stop_name}</span>}
         inputProps={{
-          placeholder: "Search",
+          placeholder: "Search stops",
           value: value,
           onChange: (_, { newValue, method }) => {
             setValue(newValue);
           },
         }}
         highlightFirstSuggestion={true}
+        theme={theme}
       />
     </div>
   );
