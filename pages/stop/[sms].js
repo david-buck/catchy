@@ -77,9 +77,10 @@ const Expected = ({
         ) : (
           <>
             Sched:{" "}
-            {new Date(aimed).toLocaleString("en-NZ", {
+            {new Date(aimed).toLocaleTimeString("en-NZ", {
               hour: "numeric",
               minute: "numeric",
+              hour12: "true",
             })}
           </>
         )}
@@ -162,8 +163,17 @@ export default function StopPage() {
           <FavouriteButton sms={sms} />
         </div>
       </div>
-      <h1 className="text-3xl font-semibold mb-6">{stop.stop_name}</h1>
-      {time.toString()}
+      <h1 className="text-3xl font-semibold mb-2">{stop.stop_name}</h1>
+      <div className="mb-8">
+        {time.toLocaleString("en-NZ", {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        })}
+      </div>
       {departures.alerts.map((element, key) => {
         return (
           <div style={{ border: "1px solid red", padding: 5 }} key={key}>
