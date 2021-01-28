@@ -10,6 +10,8 @@ import FavouriteButton from "../../components/FavouriteButton";
 import BackArrow from "../../svgs/navigation-left-arrow.svg";
 import Chair from "../../svgs/chair.svg";
 
+import Spinner from "../../svgs/spinner.svg";
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const getRouteDetails = (id, arr) => {
@@ -37,7 +39,6 @@ const Expected = ({
         style={
           (type === "frequent" && { background: color, color: "white" }) ||
           (type === "standard" && {
-            background: "White",
             border: "1px solid ",
             color: color,
           }) ||
@@ -136,10 +137,11 @@ export default function StopPage() {
       <div>Unable to get realtime updates for stop {sms}. Try again later</div>
     );
 
-  if (!departures || !stop || !routes) return <div>Loading...</div>;
+  if (!departures || !stop || !routes)
+    return <Spinner width="24" height="24" className="mt-2" />;
 
   return (
-    <div className="relative">
+    <div className="relative pt-2">
       <Head>
         <link
           rel="preload"
@@ -148,15 +150,18 @@ export default function StopPage() {
           crossorigin="anonymous"
         />
       </Head>
-      <div className="mb-6">
+      <div className="mb-6 flex row justify-between">
         <Link href="/">
           <a>
             <BackArrow width="24" />
           </a>
         </Link>
+        <div className="flex">
+          {isValidating && <Spinner width="24" height="24" className="mr-4" />}
+          <FavouriteButton sms={sms} />
+        </div>
       </div>
       <h1 className="text-3xl font-semibold mb-6">{stop.stop_name}</h1>
-      <FavouriteButton sms={sms} />
       {time.toString()}
       {departures.alerts.map((element, key) => {
         return (
@@ -188,7 +193,6 @@ export default function StopPage() {
           />
         ) : null;
       })}
-      {isValidating && <div className="absolute top-4 right-4">Refreshing</div>}
     </div>
   );
 }

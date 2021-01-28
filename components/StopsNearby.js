@@ -9,7 +9,6 @@ export default function NearbyStops() {
   const [long, setLong] = useState(null);
 
   const locate = () => {
-    console.log("locating...");
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setLat(position.coords.latitude);

@@ -9,7 +9,7 @@ export default function Favourites({ stops }) {
   const [favourites, setFavourites] = useState([]);
 
   return favourites && favourites.length > 0 ? (
-    <>
+    <div className="mb-10">
       <h2 className="text-3xl font-semibold mb-6">Your favourites</h2>
       {favourites.map((element, key) => {
         const stop = stops.find((el) => el.stop_id === element);
@@ -23,6 +23,6 @@ export default function Favourites({ stops }) {
           </div>
         );
       })}
-    </>
+    </div>
   ) : null;
 }

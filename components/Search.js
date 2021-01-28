@@ -9,19 +9,22 @@ const theme = {
   container: "relative mb-8",
   containerOpen: "",
   input:
-    "bg-white shadow-md rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full ",
+    "bg-white shadow-md dark:bg-gray-800 rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full border-white dark:border-gray-500 border border-solid",
   inputOpen: "",
   inputFocused: "outline-none",
   suggestionsContainer: "",
-  suggestionsContainerOpen: "absolute bg-white shadow-lg rounded w-full mt-1",
+  suggestionsContainerOpen:
+    "absolute bg-white dark:bg-gray-800 shadow-lg rounded w-full mt-1 border-white dark:border-gray-500 border border-solid",
   suggestionsList: "",
   suggestion: "pl-10 pr-3 py-3",
   suggestionFirst: "",
-  suggestionHighlighted: "bg-gray-200 rounded",
+  suggestionHighlighted: "bg-gray-500 bg-opacity-20 rounded",
   sectionContainer: "",
   sectionContainerFirst: "",
   sectionTitle: "",
 };
+
+const Unused = () => <div className=" border-sol " />;
 
 const Search = ({ stops }) => {
   const router = useRouter();
