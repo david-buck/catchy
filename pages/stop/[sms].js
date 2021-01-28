@@ -34,7 +34,7 @@ const Expected = ({
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <div className="flex justify-between mb-6 space-x-2 align-baseline">
+    <div className="flex justify-between mb-6 space-x-4 items-center">
       <div
         style={
           (type === "frequent" && { background: color, color: "white" }) ||
@@ -72,11 +72,10 @@ const Expected = ({
           seconds < 70 ? (
             <>Due</>
           ) : (
-            <>{Math.round(seconds / 60)}m</>
+            <>{Math.round(seconds / 60)} mins</>
           )
         ) : (
           <>
-            Sched:{" "}
             {new Date(aimed).toLocaleTimeString("en-NZ", {
               hour: "numeric",
               minute: "numeric",
@@ -85,7 +84,7 @@ const Expected = ({
           </>
         )}
       </p>
-      <Delay delay={delay} status={status} />
+      {/* <Delay delay={delay} status={status} /> */}
     </div>
   );
 };
