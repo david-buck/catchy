@@ -39,6 +39,7 @@ const Expected = ({
         style={
           (type === "frequent" && { background: color, color: "white" }) ||
           (type === "standard" && {
+            background: "white",
             border: "1px solid ",
             color: color,
           }) ||
