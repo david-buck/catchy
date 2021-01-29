@@ -33,6 +33,8 @@ export default class extends Document {
           <title key="title">
             Catchy - Real time updates for Wellington buses
           </title>
+
+          <meta name="twitter:card" content="app" />
           <meta
             property="og:title"
             content="Catchy - Real time updates for Wellington buses"
