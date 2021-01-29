@@ -34,7 +34,7 @@ export default class extends Document {
             Catchy - Real time updates for Wellington buses
           </title>
 
-          <meta name="twitter:card" content="app" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:text:title" content="Catchy" />
           <meta
             name="twitter:text:description"
