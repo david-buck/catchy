@@ -22,32 +22,6 @@ export default function IndexPage() {
 
   return (
     <div className="flex flex-col">
-      <Head>
-        <title key="title">
-          Catchy - Real time updates for Wellington buses
-        </title>
-        <meta
-          property="og:title"
-          content="Catchy - Real time updates for Wellington buses"
-          key="ogTitle"
-        />
-        <meta
-          name="description"
-          content="Real time updates for Wellington buses"
-          key="description"
-        />
-        <meta
-          property="og:image"
-          content="https://catchy.nz/share/default-share-image.png"
-          key="ogImage"
-        />
-        <link
-          rel="preload"
-          href="/api/stops"
-          as="fetch"
-          crossorigin="anonymous"
-        />
-      </Head>
       <div className="mb-3 mt-1">
         <Logo width="157" height="38" title="Catchy" />
       </div>

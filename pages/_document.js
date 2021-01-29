@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 const APP_NAME = "Catchy";
-const APP_DESCRIPTION = "Real time updates for Wellington buses";
 
 export default class extends Document {
   static async getInitialProps(ctx) {
@@ -19,7 +18,6 @@ export default class extends Document {
             content="default"
           />
           <meta name="apple-mobile-web-app-title" content={APP_NAME} />
-          <meta name="description" content={APP_DESCRIPTION} />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#FFFFFF" />
 
@@ -31,6 +29,31 @@ export default class extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
           <link rel="alternate icon" href="/favicon.ico" />
+
+          <title key="title">
+            Catchy - Real time updates for Wellington buses
+          </title>
+          <meta
+            property="og:title"
+            content="Catchy - Real time updates for Wellington buses"
+            key="ogTitle"
+          />
+          <meta
+            name="description"
+            content="Real time updates for Wellington buses"
+            key="description"
+          />
+          <meta
+            property="og:image"
+            content="https://catchy.nz/share/default-share-image.png"
+            key="ogImage"
+          />
+          <link
+            rel="preload"
+            href="/api/stops"
+            as="fetch"
+            crossorigin="anonymous"
+          />
         </Head>
         <body>
           <Main />
