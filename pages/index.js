@@ -33,9 +33,7 @@ export default function IndexPage() {
         />
         <meta
           name="description"
-          content="At Mobi2Go we are fuelled by purpose and united by food. We’re
-          on a mission to make digital ordering as easy as opening the
-          fridge."
+          content="Real time updates for Wellington buses"
           key="description"
         />
         <meta
