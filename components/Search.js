@@ -4,19 +4,20 @@ import { useRouter } from "next/router";
 import AutoSuggest from "react-autosuggest";
 
 import SearchIcon from "../svgs/search.svg";
+import LocationMarker from "../svgs/location-mono.svg";
 
 const theme = {
   container: "relative mb-8",
   containerOpen: "",
   input:
-    "bg-white shadow-md dark:bg-gray-800 rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full border-white dark:border-gray-500 border border-solid",
+    "bg-white shadow-md dark:bg-gray-800 rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full border-gray-100 dark:border-gray-500 border border-solid",
   inputOpen: "",
   inputFocused: "outline-none",
   suggestionsContainer: "",
   suggestionsContainerOpen:
-    "absolute bg-white dark:bg-gray-800 shadow-lg rounded w-full mt-1 border-white dark:border-gray-500 border border-solid",
+    "absolute bg-white dark:bg-gray-800 shadow-lg rounded w-full mt-1 border-gray-100 dark:border-gray-500 border border-solid",
   suggestionsList: "",
-  suggestion: "pl-10 pr-3 py-3",
+  suggestion: "pr-3 py-3",
   suggestionFirst: "",
   suggestionHighlighted: "bg-gray-500 bg-opacity-20 rounded",
   sectionContainer: "",
@@ -67,9 +68,18 @@ const Search = ({ stops }) => {
           router.push(`/stop/${suggestion.stop_id}`)
         }
         getSuggestionValue={(suggestion) => suggestion.stop_name}
-        renderSuggestion={(suggestion) => <span>{suggestion.stop_name}</span>}
+        renderSuggestion={(suggestion) => (
+          <span className="flex flex-nowrap items-top">
+            <LocationMarker
+              width="40"
+              height="18"
+              className="text-gray-300 flex-shrink-0 mt-1"
+            />
+            <span>{suggestion.stop_name}</span>
+          </span>
+        )}
         inputProps={{
-          placeholder: "Search stops",
+          placeholder: "Search stops by name or stop number",
           value: value,
           onChange: (_, { newValue, method }) => {
             setValue(newValue);

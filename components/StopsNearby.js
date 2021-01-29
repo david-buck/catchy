@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import useSWR from "swr";
 
+import LocationMarker from "../svgs/location-mono.svg";
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function NearbyStops() {
@@ -42,9 +44,20 @@ export default function NearbyStops() {
           return (
             <div key={key} className="mb-6">
               <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
-                <a style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span>{element.stop_name}</span>
-                  <span>{parseFloat(element.distance).toFixed(2)}km</span>
+                <a className="flex flex-nowrap justify-between gap-4">
+                  <span className="flex flex-nowrap items-top">
+                    <LocationMarker
+                      width="40"
+                      height="18"
+                      className="mr-1 text-gray-300 flex-shrink-0 mt-1"
+                    />
+                    {element.stop_name}
+                  </span>
+                  <span className="flex-shrink-0">
+                    {element.distance < 1000
+                      ? parseInt(element.distance * 1000) + " metres"
+                      : parseFloat(element.distance).toFixed(2) + " km"}
+                  </span>
                 </a>
               </Link>
             </div>

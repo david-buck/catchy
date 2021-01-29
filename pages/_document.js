@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const APP_NAME = "A bus a bus";
-const APP_DESCRIPTION = "Wellington Bus Stop app";
+const APP_NAME = "Catchy";
+const APP_DESCRIPTION = "Real time updates for Wellington buses";
 
 export default class extends Document {
   static async getInitialProps(ctx) {
@@ -29,7 +29,8 @@ export default class extends Document {
             href="/icons/apple-touch-icon.png"
           />
           <link rel="manifest" href="/manifest.json" />
-          <link rel="shortcut icon" href="/icons/favicon.ico" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
+          <link rel="alternate icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />

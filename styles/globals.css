@@ -31,5 +31,5 @@
 }
 
 body {
-  @apply font-body antialiased px-6 py-4 max-w-lg m-auto dark:bg-gray-800 dark:text-white;
+  @apply font-body antialiased px-5 py-4 max-w-lg m-auto text-gray-900 dark:bg-gray-800 dark:text-white;
 }

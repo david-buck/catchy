@@ -52,11 +52,11 @@ const Expected = ({
             paddingRight: ".5rem",
           })
         }
-        className="font-bold rounded-full w-10 h-10 place-items-center grid"
+        className="font-semibold rounded-full w-10 h-10 place-items-center grid"
       >
         {service_id}
       </div>{" "}
-      <h2 className="flex-1 font-bold">
+      <h2 className="flex-1">
         {destination_name}{" "}
         {wheelchair_accessible && (
           <Chair
