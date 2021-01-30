@@ -68,7 +68,9 @@ const Expected = ({
         )}
       </h2>
       <p>
-        {expected ? (
+        {status === "cancelled" ? (
+          <span className="font-bold">Cancelled</span>
+        ) : expected ? (
           seconds < 70 ? (
             <>Due</>
           ) : (
