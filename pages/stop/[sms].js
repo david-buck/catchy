@@ -154,7 +154,7 @@ export default function StopPage() {
       <div className="mb-6 flex row justify-between">
         <Link href="/">
           <a>
-            <BackArrow width="24" />
+            <BackArrow width="24" height="24" title="Back." />
           </a>
         </Link>
         <div className="flex">
@@ -180,29 +180,35 @@ export default function StopPage() {
           </div>
         );
       })}
-      {departures.departures.map((element, key) => {
-        let routeDetails = getRouteDetails(element.service_id, routes);
+      {departures.departures.length > 0 ? (
+        departures.departures.map((element, key) => {
+          let routeDetails = getRouteDetails(element.service_id, routes);
 
-        return element.destination.name !== "School Bus" ? (
-          <Expected
-            service_id={element.service_id}
-            destination_name={element.destination.name}
-            expected={element.arrival.expected}
-            aimed={
-              element.arrival.aimed !== ""
-                ? element.arrival.aimed
-                : element.departure.aimed
-            }
-            time={time}
-            status={element.status}
-            delay={element.delay}
-            key={key}
-            wheelchair_accessible={element.wheelchair_accessible}
-            color={routeDetails.color}
-            type={routeDetails.type}
-          />
-        ) : null;
-      })}
+          return element.destination.name !== "School Bus" ? (
+            <Expected
+              service_id={element.service_id}
+              destination_name={element.destination.name}
+              expected={element.arrival.expected}
+              aimed={
+                element.arrival.aimed !== ""
+                  ? element.arrival.aimed
+                  : element.departure.aimed
+              }
+              time={time}
+              status={element.status}
+              delay={element.delay}
+              key={key}
+              wheelchair_accessible={element.wheelchair_accessible}
+              color={routeDetails.color}
+              type={routeDetails.type}
+            />
+          ) : null;
+        })
+      ) : (
+        <div className="opacity-60">
+          No buses scheduled for this stop today.
+        </div>
+      )}
     </div>
   );
 }

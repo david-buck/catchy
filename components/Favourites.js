@@ -22,7 +22,7 @@ export default function Favourites({ stops }) {
                 <LocationMarker
                   width="40"
                   height="18"
-                  className="mr-1 text-gray-300 flex-shrink-0 mt-1"
+                  className="text-gray-300 flex-shrink-0 mt-1"
                 />
                 <span>{stop.stop_name}</span>
               </a>

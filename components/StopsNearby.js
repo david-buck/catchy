@@ -49,7 +49,7 @@ export default function NearbyStops() {
                     <LocationMarker
                       width="40"
                       height="18"
-                      className="mr-1 text-gray-300 flex-shrink-0 mt-1"
+                      className="text-gray-300 flex-shrink-0 mt-1"
                     />
                     {element.stop_name}
                   </span>
