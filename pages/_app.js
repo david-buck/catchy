@@ -1,8 +1,29 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+  const [isDark, setIsDark] = useState();
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setIsDark(true);
+    } else {
+      setIsDark(false);
+    }
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        if (event.matches) {
+          setIsDark(true);
+        } else {
+          setIsDark(false);
+        }
+      });
+  }, []);
+
   return (
     <>
       <Head>
@@ -10,6 +31,9 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
+
+        <meta name="theme-color" content={isDark ? "#1f2937" : "#FFFFFF"} />
+
         <meta name="twitter:card" content="summary_large_image" />
 
         <title key="title">
