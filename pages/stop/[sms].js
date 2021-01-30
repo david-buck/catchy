@@ -175,13 +175,17 @@ export default function StopPage() {
       </Head>
       <div className="mb-6 flex row justify-between">
         <Link href="/">
-          <a>
+          <a className="transition-colors ease-linear duration-150  p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
             <BackArrow width="24" height="24" title="Back." />
           </a>
         </Link>
         <div className="flex">
           {isValidating && (
-            <Spinner width="24" height="24" className="mr-4 text-gray-500" />
+            <Spinner
+              width="24"
+              height="24"
+              className="mr-4 mt-2 text-gray-500"
+            />
           )}
           <FavouriteButton sms={sms} />
         </div>
@@ -230,7 +234,7 @@ export default function StopPage() {
         })
       ) : (
         <div className="opacity-60">
-          No buses scheduled for this stop today.
+          No buses currently scheduled for this stop.
         </div>
       )}
     </div>
