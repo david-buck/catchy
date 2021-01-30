@@ -79,7 +79,7 @@ const Search = ({ stops }) => {
           </span>
         )}
         inputProps={{
-          placeholder: "Search stops by name or stop number",
+          placeholder: "Search stops by name or stop #",
           value: value,
           onChange: (_, { newValue, method }) => {
             setValue(newValue);
