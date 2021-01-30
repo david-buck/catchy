@@ -18,7 +18,8 @@ export default function IndexPage() {
   });
 
   if (error) return <div>failed to load {JSON.stringify(error)}</div>;
-  if (!stops) return <Spinner width="24" height="24" className="mt-2" />;
+  if (!stops)
+    return <Spinner width="24" height="24" className="mt-2 text-gray-500" />;
 
   return (
     <div className="flex flex-col">
@@ -27,7 +28,7 @@ export default function IndexPage() {
       </div>
       <Search stops={stops} />
       <Favourites stops={stops} />
-      <h2 className="text-3xl font-semibold mb-6">Stops near you</h2>
+      <h2 className="text-3xl font-semibold mb-3">Stops near you</h2>
       <NearbyStops />
     </div>
   );

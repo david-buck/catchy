@@ -12,13 +12,13 @@ export default function Favourites({ stops }) {
 
   return favourites && favourites.length > 0 ? (
     <div className="mb-6">
-      <h2 className="text-3xl font-semibold mb-6">Your favourites</h2>
+      <h2 className="text-3xl font-semibold mb-3">Your favourites</h2>
       {favourites.map((element, key) => {
         const stop = stops.find((el) => el.stop_id === element);
         return (
-          <div key={key} className="mb-6">
+          <div key={key}>
             <Link as={`/stop/${stop.stop_id}`} href="/stop/[sms]">
-              <a className="flex flex-nowrap items-top">
+              <a className="transition-colors ease-linear duration-150 flex flex-nowrap py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md pr-4">
                 <LocationMarker
                   width="40"
                   height="18"

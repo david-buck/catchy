@@ -42,9 +42,9 @@ export default function NearbyStops() {
       <div>
         {data.map((element, key) => {
           return (
-            <div key={key} className="mb-6">
+            <div key={key}>
               <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
-                <a className="flex flex-nowrap justify-between gap-4">
+                <a className="transition-colors ease-linear duration-150 flex flex-nowrap justify-between gap-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md pr-4">
                   <span className="flex flex-nowrap items-top">
                     <LocationMarker
                       width="40"

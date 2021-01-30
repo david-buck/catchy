@@ -34,7 +34,7 @@ const Expected = ({
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <div className="flex justify-between mb-6 space-x-4 items-center">
+    <div className="flex justify-between py-3 gap-x-2 items-center">
       <div
         style={
           (type === "frequent" && { background: color, color: "white" }) ||
@@ -52,7 +52,7 @@ const Expected = ({
             paddingRight: ".5rem",
           })
         }
-        className="font-semibold rounded-full w-10 h-10 place-items-center grid"
+        className="font-semibold rounded-full w-9 h-9 place-items-center grid"
       >
         {service_id}
       </div>{" "}
@@ -69,12 +69,15 @@ const Expected = ({
       </h2>
       <p>
         {status === "cancelled" ? (
-          <span className="font-bold">Cancelled</span>
+          <span className="font-bold text-red-500">Cancelled</span>
         ) : expected ? (
           seconds < 70 ? (
             <>Due</>
           ) : (
-            <>{Math.round(seconds / 60)} mins</>
+            <>
+              {Math.round(seconds / 60)} min
+              {Math.round(seconds / 60) > 1 && <>s</>}
+            </>
           )
         ) : (
           <>
@@ -141,16 +144,33 @@ export default function StopPage() {
     );
 
   if (!departures || !stop || !routes)
-    return <Spinner width="24" height="24" className="mt-2" />;
+    return <Spinner width="24" height="24" className="mt-2 text-gray-500" />;
 
   return (
     <div className="relative pt-2">
       <Head>
-        <link
-          rel="preload"
-          href="/api/routes"
-          as="fetch"
-          crossorigin="anonymous"
+        <title key="title">{stop.stop_name} bus stop — Catchy</title>
+
+        <meta
+          name="twitter:text:title"
+          content={`${stop.stop_name} bus stop — Catchy`}
+          key="twitterTitle"
+        />
+        <meta
+          name="twitter:text:description"
+          content={`Bus departures updates for ${stop.stop_name}`}
+          key="twitterDescription"
+        />
+
+        <meta
+          property="og:title"
+          content={`${stop.stop_name} bus stop — Catchy`}
+          key="ogTitle"
+        />
+        <meta
+          name="description"
+          content={`Bus departures updates for ${stop.stop_name}`}
+          key="description"
         />
       </Head>
       <div className="mb-6 flex row justify-between">
@@ -160,12 +180,14 @@ export default function StopPage() {
           </a>
         </Link>
         <div className="flex">
-          {isValidating && <Spinner width="24" height="24" className="mr-4" />}
+          {isValidating && (
+            <Spinner width="24" height="24" className="mr-4 text-gray-500" />
+          )}
           <FavouriteButton sms={sms} />
         </div>
       </div>
       <h1 className="text-3xl font-semibold mb-2">{stop.stop_name}</h1>
-      <div className="mb-8">
+      <div className="mb-4">
         {time.toLocaleString("en-NZ", {
           weekday: "long",
           month: "long",

@@ -10,7 +10,7 @@ const theme = {
   container: "relative mb-8",
   containerOpen: "",
   input:
-    "bg-white shadow-md dark:bg-gray-800 rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full border-gray-100 dark:border-gray-500 border border-solid",
+    "transition bg-white shadow-md focus:shadow-lg dark:bg-gray-800 rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full border-gray-100 dark:border-gray-500 border border-solid ",
   inputOpen: "",
   inputFocused: "outline-none",
   suggestionsContainer: "",
@@ -19,7 +19,7 @@ const theme = {
   suggestionsList: "",
   suggestion: "pr-3 py-3",
   suggestionFirst: "",
-  suggestionHighlighted: "bg-gray-500 bg-opacity-20 rounded",
+  suggestionHighlighted: "bg-gray-100 dark:bg-gray-700 rounded",
   sectionContainer: "",
   sectionContainerFirst: "",
   sectionTitle: "",

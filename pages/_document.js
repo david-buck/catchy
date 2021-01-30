@@ -29,39 +29,6 @@ export default class extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
           <link rel="alternate icon" href="/favicon.ico" />
-
-          <title key="title">
-            Catchy - Real time updates for Wellington buses
-          </title>
-
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:text:title" content="Catchy" />
-          <meta
-            name="twitter:text:description"
-            content="Real time updates for Wellington buses"
-          />
-
-          <meta
-            property="og:title"
-            content="Catchy - Real time updates for Wellington buses"
-            key="ogTitle"
-          />
-          <meta
-            name="description"
-            content="Real time updates for Wellington buses"
-            key="description"
-          />
-          <meta
-            property="og:image"
-            content="https://catchy.nz/share/default-share-image.png"
-            key="ogImage"
-          />
-          <link
-            rel="preload"
-            href="/api/stops"
-            as="fetch"
-            crossorigin="anonymous"
-          />
         </Head>
         <body>
           <Main />
