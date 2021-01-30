@@ -147,7 +147,7 @@ export default function StopPage() {
     return <Spinner width="24" height="24" className="mt-2 text-gray-500" />;
 
   return (
-    <div className="relative pt-2">
+    <div className="relative">
       <Head>
         <title key="title">{stop.stop_name} bus stop — Catchy</title>
 
@@ -173,9 +173,9 @@ export default function StopPage() {
           key="description"
         />
       </Head>
-      <div className="mb-6 flex row justify-between">
+      <div className="mb-4 flex row justify-between">
         <Link href="/">
-          <a className="transition-colors ease-linear duration-150  p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
+          <a className="transition-colors ease-linear duration-150 -ml-2 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
             <BackArrow width="24" height="24" title="Back." />
           </a>
         </Link>
