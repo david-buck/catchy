@@ -83,7 +83,7 @@ const Expected = ({
               minute: "numeric",
               hour12: "true",
             })}
-            <span className="font-bold text-red-500">Cancelled</span>
+            <span className="font-bold text-red-500"> Cancelled</span>
           </>
         ) : expected ? (
           seconds < 70 && seconds > -30 ? (
