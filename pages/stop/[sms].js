@@ -15,8 +15,11 @@ import Spinner from "../../svgs/spinner.svg";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const getRouteDetails = (id, arr) => {
-  const match = arr.find((e) => e.route_short_name === id);
-  return { color: "#" + match.route_color, type: match.type };
+  const match = arr.find((element) => element.route_short_name === id);
+
+  return match
+    ? { color: "#" + match.route_color, type: match.type }
+    : { color: "currentColor", type: "school" };
 };
 
 const Expected = ({
@@ -50,6 +53,11 @@ const Expected = ({
             fontSize: "0.75rem ",
             letterSpacing: "-0.075em",
             paddingRight: ".5rem",
+          }) ||
+          (type === "school" && {
+            ackground: "white",
+            border: "1px solid ",
+            color: color,
           })
         }
         className="font-semibold rounded-full w-9 h-9 place-items-center grid"
@@ -69,10 +77,17 @@ const Expected = ({
       </h2>
       <p>
         {status === "cancelled" ? (
-          <span className="font-bold text-red-500">Cancelled</span>
+          <>
+            {new Date(aimed).toLocaleTimeString("en-NZ", {
+              hour: "numeric",
+              minute: "numeric",
+              hour12: "true",
+            })}
+            <span className="font-bold text-red-500">Cancelled</span>
+          </>
         ) : expected ? (
-          seconds < 70 ? (
-            <>Due</>
+          seconds < 70 && seconds > -30 ? (
+            <span className="font-bold">Due</span>
           ) : (
             <>
               {Math.round(seconds / 60)} min
@@ -175,17 +190,15 @@ export default function StopPage() {
       </Head>
       <div className="mb-4 flex row justify-between">
         <Link href="/">
-          <a className="transition-colors ease-linear duration-150 -ml-2 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
+          <a className="titleBarButton">
             <BackArrow width="24" height="24" title="Back." />
           </a>
         </Link>
         <div className="flex">
           {isValidating && (
-            <Spinner
-              width="24"
-              height="24"
-              className="mr-4 mt-2 text-gray-500"
-            />
+            <div className="place-items-center grid w-9 h-9 mr-1">
+              <Spinner width="22" height="22" className="text-gray-500" />
+            </div>
           )}
           <FavouriteButton sms={sms} />
         </div>
@@ -212,7 +225,7 @@ export default function StopPage() {
         departures.departures.map((element, key) => {
           let routeDetails = getRouteDetails(element.service_id, routes);
 
-          return element.destination.name !== "School Bus" ? (
+          return (
             <Expected
               service_id={element.service_id}
               destination_name={element.destination.name}
@@ -230,7 +243,7 @@ export default function StopPage() {
               color={routeDetails.color}
               type={routeDetails.type}
             />
-          ) : null;
+          );
         })
       ) : (
         <div className="opacity-60">

@@ -23,15 +23,16 @@ export default function FavouriteButton({ sms }) {
       <button
         role="button"
         onClick={() => toggleFavourite(sms)}
-        className={`transition-colors ease-linear duration-150 -mr-2 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none  ${
-          favourites.includes(sms)
-            ? "text-yellow-500"
-            : "text-gray-300 dark:text-gray-600"
-        }`}
+        className="titleBarButton"
       >
         <Star
           width="24"
           height="24"
+          className={
+            favourites.includes(sms)
+              ? "text-yellow-500"
+              : "text-gray-300 dark:text-gray-600"
+          }
           title={
             favourites.includes(sms)
               ? "Remove from favourites."
