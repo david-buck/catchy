@@ -110,6 +110,9 @@ const Expected = ({
 };
 
 export default function StopPage() {
+  const [time, setTime] = useState(new Date());
+  const [dateOffset, setDateOffset] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date(Date.parse(new Date()) + dateOffset));
@@ -147,9 +150,6 @@ export default function StopPage() {
       setDateOffset(Date.parse(date.date) - Date.parse(time));
     },
   });
-
-  const [time, setTime] = useState(new Date());
-  const [dateOffset, setDateOffset] = useState(0);
 
   if (error)
     return stop ? (
