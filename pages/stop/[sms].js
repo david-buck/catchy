@@ -147,7 +147,8 @@ export default function StopPage() {
     refreshInterval: 0,
     revalidateOnFocus: false,
     onSuccess: (date) => {
-      setDateOffset(Date.parse(date.date) - Date.parse(time));
+      let offset = Date.parse(date.date) - Date.parse(time);
+      setDateOffset(offset > 10000 ? offset : 0);
     },
   });
 
