@@ -10,6 +10,8 @@ module.exports = {
   variants: {
     extend: {},
     transitionProperty: ["hover", "focus"],
+    borderWidth: ["focus-visible"],
+    borderColor: ["focus-visible"],
   },
   plugins: [],
 };
