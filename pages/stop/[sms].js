@@ -55,9 +55,9 @@ const Expected = ({
             paddingRight: ".5rem",
           }) ||
           (type === "school" && {
-            ackground: "white",
-            border: "1px solid ",
-            color: color,
+            background: "#FAFF00",
+
+            color: "rgba(0,0,0,.8)",
           })
         }
         className="font-semibold rounded-full w-9 h-9 place-items-center grid"
