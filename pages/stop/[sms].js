@@ -37,7 +37,7 @@ const Expected = ({
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <div className="flex justify-between py-3 gap-x-2 items-center">
+    <div className="flex justify-between py-3 space-x-2 items-center">
       <div
         style={
           (type === "frequent" && { background: color, color: "white" }) ||
@@ -86,7 +86,7 @@ const Expected = ({
             <span className="font-bold text-red-500"> Cancelled</span>
           </>
         ) : expected ? (
-          seconds < 70 && seconds > -30 ? (
+          seconds < 90 ? (
             <span className="font-bold">Due</span>
           ) : (
             <>
@@ -115,7 +115,7 @@ export default function StopPage() {
       setTime(new Date(Date.parse(new Date()) + dateOffset));
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [dateOffset]);
 
   const router = useRouter();
   const { sms } = router.query;
@@ -144,8 +144,6 @@ export default function StopPage() {
     refreshInterval: 0,
     revalidateOnFocus: false,
     onSuccess: (date) => {
-      console.log(Date.parse(date.date));
-      console.log(Date.parse(time));
       setDateOffset(Date.parse(date.date) - Date.parse(time));
     },
   });
@@ -233,7 +231,11 @@ export default function StopPage() {
             <Expected
               service_id={element.service_id}
               destination_name={element.destination.name}
-              expected={element.arrival.expected}
+              expected={
+                element.arrival.expected !== ""
+                  ? element.arrival.expected
+                  : element.departure.expected
+              }
               aimed={
                 element.arrival.aimed !== ""
                   ? element.arrival.aimed
