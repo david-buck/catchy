@@ -33,7 +33,7 @@ export default function IndexPage() {
       </Head>
       <div className="flex flex-col">
         <div className="mb-3 mt-1">
-          <Logo width="157" height="38" title="Catchy" />
+          <Logo width="157" height="38" title="Catchy" className=" -ml-0.5" />
         </div>
         <Search stops={stops} />
         <Favourites stops={stops} />
