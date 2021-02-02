@@ -47,7 +47,7 @@ const Expected = ({
             color: color,
           }) ||
           (type === "night" && {
-            background: "black",
+            background: "rgba(0,0,0,0.8)",
             boxShadow: "-.5rem 0 0 0 inset currentColor",
             color: "#fff200",
             fontSize: "0.75rem ",
