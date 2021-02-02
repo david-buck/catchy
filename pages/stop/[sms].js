@@ -37,7 +37,10 @@ const Expected = ({
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <div className="flex justify-between py-3 space-x-2 items-center">
+    <div
+      className="flex justify-between py-3 space-x-3
+     items-center"
+    >
       <div
         style={
           (type === "frequent" && { background: color, color: "white" }) ||
@@ -64,7 +67,7 @@ const Expected = ({
       >
         {service_id}
       </div>{" "}
-      <h2 className="flex-1">
+      <h2 className="flex-1 leading-tight">
         {destination_name}{" "}
         {wheelchair_accessible && (
           <Chair
