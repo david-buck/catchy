@@ -10,6 +10,8 @@ export default function NearbyStops() {
   const [lat, setLat] = useState(null);
   const [long, setLong] = useState(null);
 
+  const [cancelled, setCancelled] = useState(false);
+
   const locate = () => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -23,10 +25,13 @@ export default function NearbyStops() {
 
   useEffect(() => {
     locate();
+    return () => {
+      setCancelled(true);
+    };
   }, []);
 
   const { data, error } = useSWR(
-    lat && long ? `/api/stops/${lat}/${long}` : null,
+    lat && long && !cancelled ? `/api/stops/${lat}/${long}` : null,
     fetcher,
     {
       refreshInterval: 0,
@@ -34,7 +39,7 @@ export default function NearbyStops() {
     }
   );
 
-  if (error) return <div>failed to load {JSON.stringify(error)}</div>;
+  if (error) return <div>Unable to load nearby stops.</div>;
   if (!data) return <div>Loading nearby stops...</div>;
 
   return (
