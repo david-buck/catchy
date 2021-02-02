@@ -3,30 +3,34 @@
 @tailwind utilities;
 
 @font-face {
+  font-display: block;
   font-family: Bus;
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
   src: url(/fonts/Bus-Regular.woff) format("woff");
 }
 
 @font-face {
+  font-display: block;
   font-family: Bus;
-  font-weight: 600;
   font-style: normal;
+  font-weight: 600;
   src: url(/fonts/Bus-SemiBold.woff) format("woff");
 }
 
 @font-face {
+  font-display: block;
   font-family: Bus;
-  font-weight: 700;
   font-style: normal;
+  font-weight: 700;
   src: url(/fonts/Bus-Bold.woff) format("woff");
 }
 
 @font-face {
+  font-display: block;
   font-family: Bus;
-  font-weight: 800;
   font-style: normal;
+  font-weight: 800;
   src: url(/fonts/Bus-ExtraBold.woff) format("woff");
 }
 
