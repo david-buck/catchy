@@ -68,14 +68,24 @@ const Search = ({ stops }) => {
           router.push(`/stop/${suggestion.stop_id}`)
         }
         getSuggestionValue={(suggestion) => suggestion.stop_name}
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={(suggestion, value) => (
           <span className="flex flex-nowrap items-top">
             <LocationMarker
               width="40"
               height="18"
               className="text-gray-300 flex-shrink-0 mt-1"
             />
-            <span>{suggestion.stop_name}</span>
+            <span>
+              {suggestion.stop_name}{" "}
+              {!suggestion.stop_name
+                .toLowerCase()
+                .includes(value.query.toLowerCase()) && (
+                <span className="opacity-60 text-sm">
+                  <br />
+                  Stop {suggestion.stop_id}
+                </span>
+              )}
+            </span>
           </span>
         )}
         inputProps={{
