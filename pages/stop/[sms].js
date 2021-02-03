@@ -235,16 +235,8 @@ export default function StopPage() {
             <Expected
               service_id={element.service_id}
               destination_name={element.destination.name}
-              expected={
-                element.arrival.expected !== ""
-                  ? element.arrival.expected
-                  : element.departure.expected
-              }
-              aimed={
-                element.arrival.aimed !== ""
-                  ? element.arrival.aimed
-                  : element.departure.aimed
-              }
+              expected={element.departure.expected}
+              aimed={element.departure.aimed}
               time={time}
               status={element.status}
               delay={element.delay}
