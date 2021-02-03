@@ -4,8 +4,9 @@ import Head from "next/head";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
-import Delay from "../../components/Delay";
 import FavouriteButton from "../../components/FavouriteButton";
+
+import routeNamer from "../../lib/routeNamer";
 
 import BackArrow from "../../svgs/navigation-left-arrow.svg";
 import Chair from "../../svgs/chair.svg";
@@ -25,6 +26,7 @@ const getRouteDetails = (id, arr) => {
 const Expected = ({
   service_id,
   destination_name,
+  school,
   expected,
   aimed,
   time,
@@ -68,13 +70,19 @@ const Expected = ({
         {service_id}
       </div>{" "}
       <h2 className="flex-1 leading-tight">
-        {destination_name}{" "}
+        {routeNamer(destination_name)}
+        {school && (
+          <span className="text-sm opacity-60 leading-tight">
+            <br />
+            {school}
+          </span>
+        )}
         {wheelchair_accessible && (
           <Chair
             width="16"
             height="16"
             title="Wheelchair accessible."
-            style={{ display: "inline" }}
+            className="inline ml-2"
           />
         )}
       </h2>
@@ -145,6 +153,12 @@ export default function StopPage() {
     revalidateOnFocus: false,
   });
 
+  const { data: school_routes } = useSWR(sms ? `/api/routes/school` : null, {
+    fetcher: fetcher,
+    refreshInterval: 0,
+    revalidateOnFocus: false,
+  });
+
   const { data: date } = useSWR(`/api/local-time`, {
     fetcher: fetcher,
     refreshInterval: 0,
@@ -164,7 +178,7 @@ export default function StopPage() {
       <div>Unable to get realtime updates for stop {sms}. Try again later</div>
     );
 
-  if (!departures || !stop || !routes)
+  if (!departures || !stop || !routes || !school_routes)
     return <Spinner width="24" height="24" className="mt-2 text-gray-500" />;
 
   return (
@@ -235,6 +249,12 @@ export default function StopPage() {
             <Expected
               service_id={element.service_id}
               destination_name={element.destination.name}
+              school={
+                routeDetails.type === "school" &&
+                school_routes.find(
+                  (el) => el.route_short_name === element.service_id
+                ).route_long_name
+              }
               expected={element.departure.expected}
               aimed={element.departure.aimed}
               time={time}

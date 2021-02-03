@@ -80,7 +80,7 @@ const Search = ({ stops }) => {
               {!suggestion.stop_name
                 .toLowerCase()
                 .includes(value.query.toLowerCase()) && (
-                <span className="opacity-60 text-sm">
+                <span className="text-sm opacity-60 leading-tight">
                   <br />
                   Stop {suggestion.stop_id}
                 </span>
