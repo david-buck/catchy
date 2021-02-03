@@ -31,8 +31,7 @@ function MyApp({ Component, pageProps }) {
       window.workbox !== undefined
     ) {
       const wb = window.workbox;
-      // add event listeners to handle any of PWA lifecycle event
-      // https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-window.Workbox#events
+
       wb.addEventListener("installed", (event) => {
         console.log(`Event ${event.type} is triggered.`);
         console.log(event);
@@ -74,29 +73,6 @@ function MyApp({ Component, pageProps }) {
       // wb.addEventListener("waiting", promptNewVersionAvailable);
       // wb.addEventListener("externalwaiting", promptNewVersionAvailable);
 
-      // ISSUE - this is not working as expected, why?
-      // I could only make message event listenser work when I manually add this listenser into sw.js file
-      wb.addEventListener("message", (event) => {
-        console.log(`Event ${event.type} is triggered.`);
-        console.log(event);
-      });
-
-      /*
-      wb.addEventListener('redundant', event => {
-        console.log(`Event ${event.type} is triggered.`)
-        console.log(event)
-      })
-      wb.addEventListener('externalinstalled', event => {
-        console.log(`Event ${event.type} is triggered.`)
-        console.log(event)
-      })
-      wb.addEventListener('externalactivated', event => {
-        console.log(`Event ${event.type} is triggered.`)
-        console.log(event)
-      })
-      */
-
-      // never forget to call register as auto register is turned off in next.config.js
       wb.register();
     }
   }, []);

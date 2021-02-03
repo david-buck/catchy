@@ -124,18 +124,23 @@ export default function StopPage() {
   const [time, setTime] = useState(new Date());
   const [dateOffset, setDateOffset] = useState(0);
 
+  const [cancelled, setCancelled] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date(Date.parse(new Date()) + dateOffset));
     }, 1000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      setCancelled(true);
+    };
   }, [dateOffset]);
 
   const router = useRouter();
   const { sms } = router.query;
 
   const { data: departures, isValidating, error } = useSWR(
-    sms ? `/proxy/stopdepartures/${sms}` : null,
+    sms && !cancelled ? `/proxy/stopdepartures/${sms}` : null,
     {
       fetcher: fetcher,
       refreshInterval: 20000,
