@@ -68,7 +68,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "465",
-    schools: "Paremata School / St Theresa‘s School / Plimmerton Schools",
+    schools: "Paremata School / St Theresa’s School / Plimmerton Schools",
   },
   {
     agency_id: "UZM",
@@ -120,15 +120,15 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "614",
-    schools: "Wellington Girls‘ College /  St Mary‘s College",
+    schools: "Wellington Girls’ College /  St Mary’s College",
   },
   {
     route_short_name: "615",
-    schools: "Wellington Girls‘ College",
+    schools: "Wellington Girls’ College",
   },
   {
     route_short_name: "616",
-    schools: "Wellington Girls‘ College /  St Mary‘s College",
+    schools: "Wellington Girls’ College /  St Mary’s College",
   },
   {
     route_short_name: "617",
@@ -172,7 +172,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "646",
-    schools: "St Brigid‘s School / Onslow College",
+    schools: "St Brigid’s School / Onslow College",
   },
   {
     route_short_name: "647",
@@ -184,7 +184,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "654",
-    schools: "St Mark‘s School / South Wellington Intermediate",
+    schools: "St Mark’s School / South Wellington Intermediate",
   },
   {
     route_short_name: "661",
@@ -193,7 +193,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "667",
-    schools: "St Teresa‘s / Karori West Normal School",
+    schools: "St Teresa’s / Karori West Normal School",
   },
   {
     route_short_name: "671",
@@ -233,7 +233,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "700",
-    schools: "Wellington College / St Mark‘s School",
+    schools: "Wellington College / St Mark’s School",
   },
   {
     route_short_name: "704",
@@ -241,12 +241,12 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "711",
-    schools: "Wellington East Girls‘ College / St Mark‘s School",
+    schools: "Wellington East Girls’ College / St Mark’s School",
   },
   {
     route_short_name: "712",
     schools:
-      "Rongotai College / St Patrick‘s College / Wellington East Girls‘ College / Wellington College / St Mark‘s School",
+      "Rongotai College / St Patrick’s College / Wellington East Girls’ College / Wellington College / St Mark’s School",
   },
   {
     route_short_name: "713",
@@ -274,23 +274,23 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "720",
-    schools: "Wellington East Girls‘ College",
+    schools: "Wellington East Girls’ College",
   },
   {
     route_short_name: "721",
-    schools: "Wellington East Girls‘ College",
+    schools: "Wellington East Girls’ College",
   },
   {
     route_short_name: "722",
-    schools: "Wellington East Girls‘ College",
+    schools: "Wellington East Girls’ College",
   },
   {
     route_short_name: "723",
-    schools: "Wellington East Girls‘ College",
+    schools: "Wellington East Girls’ College",
   },
   {
     route_short_name: "724",
-    schools: "Wellington East Girls‘ College",
+    schools: "Wellington East Girls’ College",
   },
   {
     route_short_name: "725",
@@ -306,11 +306,11 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "730",
-    schools: "Wellington East Girls‘",
+    schools: "Wellington East Girls’ College",
   },
   {
     route_short_name: "731",
-    schools: "Wellington East Girls‘ College / St Marks‘",
+    schools: "Wellington East Girls’ College / St Mark’s",
   },
   {
     route_short_name: "732",
@@ -322,7 +322,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "736",
-    schools: "Wellington College / St Mark‘s / Wellington High School",
+    schools: "Wellington College / St Mark’s / Wellington High School",
   },
   {
     route_short_name: "737",
@@ -330,7 +330,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "738",
-    schools: "St Mary‘s College",
+    schools: "St Mary’s College",
   },
   {
     route_short_name: "739",
@@ -347,7 +347,7 @@ export const school_bus_schools = [
   {
     route_short_name: "742",
     schools:
-      "St Mark’s School /  Wellington  College / Wellington East Girls‘ College",
+      "St Mark’s School /  Wellington  College / Wellington East Girls’ College",
   },
   {
     route_short_name: "743",
@@ -363,15 +363,15 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "746",
-    schools: "Wellington College / St Mark‘s School / St Patrick‘s College",
+    schools: "Wellington College / St Mark’s School / St Patrick’s College",
   },
   {
     route_short_name: "751",
-    schools: " St Patrick‘s College / Rongotai College",
+    schools: " St Patrick’s College / Rongotai College",
   },
   {
     route_short_name: "753",
-    schools: "St Patrick‘s College",
+    schools: "St Patrick’s College",
   },
   {
     route_short_name: "754",
@@ -395,7 +395,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "761",
-    schools: "St Patrick‘s College",
+    schools: "St Patrick’s College",
   },
   {
     route_short_name: "762",
@@ -407,11 +407,11 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "767",
-    schools: "St Patrick‘s College",
+    schools: "St Patrick’s College",
   },
   {
     route_short_name: "768",
-    schools: "Wellington College / St Patrick‘s College / Rongotai College",
+    schools: "Wellington College / St Patrick’s College / Rongotai College",
   },
   {
     route_short_name: "769",
@@ -420,11 +420,11 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "770",
-    schools: "Basin Schools / St Patrick‘s College / Rongotai College",
+    schools: "Basin Schools / St Patrick’s College / Rongotai College",
   },
   {
     route_short_name: "772",
-    schools: "St Patrick‘s College / St Catherine‘s College",
+    schools: "St Patrick’s College / St Catherine’s College",
   },
   {
     route_short_name: "774",
@@ -432,7 +432,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "775",
-    schools: "St Patrick‘s College / St Catherine‘s College",
+    schools: "St Patrick’s College / St Catherine’s College",
   },
   {
     route_short_name: "776",
@@ -445,7 +445,7 @@ export const school_bus_schools = [
   {
     route_short_name: "782",
     schools:
-      "St Patrick’s College / St Catherine‘s College / Rongotai College / Scots College",
+      "St Patrick’s College / St Catherine’s College / Rongotai College / Scots College",
   },
   {
     route_short_name: "784",
@@ -453,12 +453,12 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "791",
-    schools: "St Patrick‘s College / Scots College",
+    schools: "St Patrick’s College / Scots College",
   },
   {
     route_short_name: "823",
     schools:
-      "Hutt Intermediate School / St Bernard‘s College / Chilton St James School / St Oran’s College",
+      "Hutt Intermediate School / St Bernard’s College / Chilton St James School / St Oran’s College",
   },
   {
     route_short_name: "825",
@@ -513,20 +513,20 @@ export const school_bus_schools = [
   {
     route_short_name: "860",
     schools:
-      "Hutt Valley High School / Sacred Heart College / St Bernard‘s College",
+      "Hutt Valley High School / Sacred Heart College / St Bernard’s College",
   },
   {
     route_short_name: "866",
     schools:
-      "Hutt Valley High School / Sacred Heart Scollege / St Bernard‘s College",
+      "Hutt Valley High School / Sacred Heart Scollege / St Bernard’s College",
   },
   {
     route_short_name: "867",
-    schools: "St Bernard‘s College",
+    schools: "St Bernard’s College",
   },
   {
     route_short_name: "868",
-    schools: "St Bernard‘s College",
+    schools: "St Bernard’s College",
   },
   {
     route_short_name: "874",
@@ -547,7 +547,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "901",
-    schools: "St Patrick‘s College",
+    schools: "St Patrick’s College",
   },
   {
     route_short_name: "906",
@@ -555,7 +555,7 @@ export const school_bus_schools = [
   },
   {
     route_short_name: "911",
-    schools: "St Oran‘s College / Chilton St James School",
+    schools: "St Oran’s College / Chilton St James School",
   },
   {
     route_short_name: "915",
