@@ -82,7 +82,7 @@ const Expected = ({
             width="16"
             height="16"
             title="Wheelchair accessible."
-            className="inline ml-2"
+            className="inline ml-2 opacity-60"
           />
         )}
       </h2>
