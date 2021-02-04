@@ -2094,12 +2094,6 @@ export const bus_stops = [
     stop_lon: 175.1204706,
   },
   {
-    stop_id: "9998",
-    stop_name: "Matiu/Somes Island Wharf",
-    stop_lat: -41.25555681,
-    stop_lon: 174.86718918,
-  },
-  {
     stop_id: "9960",
     stop_name: "Frederick Wise Park — Parkway (opposite)",
     stop_lat: -41.25597447,
@@ -4584,12 +4578,6 @@ export const bus_stops = [
     stop_lon: 174.80508033,
   },
   {
-    stop_id: "9995",
-    stop_name: "Seatoun Wharf",
-    stop_lat: -41.31879167,
-    stop_lon: 174.8302334,
-  },
-  {
     stop_id: "2790",
     stop_name: "Whenua Tapu Cemetery",
     stop_lat: -41.0577149,
@@ -6262,12 +6250,6 @@ export const bus_stops = [
     stop_name: "Percy Kinsman Crescent (near 27)",
     stop_lat: -41.11250656,
     stop_lon: 175.04412459,
-  },
-  {
-    stop_id: "9997",
-    stop_name: "Queens Wharf",
-    stop_lat: -41.28340147,
-    stop_lon: 174.7791615,
   },
   {
     stop_id: "2546",
@@ -10420,12 +10402,6 @@ export const bus_stops = [
     stop_name: "Pempsey Street at Heretaunga Square (near 35)",
     stop_lat: -41.14589967,
     stop_lon: 175.019944,
-  },
-  {
-    stop_id: "9999",
-    stop_name: "Days Bay Wharf",
-    stop_lat: -41.28061856,
-    stop_lon: 174.9054078,
   },
   {
     stop_id: "8104",
