@@ -220,8 +220,9 @@ export default function StopPage() {
             </div>
           )}
           <a
-            href={`https://maps.google.com/?q=${stop.stop_name}&ll=${stop.stop_lat},
-        ${stop.stop_lon}&z=19`}
+            href={`https://maps.google.com/?q=${encodeURI(stop.stop_name)}&ll=${
+              stop.stop_lat
+            },${stop.stop_lon}&z=19`}
             target="_blank"
             className="titleBarButton"
           >
