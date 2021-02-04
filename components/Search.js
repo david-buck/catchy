@@ -13,7 +13,7 @@ const theme = {
     "transition bg-white shadow-md focus:shadow-lg dark:bg-gray-800 rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full border-gray-100 dark:border-gray-500 border border-solid ",
   inputOpen: "",
   inputFocused: "outline-none",
-  suggestionsContainer: "",
+  suggestionsContainer: "overflow-y-auto max-h-suggestions-container",
   suggestionsContainerOpen:
     "absolute bg-white dark:bg-gray-800 shadow-lg rounded w-full mt-1 border-gray-100 dark:border-gray-500 border border-solid",
   suggestionsList: "",
@@ -25,7 +25,7 @@ const theme = {
   sectionTitle: "",
 };
 
-const Unused = () => <div className=" border-sol " />;
+const Unused = () => <div className=" ma" />;
 
 const Search = ({ stops }) => {
   const router = useRouter();
@@ -37,16 +37,18 @@ const Search = ({ stops }) => {
     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
+  // [^\s"']+|"([^"]*)"|'([^']*)'
+
   function getSuggestions(value) {
     const escapedValue = escapeRegexCharacters(value.trim());
 
-    const regex = new RegExp(escapedValue, "i");
+    const regex = new RegExp("^" + escapedValue, "i");
 
     return stops
       .filter(
         (match) => regex.test(match.stop_name) || regex.test(match.stop_id)
       )
-      .slice(0, 10);
+      .slice(0, 20);
   }
 
   return (
