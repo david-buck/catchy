@@ -9,6 +9,7 @@ import FavouriteButton from "../../components/FavouriteButton";
 import routeNamer from "../../lib/routeNamer";
 
 import BackArrow from "../../svgs/navigation-left-arrow.svg";
+import LocationMarker from "../../svgs/location-mono.svg";
 import Chair from "../../svgs/chair.svg";
 
 import Spinner from "../../svgs/spinner.svg";
@@ -86,17 +87,16 @@ const Expected = ({
           />
         )}
       </h2>
+      {wheelchair_accessible && (
+        <Chair
+          width="16"
+          height="16"
+          title="Wheelchair accessible."
+          className="inline ml-2 opacity-60"
+        />
+      )}
       <p>
-        {status === "cancelled" ? (
-          <>
-            {new Date(aimed).toLocaleTimeString("en-NZ", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: "true",
-            })}
-            <span className="font-bold text-red-500"> Cancelled</span>
-          </>
-        ) : expected ? (
+        {expected ? (
           seconds < 90 ? (
             <span className="font-bold">Due</span>
           ) : (
@@ -114,8 +114,10 @@ const Expected = ({
             })}
           </>
         )}
+        {status === "cancelled" && (
+          <span className="font-bold text-red-500"> Cancelled</span>
+        )}
       </p>
-      {/* <Delay delay={delay} status={status} /> */}
     </div>
   );
 };
@@ -219,12 +221,21 @@ export default function StopPage() {
             <BackArrow width="24" height="24" title="Back." />
           </a>
         </Link>
-        <div className="flex">
+        <div className="flex space-x-1">
           {isValidating && (
             <div className="place-items-center grid w-9 h-9 mr-1">
               <Spinner width="22" height="22" className="text-gray-500" />
             </div>
           )}
+          <a
+            href={`https://maps.google.com/?q=${encodeURI(stop.stop_name)}&ll=${
+              stop.stop_lat
+            },${stop.stop_lon}&z=19`}
+            target="_blank"
+            className="titleBarButton"
+          >
+            <LocationMarker width="20" height="20" title="View on map." />
+          </a>
           <FavouriteButton sms={sms} />
         </div>
       </div>
@@ -258,7 +269,7 @@ export default function StopPage() {
                 routeDetails.type === "school" &&
                 school_routes.find(
                   (el) => el.route_short_name === element.service_id
-                ).route_long_name
+                ).schools
               }
               expected={element.departure.expected}
               aimed={element.departure.aimed}
