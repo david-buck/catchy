@@ -40,10 +40,7 @@ const Expected = ({
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <div
-      className="flex justify-between py-3 space-x-3
-     items-center"
-    >
+    <>
       <div
         style={
           (type === "frequent" && { background: color, color: "white" }) ||
@@ -62,15 +59,14 @@ const Expected = ({
           }) ||
           (type === "school" && {
             background: "#FAFF00",
-
             color: "rgba(0,0,0,.8)",
           })
         }
-        className="font-semibold rounded-full w-9 h-9 place-items-center grid"
+        className="grid place-items-center w-9 h-9 font-semibold rounded-full"
       >
         {service_id}
-      </div>{" "}
-      <h2 className="flex-1 leading-tight">
+      </div>
+      <h2 className="leading-tight">
         {routeNamer(destination_name)}
         {school && (
           <span className="text-sm opacity-60 leading-tight">
@@ -78,24 +74,18 @@ const Expected = ({
             {school}
           </span>
         )}
+      </h2>
+      <div>
         {wheelchair_accessible && (
           <Chair
             width="16"
             height="16"
             title="Wheelchair accessible."
-            className="inline ml-2 opacity-60"
+            className="inline opacity-60"
           />
         )}
-      </h2>
-      {wheelchair_accessible && (
-        <Chair
-          width="16"
-          height="16"
-          title="Wheelchair accessible."
-          className="inline ml-2 opacity-60"
-        />
-      )}
-      <p>
+      </div>
+      <div className="text-right">
         {expected ? (
           seconds < 90 ? (
             <span className="font-bold">Due</span>
@@ -117,8 +107,8 @@ const Expected = ({
         {status === "cancelled" && (
           <span className="font-bold text-red-500"> Cancelled</span>
         )}
-      </p>
-    </div>
+      </div>
+    </>
   );
 };
 
@@ -154,13 +144,13 @@ export default function StopPage() {
     revalidateOnFocus: false,
   });
 
-  const { data: routes } = useSWR(sms ? `/api/routes` : null, {
+  const { data: routes } = useSWR(`/api/routes`, {
     fetcher: fetcher,
     refreshInterval: 0,
     revalidateOnFocus: false,
   });
 
-  const { data: school_routes } = useSWR(sms ? `/api/routes/school` : null, {
+  const { data: school_routes } = useSWR(`/api/routes/school`, {
     fetcher: fetcher,
     refreshInterval: 0,
     revalidateOnFocus: false,
@@ -240,7 +230,7 @@ export default function StopPage() {
         </div>
       </div>
       <h1 className="text-3xl font-semibold mb-2">{stop.stop_name}</h1>
-      <div className="mb-4">
+      <div className="mb-6">
         {time.toLocaleString("en-NZ", {
           weekday: "long",
           month: "long",
@@ -252,37 +242,39 @@ export default function StopPage() {
       </div>
       {departures.alerts.map((element, key) => {
         return (
-          <div style={{ border: "1px solid red", padding: 5 }} key={key}>
+          <div className="p-5 ring ring-red-500" key={key}>
             {element.alert}
           </div>
         );
       })}
       {departures.departures.length > 0 ? (
-        departures.departures.map((element, key) => {
-          let routeDetails = getRouteDetails(element.service_id, routes);
+        <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center">
+          {departures.departures.map((element, key) => {
+            let routeDetails = getRouteDetails(element.service_id, routes);
 
-          return (
-            <Expected
-              service_id={element.service_id}
-              destination_name={element.destination.name}
-              school={
-                routeDetails.type === "school" &&
-                school_routes.find(
-                  (el) => el.route_short_name === element.service_id
-                ).schools
-              }
-              expected={element.departure.expected}
-              aimed={element.departure.aimed}
-              time={time}
-              status={element.status}
-              delay={element.delay}
-              key={key}
-              wheelchair_accessible={element.wheelchair_accessible}
-              color={routeDetails.color}
-              type={routeDetails.type}
-            />
-          );
-        })
+            return (
+              <Expected
+                service_id={element.service_id}
+                destination_name={element.destination.name}
+                school={
+                  routeDetails.type === "school" &&
+                  school_routes.find(
+                    (el) => el.route_short_name === element.service_id
+                  ).schools
+                }
+                expected={element.departure.expected}
+                aimed={element.departure.aimed}
+                time={time}
+                status={element.status}
+                delay={element.delay}
+                key={key}
+                wheelchair_accessible={element.wheelchair_accessible}
+                color={routeDetails.color}
+                type={routeDetails.type}
+              />
+            );
+          })}
+        </div>
       ) : (
         <div className="opacity-60">
           No buses currently scheduled for this stop.
