@@ -1,5 +1,5 @@
-import { school_bus_routes } from "../../../data/school_bus_routes";
+import { school_bus_schools } from "../../../data/school_bus_schools";
 
 export default function handler(req, res) {
-  res.status(200).json(school_bus_routes);
+  res.status(200).json(school_bus_schools);
 }
