@@ -74,9 +74,9 @@ const Search = ({ stops }) => {
         renderSuggestion={(suggestion, value) => (
           <span className="flex flex-nowrap items-top">
             <LocationMarker
-              width="40"
+              width="36"
               height="18"
-              className="text-gray-300 flex-shrink-0 mt-1"
+              className="text-gray-300 flex-shrink-0 mt-0.5 ml-1"
             />
             <span>
               {suggestion.stop_name}{" "}
@@ -95,6 +95,9 @@ const Search = ({ stops }) => {
           onChange: (_, { newValue, method }) => {
             setValue(newValue);
           },
+          autocorrect: "off",
+          autocapitalize: "off",
+          spellcheck: "false",
         }}
         highlightFirstSuggestion={true}
         theme={theme}

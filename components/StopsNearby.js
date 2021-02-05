@@ -52,9 +52,9 @@ export default function NearbyStops() {
                 <a className="flex flex-nowrap justify-between space-x-3 py-3 pr-4 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-100 dark:hover:bg-gray-700 ">
                   <span className="flex flex-nowrap items-top">
                     <LocationMarker
-                      width="40"
+                      width="36"
                       height="18"
-                      className="text-gray-300 flex-shrink-0 mt-1"
+                      className="text-gray-300 flex-shrink-0 mt-0.5 ml-1"
                     />
                     {element.stop_name}
                   </span>
