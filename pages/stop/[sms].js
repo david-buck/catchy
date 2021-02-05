@@ -97,11 +97,13 @@ const Expected = ({
           )
         ) : (
           <>
-            {new Date(aimed).toLocaleTimeString("en-NZ", {
-              hour: "numeric",
-              minute: "numeric",
-              hour12: "true",
-            })}
+            {new Date(aimed)
+              .toLocaleTimeString("en-NZ", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+              })
+              .replace("0:", "12:")}
           </>
         )}
         {status === "cancelled" && (
@@ -232,16 +234,18 @@ export default function StopPage() {
           <FavouriteButton sms={sms} />
         </div>
       </div>
-      <h1 className="text-3xl font-semibold mb-2">{stop.stop_name}</h1>
+      <h1 className="text-3xl font-semibold mb-4">{stop.stop_name}</h1>
       <div className="mb-6">
-        {time.toLocaleString("en-NZ", {
-          weekday: "long",
-          month: "long",
-          day: "numeric",
-          hour: "numeric",
-          minute: "numeric",
-          hour12: true,
-        })}
+        {time
+          .toLocaleString("en-NZ", {
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          })
+          .replace("0:", "12:")}
       </div>
       {departures.alerts.map((element, key) => {
         return (
@@ -257,35 +261,25 @@ export default function StopPage() {
             let loopDay = new Date();
 
             return (
-              <React.Fragment key={key}>
-                {/* {loopDay.getDate() !==
-                  new Date(element.departure.expected).getDate() && (
-                  <div className="col-span-4">
-                    {JSON.stringify(loopDay.getDate())}{" "}
-                    {JSON.stringify(
-                      new Date(element.departure.aimed).getDate()
-                    )}
-                  </div>
-                )} */}
-                <Expected
-                  service_id={element.service_id}
-                  destination_name={element.destination.name}
-                  school={
-                    routeDetails.type === "school" &&
-                    school_routes.find(
-                      (el) => el.route_short_name === element.service_id
-                    ).schools
-                  }
-                  expected={element.departure.expected}
-                  aimed={element.departure.aimed}
-                  time={time}
-                  status={element.status}
-                  delay={element.delay}
-                  wheelchair_accessible={element.wheelchair_accessible}
-                  color={routeDetails.color}
-                  type={routeDetails.type}
-                />
-              </React.Fragment>
+              <Expected
+                key={key}
+                service_id={element.service_id}
+                destination_name={element.destination.name}
+                school={
+                  routeDetails.type === "school" &&
+                  school_routes.find(
+                    (el) => el.route_short_name === element.service_id
+                  ).schools
+                }
+                expected={element.departure.expected}
+                aimed={element.departure.aimed}
+                time={time}
+                status={element.status}
+                delay={element.delay}
+                wheelchair_accessible={element.wheelchair_accessible}
+                color={routeDetails.color}
+                type={routeDetails.type}
+              />
             );
           })}
         </div>
