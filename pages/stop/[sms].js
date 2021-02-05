@@ -103,7 +103,7 @@ const Expected = ({
                 minute: "numeric",
                 hour12: true,
               })
-              .replace("0:", "12:")}
+              .replace(" 0:", " 12:")}
           </>
         )}
         {status === "cancelled" && (
@@ -245,7 +245,7 @@ export default function StopPage() {
             minute: "numeric",
             hour12: true,
           })
-          .replace("0:", "12:")}
+          .replace(" 0:", " 12:")}
       </div>
       {departures.alerts.map((element, key) => {
         return (
