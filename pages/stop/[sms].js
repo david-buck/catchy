@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import useSWR from "swr";
@@ -85,7 +85,7 @@ const Expected = ({
           />
         )}
       </div>
-      <div className="text-right">
+      <div className="text-right leading-tight">
         {expected ? (
           seconds < 90 ? (
             <span className="font-bold">Due</span>
@@ -105,7 +105,10 @@ const Expected = ({
           </>
         )}
         {status === "cancelled" && (
-          <span className="font-bold text-red-500"> Cancelled</span>
+          <span className="font-bold text-red-500">
+            <br />
+            Cancelled
+          </span>
         )}
       </div>
     </>
@@ -251,27 +254,38 @@ export default function StopPage() {
         <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center">
           {departures.departures.map((element, key) => {
             let routeDetails = getRouteDetails(element.service_id, routes);
+            let loopDay = new Date();
 
             return (
-              <Expected
-                service_id={element.service_id}
-                destination_name={element.destination.name}
-                school={
-                  routeDetails.type === "school" &&
-                  school_routes.find(
-                    (el) => el.route_short_name === element.service_id
-                  ).schools
-                }
-                expected={element.departure.expected}
-                aimed={element.departure.aimed}
-                time={time}
-                status={element.status}
-                delay={element.delay}
-                key={key}
-                wheelchair_accessible={element.wheelchair_accessible}
-                color={routeDetails.color}
-                type={routeDetails.type}
-              />
+              <React.Fragment key={key}>
+                {/* {loopDay.getDate() !==
+                  new Date(element.departure.expected).getDate() && (
+                  <div className="col-span-4">
+                    {JSON.stringify(loopDay.getDate())}{" "}
+                    {JSON.stringify(
+                      new Date(element.departure.aimed).getDate()
+                    )}
+                  </div>
+                )} */}
+                <Expected
+                  service_id={element.service_id}
+                  destination_name={element.destination.name}
+                  school={
+                    routeDetails.type === "school" &&
+                    school_routes.find(
+                      (el) => el.route_short_name === element.service_id
+                    ).schools
+                  }
+                  expected={element.departure.expected}
+                  aimed={element.departure.aimed}
+                  time={time}
+                  status={element.status}
+                  delay={element.delay}
+                  wheelchair_accessible={element.wheelchair_accessible}
+                  color={routeDetails.color}
+                  type={routeDetails.type}
+                />
+              </React.Fragment>
             );
           })}
         </div>
