@@ -25,7 +25,7 @@ const theme = {
   sectionTitle: "",
 };
 
-const Unused = () => <div className=" ma" />;
+// const Unused = () => <div className=" ma" />;
 
 const Search = ({ stops }) => {
   const router = useRouter();
@@ -37,16 +37,17 @@ const Search = ({ stops }) => {
     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
-  // [^\s"']+|"([^"]*)"|'([^']*)'
-
   function getSuggestions(value) {
     const escapedValue = escapeRegexCharacters(value.trim());
 
-    const regex = new RegExp("^" + escapedValue, "i");
-
     return stops
       .filter(
-        (match) => regex.test(match.stop_name) || regex.test(match.stop_id)
+        (match) =>
+          escapedValue
+            .split(/\W/)
+            .every((val) =>
+              new RegExp("\\b" + val, "i").test(match.stop_name)
+            ) || new RegExp("^" + escapedValue).test(match.stop_id)
       )
       .slice(0, 20);
   }
@@ -79,9 +80,7 @@ const Search = ({ stops }) => {
             />
             <span>
               {suggestion.stop_name}{" "}
-              {!suggestion.stop_name
-                .toLowerCase()
-                .includes(value.query.toLowerCase()) && (
+              {suggestion.stop_id.includes(value.query) && (
                 <span className="text-sm opacity-60 leading-tight">
                   <br />
                   Stop {suggestion.stop_id}
