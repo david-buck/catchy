@@ -24,6 +24,24 @@ const getRouteDetails = (id, arr) => {
     : { color: "currentColor", type: "school" };
 };
 
+const groupByDepartureDate = (objectArray, dateProperty) => {
+  return objectArray.reduce((acc, obj) => {
+    let key = new Date(obj.departure[dateProperty]).toLocaleDateString(
+      "en-NZ",
+      {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }
+    );
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(obj);
+    return acc;
+  }, {});
+};
+
 const Expected = ({
   service_id,
   destination_name,
@@ -31,11 +49,12 @@ const Expected = ({
   expected,
   aimed,
   time,
-  delay,
   status,
   wheelchair_accessible,
   color,
   type,
+  delay,
+  vehicle_id,
 }) => {
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
@@ -181,7 +200,7 @@ export default function StopPage() {
     );
 
   if (!departures || !stop || !routes || !school_routes)
-    return <Spinner width="24" height="24" className="mt-2 text-gray-500" />;
+    return <Spinner width="24" height="24" className="mt-2 text-yellow-500" />;
 
   return (
     <div className="relative">
@@ -219,7 +238,7 @@ export default function StopPage() {
         <div className="flex space-x-1">
           {isValidating && (
             <div className="place-items-center grid w-9 h-9 mr-1">
-              <Spinner width="22" height="22" className="text-gray-500" />
+              <Spinner width="22" height="22" className="text-yellow-500" />
             </div>
           )}
           <a
@@ -254,34 +273,45 @@ export default function StopPage() {
           </div>
         );
       })}
+
       {departures.departures.length > 0 ? (
         <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center">
-          {departures.departures.map((element, key) => {
-            let routeDetails = getRouteDetails(element.service_id, routes);
-            let loopDay = new Date();
-
-            return (
-              <Expected
-                key={key}
-                service_id={element.service_id}
-                destination_name={element.destination.name}
-                school={
-                  routeDetails.type === "school" &&
-                  school_routes.find(
-                    (el) => el.route_short_name === element.service_id
-                  ).schools
-                }
-                expected={element.departure.expected}
-                aimed={element.departure.aimed}
-                time={time}
-                status={element.status}
-                delay={element.delay}
-                wheelchair_accessible={element.wheelchair_accessible}
-                color={routeDetails.color}
-                type={routeDetails.type}
-              />
-            );
-          })}
+          {Object.entries(
+            groupByDepartureDate(departures.departures, "aimed")
+          ).map(([date, departures]) => (
+            <React.Fragment key={date}>
+              <h2 className="col-span-4">
+                {new Date(date).toLocaleString("en-NZ", {
+                  weekday: "long",
+                })}
+              </h2>
+              {departures.map((element, key) => {
+                let routeDetails = getRouteDetails(element.service_id, routes);
+                return (
+                  <Expected
+                    key={date + key}
+                    service_id={element.service_id}
+                    vehicle_id={element.vehicle_id}
+                    destination_name={element.destination.name}
+                    school={
+                      routeDetails.type === "school" &&
+                      school_routes.find(
+                        (el) => el.route_short_name === element.service_id
+                      ).schools
+                    }
+                    expected={element.departure.expected}
+                    aimed={element.departure.aimed}
+                    time={time}
+                    status={element.status}
+                    delay={element.delay}
+                    wheelchair_accessible={element.wheelchair_accessible}
+                    color={routeDetails.color}
+                    type={routeDetails.type}
+                  />
+                );
+              })}
+            </React.Fragment>
+          ))}
         </div>
       ) : (
         <div className="opacity-60">
