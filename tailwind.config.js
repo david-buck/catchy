@@ -7,7 +7,7 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        "stop-row": "2.25rem 5fr 1rem minmax(5rem, 1fr)",
+        "stop-row": "2.25rem 5fr 1.125rem minmax(5rem, 1fr)",
       },
       inset: { 5.5: "1.375rem" },
       maxHeight: {

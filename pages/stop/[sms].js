@@ -97,10 +97,10 @@ const Expected = ({
       <div>
         {wheelchair_accessible && (
           <Chair
-            width="16"
-            height="16"
+            width="18"
+            height="18"
             title="Wheelchair accessible."
-            className="inline opacity-60"
+            className="opacity-60"
           />
         )}
       </div>
