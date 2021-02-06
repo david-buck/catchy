@@ -30,6 +30,12 @@ export default function NearbyStops() {
     };
   }, []);
 
+  useEffect(() => {
+    setFavourites(JSON.parse(window.localStorage.getItem("favourites")));
+  }, []);
+
+  const [favourites, setFavourites] = useState([]);
+
   const { data, error } = useSWR(
     lat && long && !cancelled ? `/api/stops/${lat}/${long}` : null,
     fetcher,
@@ -54,7 +60,11 @@ export default function NearbyStops() {
                     <LocationMarker
                       width="36"
                       height="18"
-                      className="text-gray-300 flex-shrink-0 mt-0.5 ml-1"
+                      className={`${
+                        favourites.includes(element.stop_id)
+                          ? "text-yellow-500"
+                          : "text-gray-300"
+                      } flex-shrink-0 mt-0.5 ml-1`}
                     />
                     {element.stop_name}
                   </span>
