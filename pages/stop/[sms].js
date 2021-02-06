@@ -85,7 +85,7 @@ const Expected = ({
       >
         {service_id}
       </div>
-      <h2 className="leading-tight">
+      <h3 className="leading-tight">
         {routeNamer(destination_name)}
         {school && (
           <span className="text-sm opacity-60 leading-tight">
@@ -93,7 +93,7 @@ const Expected = ({
             {school}
           </span>
         )}
-      </h2>
+      </h3>
       <div>
         {wheelchair_accessible && (
           <Chair
@@ -254,18 +254,7 @@ export default function StopPage() {
         </div>
       </div>
       <h1 className="text-3xl font-semibold mb-4">{stop.stop_name}</h1>
-      <div className="mb-6">
-        {time
-          .toLocaleString("en-NZ", {
-            weekday: "long",
-            month: "long",
-            day: "numeric",
-            hour: "numeric",
-            minute: "numeric",
-            hour12: true,
-          })
-          .replace(" 0:", " 12:")}
-      </div>
+
       {departures.alerts.map((element, key) => {
         return (
           <div className="p-5 ring ring-red-500" key={key}>
@@ -278,40 +267,56 @@ export default function StopPage() {
         <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center">
           {Object.entries(
             groupByDepartureDate(departures.departures, "aimed")
-          ).map(([date, departures]) => (
-            <React.Fragment key={date}>
-              <h2 className="col-span-4">
-                {new Date(date).toLocaleString("en-NZ", {
-                  weekday: "long",
+          ).map(([date, departures]) => {
+            let loopDate = new Date(date);
+            return (
+              <React.Fragment key={date}>
+                <h2 className="col-span-4 pt-4">
+                  {loopDate.getDate() === new Date().getDate() && (
+                    <span className="font-bold mr-1">Today </span>
+                  )}
+                  {loopDate.getDate() === new Date().getDate() + 1 && (
+                    <span className="font-bold mr-1">Tomorrow </span>
+                  )}
+                  <span className="opacity-60">
+                    {loopDate.toLocaleString("en-NZ", {
+                      weekday: "long",
+                      day: "numeric",
+                      month: "long",
+                    })}
+                  </span>
+                </h2>
+                {departures.map((element, key) => {
+                  let routeDetails = getRouteDetails(
+                    element.service_id,
+                    routes
+                  );
+                  return (
+                    <Expected
+                      key={date + key}
+                      service_id={element.service_id}
+                      vehicle_id={element.vehicle_id}
+                      destination_name={element.destination.name}
+                      school={
+                        routeDetails.type === "school" &&
+                        school_routes.find(
+                          (el) => el.route_short_name === element.service_id
+                        ).schools
+                      }
+                      expected={element.departure.expected}
+                      aimed={element.departure.aimed}
+                      time={time}
+                      status={element.status}
+                      delay={element.delay}
+                      wheelchair_accessible={element.wheelchair_accessible}
+                      color={routeDetails.color}
+                      type={routeDetails.type}
+                    />
+                  );
                 })}
-              </h2>
-              {departures.map((element, key) => {
-                let routeDetails = getRouteDetails(element.service_id, routes);
-                return (
-                  <Expected
-                    key={date + key}
-                    service_id={element.service_id}
-                    vehicle_id={element.vehicle_id}
-                    destination_name={element.destination.name}
-                    school={
-                      routeDetails.type === "school" &&
-                      school_routes.find(
-                        (el) => el.route_short_name === element.service_id
-                      ).schools
-                    }
-                    expected={element.departure.expected}
-                    aimed={element.departure.aimed}
-                    time={time}
-                    status={element.status}
-                    delay={element.delay}
-                    wheelchair_accessible={element.wheelchair_accessible}
-                    color={routeDetails.color}
-                    type={routeDetails.type}
-                  />
-                );
-              })}
-            </React.Fragment>
-          ))}
+              </React.Fragment>
+            );
+          })}
         </div>
       ) : (
         <div className="opacity-60">
