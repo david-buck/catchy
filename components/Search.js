@@ -7,7 +7,7 @@ import SearchIcon from "../svgs/search.svg";
 import LocationMarker from "../svgs/location-mono.svg";
 
 const theme = {
-  container: "relative mb-8",
+  container: "relative mt-2 mb-6",
   containerOpen: "",
   input:
     "transition bg-white shadow-md focus:shadow-lg dark:bg-gray-800 rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full border-gray-100 dark:border-gray-500 border border-solid ",
@@ -53,12 +53,12 @@ const Search = ({ stops }) => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative text-lg">
       <SearchIcon
         width="24"
         height="24"
         role="display"
-        className="absolute z-10 top-3 left-3"
+        className="absolute z-10 top-5.5 left-3"
       />
       <AutoSuggest
         suggestions={suggestions}
@@ -76,7 +76,7 @@ const Search = ({ stops }) => {
             <LocationMarker
               width="36"
               height="18"
-              className="text-gray-300 flex-shrink-0 mt-0.5 ml-1"
+              className="text-gray-300 flex-shrink-0 mt-1 ml-1"
             />
             <span>
               {suggestion.stop_name}{" "}

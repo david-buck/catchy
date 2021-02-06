@@ -34,8 +34,12 @@
   src: url(/fonts/Bus-ExtraBold.woff) format("woff");
 }
 
+html * {
+  max-height: 1000000px;
+}
+
 body {
-  @apply font-body antialiased px-5 py-4 max-w-lg m-auto text-gray-900 dark:bg-gray-800 dark:text-white;
+  @apply font-body antialiased px-5 py-4 max-w-xl m-auto text-gray-900 dark:bg-gray-800 dark:text-white;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }

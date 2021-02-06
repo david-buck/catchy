@@ -72,8 +72,8 @@ const Expected = ({
             background: "rgba(0,0,0,0.8)",
             boxShadow: "-.5rem 0 0 0 inset currentColor",
             color: "#fff200",
-            fontSize: "0.75rem ",
-            letterSpacing: "-0.075em",
+            fontSize: "0.875rem ",
+            letterSpacing: "-0.05em",
             paddingRight: ".5rem",
           }) ||
           (type === "school" && {
@@ -264,7 +264,7 @@ export default function StopPage() {
       })}
 
       {departures.departures.length > 0 ? (
-        <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center">
+        <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center text-lg">
           {Object.entries(
             groupByDepartureDate(departures.departures, "aimed")
           ).map(([date, departures]) => {

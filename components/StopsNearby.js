@@ -45,8 +45,16 @@ export default function NearbyStops() {
     }
   );
 
-  if (error) return <div>Unable to load nearby stops.</div>;
-  if (!data) return <div>Loading nearby stops...</div>;
+  if (error)
+    return (
+      <div className="py-2 text-lg opacity-60">
+        Unable to load nearby stops.
+      </div>
+    );
+  if (!data)
+    return (
+      <div className="py-2 text-lg opacity-60">Loading nearby stops...</div>
+    );
 
   return (
     <>
@@ -55,7 +63,7 @@ export default function NearbyStops() {
           return (
             <div key={key}>
               <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
-                <a className="flex flex-nowrap justify-between space-x-3 py-3 pr-4 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                <a className="flex flex-nowrap justify-between space-x-3 py-3 pr-4 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-100 dark:hover:bg-gray-700 text-lg">
                   <span className="flex flex-nowrap items-top">
                     <LocationMarker
                       width="36"
@@ -64,7 +72,7 @@ export default function NearbyStops() {
                         favourites.includes(element.stop_id)
                           ? "text-yellow-500"
                           : "text-gray-300"
-                      } flex-shrink-0 mt-0.5 ml-1`}
+                      } flex-shrink-0 mt-1 ml-1`}
                     />
                     {element.stop_name}
                   </span>
