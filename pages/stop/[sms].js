@@ -319,7 +319,7 @@ export default function StopPage() {
           })}
         </div>
       ) : (
-        <div className="opacity-60">
+        <div className="text-lg opacity-60">
           No buses currently scheduled for this stop.
         </div>
       )}
