@@ -39,7 +39,7 @@ html * {
 }
 
 body {
-  @apply font-body antialiased px-5 py-4 max-w-xl m-auto text-gray-900 dark:bg-gray-800 dark:text-white;
+  @apply font-body antialiased px-5 pb-12 max-w-xl m-auto text-gray-900 dark:bg-gray-800 dark:text-white;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }

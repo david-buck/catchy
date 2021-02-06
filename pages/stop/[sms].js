@@ -229,7 +229,7 @@ export default function StopPage() {
           key="description"
         />
       </Head>
-      <div className="mb-4 flex row justify-between">
+      <div className="mb-4 pt-4 flex row justify-between">
         <Link href="/">
           <a className="titleBarButton">
             <BackArrow width="24" height="24" title="Back." />
