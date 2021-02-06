@@ -95,9 +95,9 @@ const Search = ({ stops }) => {
           onChange: (_, { newValue, method }) => {
             setValue(newValue);
           },
-          autocorrect: "off",
-          autocapitalize: "off",
-          spellcheck: "false",
+          autoCorrect: "off",
+          autoCapitalize: "off",
+          spellCheck: "false",
         }}
         highlightFirstSuggestion={true}
         theme={theme}
