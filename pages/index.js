@@ -19,7 +19,7 @@ export default function IndexPage() {
 
   if (error) return <div>failed to load {JSON.stringify(error)}</div>;
   if (!stops)
-    return <Spinner width="24" height="24" className="mt-2 text-gray-500" />;
+    return <Spinner width="24" height="24" className="mt-2 text-yellow-500" />;
 
   return (
     <>
