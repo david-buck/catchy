@@ -68,7 +68,7 @@ export default function NearbyStops() {
                     />
                     {element.stop_name}
                   </span>
-                  <span className="flex-shrink-0">
+                  <span className="flex-shrink-0 opacity-60">
                     {element.distance < 1000
                       ? parseInt(element.distance * 1000) + " metres"
                       : parseFloat(element.distance).toFixed(2) + " km"}
