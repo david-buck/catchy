@@ -164,13 +164,16 @@ export default function StopPage() {
     {
       fetcher: fetcher,
       refreshInterval: 20000,
-      onSuccess: (departures) => {
-        setGroupedDepartures(
-          Object.entries(groupByDepartureDate(departures.departures, "aimed"))
-        );
-      },
     }
   );
+
+  useEffect(() => {
+    departures != null &&
+      setGroupedDepartures(
+        Object.entries(groupByDepartureDate(departures?.departures, "aimed"))
+      );
+  }, [departures]);
+
   const { data: stop } = useSWR(sms ? `/api/stop/${sms}` : null, {
     fetcher: fetcher,
     refreshInterval: 0,
