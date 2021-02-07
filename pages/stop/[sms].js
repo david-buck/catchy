@@ -62,7 +62,10 @@ const Expected = ({
     <>
       <div
         style={
-          (type === "frequent" && { background: color, color: "white" }) ||
+          (type === "frequent" && {
+            background: color,
+            color: "white",
+          }) ||
           (type === "standard" && {
             background: "white",
             border: "1px solid ",
@@ -71,7 +74,7 @@ const Expected = ({
           (type === "night" && {
             background: "rgba(0,0,0,0.8)",
             boxShadow: "-.5rem 0 0 0 inset currentColor",
-            color: "#fff200",
+            color: "#FFF200",
             fontSize: "0.875rem ",
             letterSpacing: "-0.05em",
             paddingRight: ".5rem",
@@ -138,6 +141,7 @@ const Expected = ({
 
 export default function StopPage() {
   const [time, setTime] = useState(new Date());
+  const [groupedDepartures, setGroupedDepartures] = useState(new Date());
   const [dateOffset, setDateOffset] = useState(0);
 
   const [cancelled, setCancelled] = useState(false);
@@ -160,6 +164,11 @@ export default function StopPage() {
     {
       fetcher: fetcher,
       refreshInterval: 20000,
+      onSuccess: (departures) => {
+        setGroupedDepartures(
+          Object.entries(groupByDepartureDate(departures.departures, "aimed"))
+        );
+      },
     }
   );
   const { data: stop } = useSWR(sms ? `/api/stop/${sms}` : null, {
@@ -265,9 +274,7 @@ export default function StopPage() {
 
       {departures.departures.length > 0 ? (
         <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center text-lg">
-          {Object.entries(
-            groupByDepartureDate(departures.departures, "aimed")
-          ).map(([date, departures]) => {
+          {groupedDepartures.map(([date, departures]) => {
             let loopDate = new Date(date);
             return (
               <React.Fragment key={date}>
