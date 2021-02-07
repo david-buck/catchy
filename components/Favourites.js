@@ -20,9 +20,9 @@ export default function Favourites({ stops }) {
             <Link as={`/stop/${stop.stop_id}`} href="/stop/[sms]">
               <a className="transition-colors ease-linear duration-150 flex flex-nowrap py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md pr-4 text-lg">
                 <LocationMarker
-                  width="36"
+                  width="38"
                   height="18"
-                  className="text-yellow-500 flex-shrink-0 mt-1 ml-1"
+                  className="text-yellow-500 flex-shrink-0 mt-1 ml-0.5"
                 />
                 <span>{stop.stop_name}</span>
               </a>

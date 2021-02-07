@@ -74,9 +74,9 @@ const Search = ({ stops }) => {
         renderSuggestion={(suggestion, value) => (
           <span className="flex flex-nowrap items-top">
             <LocationMarker
-              width="36"
+              width="38"
               height="18"
-              className="text-gray-300 flex-shrink-0 mt-1 ml-1"
+              className="text-gray-300 flex-shrink-0 mt-1 ml-0.5"
             />
             <span>
               {suggestion.stop_name}{" "}
