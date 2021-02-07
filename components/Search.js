@@ -79,7 +79,7 @@ const Search = ({ stops }) => {
             <span>
               {suggestion.stop_name}{" "}
               {suggestion.stop_id.includes(value.query) && (
-                <span className="text-sm opacity-60 leading-tight">
+                <span className="text-sm opacity-60 leading-none">
                   <br />
                   Stop {suggestion.stop_id}
                 </span>

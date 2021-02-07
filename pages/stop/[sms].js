@@ -88,10 +88,10 @@ const Expected = ({
       >
         {service_id}
       </div>
-      <h3 className="leading-tight">
+      <h3 className="leading-none">
         {routeNamer(destination_name)}
         {school && (
-          <span className="text-sm opacity-60 leading-tight">
+          <span className="text-sm opacity-60 leading-none">
             <br />
             {school}
           </span>
@@ -265,7 +265,7 @@ export default function StopPage() {
           <FavouriteButton sms={sms} />
         </div>
       </div>
-      <h1 className="text-3xl font-semibold mb-4">{stop.stop_name}</h1>
+      <h1 className="text-3xl font-semibold">{stop.stop_name}</h1>
 
       {departures.alerts.map((element, key) => {
         return (
