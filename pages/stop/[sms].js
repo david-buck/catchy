@@ -141,7 +141,7 @@ const Expected = ({
 
 export default function StopPage() {
   const [time, setTime] = useState(new Date());
-  const [groupedDepartures, setGroupedDepartures] = useState([]);
+  const [groupedDepartures, setGroupedDepartures] = useState(null);
   const [dateOffset, setDateOffset] = useState(0);
 
   const [cancelled, setCancelled] = useState(false);
