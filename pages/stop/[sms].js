@@ -141,7 +141,7 @@ const Expected = ({
 
 export default function StopPage() {
   const [time, setTime] = useState(new Date());
-  const [groupedDepartures, setGroupedDepartures] = useState(new Date());
+  const [groupedDepartures, setGroupedDepartures] = useState([]);
   const [dateOffset, setDateOffset] = useState(0);
 
   const [cancelled, setCancelled] = useState(false);
@@ -238,7 +238,7 @@ export default function StopPage() {
           key="description"
         />
       </Head>
-      <div className="mb-4 pt-4 flex row justify-between">
+      <div className="bg-white dark:bg-gray-800 mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
         <Link href="/">
           <a className="titleBarButton">
             <BackArrow width="24" height="24" title="Back." />
@@ -274,11 +274,11 @@ export default function StopPage() {
 
       {departures.departures.length > 0 ? (
         <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center text-lg">
-          {groupedDepartures.map(([date, departures]) => {
+          {groupedDepartures?.map(([date, departures]) => {
             let loopDate = new Date(date);
             return (
               <React.Fragment key={date}>
-                <h2 className="col-span-4 pt-4">
+                <h2 className="col-span-4 pt-4 bg-white dark:bg-gray-800 sticky top-11">
                   {loopDate.getDate() === new Date().getDate() && (
                     <span className="font-bold mr-1">Today </span>
                   )}
@@ -293,6 +293,7 @@ export default function StopPage() {
                     })}
                   </span>
                 </h2>
+
                 {departures.map((element, key) => {
                   let routeDetails = getRouteDetails(
                     element.service_id,
