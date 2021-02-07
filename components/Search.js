@@ -15,7 +15,7 @@ const theme = {
   inputFocused: "outline-none",
   suggestionsContainer: "overflow-y-auto max-h-suggestions-container",
   suggestionsContainerOpen:
-    "absolute bg-white dark:bg-gray-800 shadow-lg rounded w-full mt-1 border-gray-100 dark:border-gray-500 border border-solid",
+    "absolute bg-white dark:bg-gray-800 shadow-lg rounded w-full mt-1 border-gray-100 dark:border-gray-500 border border-solid z-10",
   suggestionsList: "",
   suggestion: "pr-3 py-3",
   suggestionFirst: "",
@@ -24,8 +24,6 @@ const theme = {
   sectionContainerFirst: "",
   sectionTitle: "",
 };
-
-// const Unused = () => <div className=" ma" />;
 
 const Search = ({ stops }) => {
   const router = useRouter();
