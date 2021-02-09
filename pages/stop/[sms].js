@@ -276,7 +276,7 @@ export default function StopPage() {
             let loopDate = new Date(date);
             return (
               <React.Fragment key={date}>
-                <h2 className="col-span-4 pt-4 bg-white dark:bg-gray-800 sticky top-11">
+                <h2 className="col-span-4 pt-4 bg-white dark:bg-gray-800 sticky top-11 z-10">
                   {loopDate.getDate() === new Date().getDate() && (
                     <span className="font-bold mr-1">Today </span>
                   )}
