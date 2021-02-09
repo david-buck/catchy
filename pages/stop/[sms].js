@@ -4,6 +4,9 @@ import Head from "next/head";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
+import useRoutes from "../../hooks/useRoutes";
+import useSchoolRoutes from "../../hooks/useSchoolRoutes";
+
 import FavouriteButton from "../../components/FavouriteButton";
 
 import routeNamer from "../../lib/routeNamer";
@@ -180,17 +183,9 @@ export default function StopPage() {
     revalidateOnFocus: false,
   });
 
-  const { data: routes } = useSWR(`/api/routes`, {
-    fetcher: fetcher,
-    refreshInterval: 0,
-    revalidateOnFocus: false,
-  });
+  const { data: routes } = useRoutes();
 
-  const { data: school_routes } = useSWR(`/api/routes/school`, {
-    fetcher: fetcher,
-    refreshInterval: 0,
-    revalidateOnFocus: false,
-  });
+  const { data: school_routes } = useSchoolRoutes();
 
   const { data: date } = useSWR(`/api/local-time`, {
     fetcher: fetcher,

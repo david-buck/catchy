@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+import useStops from "../hooks/useStops";
+
 import LocationMarker from "../svgs/location-mono.svg";
 
-export default function Favourites({ stops }) {
+export default function Favourites() {
   useEffect(() => {
     setFavourites(JSON.parse(window.localStorage.getItem("favourites")));
   }, []);
 
   const [favourites, setFavourites] = useState([]);
 
-  return favourites && favourites.length > 0 ? (
+  const { data: stops, isValidating, error } = useStops();
+
+  return favourites && favourites.length > 0 && stops ? (
     <div className="mb-6">
       <h2 className="text-3xl font-semibold mb-3">Your favourites</h2>
       {favourites.map((element, key) => {
