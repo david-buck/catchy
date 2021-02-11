@@ -69,7 +69,7 @@ export default function NearbyStops() {
                       width="38"
                       height="18"
                       className={`${
-                        favourites.includes(element.stop_id)
+                        favourites?.includes(element.stop_id)
                           ? "text-yellow-500"
                           : "text-gray-300"
                       } flex-shrink-0 mt-1 ml-0.5`}
