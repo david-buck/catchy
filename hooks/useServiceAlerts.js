@@ -2,10 +2,10 @@ import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default function useRoutes(id) {
-  const { data, error } = useSWR(id ? `/api/routes/${id}` : `/api/routes`, {
+export default function useServiceAlerts() {
+  const { data, error } = useSWR(`/api/servicealerts`, {
     fetcher: fetcher,
-    refreshInterval: 0,
+    refreshInterval: 600000, // 10 minutes
     revalidateOnFocus: false,
   });
   return {

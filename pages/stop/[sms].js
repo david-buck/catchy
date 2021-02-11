@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 
 import useRoutes from "../../hooks/useRoutes";
 import useSchoolRoutes from "../../hooks/useSchoolRoutes";
+import useStops from "../../hooks/useStops";
+import useServiceAlerts from "../../hooks/useServiceAlerts";
 
 import FavouriteButton from "../../components/FavouriteButton";
 
@@ -62,83 +64,88 @@ const Expected = ({
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <>
-      <div
-        style={
-          (type === "frequent" && {
-            background: color,
-            color: "white",
-          }) ||
-          (type === "standard" && {
-            background: "white",
-            border: "1px solid ",
-            color: color,
-          }) ||
-          (type === "night" && {
-            background: "rgba(0,0,0,0.8)",
-            boxShadow: "-.5rem 0 0 0 inset currentColor",
-            color: "#FFF200",
-            fontSize: "0.875rem ",
-            letterSpacing: "-0.05em",
-            paddingRight: ".5rem",
-          }) ||
-          (type === "school" && {
-            background: "#FAFF00",
-            color: "rgba(0,0,0,.8)",
-          })
-        }
-        className="grid place-items-center w-9 h-9 font-semibold rounded-full"
-      >
-        {service_id}
-      </div>
-      <h3 className="leading-none">
-        {routeNamer(destination_name)}
-        {school && (
-          <span className="text-sm opacity-60 leading-none">
-            <br />
-            {school}
-          </span>
-        )}
-      </h3>
-      <div>
-        {wheelchair_accessible && (
-          <Chair
-            width="18"
-            height="18"
-            title="Wheelchair accessible."
-            className="opacity-60"
-          />
-        )}
-      </div>
-      <div className="text-right leading-tight">
-        {expected ? (
-          seconds < 90 ? (
-            <span className="font-bold">Due</span>
+    <Link
+      as={vehicle_id ? `/trip/${vehicle_id}` : null}
+      href={vehicle_id ? "/trip/[vehicle_id]" : "/trip/undefined"}
+    >
+      <a className="grid grid-cols-stop-row gap-x-3 py-3 items-center text-lg">
+        <div
+          style={
+            (type === "frequent" && {
+              background: color,
+              color: "white",
+            }) ||
+            (type === "standard" && {
+              background: "white",
+              border: "1px solid ",
+              color: color,
+            }) ||
+            (type === "night" && {
+              background: "rgba(0,0,0,0.8)",
+              boxShadow: "-.5rem 0 0 0 inset currentColor",
+              color: "#FFF200",
+              fontSize: "0.875rem ",
+              letterSpacing: "-0.05em",
+              paddingRight: ".5rem",
+            }) ||
+            (type === "school" && {
+              background: "#FAFF00",
+              color: "rgba(0,0,0,.8)",
+            })
+          }
+          className="grid place-items-center w-9 h-9 font-semibold rounded-full"
+        >
+          {service_id}
+        </div>
+        <h3 className="leading-none">
+          {routeNamer(destination_name)}
+          {school && (
+            <span className="text-sm opacity-60 leading-none">
+              <br />
+              {school}
+            </span>
+          )}
+        </h3>
+        <div>
+          {wheelchair_accessible && (
+            <Chair
+              width="18"
+              height="18"
+              title="Wheelchair accessible."
+              className="opacity-60"
+            />
+          )}
+        </div>
+        <div className="text-right leading-tight">
+          {expected ? (
+            seconds < 90 ? (
+              <span className="font-bold">Due</span>
+            ) : (
+              <>
+                {Math.round(seconds / 60)} min
+                {Math.round(seconds / 60) > 1 && <>s</>}
+              </>
+            )
           ) : (
             <>
-              {Math.round(seconds / 60)} min
-              {Math.round(seconds / 60) > 1 && <>s</>}
+              {new Date(aimed)
+                .toLocaleTimeString("en-NZ", {
+                  hour: "numeric",
+                  minute: "numeric",
+                  hour12: true,
+                })
+                .replace(" 0:", " 12:")}
             </>
-          )
-        ) : (
-          <>
-            {new Date(aimed)
-              .toLocaleTimeString("en-NZ", {
-                hour: "numeric",
-                minute: "numeric",
-                hour12: true,
-              })
-              .replace(" 0:", " 12:")}
-          </>
-        )}
-        {status === "cancelled" && (
-          <span className="font-bold text-red-500">
-            <br />
-            Cancelled
-          </span>
-        )}
-      </div>
-    </>
+          )}
+          {status === "cancelled" && (
+            <span className="font-bold text-red-500">
+              <br />
+              Cancelled
+            </span>
+          )}
+        </div>
+      </a>
+    </Link>
   );
 };
 
@@ -177,15 +184,19 @@ export default function StopPage() {
       );
   }, [departures]);
 
-  const { data: stop } = useSWR(sms ? `/api/stop/${sms}` : null, {
-    fetcher: fetcher,
-    refreshInterval: 0,
-    revalidateOnFocus: false,
-  });
+  const { data: stops } = useStops();
+
+  const stop = stops?.find((e) => e.stop_id === sms);
 
   const { data: routes } = useRoutes();
 
   const { data: school_routes } = useSchoolRoutes();
+
+  const { data: service_alerts } = useServiceAlerts();
+
+  const relevantAlerts = service_alerts?.entity.filter((e) =>
+    e.alert.informed_entity.find((f) => f.stop_id === sms)
+  );
 
   const { data: date } = useSWR(`/api/local-time`, {
     fetcher: fetcher,
@@ -262,21 +273,16 @@ export default function StopPage() {
       </div>
       <h1 className="text-3xl font-semibold">{stop.stop_name}</h1>
 
-      {departures.alerts.map((element, key) => {
-        return (
-          <div className="p-5 ring ring-red-500" key={key}>
-            {element.alert}
-          </div>
-        );
-      })}
+      {/* {relevantAlerts.length > 0 &&
+        relevantAlerts.map((e, k) => e.alert.header_text.translation[0].text)} */}
 
       {departures.departures.length > 0 ? (
-        <div className="grid grid-cols-stop-row gap-x-3 gap-y-6 items-center text-lg">
+        <div>
           {groupedDepartures?.map(([date, departures]) => {
             let loopDate = new Date(date);
             return (
               <React.Fragment key={date}>
-                <h2 className="col-span-4 pt-4 bg-white dark:bg-gray-800 sticky top-11 z-10">
+                <h2 className="col-span-4 pt-4 mb-2 bg-white dark:bg-gray-800 sticky top-11 z-10">
                   {loopDate.getDate() === new Date().getDate() && (
                     <span className="font-bold mr-1">Today </span>
                   )}
