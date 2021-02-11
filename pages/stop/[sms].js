@@ -149,6 +149,35 @@ const Expected = ({
   );
 };
 
+const Alert = ({
+  active_period,
+  effect,
+  severity_level,
+  header_text,
+  description_text,
+  key,
+}) => {
+  const now = parseInt(Date.parse(new Date()) / 1000);
+
+  return active_period[0].start < now &&
+    active_period[0].end > now &&
+    effect !== "NO_EFFECT" ? (
+    <div
+      key={key}
+      className={`${
+        severity_level === "WARNING"
+          ? "bg-pink-50 border-pink-500"
+          : "bg-blue-50 border-blue-500"
+      } px-4 py-3 border-2 rounded-lg mt-4 mb-2`}
+    >
+      <h2 className="text-lg font-bold leading-tight mb-2">{header_text}</h2>
+      <p>{description_text}</p>
+    </div>
+  ) : (
+    <div key={key} />
+  );
+};
+
 export default function StopPage() {
   const [time, setTime] = useState(new Date());
   const [groupedDepartures, setGroupedDepartures] = useState(null);
@@ -273,8 +302,17 @@ export default function StopPage() {
       </div>
       <h1 className="text-3xl font-semibold">{stop.stop_name}</h1>
 
-      {/* {relevantAlerts.length > 0 &&
-        relevantAlerts.map((e, k) => e.alert.header_text.translation[0].text)} */}
+      {relevantAlerts?.length > 0 &&
+        relevantAlerts.map((e, k) => (
+          <Alert
+            active_period={e.alert.active_period}
+            effect={e.effect}
+            severity_level={e.alert.severity_level}
+            header_text={e.alert.header_text.translation[0].text}
+            description_text={e.alert.description_text.translation[0].text}
+            key={k}
+          />
+        ))}
 
       {departures.departures.length > 0 ? (
         <div>
@@ -282,12 +320,14 @@ export default function StopPage() {
             let loopDate = new Date(date);
             return (
               <React.Fragment key={date}>
-                <h2 className="col-span-4 pt-4 mb-2 bg-white dark:bg-gray-800 sticky top-11 z-10">
+                <h2 className="col-span-4 pt-4 mb-2 bg-white dark:bg-gray-800 sticky top-12 z-10">
                   {loopDate.getDate() === new Date().getDate() && (
                     <span className="font-bold mr-1">Today </span>
                   )}
                   {loopDate.getDate() === new Date().getDate() + 1 && (
-                    <span className="font-bold mr-1">Tomorrow </span>
+                    <>
+                      <span className="font-bold mr-1">Tomorrow </span>
+                    </>
                   )}
                   <span className="opacity-60">
                     {loopDate.toLocaleString("en-NZ", {
