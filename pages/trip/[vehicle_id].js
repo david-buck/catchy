@@ -57,22 +57,37 @@ export default function BusInfo() {
 
   return (
     <div>
-      <div className="z-10 absolute bg-gradient-to-b from-white to-transparent dark:from-gray-800 pb-56 left-0 mx-auto w-full">
+      <div className="z-10 absolute bg-gradient-to-b from-white to-transparent dark:from-gray-800 left-0 mx-auto w-full h-3/5">
         <div className="max-w-xl mx-auto px-5">
           <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
             <button onClick={() => router.back()} className="titleBarButton">
               <BackArrow width="24" height="24" title="Back." />
             </button>
           </div>
-          <h1 className="text-2xl font-semibold leading-tight">
+          <h1 className="text-2xl font-semibold leading-tight mb-2 pt-1">
             {currTripUpdate?.trip_update.trip.trip_id.split("__")[1] === "1"
               ? route.route_long_name
               : route.route_desc}
           </h1>
+
+          <div
+            className={`${
+              delayMinutes > 0 ? "bg-pink-200" : "bg-white"
+            } px-4 py-1 rounded-full inline-block mb-2`}
+          >
+            Running{" "}
+            {delayMinutes > 0 ? (
+              <>
+                {delayMinutes} minute{delayMinutes > 1 && <>s</>} late
+              </>
+            ) : (
+              <>On time</>
+            )}
+          </div>
           <br />
-          {delayMinutes > 1 ? <>{delayMinutes} minutes late</> : <>On time</>}
-          <br />
-          Next stop: {nextStop?.stop_name}
+          <div className="bg-white px-4 py-1 rounded-full inline-block">
+            Next stop: {nextStop?.stop_name}
+          </div>
         </div>
       </div>
       {/* lat={currVehiclePostion?.vehicle.position.latitude}

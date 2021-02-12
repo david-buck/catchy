@@ -26,6 +26,7 @@ const Map = ({ lat, lng, bearing }) => {
       anchor: "right",
       rotation: bearing,
       pitchAlignment: "map",
+      offset: [20, 0],
       element: document.querySelector("#vehiclePositionMarker"),
     });
 
