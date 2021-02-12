@@ -82,7 +82,7 @@ const Expected = ({
             }) ||
             (type === "night" && {
               background: "rgba(0,0,0,0.8)",
-              boxShadow: "-.5rem 0 0 0 inset currentColor",
+              boxShadow: "-.4rem 0 0 0 currentColor inset",
               color: "#FFF200",
               fontSize: "0.875rem ",
               letterSpacing: "-0.05em",
@@ -371,7 +371,7 @@ export default function StopPage() {
           })}
         </div>
       ) : (
-        <div className="text-lg opacity-60">
+        <div className="text-lg opacity-60 pt-4">
           No buses currently scheduled for this stop.
         </div>
       )}

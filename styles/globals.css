@@ -47,3 +47,18 @@ body {
 .titleBarButton {
   @apply place-items-center grid w-9 h-9 transition-colors ease-linear duration-150 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus-visible:border focus-visible:border-gray-400;
 }
+
+.mapboxgl-control-container {
+  @apply hidden;
+}
+
+.mapboxgl-canvas {
+  @apply focus:outline-none;
+}
+
+.mapbox-vehicle-marker {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-image: url("/images/vehicle-position-marker.svg");
+  cursor: pointer;
+}

@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
+
+import Map from "../../components/Map";
+
 import useVehiclePositions from "../../hooks/useVehiclePositions";
 import useTripUpdates from "../../hooks/useTripUpdates";
 import useStops from "../../hooks/useStops";
 import useRoutes from "../../hooks/useRoutes";
 
 import { useRouter } from "next/router";
+
+import BackArrow from "../../svgs/navigation-left-arrow.svg";
 
 export default function BusInfo() {
   const router = useRouter();
@@ -48,17 +53,39 @@ export default function BusInfo() {
   )
     return <>No trip data is available</>;
 
+  if (!currVehiclePostion) return <>Waiting</>;
+
   return (
-    <>
-      <h1 className="text-3xl font-semibold pt-8">
-        {currTripUpdate?.trip_update.trip.trip_id.split("__")[1] === "1"
-          ? route.route_long_name
-          : route.route_desc}
-      </h1>
+    <div>
+      <div className="z-10 absolute bg-gradient-to-b from-white to-transparent dark:from-gray-800 pb-40 left-0 px-4 mx-auto w-full">
+        <div className="max-w-sm mx-auto">
+          <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
+            <button onClick={() => router.back()} className="titleBarButton">
+              <BackArrow width="24" height="24" title="Back." />
+            </button>
+          </div>
+          <h1 className="text-2xl font-semibold leading-tight">
+            {currTripUpdate?.trip_update.trip.trip_id.split("__")[1] === "1"
+              ? route.route_long_name
+              : route.route_desc}
+          </h1>
+          <br />
+          {delayMinutes > 1 ? <>{delayMinutes} minutes late</> : <>On time</>}
+          <br />
+          Next stop: {nextStop?.stop_name}
+        </div>
+      </div>
+      {/* lat={currVehiclePostion?.vehicle.position.latitude}
       <br />
-      {delayMinutes > 1 ? <>{delayMinutes} minutes late</> : <>On time</>}
+      lng={currVehiclePostion?.vehicle.position.longitude}
       <br />
-      Next stop: {nextStop?.stop_name}
-    </>
+      bearing={currVehiclePostion?.vehicle.position.bearing}
+      <br /> */}
+      <Map
+        lat={currVehiclePostion?.vehicle.position.latitude}
+        lng={currVehiclePostion?.vehicle.position.longitude}
+        bearing={currVehiclePostion?.vehicle.position.bearing}
+      />
+    </div>
   );
 }
