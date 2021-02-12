@@ -72,7 +72,9 @@ export default function BusInfo() {
 
           <div
             className={`${
-              delayMinutes > 0 ? "bg-pink-200" : "bg-white"
+              delayMinutes > 0
+                ? "bg-pink-200 dark:bg-pink-700"
+                : "bg-white dark:bg-gray-800"
             } px-4 py-1 rounded-full inline-block mb-2`}
           >
             Running{" "}
@@ -85,7 +87,7 @@ export default function BusInfo() {
             )}
           </div>
           <br />
-          <div className="bg-white px-4 py-1 rounded-full inline-block">
+          <div className="bg-white dark:bg-gray-800 px-4 py-1 rounded-full inline-block">
             Next stop: {nextStop?.stop_name}
           </div>
         </div>

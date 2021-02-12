@@ -166,8 +166,8 @@ const Alert = ({
       key={key}
       className={`${
         severity_level === "WARNING"
-          ? "bg-pink-50 border-pink-500"
-          : "bg-blue-50 border-blue-500"
+          ? "bg-pink-50 border-pink-500 dark:bg-pink-700 dark:border-pink-800"
+          : "bg-blue-50 border-blue-500 dark:bg-blue-700 dark:border-blue-800"
       } px-4 py-3 border-2 rounded-lg mt-4 mb-2`}
     >
       <h2 className="text-lg font-bold leading-tight mb-2">{header_text}</h2>
