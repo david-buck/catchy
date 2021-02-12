@@ -57,8 +57,8 @@ export default function BusInfo() {
 
   return (
     <div>
-      <div className="z-10 absolute bg-gradient-to-b from-white to-transparent dark:from-gray-800 pb-40 left-0 px-4 mx-auto w-full">
-        <div className="max-w-sm mx-auto">
+      <div className="z-10 absolute bg-gradient-to-b from-white to-transparent dark:from-gray-800 pb-56 left-0 mx-auto w-full">
+        <div className="max-w-xl mx-auto px-5">
           <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
             <button onClick={() => router.back()} className="titleBarButton">
               <BackArrow width="24" height="24" title="Back." />
