@@ -29,7 +29,7 @@ export default function BusInfo() {
     (e) => e.trip_update.vehicle.id === vehicle_id
   );
 
-  const nextStop = stops?.find(
+  const nearestStop = stops?.find(
     (e) => e.stop_id === currTripUpdate?.trip_update.stop_time_update.stop_id
   );
 
@@ -88,7 +88,7 @@ export default function BusInfo() {
           </div>
           <br />
           <div className="bg-white dark:bg-gray-800 px-4 py-1 rounded-full inline-block">
-            Next stop: {nextStop?.stop_name}
+            Nearest stop: {nearestStop?.stop_name}
           </div>
         </div>
       </div>
