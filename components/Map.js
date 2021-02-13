@@ -15,7 +15,7 @@ const Map = ({ lat, lng, bearing }) => {
   useEffect(() => {
     map.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: "mapbox://styles/catchy-nz/ckl34y0vr1yqt17mqd9q74me0",
       center: [lng, lat],
       pitch: 40,
       zoom: 16,
