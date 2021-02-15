@@ -55,10 +55,3 @@ body {
 .mapboxgl-canvas {
   @apply focus:outline-none;
 }
-
-.mapbox-vehicle-marker {
-  height: 1.5rem;
-  width: 1.5rem;
-  background-image: url("/images/vehicle-position-marker.svg");
-  cursor: pointer;
-}
