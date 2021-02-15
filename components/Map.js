@@ -37,7 +37,7 @@ const Map = ({ lat, lng, bearing }) => {
     map.current.flyTo({
       center: [lng, lat],
       offset: [0, 75],
-      curve: 0.75,
+      curve: 0,
     });
 
     marker.current
@@ -51,11 +51,12 @@ const Map = ({ lat, lng, bearing }) => {
       <div className="absolute h-screen w-screen inset-0">
         <div ref={mapContainerRef} className="relative h-screen w-screen" />
       </div>
+
       <VehiclePositionMarker
         id="vehiclePositionMarker"
         width="40"
         height="40"
-        className="absolute"
+        className="text-blue-600"
       />
     </>
   );
