@@ -68,7 +68,7 @@ export default function BusInfo() {
             <CloseCross width="24" height="24" title="Back." />
           </button>
         </div>
-        <h1 className="text-2xl font-semibold mb-4">Waiting for a bus</h1>
+        <h1 className="text-3xl font-semibold mb-4">Waiting for a bus</h1>
         <p className="mb-4">
           Updates are either unavailable for this bus, or no bus has been
           assigned to your trip yet.
