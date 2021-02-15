@@ -257,7 +257,7 @@ export default function StopPage() {
           key="description"
         />
       </Head>
-      <div className="bg-white dark:bg-gray-800 mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
+      <div className="bg-white dark:bg-gray-800 mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-20">
         <Link href="/">
           <a className="titleBarButton">
             <BackArrow width="24" height="24" title="Back." />
