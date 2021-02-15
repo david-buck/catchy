@@ -82,7 +82,7 @@ export default function BusInfo() {
       <Spinner width="24" height="24" className="mt-2 text-yellow-500 mt-6" />
     );
 
-  let routeDetails = getRouteDetails(route.route_short_name, routes);
+  let routeDetails = getRouteDetails(route?.route_short_name, routes);
 
   return (
     <div>
@@ -100,13 +100,13 @@ export default function BusInfo() {
             <RouteBadge
               route_color={routeDetails.color}
               route_type={routeDetails.type}
-              service_id={route.route_short_name}
+              service_id={route?.route_short_name}
               className="mr-3"
             />
             <h1 className="text-xl font-semibold leading-tight mb-2 pt-1">
               {currTripUpdate?.trip_update.trip.trip_id.split("__")[1] === "1"
-                ? route.route_long_name
-                : route.route_desc}
+                ? route?.route_long_name
+                : route?.route_desc}
             </h1>
           </div>
 
