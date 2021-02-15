@@ -16,7 +16,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderColor: ["dark"],
+    },
     transitionProperty: ["hover", "focus"],
     borderWidth: ["focus-visible"],
     borderColor: ["focus-visible"],
