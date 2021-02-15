@@ -10,6 +10,7 @@ import useStops from "../../hooks/useStops";
 import useServiceAlerts from "../../hooks/useServiceAlerts";
 
 import FavouriteButton from "../../components/FavouriteButton";
+import RouteBadge from "../../components/RouteBadge";
 
 import routeNamer from "../../lib/routeNamer";
 
@@ -56,8 +57,8 @@ const Expected = ({
   time,
   status,
   wheelchair_accessible,
-  color,
-  type,
+  route_color,
+  route_type,
   delay,
   vehicle_id,
 }) => {
@@ -65,38 +66,16 @@ const Expected = ({
 
   return (
     <Link
-      as={vehicle_id ? `/trip/${vehicle_id}` : null}
-      href={vehicle_id ? "/trip/[vehicle_id]" : "/trip/undefined"}
+      as={vehicle_id ? `/bus/${vehicle_id}` : null}
+      href={vehicle_id ? "/bus/[vehicle_id]" : "/bus/undefined"}
     >
       <a className="grid grid-cols-stop-row gap-x-3 py-3 items-center text-lg">
-        <div
-          style={
-            (type === "frequent" && {
-              background: color,
-              color: "white",
-            }) ||
-            (type === "standard" && {
-              background: "white",
-              border: "1px solid ",
-              color: color,
-            }) ||
-            (type === "night" && {
-              background: "rgba(0,0,0,0.8)",
-              boxShadow: "-.4rem 0 0 0 currentColor inset",
-              color: "#FFF200",
-              fontSize: "0.875rem ",
-              letterSpacing: "-0.05em",
-              paddingRight: ".5rem",
-            }) ||
-            (type === "school" && {
-              background: "#FAFF00",
-              color: "rgba(0,0,0,.8)",
-            })
-          }
-          className="grid place-items-center w-9 h-9 font-semibold rounded-full"
-        >
-          {service_id}
-        </div>
+        <RouteBadge
+          route_color={route_color}
+          route_type={route_type}
+          service_id={service_id}
+        />
+
         <h3 className="leading-none">
           {routeNamer(destination_name)}
           {school && (
@@ -157,10 +136,10 @@ const Alert = ({
   description_text,
   key,
 }) => {
-  const now = parseInt(Date.parse(new Date()) / 1000);
+  const epochNow = parseInt(Date.parse(new Date()) / 1000);
 
-  return active_period[0].start < now &&
-    active_period[0].end > now &&
+  return active_period[0].start < epochNow &&
+    active_period[0].end > epochNow &&
     effect !== "NO_EFFECT" ? (
     <div
       key={key}
@@ -247,7 +226,9 @@ export default function StopPage() {
     );
 
   if (!departures || !stop || !routes || !school_routes)
-    return <Spinner width="24" height="24" className="mt-2 text-yellow-500" />;
+    return (
+      <Spinner width="24" height="24" className="mt-2 text-yellow-500 mt-6" />
+    );
 
   return (
     <div className="relative">
@@ -361,8 +342,8 @@ export default function StopPage() {
                       status={element.status}
                       delay={element.delay}
                       wheelchair_accessible={element.wheelchair_accessible}
-                      color={routeDetails.color}
-                      type={routeDetails.type}
+                      route_color={routeDetails.color}
+                      route_type={routeDetails.type}
                     />
                   );
                 })}
