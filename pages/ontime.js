@@ -7,23 +7,28 @@ import useTripUpdates from "../hooks/useTripUpdates";
 export default function OnTime() {
   const { data: tripUpdates } = useTripUpdates();
 
+  const areUpdating = tripUpdates?.entity.filter(
+    (e) =>
+      Date.parse(new Date()) / 1000 - parseInt(e.trip_update.timestamp) < 60
+  );
+
   const reducer = (accumulator, currentValue) =>
     accumulator + currentValue.trip_update.stop_time_update.arrival.delay;
 
-  const count = tripUpdates?.entity.length;
+  const count = areUpdating?.length;
 
-  const countLate = tripUpdates?.entity.filter(
+  const countLate = areUpdating?.filter(
     (e) => parseInt(e.trip_update.stop_time_update.arrival.delay) > 0
   ).length;
 
-  const sorted = tripUpdates?.entity.sort((a, b) => {
+  const sorted = areUpdating?.sort((a, b) => {
     return (
       a.trip_update.stop_time_update.arrival.delay -
       b.trip_update.stop_time_update.arrival.delay
     );
   });
 
-  const mean = Math.round(tripUpdates?.entity.reduce(reducer, 0) / count);
+  const mean = Math.round(areUpdating?.reduce(reducer, 0) / count);
 
   return tripUpdates ? (
     <div>
