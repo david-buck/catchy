@@ -22,14 +22,24 @@ export default function IndexPage() {
     return <Spinner width="24" height="24" className="mt-2 text-gray-500" />;
 
   return (
-    <div className="flex flex-col">
-      <div className="mb-3 mt-1">
-        <Logo width="157" height="38" title="Catchy" />
+    <>
+      <Head>
+        <link
+          rel="preload"
+          href="/api/stops"
+          as="fetch"
+          crossOrigin="anonymous"
+        />
+      </Head>
+      <div className="flex flex-col">
+        <div className="mb-3 mt-1">
+          <Logo width="157" height="38" title="Catchy" />
+        </div>
+        <Search stops={stops} />
+        <Favourites stops={stops} />
+        <h2 className="text-3xl font-semibold mb-3">Stops near you</h2>
+        <NearbyStops />
       </div>
-      <Search stops={stops} />
-      <Favourites stops={stops} />
-      <h2 className="text-3xl font-semibold mb-3">Stops near you</h2>
-      <NearbyStops />
-    </div>
+    </>
   );
 }

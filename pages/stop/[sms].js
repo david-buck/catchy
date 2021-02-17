@@ -143,7 +143,11 @@ export default function StopPage() {
     fetcher: fetcher,
     refreshInterval: 0,
     revalidateOnFocus: false,
-    onSuccess: () => setDateOffset(Date.parse(date.date) - Date.parse(time)),
+    onSuccess: (date) => {
+      console.log(Date.parse(date.date));
+      console.log(Date.parse(time));
+      setDateOffset(Date.parse(date.date) - Date.parse(time));
+    },
   });
 
   const [time, setTime] = useState(new Date());

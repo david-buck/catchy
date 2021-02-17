@@ -37,5 +37,5 @@ body {
 }
 
 .titleBarButton {
-  @apply place-items-center grid w-9 h-9 transition-colors ease-linear duration-150 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none;
+  @apply place-items-center grid w-9 h-9 transition-colors ease-linear duration-150 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-500;
 }

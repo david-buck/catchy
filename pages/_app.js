@@ -62,13 +62,6 @@ function MyApp({ Component, pageProps }) {
           content="https://catchy.nz/share/default-share-image.png"
           key="ogImage"
         />
-
-        <link
-          rel="preload"
-          href="/api/stops"
-          as="fetch"
-          crossOrigin="anonymous"
-        />
       </Head>
       <Component {...pageProps} />
     </>
