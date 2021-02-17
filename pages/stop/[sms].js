@@ -226,9 +226,7 @@ export default function StopPage() {
     );
 
   if (!departures || !stop || !routes || !school_routes)
-    return (
-      <Spinner width="24" height="24" className="mt-2 text-yellow-500 mt-6" />
-    );
+    return <Spinner width="24" height="24" className="text-yellow-500 mt-6" />;
 
   return (
     <div className="relative">
