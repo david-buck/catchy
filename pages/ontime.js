@@ -21,6 +21,14 @@ export default function OnTime() {
     (e) => parseInt(e.trip_update.stop_time_update.arrival.delay) > 0
   ).length;
 
+  const countOnTime = areUpdating?.filter(
+    (e) => parseInt(e.trip_update.stop_time_update.arrival.delay) === 0
+  ).length;
+
+  const countEarly = areUpdating?.filter(
+    (e) => parseInt(e.trip_update.stop_time_update.arrival.delay) < 0
+  ).length;
+
   const sorted = areUpdating?.sort((a, b) => {
     return (
       a.trip_update.stop_time_update.arrival.delay -
@@ -31,10 +39,17 @@ export default function OnTime() {
   const mean = Math.round(areUpdating?.reduce(reducer, 0) / count);
 
   return tripUpdates ? (
-    <div>
+    <div className="p-5">
       <p>Number of buses sending updates: {count}</p>
       <p>
         Running late: {countLate} ({((countLate / count) * 100).toFixed(1)}%)
+      </p>
+      <p>
+        Running on time (suspicious): {countOnTime} (
+        {((countOnTime / count) * 100).toFixed(1)}%)
+      </p>
+      <p>
+        Running early: {countEarly} ({((countEarly / count) * 100).toFixed(1)}%)
       </p>
       <p>
         Median delay{" "}
