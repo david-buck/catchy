@@ -62,13 +62,14 @@ export default function BusInfo() {
     (!currTripUpdate && tripUpdates)
   )
     return (
-      <div>
+      <div className="px-5">
         <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
           <button onClick={() => router.back()} className="titleBarButton">
             <CloseCross width="24" height="24" title="Back." />
           </button>
         </div>
         <h1 className="text-3xl font-semibold mb-4">Waiting for a bus</h1>
+
         <p className="mb-4">
           Updates are either unavailable for this bus, or no bus has been
           assigned to your trip yet.
@@ -79,7 +80,7 @@ export default function BusInfo() {
 
   if (!currVehiclePostion || !tripUpdates)
     return (
-      <Spinner width="24" height="24" className="mt-2 text-yellow-500 mt-6" />
+      <Spinner width="24" height="24" className="text-yellow-500 mt-6 px-5" />
     );
 
   let routeDetails = getRouteDetails(route?.route_short_name, routes);

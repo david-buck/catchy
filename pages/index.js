@@ -19,14 +19,14 @@ export default function IndexPage() {
         />
       </Head>
       <div className="flex flex-col">
-        <div className="mb-2 pt-5">
+        <div className="mb-2 px-5 pt-5">
           <Logo width="157" height="38" title="Catchy" className="-ml-0.5" />
         </div>
 
         <Search />
         <Favourites />
 
-        <h2 className="text-3xl font-semibold mb-3">Stops near you</h2>
+        <h2 className="text-3xl font-semibold mb-3 px-5">Stops near you</h2>
         <NearbyStops />
       </div>
     </>
