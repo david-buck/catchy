@@ -75,7 +75,9 @@ const Expected = ({
           service_id={service_id}
         />
 
-        <h3 className="leading-none">
+        <h3
+          className={`leading-none ${!wheelchair_accessible && "col-span-2"}`}
+        >
           {routeNamer(destination_name)}
           {school && (
             <span className="text-sm opacity-60 leading-none">
@@ -84,16 +86,16 @@ const Expected = ({
             </span>
           )}
         </h3>
-        <div>
-          {wheelchair_accessible && (
+        {wheelchair_accessible && (
+          <div>
             <Chair
               width="18"
               height="18"
               title="Wheelchair accessible."
               className="opacity-60"
             />
-          )}
-        </div>
+          </div>
+        )}
         <div className="text-right leading-tight">
           {expected ? (
             seconds < 90 ? (
