@@ -23,7 +23,7 @@ import Spinner from "../../svgs/spinner.svg";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const getRouteDetails = (id, arr) => {
-  const match = arr.find((element) => element.route_short_name === id);
+  const match = arr.find((el) => el.route_short_name === id);
 
   return match
     ? { color: "#" + match.route_color, type: match.type }
@@ -59,7 +59,6 @@ const Expected = ({
   wheelchair_accessible,
   route_color,
   route_type,
-  delay,
   vehicle_id,
 }) => {
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;

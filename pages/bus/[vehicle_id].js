@@ -3,10 +3,11 @@ import Head from "next/head";
 
 import Map from "../../components/Map";
 
-import useVehiclePositions from "../../hooks/useVehiclePositions";
+import usevehiclePositions from "../../hooks/usevehiclePositions";
 import useTripUpdates from "../../hooks/useTripUpdates";
 import useStops from "../../hooks/useStops";
 import useRoutes from "../../hooks/useRoutes";
+import useSchoolRoutes from "../../hooks/useSchoolRoutes";
 
 import { useRouter } from "next/router";
 
@@ -26,41 +27,36 @@ const getRouteDetails = (id, arr) => {
     : { color: "currentColor", type: "school" };
 };
 
-export default function BusInfo() {
+export default function BusInfo({ prevPage }) {
+  console.log(prevPage);
   const router = useRouter();
   const { vehicle_id } = router.query;
-  const { data: vehiclePositions } = useVehiclePositions();
-  const { data: tripUpdates } = useTripUpdates();
+  const {
+    data: vehiclePosition,
+    isError: vehiclePositionError,
+  } = usevehiclePositions(vehicle_id);
+  const { data: tripUpdate, isError: tripUpdateError } = useTripUpdates(
+    vehicle_id
+  );
   const { data: stops } = useStops();
   const { data: routes } = useRoutes();
-
-  const currVehiclePostion = vehiclePositions?.entity.find(
-    (e) => e.vehicle.vehicle.id === vehicle_id
-  );
-
-  const currTripUpdate = tripUpdates?.entity.find(
-    (e) => e.trip_update.vehicle.id === vehicle_id
-  );
+  const { data: school_routes } = useSchoolRoutes();
 
   const nearestStop = stops?.find(
-    (e) => e.stop_id === currTripUpdate?.trip_update.stop_time_update.stop_id
+    (e) => e.stop_id === tripUpdate?.trip_update?.stop_time_update.stop_id
   );
 
   const route = routes?.find(
     (e) =>
       e.route_short_name ===
-      currTripUpdate?.trip_update.trip.trip_id.split("__")[0]
+      tripUpdate?.trip_update?.trip.trip_id.split("__")[0]
   );
 
   let delayMinutes = Math.round(
-    currTripUpdate?.trip_update.stop_time_update.arrival.delay / 60
+    tripUpdate?.trip_update?.stop_time_update.arrival.delay / 60
   );
 
-  if (
-    vehicle_id === "undefined" ||
-    vehicle_id === undefined ||
-    (!currTripUpdate && tripUpdates)
-  )
+  if (vehicle_id === "undefined" || vehicle_id === undefined)
     return (
       <div className="px-5">
         <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
@@ -78,7 +74,7 @@ export default function BusInfo() {
       </div>
     );
 
-  if (!currVehiclePostion || !tripUpdates)
+  if (!vehiclePosition || !tripUpdate)
     return (
       <Spinner width="24" height="24" className="text-yellow-500 mt-6 px-5" />
     );
@@ -101,19 +97,37 @@ export default function BusInfo() {
             <RouteBadge
               route_color={routeDetails.color}
               route_type={routeDetails.type}
-              service_id={route?.route_short_name}
+              service_id={tripUpdate?.trip_update.trip.trip_id.split("__")[0]}
               className="mr-3"
             />
             <h1 className="text-xl font-semibold leading-tight mb-2 pt-1">
-              {currTripUpdate?.trip_update.trip.trip_id.split("__")[1] === "1"
-                ? route?.route_long_name
-                : route?.route_desc}
+              {routeDetails.type !== "school" ? (
+                tripUpdate?.trip_update.trip.trip_id.split("__")[1] === "1" ? (
+                  route?.route_long_name
+                ) : (
+                  route?.route_desc
+                )
+              ) : (
+                <span>
+                  School Bus{" "}
+                  <span className="text-sm opacity-60 leading-none">
+                    <br />
+                    {
+                      school_routes.find(
+                        (el) =>
+                          el.route_short_name ===
+                          tripUpdate?.trip_update.trip.trip_id.split("__")[0]
+                      ).schools
+                    }
+                  </span>
+                </span>
+              )}
             </h1>
           </div>
 
           <div
             className={`${
-              delayMinutes > 0
+              delayMinutes > 2
                 ? "bg-pink-200 dark:bg-pink-700"
                 : "bg-white dark:bg-gray-800"
             } pl-2 pr-4 py-1 rounded-2xl inline-flex mb-2 ml-11`}
@@ -121,7 +135,7 @@ export default function BusInfo() {
             <Clock
               width="16"
               height="16"
-              className="ml-0.5 mt-1 mr-1.5 opacity-60 flex-shrink-0"
+              className="ml-0.5 mt-1 mr-1.5 opacity-70 flex-shrink-0 "
             />{" "}
             Running{" "}
             {delayMinutes > 0 ? (
@@ -144,9 +158,9 @@ export default function BusInfo() {
         </div>
       </div>
       <Map
-        lat={currVehiclePostion?.vehicle.position.latitude}
-        lng={currVehiclePostion?.vehicle.position.longitude}
-        bearing={currVehiclePostion?.vehicle.position.bearing}
+        lat={vehiclePosition?.vehicle.position.latitude}
+        lng={vehiclePosition?.vehicle.position.longitude}
+        bearing={vehiclePosition?.vehicle.position.bearing}
       />
     </div>
   );

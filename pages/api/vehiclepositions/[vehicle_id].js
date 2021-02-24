@@ -20,11 +20,11 @@ async function getResponse() {
 module.exports = async ({ query: { vehicle_id } }, res) => {
   const oneUpdate = await getResponse();
 
-  const filtered = await JSON.parse(oneUpdate).entity.filter(
+  const filtered = await JSON.parse(oneUpdate).entity.find(
     (p) => p.vehicle.vehicle.id === vehicle_id
   );
 
-  if (filtered.length > 0) {
+  if (filtered) {
     res.status(200).json(filtered);
   } else {
     res
