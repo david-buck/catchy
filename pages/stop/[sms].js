@@ -48,6 +48,20 @@ const groupByDepartureDate = (objectArray, dateProperty) => {
   }, {});
 };
 
+const BusLink = ({ cancelled, unknown, vehicle_id, children }) => {
+  if (cancelled) {
+    return <Link href="/bus/cancelled">{children}</Link>;
+  } else if (unknown) {
+    return <Link href="/bus/unknown">{children}</Link>;
+  } else if (vehicle_id) {
+    return (
+      <Link as={`/bus/${vehicle_id}`} href={"/bus/[vehicle_id]"}>
+        {children}
+      </Link>
+    );
+  }
+};
+
 const Expected = ({
   service_id,
   destination_name,
@@ -64,9 +78,10 @@ const Expected = ({
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <Link
-      as={vehicle_id ? `/bus/${vehicle_id}` : null}
-      href={vehicle_id ? "/bus/[vehicle_id]" : "/bus/undefined"}
+    <BusLink
+      cancelled={status === "cancelled"}
+      unknown={!vehicle_id}
+      vehicle_id={vehicle_id}
     >
       <a className="grid grid-cols-stop-row gap-x-3 px-5 py-3 items-center text-lg hover:bg-gray-400 hover:bg-opacity-10 rounded-lg">
         <RouteBadge
@@ -125,7 +140,7 @@ const Expected = ({
           )}
         </div>
       </a>
-    </Link>
+    </BusLink>
   );
 };
 

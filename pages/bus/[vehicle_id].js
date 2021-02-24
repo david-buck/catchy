@@ -54,11 +54,7 @@ export default function BusInfo({ previousPages }) {
     tripUpdate?.trip_update?.stop_time_update.arrival.delay / 60
   );
 
-  if (
-    vehicle_id === "undefined" ||
-    vehicle_id === undefined ||
-    tripUpdate?.message
-  )
+  if (vehicle_id === undefined || tripUpdate?.message)
     return (
       <div className="px-5">
         <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">

@@ -54,15 +54,15 @@ export default function OnTime() {
       <p>
         Median delay{" "}
         {
-          sorted[Math.ceil(count / 2)].trip_update.stop_time_update.arrival
+          sorted[Math.ceil(count / 2)]?.trip_update.stop_time_update.arrival
             .delay
         }{" "}
         seconds
       </p>
       <p>Mean delay: {mean} seconds</p>
       <p>
-        Most delayed: {sorted[count - 1].trip_update.trip.trip_id} by{" "}
-        {sorted[count - 1].trip_update.stop_time_update.arrival.delay} seconds
+        Most delayed: {sorted[count - 1]?.trip_update.trip.trip_id} by{" "}
+        {sorted[count - 1]?.trip_update.stop_time_update.arrival.delay} seconds
       </p>
     </div>
   ) : null;
