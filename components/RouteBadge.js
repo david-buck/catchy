@@ -32,7 +32,7 @@ export default function RouteBadge({
       className={
         className +
         ` grid place-items-center w-9 h-9 font-semibold rounded-full flex-shrink-0 ${
-          service_id?.length > 2 && "text-base"
+          service_id.length > 2 ? "text-base" : "text-lg"
         }`
       }
     >
