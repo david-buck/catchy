@@ -1,12 +1,15 @@
+import Link from "next/link";
 import CloseCross from "../svgs/close-cross.svg";
 
 export default function privacy() {
   return (
     <div className="px-5">
       <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
-        <a href="/" className="titleBarButton">
-          <CloseCross width="24" height="24" title="Back." />
-        </a>
+        <Link href="/">
+          <a className="titleBarButton">
+            <CloseCross width="24" height="24" title="Catchy main screen." />
+          </a>
+        </Link>
       </div>
       <h1 className="text-3xl font-semibold mb-4">Privacy</h1>
 
@@ -32,7 +35,10 @@ export default function privacy() {
       </p>
       <p className="mb-4">
         If you have any questions or concerns about Catchy’s use of your data,
-        contact feedback@catchy.nz
+        contact{" "}
+        <a href="mailto:feedback@catchy.nz" className="text-blue-500">
+          feedback@catchy.nz
+        </a>
       </p>
     </div>
   );

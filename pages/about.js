@@ -1,12 +1,16 @@
+import Link from "next/link";
+
 import CloseCross from "../svgs/close-cross.svg";
 
 export default function about() {
   return (
     <div className="px-5">
       <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
-        <a href="/" className="titleBarButton">
-          <CloseCross width="24" height="24" title="Back." />
-        </a>
+        <Link href="/">
+          <a className="titleBarButton">
+            <CloseCross width="24" height="24" title="Catchy main screen." />
+          </a>
+        </Link>
       </div>
       <h1 className="text-3xl font-semibold mb-4">About Catchy</h1>
 
@@ -59,7 +63,30 @@ export default function about() {
         .
       </p>
       <p className="mb-4">
-        Technology used: Next.js and SWR by Vercel, Mapbox, and Metlink’s APIs
+        Technology used:{" "}
+        <a href="https://nextjs.org/" className="text-blue-500">
+          Next.js
+        </a>{" "}
+        and{" "}
+        <a href="https://swr.vercel.app/" className="text-blue-500">
+          SWR
+        </a>{" "}
+        by{" "}
+        <a href="https://vercel.com/" className="text-blue-500">
+          Vercel
+        </a>
+        ,{" "}
+        <a href="https://www.mapbox.com/" className="text-blue-500">
+          Mapbox
+        </a>
+        , and{" "}
+        <a href="https://www.metlink.org.nz/" className="text-blue-500">
+          Metlink
+        </a>
+        ’s{" "}
+        <a href="https://opendata.metlink.org.nz/" className="text-blue-500">
+          APIs
+        </a>
       </p>
     </div>
   );
