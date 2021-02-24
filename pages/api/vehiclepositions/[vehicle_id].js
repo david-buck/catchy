@@ -3,7 +3,7 @@ const got = require("got");
 async function getResponse() {
   try {
     const response = await got(
-      "https://api.opendata.metlink.org.nz/v1/gtfs-rt/vehiclepostions",
+      "https://api.opendata.metlink.org.nz/v1/gtfs-rt/vehiclepositions",
       {
         headers: {
           "x-api-key": "qERRhpluph3tNi0KG4gA65h3lYgkV9e58hOAAFR1",
@@ -21,7 +21,7 @@ module.exports = async ({ query: { vehicle_id } }, res) => {
   const oneUpdate = await getResponse();
 
   const filtered = await JSON.parse(oneUpdate).entity.filter(
-    (p) => p.trip_update.vehicle.id === vehicle_id
+    (p) => p.vehicle.vehicle.id === vehicle_id
   );
 
   if (filtered.length > 0) {
