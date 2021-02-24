@@ -69,7 +69,7 @@ const Expected = ({
       as={vehicle_id ? `/bus/${vehicle_id}` : null}
       href={vehicle_id ? "/bus/[vehicle_id]" : "/bus/undefined"}
     >
-      <a className="grid grid-cols-stop-row gap-x-3 py-3 items-center text-lg">
+      <a className="grid grid-cols-stop-row gap-x-3 px-5 py-3 items-center text-lg hover:bg-gray-400 hover:bg-opacity-10 rounded-lg">
         <RouteBadge
           route_color={route_color}
           route_type={route_type}
@@ -147,7 +147,7 @@ const Alert = ({
         severity_level === "WARNING"
           ? "bg-pink-50 border-pink-500 dark:bg-pink-700 dark:border-pink-800"
           : "bg-blue-50 border-blue-500 dark:bg-blue-700 dark:border-blue-800"
-      } px-4 py-3 border-2 rounded-lg mt-4 mb-2`}
+      } px-4 py-3 border-2 rounded-md mx-5 mt-4 mb-2`}
     >
       <h2 className="text-lg font-bold leading-tight mb-2">{header_text}</h2>
       <p>{description_text}</p>
@@ -218,15 +218,19 @@ export default function StopPage() {
 
   if (error)
     return stop ? (
-      <div>
+      <div className="px-5">
         Unable to get realtime updates for {stop.stop_name}. Try again later
       </div>
     ) : (
-      <div>Unable to get realtime updates for stop {sms}. Try again later</div>
+      <div className="px-5">
+        Unable to get realtime updates for stop {sms}. Try again later
+      </div>
     );
 
   if (!departures || !stop || !routes || !school_routes)
-    return <Spinner width="24" height="24" className="text-yellow-500 mt-6" />;
+    return (
+      <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
+    );
 
   return (
     <div className="relative">
@@ -255,7 +259,7 @@ export default function StopPage() {
           key="description"
         />
       </Head>
-      <div className="bg-white dark:bg-gray-800 mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-20">
+      <div className="bg-white dark:bg-gray-800 mb-2 px-5 pb-2 pt-4 flex row justify-between sticky top-0 z-20">
         <Link href="/">
           <a className="titleBarButton">
             <BackArrow width="24" height="24" title="Back." />
@@ -279,7 +283,7 @@ export default function StopPage() {
           <FavouriteButton sms={sms} />
         </div>
       </div>
-      <h1 className="text-3xl font-semibold">{stop.stop_name}</h1>
+      <h1 className="text-3xl font-semibold px-5">{stop.stop_name}</h1>
 
       {relevantAlerts?.length > 0 &&
         relevantAlerts.map((e, k) => (
@@ -298,8 +302,8 @@ export default function StopPage() {
           {groupedDepartures?.map(([date, departures]) => {
             let loopDate = new Date(date);
             return (
-              <React.Fragment key={date}>
-                <h2 className="col-span-4 pt-4 mb-2 bg-white dark:bg-gray-800 sticky top-12 z-10">
+              <div key={date}>
+                <h2 className="col-span-4 px-5 pt-4 mb-2 bg-white dark:bg-gray-800 sticky top-12 z-10">
                   {loopDate.getDate() === new Date().getDate() && (
                     <span className="font-bold mr-1">Today </span>
                   )}
@@ -345,7 +349,7 @@ export default function StopPage() {
                     />
                   );
                 })}
-              </React.Fragment>
+              </div>
             );
           })}
         </div>

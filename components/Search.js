@@ -19,9 +19,9 @@ const theme = {
   suggestionsContainerOpen:
     "absolute bg-white dark:bg-gray-800 shadow-lg rounded w-full mt-1 border-gray-100 dark:border-gray-500 border border-solid z-10",
   suggestionsList: "",
-  suggestion: "pr-3 py-3",
+  suggestion: "pr-3 py-4",
   suggestionFirst: "",
-  suggestionHighlighted: "bg-gray-100 dark:bg-gray-700 rounded",
+  suggestionHighlighted: "bg-gray-100 dark:bg-gray-700",
   sectionContainer: "",
   sectionContainerFirst: "",
   sectionTitle: "",
@@ -55,12 +55,12 @@ const Search = () => {
   }
 
   return (
-    <div className="relative text-lg">
+    <div className="relative text-lg px-5">
       <SearchIcon
         width="24"
         height="24"
         role="display"
-        className="absolute z-10 top-5.5 left-3"
+        className="absolute z-10 top-5.5 left-8"
       />
       <AutoSuggest
         suggestions={suggestions}

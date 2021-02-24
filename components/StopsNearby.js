@@ -53,7 +53,9 @@ export default function NearbyStops() {
     );
   if (!data)
     return (
-      <div className="py-2 text-lg opacity-60">Loading nearby stops...</div>
+      <div className="py-2 text-lg opacity-60 px-5">
+        Loading nearby stops...
+      </div>
     );
 
   return (
@@ -63,7 +65,7 @@ export default function NearbyStops() {
           return (
             <div key={key}>
               <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
-                <a className="flex flex-nowrap justify-between space-x-3 py-3 pr-4 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-100 dark:hover:bg-gray-700 text-lg">
+                <a className="flex flex-nowrap justify-between space-x-3 pl-5 pr-8 py-3 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-400 hover:bg-opacity-10 text-lg">
                   <span className="flex flex-nowrap items-top">
                     <LocationMarker
                       width="38"

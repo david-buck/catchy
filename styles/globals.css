@@ -39,13 +39,13 @@ html * {
 }
 
 body {
-  @apply font-body antialiased px-5 pb-4 max-w-xl m-auto text-gray-900 bg-white dark:bg-gray-800 dark:text-white;
+  @apply font-body antialiased max-w-xl m-auto text-gray-900 bg-white dark:bg-gray-800 dark:text-white;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
 
 .titleBarButton {
-  @apply place-items-center grid w-9 h-9 transition-colors ease-linear duration-150 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus-visible:border focus-visible:border-gray-400;
+  @apply place-items-center grid w-9 h-9 transition-colors ease-linear duration-150 rounded-full hover:bg-gray-400 hover:bg-opacity-10 focus:outline-none focus-visible:border focus-visible:border-gray-400;
 }
 
 .mapboxgl-control-container {
