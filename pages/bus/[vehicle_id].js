@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Map from "../../components/Map";
 
-import usevehiclePositions from "../../hooks/usevehiclePositions";
+import usevehiclePositions from "../../hooks/useVehiclePositions";
 import useTripUpdates from "../../hooks/useTripUpdates";
 import useStops from "../../hooks/useStops";
 import useRoutes from "../../hooks/useRoutes";
