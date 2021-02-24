@@ -5,6 +5,7 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   const [isDark, setIsDark] = useState();
+  const [previousPages, setPreviousPages] = useState([]);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -23,6 +24,11 @@ function MyApp({ Component, pageProps }) {
         }
       });
   }, []);
+
+  useEffect(() => {
+    previousPages[previousPages.length - 1] !== document.location.href &&
+      setPreviousPages([...previousPages, document.location.href]);
+  });
 
   useEffect(() => {
     if (
@@ -116,7 +122,7 @@ function MyApp({ Component, pageProps }) {
           key="ogImage"
         />
       </Head>
-      <Component {...pageProps} />
+      <Component previousPages={previousPages} {...pageProps} />
     </>
   );
 }
