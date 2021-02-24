@@ -18,8 +18,10 @@ export default function privacy() {
         at what you’re doing.
       </p>
       <p className="mb-4">
-        Catchy doesn’t track you. There are no third-party trackers or cookies
-        used at all.
+        <a href="https://themarkup.org/blacklight?url=catchy.nz">
+          Catchy doesn’t track you
+        </a>
+        . No third-party trackers or cookies are used at all.
       </p>
       <p className="mb-4">
         Our web host, Vercel, has{" "}
