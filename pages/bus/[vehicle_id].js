@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Head from "next/head";
 
 import Map from "../../components/Map";
@@ -27,8 +26,7 @@ const getRouteDetails = (id, arr) => {
     : { color: "currentColor", type: "school" };
 };
 
-export default function BusInfo({ prevPage }) {
-  console.log(prevPage);
+export default function BusInfo({ previousPages }) {
   const router = useRouter();
   const { vehicle_id } = router.query;
   const {
@@ -46,21 +44,30 @@ export default function BusInfo({ prevPage }) {
     (e) => e.stop_id === tripUpdate?.trip_update?.stop_time_update.stop_id
   );
 
-  const route = routes?.find(
-    (e) =>
-      e.route_short_name ===
-      tripUpdate?.trip_update?.trip.trip_id.split("__")[0]
-  );
+  const service_id = tripUpdate?.trip_update?.trip.trip_id.split("__")[0];
+
+  const route = routes?.find((e) => e.route_short_name === service_id);
+
+  const routeDetails = route && getRouteDetails(route.route_short_name, routes);
 
   let delayMinutes = Math.round(
     tripUpdate?.trip_update?.stop_time_update.arrival.delay / 60
   );
 
-  if (vehicle_id === "undefined" || vehicle_id === undefined)
+  if (
+    vehicle_id === "undefined" ||
+    vehicle_id === undefined ||
+    tripUpdate?.message
+  )
     return (
       <div className="px-5">
         <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
-          <button onClick={() => router.back()} className="titleBarButton">
+          <button
+            onClick={() =>
+              previousPages.length > 1 ? router.back() : router.push("/")
+            }
+            className="titleBarButton"
+          >
             <CloseCross width="24" height="24" title="Back." />
           </button>
         </div>
@@ -79,25 +86,26 @@ export default function BusInfo({ prevPage }) {
       <Spinner width="24" height="24" className="text-yellow-500 mt-6 px-5" />
     );
 
-  let routeDetails = getRouteDetails(route?.route_short_name, routes);
-
   return (
     <div>
       <div className="z-10 absolute bg-gradient-to-b from-white dark:from-gray-800 left-0 mx-auto w-full h-3/5">
         <div className="max-w-xl mx-auto px-5">
           <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
-            <button onClick={() => router.back()} className="titleBarButton">
+            <button
+              onClick={() =>
+                previousPages.length > 1 ? router.back() : router.push("/")
+              }
+              className="titleBarButton"
+            >
               <CloseCross width="24" height="24" title="Back." />
             </button>
           </div>
-          {/* <div className="text-sm uppercase font-semibold opacity-40 ml-12">
-            Bus ID: {vehicle_id}
-          </div> */}
+
           <div className="flex">
             <RouteBadge
               route_color={routeDetails.color}
               route_type={routeDetails.type}
-              service_id={tripUpdate?.trip_update.trip.trip_id.split("__")[0]}
+              service_id={service_id}
               className="mr-3"
             />
             <h1 className="text-xl font-semibold leading-tight mb-2 pt-1">
@@ -114,9 +122,7 @@ export default function BusInfo({ prevPage }) {
                     <br />
                     {
                       school_routes.find(
-                        (el) =>
-                          el.route_short_name ===
-                          tripUpdate?.trip_update.trip.trip_id.split("__")[0]
+                        (el) => el.route_short_name === service_id
                       ).schools
                     }
                   </span>
