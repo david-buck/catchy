@@ -39,7 +39,7 @@ html * {
 }
 
 body {
-  @apply font-body antialiased max-w-xl m-auto text-gray-900 bg-white dark:bg-gray-800 dark:text-white;
+  @apply font-body antialiased max-w-xl m-auto text-gray-900 bg-white dark:bg-gray-800 dark:text-white transition-colors;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }

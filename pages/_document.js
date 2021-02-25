@@ -1,7 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const APP_NAME = "Catchy";
-
 export default class extends Document {
   static async getInitialProps(ctx) {
     return await Document.getInitialProps(ctx);
@@ -11,13 +9,13 @@ export default class extends Document {
     return (
       <Html lang="en" dir="ltr">
         <Head>
-          <meta name="application-name" content={APP_NAME} />
+          <meta name="application-name" content="Catchy" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="default"
           />
-          <meta name="apple-mobile-web-app-title" content={APP_NAME} />
+          <meta name="apple-mobile-web-app-title" content="Catchy" />
           <meta name="mobile-web-app-capable" content="yes" />
 
           <link
@@ -28,6 +26,33 @@ export default class extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
           <link rel="alternate icon" href="/favicon.ico" />
+
+          <title key="title">
+            Catchy - Real time updates for Wellington buses
+          </title>
+
+          <meta name="twitter:text:title" content="Catchy" key="twitterTitle" />
+          <meta
+            name="twitter:text:description"
+            content="Real time updates for Wellington buses"
+            key="twitterDescription"
+          />
+
+          <meta
+            property="og:title"
+            content="Catchy - Real time updates for Wellington buses"
+            key="ogTitle"
+          />
+          <meta
+            name="description"
+            content="Real time updates for Wellington buses"
+            key="description"
+          />
+          <meta
+            property="og:image"
+            content="https://catchy.nz/share/default-share-image.png"
+            key="ogImage"
+          />
         </Head>
         <body>
           <Main />
