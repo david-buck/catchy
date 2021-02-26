@@ -6,7 +6,7 @@ import BusStopMarker from "../svgs/bus-stop-mono.svg";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default function NearbyStops() {
+export default function NearbyStops({ favourites }) {
   const [lat, setLat] = useState(null);
   const [long, setLong] = useState(null);
 
@@ -30,12 +30,6 @@ export default function NearbyStops() {
     };
   }, []);
 
-  useEffect(() => {
-    setFavourites(JSON.parse(window.localStorage.getItem("favourites")));
-  }, []);
-
-  const [favourites, setFavourites] = useState([]);
-
   const { data, error } = useSWR(
     lat && long && !cancelled ? `/api/stops/${lat}/${long}` : null,
     fetcher,
@@ -54,41 +48,40 @@ export default function NearbyStops() {
   if (!data)
     return (
       <div className="py-2 text-lg opacity-60 px-5">
-        Loading nearby stops...
+        Finding stops nearest you...
       </div>
     );
 
   return (
-    <>
-      <div>
-        {data.map((element, key) => {
-          return (
-            <div key={key}>
-              <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
-                <a className="flex flex-nowrap justify-between space-x-3 pl-5 pr-8 py-3 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-400 hover:bg-opacity-10 text-lg">
-                  <span className="flex flex-nowrap items-top">
-                    <BusStopMarker
-                      width="38"
-                      height="18"
-                      className={`${
-                        favourites?.includes(element.stop_id)
-                          ? "text-yellow-500"
-                          : "text-gray-300"
-                      } flex-shrink-0 mt-1 ml-0.5`}
-                    />
-                    {element.stop_name}
-                  </span>
-                  <span className="flex-shrink-0 opacity-60">
-                    {element.distance < 1000
-                      ? parseInt(element.distance * 1000) + " metres"
-                      : parseFloat(element.distance).toFixed(2) + " km"}
-                  </span>
-                </a>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <div>
+      <h2 className="text-3xl font-semibold mb-3 px-5">Stops near you</h2>
+      {data.map((element, key) => {
+        return (
+          <div key={key}>
+            <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
+              <a className="flex flex-nowrap justify-between space-x-3 pl-5 pr-8 py-3 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-400 hover:bg-opacity-10 text-lg">
+                <span className="flex flex-nowrap items-top">
+                  <BusStopMarker
+                    width="38"
+                    height="18"
+                    className={`${
+                      favourites?.includes(element.stop_id)
+                        ? "text-yellow-500"
+                        : "text-gray-300"
+                    } flex-shrink-0 mt-1 ml-0.5`}
+                  />
+                  {element.stop_name}
+                </span>
+                <span className="flex-shrink-0 opacity-60">
+                  {element.distance < 1000
+                    ? parseInt(element.distance * 1000) + " metres"
+                    : parseFloat(element.distance).toFixed(2) + " km"}
+                </span>
+              </a>
+            </Link>
+          </div>
+        );
+      })}
+    </div>
   );
 }

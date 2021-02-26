@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-import useStops from "../hooks/useStops";
-
 import BusStopMarker from "../svgs/bus-stop-mono.svg";
 
-export default function Favourites({ favourites }) {
-  const { data: stops, isValidating, error } = useStops();
-
+export default function Favourites({ favourites, stops }) {
   return favourites && favourites.length > 0 && stops ? (
     <div className="mb-6">
       <h2 className="text-3xl font-semibold mb-3 px-5">Your favourites</h2>

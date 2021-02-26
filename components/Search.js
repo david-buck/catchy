@@ -3,8 +3,6 @@ import { useRouter } from "next/router";
 
 import AutoSuggest from "react-autosuggest";
 
-import useStops from "../hooks/useStops";
-
 import SearchIcon from "../svgs/search.svg";
 import BusStopMarker from "../svgs/bus-stop-mono.svg";
 
@@ -27,10 +25,8 @@ const theme = {
   sectionTitle: "",
 };
 
-const Search = ({ favourites }) => {
+const Search = ({ favourites, stops }) => {
   const router = useRouter();
-
-  const { data: stops, isValidating, error } = useStops();
 
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);

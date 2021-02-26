@@ -4,10 +4,12 @@ import NearbyStops from "../components/StopsNearby";
 
 import Head from "next/head";
 
+import useStops from "../hooks/useStops";
+
 import Logo from "../svgs/catchy-full-logo.svg";
-import Spinner from "../svgs/spinner.svg";
 
 export default function IndexPage({ favourites }) {
+  const { data: stops, isValidating, error } = useStops();
   return (
     <>
       <Head>
@@ -23,11 +25,9 @@ export default function IndexPage({ favourites }) {
           <Logo width="157" height="38" title="Catchy" className="-ml-0.5" />
         </div>
 
-        <Search favourites={favourites} />
-        <Favourites favourites={favourites} />
-
-        <h2 className="text-3xl font-semibold mb-3 px-5">Stops near you</h2>
-        <NearbyStops />
+        <Search favourites={favourites} stops={stops} />
+        <Favourites favourites={favourites} stops={stops} />
+        <NearbyStops favourites={favourites} />
       </div>
     </>
   );
