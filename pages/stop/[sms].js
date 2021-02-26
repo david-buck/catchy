@@ -279,7 +279,7 @@ export default function StopPage({ favourites, setFavourites }) {
       </PageWrapper>
     );
 
-  if (!departures || !stop || !routes || !school_routes)
+  if (stop && (!departures || !routes || !school_routes))
     return (
       <PageWrapper stop={stop}>
         <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
