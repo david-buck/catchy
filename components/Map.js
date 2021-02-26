@@ -22,8 +22,11 @@ const Map = ({ lat, lng, bearing }) => {
       zoom: 16.9,
       minZoom: 15,
       maxZoom: 18,
+
       //interactive: false,
     });
+
+    map.current.dragRotate.disable();
 
     marker.current = new mapboxgl.Marker({
       anchor: "right",
@@ -45,7 +48,7 @@ const Map = ({ lat, lng, bearing }) => {
 
     marker.current
       .setLngLat([lng, lat])
-      .setRotation(bearing)
+      .setRotation(map.current.getBearing() + bearing)
       .addTo(map.current);
   }, [lng, lat]);
 
