@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -17,9 +17,12 @@ const Map = ({ lat, lng, bearing }) => {
       container: mapContainerRef.current,
       style: "mapbox://styles/catchy-nz/ckl34y0vr1yqt17mqd9q74me0",
       center: [lng, lat],
-      pitch: 40,
-      zoom: 16,
-      interactive: false,
+      pitch: 38,
+      maxPitch: 45,
+      zoom: 16.9,
+      minZoom: 15,
+      maxZoom: 18,
+      //interactive: false,
     });
 
     marker.current = new mapboxgl.Marker({
