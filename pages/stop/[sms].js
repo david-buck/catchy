@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 import useRoutes from "../../hooks/useRoutes";
 import useSchoolRoutes from "../../hooks/useSchoolRoutes";
-import useStops from "../../hooks/useStops";
+import useStop from "../../hooks/useStop";
 import useServiceAlerts from "../../hooks/useServiceAlerts";
 
 import FavouriteButton from "../../components/FavouriteButton";
@@ -15,7 +15,6 @@ import RouteBadge from "../../components/RouteBadge";
 import routeNamer from "../../lib/routeNamer";
 
 import BackArrow from "../../svgs/navigation-left-arrow.svg";
-import BusStopMarker from "../../svgs/bus-stop-mono.svg";
 import Chair from "../../svgs/chair.svg";
 import LocationMarker from "../../svgs/location-mono.svg";
 
@@ -240,9 +239,7 @@ export default function StopPage({ favourites, setFavourites }) {
       );
   }, [departures]);
 
-  const { data: stops } = useStops();
-
-  const stop = stops?.find((e) => e.stop_id === sms);
+  const { data: stop } = useStop(sms);
 
   const { data: routes } = useRoutes();
 
