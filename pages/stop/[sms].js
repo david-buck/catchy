@@ -217,7 +217,6 @@ const Alert = ({
 };
 
 export default function StopPage({ favourites, setFavourites, stop }) {
-  console.log(stop);
   const router = useRouter();
   const { sms } = router.query;
 
