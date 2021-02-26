@@ -6,6 +6,29 @@ export default function privacy() {
   return (
     <div className="px-5">
       <Head>
+        <title key="title">Catchy — Privacy policy</title>
+
+        <meta
+          name="twitter:text:title"
+          content="Catchy — Privacy policy"
+          key="twitterTitle"
+        />
+        <meta
+          name="twitter:text:description"
+          content="Catchy is not a business, and it's no one's business which bus you catch."
+          key="twitterDescription"
+        />
+
+        <meta
+          property="og:title"
+          content="Catchy — Privacy policy"
+          key="ogTitle"
+        />
+        <meta
+          name="description"
+          content="Catchy is not a business, and it's no one's business which bus you catch."
+          key="description"
+        />
         <meta
           property="og:image"
           content="https://catchy.nz/share/privacy-share-image.png"
