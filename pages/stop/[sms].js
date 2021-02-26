@@ -105,8 +105,8 @@ const Expected = ({
         {wheelchair_accessible && (
           <div>
             <Chair
-              width="18"
-              height="18"
+              width="13"
+              height="16"
               title="Wheelchair accessible."
               className="opacity-60"
             />
@@ -227,8 +227,8 @@ export default function StopPage({ favourites, setFavourites }) {
     fetcher: fetcher,
     refreshInterval: 0,
     revalidateOnFocus: false,
-    onSuccess: (date) => {
-      let offset = Date.parse(date.date) - Date.parse(time);
+    onSuccess: (d) => {
+      let offset = Date.parse(d.date) - Date.parse(time);
       setDateOffset(offset > 10000 ? offset : 0);
     },
   });
