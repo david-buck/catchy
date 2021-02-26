@@ -1,9 +1,17 @@
+import Head from "next/head";
 import Link from "next/link";
 import CloseCross from "../svgs/close-cross.svg";
 
 export default function privacy() {
   return (
     <div className="px-5">
+      <Head>
+        <meta
+          property="og:image"
+          content="https://catchy.nz/share/privacy-share-image.png"
+          key="ogImage"
+        />
+      </Head>
       <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
         <Link href="/">
           <a className="titleBarButton">
