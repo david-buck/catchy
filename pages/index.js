@@ -13,33 +13,6 @@ export default function IndexPage({ favourites }) {
   return (
     <>
       <Head>
-        <title key="title">
-          Catchy - Real time updates for Wellington buses
-        </title>
-
-        <meta name="twitter:text:title" content="Catchy" key="twitterTitle" />
-        <meta
-          name="twitter:text:description"
-          content="Real time updates for Wellington buses"
-          key="twitterDescription"
-        />
-
-        <meta
-          property="og:title"
-          content="Catchy - Real time updates for Wellington buses"
-          key="ogTitle"
-        />
-        <meta
-          name="description"
-          content="Real time updates for Wellington buses"
-          key="description"
-        />
-        <meta
-          property="og:image"
-          content="https://catchy.nz/share/default-share-image.png"
-          key="ogImage"
-        />
-
         <link
           rel="preload"
           href="/api/stops"
