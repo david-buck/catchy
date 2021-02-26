@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 
 import useRoutes from "../../hooks/useRoutes";
 import useSchoolRoutes from "../../hooks/useSchoolRoutes";
-import useStop from "../../hooks/useStop";
 import useServiceAlerts from "../../hooks/useServiceAlerts";
 
 import FavouriteButton from "../../components/FavouriteButton";
@@ -19,6 +18,19 @@ import Chair from "../../svgs/chair.svg";
 import LocationMarker from "../../svgs/location-mono.svg";
 
 import Spinner from "../../svgs/spinner.svg";
+
+export async function getServerSideProps({ params }) {
+  const res = await fetch(
+    process.env.NODE_ENV === "development"
+      ? `http://localhost:3000/api/stop/${params.sms}`
+      : `https://catchy.nz/api/stop/${params.sms}`
+  );
+  const stop = await res.json();
+
+  return {
+    props: { stop },
+  };
+}
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -204,7 +216,11 @@ const Alert = ({
   );
 };
 
-export default function StopPage({ favourites, setFavourites }) {
+export default function StopPage({ favourites, setFavourites, stop }) {
+  console.log(stop);
+  const router = useRouter();
+  const { sms } = router.query;
+
   const [time, setTime] = useState(new Date());
   const [groupedDepartures, setGroupedDepartures] = useState(null);
   const [dateOffset, setDateOffset] = useState(0);
@@ -221,9 +237,6 @@ export default function StopPage({ favourites, setFavourites }) {
     };
   }, [dateOffset]);
 
-  const router = useRouter();
-  const { sms } = router.query;
-
   const { data: departures, isValidating, error } = useSWR(
     sms && !cancelled ? `/proxy/stopdepartures/${sms}` : null,
     {
@@ -238,8 +251,6 @@ export default function StopPage({ favourites, setFavourites }) {
         Object.entries(groupByDepartureDate(departures?.departures, "aimed"))
       );
   }, [departures]);
-
-  const { data: stop } = useStop(sms);
 
   const { data: routes } = useRoutes();
 
@@ -276,7 +287,7 @@ export default function StopPage({ favourites, setFavourites }) {
       </PageWrapper>
     );
 
-  if (!stop || !departures || !routes || !school_routes)
+  if (!departures || !routes || !school_routes)
     return (
       <PageWrapper stop={stop}>
         <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
