@@ -3,15 +3,9 @@ import Link from "next/link";
 
 import useStops from "../hooks/useStops";
 
-import LocationMarker from "../svgs/location-mono.svg";
+import BusStopMarker from "../svgs/bus-stop-mono.svg";
 
-export default function Favourites() {
-  useEffect(() => {
-    setFavourites(JSON.parse(window.localStorage.getItem("favourites")));
-  }, []);
-
-  const [favourites, setFavourites] = useState([]);
-
+export default function Favourites({ favourites }) {
   const { data: stops, isValidating, error } = useStops();
 
   return favourites && favourites.length > 0 && stops ? (
@@ -23,7 +17,7 @@ export default function Favourites() {
           <div key={key}>
             <Link as={`/stop/${stop.stop_id}`} href="/stop/[sms]">
               <a className="transition-colors ease-linear duration-150 flex flex-nowrap py-4 px-5 hover:bg-gray-400 hover:bg-opacity-10 rounded-md pr-4 text-lg">
-                <LocationMarker
+                <BusStopMarker
                   width="38"
                   height="18"
                   className="text-yellow-500 flex-shrink-0 mt-1 ml-0.5"

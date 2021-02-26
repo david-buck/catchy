@@ -2,12 +2,7 @@ import { useEffect, useState } from "react";
 
 import Star from "../svgs/star.svg";
 
-export default function FavouriteButton({ sms }) {
-  const initialState = () =>
-    JSON.parse(window.localStorage.getItem("favourites")) || [];
-
-  const [favourites, setFavourites] = useState(initialState);
-
+export default function FavouriteButton({ sms, favourites, setFavourites }) {
   useEffect(() => {
     window.localStorage.setItem("favourites", JSON.stringify(favourites));
   }, [favourites]);

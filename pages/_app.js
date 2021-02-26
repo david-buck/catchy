@@ -30,6 +30,12 @@ function MyApp({ Component, pageProps }) {
       setPreviousPages([...previousPages, document.location.href]);
   });
 
+  const [favourites, setFavourites] = useState([]);
+
+  useEffect(() => {
+    setFavourites(JSON.parse(window.localStorage.getItem("favourites")) || []);
+  }, []);
+
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
@@ -95,7 +101,12 @@ function MyApp({ Component, pageProps }) {
 
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Component previousPages={previousPages} {...pageProps} />
+      <Component
+        previousPages={previousPages}
+        favourites={favourites}
+        setFavourites={setFavourites}
+        {...pageProps}
+      />
     </>
   );
 }

@@ -15,8 +15,9 @@ import RouteBadge from "../../components/RouteBadge";
 import routeNamer from "../../lib/routeNamer";
 
 import BackArrow from "../../svgs/navigation-left-arrow.svg";
-import LocationMarker from "../../svgs/location-mono.svg";
+import BusStopMarker from "../../svgs/bus-stop-mono.svg";
 import Chair from "../../svgs/chair.svg";
+import LocationMarker from "../../svgs/location-mono.svg";
 
 import Spinner from "../../svgs/spinner.svg";
 
@@ -173,7 +174,7 @@ const Alert = ({
   );
 };
 
-export default function StopPage() {
+export default function StopPage({ favourites, setFavourites }) {
   const [time, setTime] = useState(new Date());
   const [groupedDepartures, setGroupedDepartures] = useState(null);
   const [dateOffset, setDateOffset] = useState(0);
@@ -296,7 +297,11 @@ export default function StopPage() {
           >
             <LocationMarker width="20" height="20" title="View on map." />
           </a>
-          <FavouriteButton sms={sms} />
+          <FavouriteButton
+            sms={sms}
+            favourites={favourites}
+            setFavourites={setFavourites}
+          />
         </div>
       </div>
       <h1 className="text-3xl font-semibold px-5">{stop.stop_name}</h1>

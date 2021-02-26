@@ -7,7 +7,7 @@ import Head from "next/head";
 import Logo from "../svgs/catchy-full-logo.svg";
 import Spinner from "../svgs/spinner.svg";
 
-export default function IndexPage() {
+export default function IndexPage({ favourites }) {
   return (
     <>
       <Head>
@@ -23,8 +23,8 @@ export default function IndexPage() {
           <Logo width="157" height="38" title="Catchy" className="-ml-0.5" />
         </div>
 
-        <Search />
-        <Favourites />
+        <Search favourites={favourites} />
+        <Favourites favourites={favourites} />
 
         <h2 className="text-3xl font-semibold mb-3 px-5">Stops near you</h2>
         <NearbyStops />

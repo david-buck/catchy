@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 import RouteBadge from "../../components/RouteBadge";
 
 import CloseCross from "../../svgs/close-cross.svg";
-import LocationMarker from "../../svgs/location-mono.svg";
+import BusStopMarker from "../../svgs/bus-stop-mono.svg";
 import Clock from "../../svgs/clock.svg";
 
 import Spinner from "../../svgs/spinner.svg";
@@ -150,10 +150,10 @@ export default function BusInfo({ previousPages }) {
           </div>
           <br />
           <div className="bg-white dark:bg-gray-800 ml-11 pl-2 pr-4 py-1 rounded-2xl inline-flex">
-            <LocationMarker
+            <BusStopMarker
               width="16"
               height="16"
-              className="text-red-500 mt-1 ml-0.5 mr-1.5 flex-shrink-0"
+              className="text-yellow-500 mt-1 ml-0.5 mr-1.5 flex-shrink-0"
             />
             Nearby stop: {nearestStop?.stop_name}
           </div>

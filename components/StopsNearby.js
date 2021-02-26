@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import useSWR from "swr";
 
-import LocationMarker from "../svgs/location-mono.svg";
+import BusStopMarker from "../svgs/bus-stop-mono.svg";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -67,7 +67,7 @@ export default function NearbyStops() {
               <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
                 <a className="flex flex-nowrap justify-between space-x-3 pl-5 pr-8 py-3 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-400 hover:bg-opacity-10 text-lg">
                   <span className="flex flex-nowrap items-top">
-                    <LocationMarker
+                    <BusStopMarker
                       width="38"
                       height="18"
                       className={`${

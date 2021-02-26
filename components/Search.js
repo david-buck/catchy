@@ -6,7 +6,7 @@ import AutoSuggest from "react-autosuggest";
 import useStops from "../hooks/useStops";
 
 import SearchIcon from "../svgs/search.svg";
-import LocationMarker from "../svgs/location-mono.svg";
+import BusStopMarker from "../svgs/bus-stop-mono.svg";
 
 const theme = {
   container: "relative mt-2 mb-6",
@@ -27,7 +27,7 @@ const theme = {
   sectionTitle: "",
 };
 
-const Search = () => {
+const Search = ({ favourites }) => {
   const router = useRouter();
 
   const { data: stops, isValidating, error } = useStops();
@@ -75,10 +75,14 @@ const Search = () => {
         getSuggestionValue={(suggestion) => suggestion.stop_name}
         renderSuggestion={(suggestion, value) => (
           <span className="flex flex-nowrap items-top">
-            <LocationMarker
+            <BusStopMarker
               width="38"
               height="18"
-              className="text-gray-300 flex-shrink-0 mt-1 ml-0.5"
+              className={`${
+                favourites?.includes(suggestion.stop_id)
+                  ? "text-yellow-500"
+                  : "text-gray-300"
+              } text-gray-300 flex-shrink-0 mt-1 ml-0.5`}
             />
             <span>
               {suggestion.stop_name}{" "}
