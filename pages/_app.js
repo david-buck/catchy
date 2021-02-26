@@ -44,46 +44,25 @@ function MyApp({ Component, pageProps }) {
     ) {
       const wb = window.workbox;
 
-      wb.addEventListener("installed", (event) => {
-        console.log(`Event ${event.type} is triggered.`);
-        console.log(event);
-      });
+      const promptNewVersionAvailable = (event) => {
+        if (
+          confirm("A newer version of Catchy is available, reload to update?")
+        ) {
+          wb.addEventListener("controlling", (event) => {
+            window.location.reload();
+          });
 
-      wb.addEventListener("controlling", (event) => {
-        console.log(`Event ${event.type} is triggered.`);
-        console.log(event);
-      });
+          // Send a message to the waiting service worker, instructing it to activate.
+          wb.messageSW({ type: "SKIP_WAITING" });
+        } else {
+          console.log(
+            "User rejected to reload the web app, keep using old version. New version will be automatically load when user open the app next time."
+          );
+        }
+      };
 
-      wb.addEventListener("activated", (event) => {
-        console.log(`Event ${event.type} is triggered.`);
-        console.log(event);
-      });
-
-      // A common UX pattern for progressive web apps is to show a banner when a service worker has updated and waiting to install.
-      // NOTE: MUST set skipWaiting to false in next.config.js pwa object
-      // https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offer_a_page_reload_for_users
-      // const promptNewVersionAvailable = (event) => {
-      //   // `event.wasWaitingBeforeRegister` will be false if this is the first time the updated service worker is waiting.
-      //   // When `event.wasWaitingBeforeRegister` is true, a previously updated service worker is still waiting.
-      //   // You may want to customize the UI prompt accordingly.
-      //   if (
-      //     confirm("A newer version of Catchy is available, reload to update?")
-      //   ) {
-      //     wb.addEventListener("controlling", (event) => {
-      //       window.location.reload();
-      //     });
-
-      //     // Send a message to the waiting service worker, instructing it to activate.
-      //     wb.messageSW({ type: "SKIP_WAITING" });
-      //   } else {
-      //     console.log(
-      //       "User rejected to reload the web app, keep using old version. New version will be automatically load when user open the app next time."
-      //     );
-      //   }
-      // };
-
-      // wb.addEventListener("waiting", promptNewVersionAvailable);
-      // wb.addEventListener("externalwaiting", promptNewVersionAvailable);
+      wb.addEventListener("waiting", promptNewVersionAvailable);
+      wb.addEventListener("externalwaiting", promptNewVersionAvailable);
 
       wb.register();
     }
@@ -103,7 +82,11 @@ function MyApp({ Component, pageProps }) {
 
         <meta name="application-name" content="Catchy" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="default"
+          key=""
+        />
         <meta name="apple-mobile-web-app-title" content="Catchy" />
         <meta name="mobile-web-app-capable" content="yes" />
 
@@ -115,33 +98,6 @@ function MyApp({ Component, pageProps }) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
         <link rel="alternate icon" href="/favicon.ico" />
-
-        <title key="title">
-          Catchy - Real time updates for Wellington buses
-        </title>
-
-        <meta name="twitter:text:title" content="Catchy" key="twitterTitle" />
-        <meta
-          name="twitter:text:description"
-          content="Real time updates for Wellington buses"
-          key="twitterDescription"
-        />
-
-        <meta
-          property="og:title"
-          content="Catchy - Real time updates for Wellington buses"
-          key="ogTitle"
-        />
-        <meta
-          name="description"
-          content="Real time updates for Wellington buses"
-          key="description"
-        />
-        <meta
-          property="og:image"
-          content="https://catchy.nz/share/default-share-image.png"
-          key="ogImage"
-        />
       </Head>
       <Component
         previousPages={previousPages}

@@ -8,7 +8,7 @@ module.exports = withPWA({
     register: false,
     skipWaiting: false,
     runtimeCaching,
-    disable: process.env.NODE_ENV === "development",
+    // disable: process.env.NODE_ENV === "development",
   },
   webpack(config) {
     config.module.rules.push({
