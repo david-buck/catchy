@@ -9,7 +9,6 @@ export const bus_routes = [
       "Johnsonville West/Churton Park/Grenada Village - Island Bay",
     route_desc: "Island Bay - Johnsonville West/Churton Park/Grenada Village",
     route_color: "e31837",
-    route_text_color: "ffffff",
   },
   {
     id: 140,
@@ -20,7 +19,6 @@ export const bus_routes = [
     route_long_name: "Karori - Wellington - Hataitai - Miramar/Seatoun",
     route_desc: "Miramar/Seatoun - Hataitai - Wellington - Karori",
     route_color: "005eb8",
-    route_text_color: "ffffff",
   },
   {
     id: 28,
@@ -31,7 +29,6 @@ export const bus_routes = [
     route_long_name: "Lyall Bay/Rongotai - Kilbirnie - Newtown - Wellington",
     route_desc: "Wellington - Newtown - Kilbirnie - Lyall Bay/Rongotai",
     route_color: "5e9732",
-    route_text_color: "000000",
   },
   {
     id: 10,
@@ -42,7 +39,6 @@ export const bus_routes = [
     route_long_name: "Kingston - Brooklyn - Wellington",
     route_desc: "Wellington - Brooklyn - Kingston",
     route_color: "9f219f",
-    route_text_color: "ffffff",
   },
   {
     id: 157,
@@ -53,7 +49,6 @@ export const bus_routes = [
     route_long_name: "Strathmore Park - Kilbirnie - Newtown - Wellington",
     route_desc: "Wellington - Newtown - Kilbirnie - Strathmore Park",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 45,
@@ -64,7 +59,6 @@ export const bus_routes = [
     route_long_name: "Strathmore Park - Kilbirnie - Hataitai - Wellington",
     route_desc: "Wellington - Hataitai - Kilbirnie - Strathmore Park",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 168,
@@ -75,7 +69,6 @@ export const bus_routes = [
     route_long_name: "Mairangi - Glenmore Street - Brandon Street",
     route_desc: "Brandon Street - Glenmore Street - Mairangi",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 1,
@@ -86,7 +79,6 @@ export const bus_routes = [
     route_long_name: "Wilton - Wellington - Roseneath - Hataitai - Kilbirnie",
     route_desc: "Kilbirnie - Hataitai - Roseneath - Wellington - Wilton",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 127,
@@ -97,7 +89,6 @@ export const bus_routes = [
     route_long_name: "Kowhai Park - Brooklyn - Wellington",
     route_desc: "Wellington - Brooklyn - Kowhai Park",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 102,
@@ -108,7 +99,6 @@ export const bus_routes = [
     route_long_name: "Miramar - Newtown - Kelburn - Karori",
     route_desc: "Karori - Kelburn - Newtown - Miramar",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 34,
@@ -119,7 +109,6 @@ export const bus_routes = [
     route_long_name: "Johnsonville - Churton Park - Johnsonville",
     route_desc: "Johnsonville - Churton Park - Johnsonville",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 197,
@@ -132,7 +121,6 @@ export const bus_routes = [
     route_desc:
       "Johnsonville - Churton Park - Johnsonville (Wellington extension)",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 126,
@@ -143,7 +131,6 @@ export const bus_routes = [
     route_long_name: "Kilbirnie - Mt Victoria - Courtenay Place",
     route_desc: "Courtenay Place - Mt Victoria - Kilbirnie",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 49,
@@ -154,7 +141,6 @@ export const bus_routes = [
     route_long_name: "Karori (Wrights Hill) - Kelburn - Courtenay Place",
     route_desc: "Courtenay Place - Kelburn - Karori (Wrights Hill)",
     route_color: "ee80b3",
-    route_text_color: "000000",
   },
   {
     id: 69,
@@ -165,7 +151,6 @@ export const bus_routes = [
     route_long_name: "Johnsonville - Mairangi - Kelburn - Wellington",
     route_desc: "Wellington - Kelburn - Mairangi - Johnsonville",
     route_color: "f58025",
-    route_text_color: "000000",
   },
   {
     id: 153,
@@ -176,7 +161,6 @@ export const bus_routes = [
     route_long_name: "Houghton Bay - Newtown - Wellington",
     route_desc: "Wellington - Newtown - Houghton Bay",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 180,
@@ -188,7 +172,6 @@ export const bus_routes = [
       "Johnsonville - Broadmeadows - Wellington - Miramar Heights",
     route_desc: "Miramar Heights - Wellington - Broadmeadows - Johnsonville",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 129,
@@ -199,7 +182,6 @@ export const bus_routes = [
     route_long_name: "Khandallah - Wellington - Aro Valley - Highbury",
     route_desc: "Highbury - Aro Valley - Wellington - Khandallah",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 199,
@@ -210,7 +192,6 @@ export const bus_routes = [
     route_long_name: "Khandallah - Ngaio - Brandon Street",
     route_desc: "Brandon Street - Ngaio - Khandallah",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 160,
@@ -221,7 +202,6 @@ export const bus_routes = [
     route_long_name: "Vogeltown - Wellington",
     route_desc: "Wellington - Vogeltown",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 207,
@@ -232,7 +212,6 @@ export const bus_routes = [
     route_long_name: "Beacon Hill - Strathmore Park Shops",
     route_desc: "Strathmore Park Shops - Beacon Hill",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 217,
@@ -245,7 +224,6 @@ export const bus_routes = [
     route_desc:
       "Wellington - Newtown - Southgate - Island Bay - Owhiro Bay - Brooklyn",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 64,
@@ -256,7 +234,6 @@ export const bus_routes = [
     route_long_name: "Scorching Bay/Moa Point - Wellington (Express)",
     route_desc: "Wellington - Scorching Bay/Moa Point (Express)",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 100,
@@ -267,7 +244,6 @@ export const bus_routes = [
     route_long_name: "Miramar North - Wellington (Express)",
     route_desc: "Wellington - Miramar North (Express)",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 15,
@@ -279,7 +255,6 @@ export const bus_routes = [
       "Houghton Bay - Island Bay - Berhampore - Wellington (Express)",
     route_desc: "Wellington - Berhampore - Island Bay - Houghton Bay (Express)",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 68,
@@ -290,7 +265,6 @@ export const bus_routes = [
     route_long_name: "Karori South - Brandon Street",
     route_desc: "Brandon Street - Karori South",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 81,
@@ -301,7 +275,6 @@ export const bus_routes = [
     route_long_name: "Karori West - Brandon Street",
     route_desc: "Brandon Street - Karori West",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 136,
@@ -312,7 +285,6 @@ export const bus_routes = [
     route_long_name: "Hataitai - Wellington",
     route_desc: "Wellington - Hataitai",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 188,
@@ -323,7 +295,6 @@ export const bus_routes = [
     route_long_name: "Lyall Bay - Kilbirnie - Hataitai - Wellington",
     route_desc: "Wellington - Hataitai - Kilbirnie - Lyall Bay",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 21,
@@ -335,7 +306,6 @@ export const bus_routes = [
     route_desc:
       "Brandon Street - Kelburn - Karori (Wrights Hill) (via The Terrace)",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 84,
@@ -346,7 +316,6 @@ export const bus_routes = [
     route_long_name: "Island Bay - Owhiro Bay - Brooklyn - Wellington",
     route_desc: "Wellington - Brooklyn - Owhiro Bay - Island Bay",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 96,
@@ -357,7 +326,6 @@ export const bus_routes = [
     route_long_name: "Johnsonville - Newlands - Wellington",
     route_desc: "Wellington - Newlands - Johnsonville",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 232,
@@ -368,7 +336,6 @@ export const bus_routes = [
     route_long_name: "Johnsonville - Paparangi - Wellington",
     route_desc: "Wellington - Paparangi - Johnsonville",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 208,
@@ -379,7 +346,6 @@ export const bus_routes = [
     route_long_name: "Woodridge - Wellington",
     route_desc: "Wellington - Woodridge",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 4,
@@ -390,7 +356,6 @@ export const bus_routes = [
     route_long_name: "Newlands - Wellington",
     route_desc: "Wellington - Newlands",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 166,
@@ -401,7 +366,6 @@ export const bus_routes = [
     route_long_name: "Porirua - Tawa - Johnsonville",
     route_desc: "Johnsonville - Tawa - Porirua",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 133,
@@ -412,7 +376,6 @@ export const bus_routes = [
     route_long_name: "Porirua - Tawa - Johnsonville - Wellington",
     route_desc: "Wellington - Johnsonville - Tawa - Porirua",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 139,
@@ -423,7 +386,6 @@ export const bus_routes = [
     route_long_name: "Eastbourne - Petone - Wellington",
     route_desc: "Wellington - Petone - Eastbourne",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 89,
@@ -434,7 +396,6 @@ export const bus_routes = [
     route_long_name: "Eastbourne - Lower Hutt - Petone - Wellington",
     route_desc: "Wellington - Petone - Lower Hutt - Eastbourne",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 101,
@@ -445,7 +406,6 @@ export const bus_routes = [
     route_long_name: "Eastbourne - Gracefield - Petone - Wellington",
     route_desc: "Wellington - Petone - Gracefield - Eastbourne",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 39,
@@ -456,7 +416,6 @@ export const bus_routes = [
     route_long_name: "Eastbourne - Wellington (Express)",
     route_desc: "Wellington - Eastbourne (Express)",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 51,
@@ -467,7 +426,6 @@ export const bus_routes = [
     route_long_name: "Emerald Hill - Upper Hutt - Lower Hutt - Petone",
     route_desc: "Petone - Lower Hutt - Upper Hutt - Emerald Hill",
     route_color: "9849b8",
-    route_text_color: "ffffff",
   },
   {
     id: 7,
@@ -478,7 +436,6 @@ export const bus_routes = [
     route_long_name: "Upper Hutt - Totara Park - Upper Hutt",
     route_desc: "Upper Hutt - Totara Park - Upper Hutt",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 191,
@@ -489,7 +446,6 @@ export const bus_routes = [
     route_long_name: "Te Marua - Timberlea - Maoribank - Upper Hutt",
     route_desc: "Upper Hutt - Maoribank - Timberlea - Te Marua",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 230,
@@ -500,7 +456,6 @@ export const bus_routes = [
     route_long_name: "Riverstone Terraces - Upper Hutt",
     route_desc: "Upper Hutt - Riverstone Terraces",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 32,
@@ -511,7 +466,6 @@ export const bus_routes = [
     route_long_name: "Trentham - Elderslea - Upper Hutt",
     route_desc: "Upper Hutt - Elderslea - Trentham",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 222,
@@ -522,7 +476,6 @@ export const bus_routes = [
     route_long_name: "Upper Hutt - Pinehaven - Upper Hutt",
     route_desc: "Upper Hutt - Pinehaven - Upper Hutt",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 106,
@@ -533,7 +486,6 @@ export const bus_routes = [
     route_long_name: "Stokes Valley - Taita - Epuni - Lower Hutt",
     route_desc: "Lower Hutt - Epuni - Taita - Stokes Valley",
     route_color: "008854",
-    route_text_color: "000000",
   },
   {
     id: 227,
@@ -544,7 +496,6 @@ export const bus_routes = [
     route_long_name: "Stokes Valley Heights - Naenae - Lower Hutt - Seaview",
     route_desc: "Seaview - Lower Hutt - Naenae - Stokes Valley Heights",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 90,
@@ -555,7 +506,6 @@ export const bus_routes = [
     route_long_name: "Naenae - Waterloo - Lower Hutt - Petone",
     route_desc: "Petone - Lower Hutt - Waterloo - Naenae",
     route_color: "00689e",
-    route_text_color: "ffffff",
   },
   {
     id: 163,
@@ -566,7 +516,6 @@ export const bus_routes = [
     route_long_name: "Belmont - Melling - Lower Hutt",
     route_desc: "Lower Hutt - Melling - Belmont",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 80,
@@ -577,7 +526,6 @@ export const bus_routes = [
     route_long_name: "Kelson - Lower Hutt - Maungaraki - Petone",
     route_desc: "Petone - Maungaraki - Lower Hutt - Kelson",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 30,
@@ -588,7 +536,6 @@ export const bus_routes = [
     route_long_name: "Petone - Korokoro - Petone",
     route_desc: "Petone - Korokoro - Petone",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 155,
@@ -599,7 +546,6 @@ export const bus_routes = [
     route_long_name: "Wainuiomata North - Waterloo - Lower Hutt",
     route_desc: "Lower Hutt - Waterloo - Wainuiomata North",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 31,
@@ -610,7 +556,6 @@ export const bus_routes = [
     route_long_name: "Lower Hutt - Wainuiomata South - Lower Hutt",
     route_desc: "Lower Hutt - Wainuiomata South - Lower Hutt",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 149,
@@ -621,7 +566,6 @@ export const bus_routes = [
     route_long_name: "Masterton - Greytown - Featherston - Martinborough",
     route_desc: "Martinborough - Featherston - Greytown - Masterton",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 224,
@@ -632,7 +576,6 @@ export const bus_routes = [
     route_long_name: "Masterton - Masterton West - Masterton",
     route_desc: "Masterton - Masterton West - Masterton",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 112,
@@ -643,7 +586,6 @@ export const bus_routes = [
     route_long_name: "Masterton - Masterton South - Masterton",
     route_desc: "Masterton - Masterton South - Masterton",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 95,
@@ -654,7 +596,6 @@ export const bus_routes = [
     route_long_name: "Masterton - Masterton North - Masterton",
     route_desc: "Masterton - Masterton North - Masterton",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 170,
@@ -665,7 +606,6 @@ export const bus_routes = [
     route_long_name: "Greytown - Woodside",
     route_desc: "Woodside - Greytown",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 134,
@@ -676,7 +616,6 @@ export const bus_routes = [
     route_long_name: "Masterton - Masterton East - Masterton",
     route_desc: "Masterton - Masterton East - Masterton",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 142,
@@ -687,7 +626,6 @@ export const bus_routes = [
     route_long_name: "Titahi Bay - Porirua",
     route_desc: "Porirua - Titahi Bay",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 175,
@@ -698,7 +636,6 @@ export const bus_routes = [
     route_long_name: "Titahi Bay - Porirua - Ascot Park",
     route_desc: "Ascot Park - Porirua - Titahi Bay",
     route_color: "008854",
-    route_text_color: "000000",
   },
   {
     id: 198,
@@ -709,7 +646,6 @@ export const bus_routes = [
     route_long_name: "Sievers Grove - Elsdon - Sievers Grove",
     route_desc: "Sievers Grove - Elsdon - Sievers Grove",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 204,
@@ -720,7 +656,6 @@ export const bus_routes = [
     route_long_name: "Whitby (The Crowsnest) - Aotea - Porirua",
     route_desc: "Porirua - Aotea - Whitby (The Crowsnest)",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 147,
@@ -732,7 +667,6 @@ export const bus_routes = [
       "Whitby (Navigation Drive) - Paremata - Papakowhai - Porirua",
     route_desc: "Porirua - Papakowhai - Paremata - Whitby (Navigation Drive)",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 138,
@@ -743,7 +677,6 @@ export const bus_routes = [
     route_long_name: "Paraparaumu - Raumati South - Paraparaumu",
     route_desc: "Paraparaumu - Raumati South - Paraparaumu",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 212,
@@ -754,7 +687,6 @@ export const bus_routes = [
     route_long_name: "Paekakariki - Paraparaumu - Kapiti Health Centre",
     route_desc: "Kapiti Health Centre - Paraparaumu - Paekakariki",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 148,
@@ -765,7 +697,6 @@ export const bus_routes = [
     route_long_name: "Raumati Beach - Paraparaumu Beach - Paraparaumu",
     route_desc: "Paraparaumu - Paraparaumu Beach - Raumati Beach",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 200,
@@ -776,7 +707,6 @@ export const bus_routes = [
     route_long_name: "Paraparaumu Beach - Paraparaumu (via Guildford Drive)",
     route_desc: "Paraparaumu - Paraparaumu Beach (via Guildford Drive)",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 117,
@@ -787,7 +717,6 @@ export const bus_routes = [
     route_long_name: "Paraparaumu Beach - Paraparaumu (via Mazengarb Road)",
     route_desc: "Paraparaumu - Paraparaumu Beach (via Mazengarb Road)",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 115,
@@ -798,7 +727,6 @@ export const bus_routes = [
     route_long_name: "Paraparaumu East - Paraparaumu - Kapiti Health Centre",
     route_desc: "Kapiti Health Centre - Paraparaumu - Paraparaumu East",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 151,
@@ -809,7 +737,6 @@ export const bus_routes = [
     route_long_name: "Waikanae - Waikanae Beach - Waikanae",
     route_desc: "Waikanae - Waikanae Beach - Waikanae",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 143,
@@ -820,7 +747,6 @@ export const bus_routes = [
     route_long_name: "Waikanae - Waikanae East - Waikanae",
     route_desc: "Waikanae - Waikanae East - Waikanae",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 186,
@@ -831,7 +757,6 @@ export const bus_routes = [
     route_long_name: "Waikanae - Otaki - Waikanae",
     route_desc: "Waikanae - Otaki - Waikanae",
     route_color: "6cace4",
-    route_text_color: "000000",
   },
   {
     id: 59,
@@ -842,7 +767,6 @@ export const bus_routes = [
     route_long_name: "Waikanae - Levin",
     route_desc: "Levin - Waikanae",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 130,
@@ -853,7 +777,6 @@ export const bus_routes = [
     route_long_name: "Whenua Tapu Cemetery - Porirua - Titahi Bay",
     route_desc: "Titahi Bay - Porirua - Whenua Tapu Cemetery",
     route_color: "636466",
-    route_text_color: "ffffff",
   },
   {
     id: 9,
@@ -866,7 +789,6 @@ export const bus_routes = [
     route_desc:
       "After Midnight (Wellington - Island Bay - Houghton Bay - Lyall Bay)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 60,
@@ -879,7 +801,6 @@ export const bus_routes = [
     route_desc:
       "After Midnight (Wellington - Miramar - Strathmore Park - Seatoun)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 72,
@@ -891,7 +812,6 @@ export const bus_routes = [
       "After Midnight (Wellington - Kelburn - Karori - Northland)",
     route_desc: "After Midnight (Wellington - Kelburn - Karori - Northland)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 46,
@@ -903,7 +823,6 @@ export const bus_routes = [
       "After Midnight (Wellington - Wadestown - Ngaio - Khandallah)",
     route_desc: "After Midnight (Wellington - Wadestown - Ngaio - Khandallah)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 54,
@@ -916,7 +835,6 @@ export const bus_routes = [
     route_desc:
       "After Midnight (Wellington - Newlands - Churton Park - Johnsonville)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 164,
@@ -928,7 +846,6 @@ export const bus_routes = [
       "After Midnight (Wellington - Porirua - Whitby - Plimmerton)",
     route_desc: "After Midnight (Wellington - Porirua - Whitby - Plimmerton)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 107,
@@ -939,7 +856,6 @@ export const bus_routes = [
     route_long_name: "After Midnight (Lower Hutt - Petone - Wellington)",
     route_desc: "After Midnight (Lower Hutt - Petone - Wellington)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 111,
@@ -952,7 +868,6 @@ export const bus_routes = [
     route_desc:
       "After Midnight (Wellington - Naenae - Stokes Valley - Upper Hutt)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 173,
@@ -965,7 +880,6 @@ export const bus_routes = [
     route_desc:
       "After Midnight (Wellington - Lower Hutt - Waterloo - Wainuiomata)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
   {
     id: 220,
@@ -978,6 +892,5 @@ export const bus_routes = [
     route_desc:
       "After Midnight (Wellington - Petone - Lower Hutt - Eastbourne)",
     route_color: "000000",
-    route_text_color: "ffffff",
   },
 ];
