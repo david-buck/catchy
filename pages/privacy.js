@@ -15,7 +15,7 @@ export default function privacy() {
         />
         <meta
           name="twitter:text:description"
-          content="Catchy is not a business, and it's no one's business which bus you catch."
+          content="Just because the transport's public doesn't mean you want everyone to know about it."
           key="twitterDescription"
         />
 
@@ -26,7 +26,7 @@ export default function privacy() {
         />
         <meta
           name="description"
-          content="Catchy is not a business, and it's no one's business which bus you catch."
+          content="Just because the transport's public doesn't mean you want everyone to know about it."
           key="description"
         />
         <meta

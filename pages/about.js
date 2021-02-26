@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 
 import CloseCross from "../svgs/close-cross.svg";
@@ -5,6 +6,27 @@ import CloseCross from "../svgs/close-cross.svg";
 export default function about() {
   return (
     <div className="px-5">
+      <Head>
+        <title key="title">About Catchy</title>
+
+        <meta
+          name="twitter:text:title"
+          content="About Catchy"
+          key="twitterTitle"
+        />
+        <meta
+          name="twitter:text:description"
+          content="Find out more about Wellington's favourite free public transport app."
+          key="twitterDescription"
+        />
+
+        <meta property="og:title" content="About Catchy" key="ogTitle" />
+        <meta
+          name="description"
+          content="Find out more about Wellington's favourite free public transport app."
+          key="description"
+        />
+      </Head>
       <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
         <Link href="/">
           <a className="titleBarButton">
