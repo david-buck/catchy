@@ -49,6 +49,37 @@ const groupByDepartureDate = (objectArray, dateProperty) => {
   }, {});
 };
 
+const PageWrapper = ({ children, stop }) => (
+  <div className="relative">
+    <Head>
+      <title key="title">{stop?.stop_name} bus stop — Catchy</title>
+
+      <meta
+        name="twitter:text:title"
+        content={`${stop?.stop_name} bus stop — Catchy`}
+        key="twitterTitle"
+      />
+      <meta
+        name="twitter:text:description"
+        content={`Bus departures updates for ${stop?.stop_name}`}
+        key="twitterDescription"
+      />
+
+      <meta
+        property="og:title"
+        content={`${stop?.stop_name} bus stop — Catchy`}
+        key="ogTitle"
+      />
+      <meta
+        name="description"
+        content={`Bus departures updates for ${stop?.stop_name}`}
+        key="description"
+      />
+    </Head>
+    {children}
+  </div>
+);
+
 const BusLink = ({ cancelled, unknown, vehicle_id, children }) => {
   if (cancelled) {
     return <Link href="/bus/cancelled">{children}</Link>;
@@ -234,48 +265,29 @@ export default function StopPage({ favourites, setFavourites }) {
   });
 
   if (error)
-    return stop ? (
-      <div className="px-5">
-        Unable to get realtime updates for {stop.stop_name}. Try again later
-      </div>
-    ) : (
-      <div className="px-5">
-        Unable to get realtime updates for stop {sms}. Try again later
-      </div>
+    return (
+      <PageWrapper stop={stop}>
+        {stop ? (
+          <div className="px-5">
+            Unable to get realtime updates for {stop.stop_name}. Try again later
+          </div>
+        ) : (
+          <div className="px-5">
+            Unable to get realtime updates for stop {sms}. Try again later
+          </div>
+        )}
+      </PageWrapper>
     );
 
   if (!departures || !stop || !routes || !school_routes)
     return (
-      <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
+      <PageWrapper stop={stop}>
+        <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
+      </PageWrapper>
     );
 
   return (
-    <div className="relative">
-      <Head>
-        <title key="title">{stop.stop_name} bus stop — Catchy</title>
-
-        <meta
-          name="twitter:text:title"
-          content={`${stop.stop_name} bus stop — Catchy`}
-          key="twitterTitle"
-        />
-        <meta
-          name="twitter:text:description"
-          content={`Bus departures updates for ${stop.stop_name}`}
-          key="twitterDescription"
-        />
-
-        <meta
-          property="og:title"
-          content={`${stop.stop_name} bus stop — Catchy`}
-          key="ogTitle"
-        />
-        <meta
-          name="description"
-          content={`Bus departures updates for ${stop.stop_name}`}
-          key="description"
-        />
-      </Head>
+    <PageWrapper stop={stop}>
       <div className="bg-white dark:bg-gray-800 mb-2 px-5 pb-2 pt-4 flex row justify-between sticky top-0 z-20">
         <Link href="/">
           <a className="titleBarButton">
@@ -379,6 +391,6 @@ export default function StopPage({ favourites, setFavourites }) {
           No buses currently scheduled for this stop.
         </div>
       )}
-    </div>
+    </PageWrapper>
   );
 }
