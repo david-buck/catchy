@@ -77,13 +77,13 @@ const Search = ({ favourites, stops }) => {
         renderSuggestion={(suggestion, value) => (
           <span className="flex flex-nowrap items-top">
             <BusStopMarker
-              width="38"
-              height="18"
+              width="10"
+              height="16"
               className={`${
                 favourites?.includes(suggestion.stop_id)
                   ? "text-yellow-500"
                   : "text-gray-300"
-              } text-gray-300 flex-shrink-0 mt-1 ml-0.5`}
+              } text-gray-300 flex-shrink-0 mt-1 mx-4`}
             />
             <span>
               {suggestion.stop_name}{" "}

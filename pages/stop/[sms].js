@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import useSWR from "swr";
@@ -225,6 +225,45 @@ export default function StopPage({ stops, favourites, setFavourites }) {
     };
   }, [dateOffset]);
 
+  function useHookWithRefCallback() {
+    const ref = useRef(null);
+    const setRef = useCallback((node) => {
+      if (ref.current) {
+        // Make sure to cleanup any events/references added to the last instance
+      }
+
+      if (node) {
+        // Check if a node is actually passed. Otherwise node would be null.
+        // You can now do what you need to, addEventListeners, measure, etc.
+      }
+
+      // Save a reference to the node
+      ref.current = node;
+    }, []);
+
+    return [setRef];
+  }
+
+  const bigTitle = useRef(null);
+
+  const [titleVisible, setTitleVisible] = useState(false);
+
+  useEffect(() => {
+    var intersectionObserver = new IntersectionObserver(
+      function (entries) {
+        console.log(entries[0].intersectionRatio);
+        if (entries[0].intersectionRatio <= 0.001) {
+          setTitleVisible(true);
+        } else {
+          setTitleVisible(false);
+        }
+      },
+      { rootMargin: "-80px 0px 0px 0px" }
+    );
+
+    bigTitle?.current && intersectionObserver.observe(bigTitle.current);
+  }, [bigTitle.current]);
+
   const { data: departures, isValidating, error } = useSWR(
     sms && !cancelled ? `/proxy/stopdepartures/${sms}` : null,
     {
@@ -281,15 +320,14 @@ export default function StopPage({ stops, favourites, setFavourites }) {
     </div>;
   }
 
-  if (!departures || !routes || !school_routes)
+  if (stop && (!departures || !routes || !school_routes))
     return (
       <PageWrapper stop={stop}>
-        <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />{" "}
-        {stop?.id}
+        <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
       </PageWrapper>
     );
 
-  return (
+  return stop ? (
     <PageWrapper stop={stop}>
       <div className="bg-white dark:bg-gray-800 mb-2 px-5 pb-2 pt-4 flex row justify-between sticky top-0 z-20">
         <Link href="/">
@@ -297,6 +335,13 @@ export default function StopPage({ stops, favourites, setFavourites }) {
             <BackArrow width="24" height="24" title="Back." />
           </a>
         </Link>
+        <div
+          className={`px-2 py-1 text-xl font-semibold flex-1 overflow-ellipsis line-clamp-1  transition-opacity ${
+            titleVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {stop.stop_name}
+        </div>
         <div className="flex space-x-1">
           {isValidating && (
             <div className="place-items-center grid w-9 h-9 mr-1">
@@ -319,7 +364,9 @@ export default function StopPage({ stops, favourites, setFavourites }) {
           />
         </div>
       </div>
-      <h1 className="text-3xl font-semibold px-5">{stop.stop_name}</h1>
+      <h1 className="text-3xl font-semibold px-5" ref={bigTitle}>
+        {stop.stop_name}
+      </h1>
 
       {relevantAlerts?.length > 0 &&
         relevantAlerts.map((e, k) => (
@@ -395,5 +442,5 @@ export default function StopPage({ stops, favourites, setFavourites }) {
         </div>
       )}
     </PageWrapper>
-  );
+  ) : null;
 }

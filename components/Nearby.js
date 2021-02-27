@@ -92,13 +92,13 @@ export default function Nearby({ favourites, type }) {
                   <a className="flex flex-nowrap justify-between space-x-3 pl-5 pr-8 py-3 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-400 hover:bg-opacity-10 text-lg">
                     <span className="flex flex-nowrap items-top">
                       <BusStopMarker
-                        width="38"
-                        height="18"
+                        width="10"
+                        height="16"
                         className={`${
                           favourites?.includes(element.stop_id)
                             ? "text-yellow-500"
                             : "text-gray-300"
-                        } flex-shrink-0 mt-1 ml-0.5`}
+                        } flex-shrink-0 mt-1 mx-4`}
                       />
                       {element.stop_name}
                     </span>
