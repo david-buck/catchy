@@ -84,14 +84,14 @@ export default function BusInfo({ previousPages }) {
 
   return (
     <div>
-      <div className="z-10 absolute bg-gradient-to-b from-white dark:from-gray-800 left-0 mx-auto w-full h-3/5 pointer-events-none">
-        <div className="max-w-xl mx-auto px-5">
-          <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
+      <div className="z-10 absolute bg-gradient-to-b from-white dark:from-gray-800 left-0 mx-auto w-full h-3/5 max-h-96 pointer-events-none">
+        <div className="max-w-xl mx-auto px-5 pointer-events-auto">
+          <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10 ">
             <button
               onClick={() =>
                 previousPages.length > 1 ? router.back() : router.push("/")
               }
-              className="titleBarButton pointer-events-auto"
+              className="titleBarButton"
             >
               <CloseCross width="24" height="24" title="Back." />
             </button>
