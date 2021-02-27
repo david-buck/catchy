@@ -1524,12 +1524,6 @@ export const bus_stops = [
     stop_lon: 174.7578989,
   },
   {
-    stop_id: "0001",
-    stop_name: "Fare Zone Boundary 12/13 — Ruamahanga River Bridge (SH53)",
-    stop_lat: -41.19730779,
-    stop_lon: 175.43980893,
-  },
-  {
     stop_id: "6050",
     stop_name: "Breaker Bay Road at Reef Bay",
     stop_lat: -41.33975864,
@@ -6768,12 +6762,6 @@ export const bus_stops = [
     stop_lon: 174.8831739,
   },
   {
-    stop_id: "0003",
-    stop_name: "Fare Zone Boundary 11/12 — Tauherenikau River Bridge (SH2)",
-    stop_lat: -41.11841239,
-    stop_lon: 175.37498108,
-  },
-  {
     stop_id: "2929",
     stop_name: "Titahi Bay — Pikarere Street",
     stop_lat: -41.11171164,
@@ -7678,12 +7666,6 @@ export const bus_stops = [
     stop_name: "View Road at Houghton Bay Road",
     stop_lat: -41.33335188,
     stop_lon: 174.78875679,
-  },
-  {
-    stop_id: "0002",
-    stop_name: "Fare Zone Boundary 11/12 — Tauherenikau River Bridge (SH53)",
-    stop_lat: -41.14335092,
-    stop_lon: 175.36021609,
   },
   {
     stop_id: "6161",
@@ -9976,12 +9958,6 @@ export const bus_stops = [
     stop_name: "Bedford Street (near 164)",
     stop_lat: -41.14350124,
     stop_lon: 174.86753263,
-  },
-  {
-    stop_id: "0004",
-    stop_name: "Fare Zone Boundary 12/13 Waiohine River Bridge (SH2)",
-    stop_lat: -41.05871002,
-    stop_lon: 175.49475119,
   },
   {
     stop_id: "3464",
@@ -15336,12 +15312,6 @@ export const bus_stops = [
     stop_lon: 174.7921126,
   },
   {
-    stop_id: "0910",
-    stop_name: "Herbert Street at Bridge Street (temporary stop)",
-    stop_lat: -41.211234,
-    stop_lon: 174.894848,
-  },
-  {
     stop_id: "9586",
     stop_name: "Fergusson Drive (near 1087)",
     stop_lat: -41.11723049,
@@ -16666,12 +16636,6 @@ export const bus_stops = [
     stop_name: "Maungaraki Road at Oakleigh Street",
     stop_lat: -41.20272344,
     stop_lon: 174.87746195,
-  },
-  {
-    stop_id: "0005",
-    stop_name: "Fare Zone Boundary 13/14 — Waingawa River Bridge (SH2)",
-    stop_lat: -40.96453713,
-    stop_lon: 175.60913622,
   },
   {
     stop_id: "9255",
