@@ -203,7 +203,7 @@ const Alert = ({
   );
 };
 
-export default function StopPage({ favourites, setFavourites, stops }) {
+export default function StopPage({ stops, favourites, setFavourites }) {
   const router = useRouter();
   const { sms } = router.query;
 
@@ -275,10 +275,17 @@ export default function StopPage({ favourites, setFavourites, stops }) {
       </PageWrapper>
     );
 
+  if (!stop) {
+    <div>
+      <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />;
+    </div>;
+  }
+
   if (!departures || !routes || !school_routes)
     return (
       <PageWrapper stop={stop}>
-        <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
+        <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />{" "}
+        {stop?.id}
       </PageWrapper>
     );
 

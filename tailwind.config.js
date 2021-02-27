@@ -22,6 +22,8 @@ module.exports = {
     transitionProperty: ["hover", "focus"],
     borderWidth: ["focus-visible"],
     borderColor: ["focus-visible"],
+    ringWidth: ["focus-visible"],
+    ringColor: ["focus-visible"],
   },
   plugins: [],
 };

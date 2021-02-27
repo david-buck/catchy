@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 
 import AutoSuggest from "react-autosuggest";
 
 import SearchIcon from "../svgs/search.svg";
+
+import CloseCross from "../svgs/close-cross.svg";
+
 import BusStopMarker from "../svgs/bus-stop-mono.svg";
 
 const theme = {
-  container: "relative mt-2 mb-6",
+  container: "relative my-2",
   containerOpen: "",
   input:
     "transition bg-white shadow-md focus:shadow-lg dark:bg-gray-800 rounded-lg placeholder-gray-400 pl-10 pr-3 py-3 w-full border-gray-100 dark:border-gray-500 border border-solid ",
@@ -27,6 +30,8 @@ const theme = {
 
 const Search = ({ favourites, stops }) => {
   const router = useRouter();
+
+  const inputRef = useRef();
 
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -100,10 +105,28 @@ const Search = ({ favourites, stops }) => {
           autoCorrect: "off",
           autoCapitalize: "off",
           spellCheck: "false",
+          ref: inputRef,
         }}
         highlightFirstSuggestion={true}
         theme={theme}
       />
+      {value.length > 0 && (
+        <button
+          onClick={() => {
+            inputRef.current.focus();
+            setValue("");
+          }}
+          className="absolute z-10 top-4 right-8 titleBarButton"
+        >
+          <CloseCross
+            width="18"
+            height="18"
+            role="display"
+            title="Close"
+            className="text-gray-500 dark:text-gray-300"
+          />
+        </button>
+      )}
     </div>
   );
 };

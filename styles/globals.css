@@ -34,18 +34,27 @@
   src: url(/fonts/Bus-ExtraBold.woff) format("woff");
 }
 
-html * {
-  max-height: 1000000px;
+@layer base {
+  html * {
+    max-height: 1000000px;
+  }
+
+  html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 body {
   @apply font-body antialiased max-w-xl m-auto text-gray-900 bg-white dark:bg-gray-800 dark:text-white transition-colors;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
 }
 
 .titleBarButton {
   @apply place-items-center grid w-9 h-9 transition-colors ease-linear duration-150 rounded-full hover:bg-gray-400 hover:bg-opacity-10 focus:outline-none focus-visible:border focus-visible:border-gray-400;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .mapboxgl-control-container {

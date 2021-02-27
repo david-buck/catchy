@@ -19,10 +19,7 @@ export default function noBus({ previousPages }) {
         Bus cancelled
       </h1>
 
-      <p className="mb-4">
-        This bus has been cancelled. There’s no more details, that's all we
-        know.
-      </p>
+      <p className="mb-4">This bus has been cancelled.</p>
     </div>
   );
 }
