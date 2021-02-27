@@ -19,19 +19,6 @@ import LocationMarker from "../../svgs/location-mono.svg";
 
 import Spinner from "../../svgs/spinner.svg";
 
-export async function getServerSideProps({ params }) {
-  const res = await fetch(
-    process.env.NODE_ENV === "development"
-      ? `http://localhost:3000/api/stop/${params.sms}`
-      : `https://catchy.nz/api/stop/${params.sms}`
-  );
-  const stop = await res.json();
-
-  return {
-    props: { stop },
-  };
-}
-
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const getRouteDetails = (id, arr) => {
@@ -216,9 +203,11 @@ const Alert = ({
   );
 };
 
-export default function StopPage({ favourites, setFavourites, stop }) {
+export default function StopPage({ favourites, setFavourites, stops }) {
   const router = useRouter();
   const { sms } = router.query;
+
+  const stop = stops.find((el) => el.stop_id === sms);
 
   const [time, setTime] = useState(new Date());
   const [groupedDepartures, setGroupedDepartures] = useState(null);

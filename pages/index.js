@@ -4,12 +4,9 @@ import NearbyStops from "../components/StopsNearby";
 
 import Head from "next/head";
 
-import useStops from "../hooks/useStops";
-
 import Logo from "../svgs/catchy-full-logo.svg";
 
-export default function IndexPage({ favourites }) {
-  const { data: stops } = useStops();
+export default function IndexPage({ favourites, stops }) {
   return (
     <>
       <Head>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 
+import { bus_stops } from "../data/bus_stops";
+
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -130,6 +132,7 @@ function MyApp({ Component, pageProps }) {
         previousPages={previousPages}
         favourites={favourites}
         setFavourites={setFavourites}
+        stops={bus_stops}
         {...pageProps}
       />
     </>
