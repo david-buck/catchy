@@ -26,12 +26,12 @@ export default function handler({ query: { lat, long } }, res) {
   const nearest = train_stations
     .map((element, key) => {
       let dist = getDistance(lat, long, element.stop_lat, element.stop_lon);
-      if (dist < 3) return { distance: dist.toFixed(4), ...element };
+      if (dist < 5) return { distance: dist.toFixed(4), ...element };
       else return null;
     })
     .filter((i) => i)
     .sort((a, b) => a.distance.localeCompare(b.distance))
-    .slice(0, 20);
+    .slice(0, 10);
 
   res.status(200).json(nearest);
 }

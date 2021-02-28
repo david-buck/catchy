@@ -7,7 +7,7 @@ import SearchIcon from "../svgs/search.svg";
 
 import CloseCross from "../svgs/close-cross.svg";
 
-import BusStopMarker from "../svgs/bus-stop-mono.svg";
+import StopMarker from "../svgs/stop-mono-lg.svg";
 
 const theme = {
   container: "relative my-2",
@@ -28,7 +28,7 @@ const theme = {
   sectionTitle: "",
 };
 
-const Search = ({ favourites, stops }) => {
+const Search = ({ favourites, stops, type }) => {
   const router = useRouter();
 
   const inputRef = useRef();
@@ -76,18 +76,18 @@ const Search = ({ favourites, stops }) => {
         getSuggestionValue={(suggestion) => suggestion.stop_name}
         renderSuggestion={(suggestion, value) => (
           <span className="flex flex-nowrap items-top">
-            <BusStopMarker
-              width="10"
-              height="16"
+            <StopMarker
+              width="12"
+              height="18"
               className={`${
                 favourites?.includes(suggestion.stop_id)
                   ? "text-yellow-500"
                   : "text-gray-300"
-              } text-gray-300 flex-shrink-0 mt-1 mx-4`}
+              } flex-shrink-0 mt-px mx-4`}
             />
             <span>
               {suggestion.stop_name}{" "}
-              {suggestion.stop_id.includes(value.query) && (
+              {type === "bus" && suggestion.stop_id.includes(value.query) && (
                 <span className="text-sm opacity-60 leading-none">
                   <br />
                   Stop {suggestion.stop_id}
@@ -97,7 +97,10 @@ const Search = ({ favourites, stops }) => {
           </span>
         )}
         inputProps={{
-          placeholder: "Search stops by name or stop #",
+          placeholder:
+            type === "bus"
+              ? "Search stops by name or stop #"
+              : "Search stations by name or station code",
           value: value,
           onChange: (_, { newValue, method }) => {
             setValue(newValue);

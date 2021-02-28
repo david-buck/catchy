@@ -12,6 +12,7 @@ import FavouriteButton from "../../components/FavouriteButton";
 import RouteBadge from "../../components/RouteBadge";
 
 import routeNamer from "../../lib/routeNamer";
+import checkStopType from "../../lib/checkStopType";
 
 import BackArrow from "../../svgs/navigation-left-arrow.svg";
 import Chair from "../../svgs/chair.svg";
@@ -78,14 +79,23 @@ const PageWrapper = ({ children, stop }) => (
   </div>
 );
 
-const BusLink = ({ cancelled, unknown, vehicle_id, children }) => {
+const ViewUpdatesLink = ({
+  cancelled,
+  unknown,
+  vehicle_id,
+  stopType,
+  children,
+}) => {
   if (cancelled) {
-    return <Link href="/bus/cancelled">{children}</Link>;
+    return <Link href={`/${stopType}/cancelled`}>{children}</Link>;
   } else if (unknown) {
-    return <Link href="/bus/unknown">{children}</Link>;
+    return <Link href={`/${stopType}/unknown`}>{children}</Link>;
   } else if (vehicle_id) {
     return (
-      <Link as={`/bus/${vehicle_id}`} href={"/bus/[vehicle_id]"}>
+      <Link
+        as={`/${stopType}/${vehicle_id}`}
+        href={`/${stopType}/[vehicle_id]`}
+      >
         {children}
       </Link>
     );
@@ -93,31 +103,34 @@ const BusLink = ({ cancelled, unknown, vehicle_id, children }) => {
 };
 
 const Expected = ({
-  service_id,
-  destination_name,
-  school,
-  expected,
   aimed,
-  time,
-  status,
-  wheelchair_accessible,
+  destination_name,
+  expected,
   route_color,
   route_type,
+  school,
+  service_id,
+  status,
+  stopType,
+  time,
   vehicle_id,
+  wheelchair_accessible,
 }) => {
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
 
   return (
-    <BusLink
+    <ViewUpdatesLink
       cancelled={status === "cancelled"}
       unknown={!vehicle_id}
       vehicle_id={vehicle_id}
+      stopType={stopType}
     >
       <a className="grid grid-cols-stop-row gap-x-3 px-5 py-3 items-center text-lg hover:bg-gray-400 hover:bg-opacity-10 rounded-lg">
         <RouteBadge
           route_color={route_color}
           route_type={route_type}
           service_id={service_id}
+          transport_type={stopType}
         />
 
         <h3
@@ -170,7 +183,7 @@ const Expected = ({
           )}
         </div>
       </a>
-    </BusLink>
+    </ViewUpdatesLink>
   );
 };
 
@@ -180,7 +193,6 @@ const Alert = ({
   severity_level,
   header_text,
   description_text,
-  key,
 }) => {
   const epochNow = parseInt(Date.parse(new Date()) / 1000);
 
@@ -188,7 +200,6 @@ const Alert = ({
     active_period[0].end > epochNow &&
     effect !== "NO_EFFECT" ? (
     <div
-      key={key}
       className={`${
         severity_level === "WARNING"
           ? "bg-pink-50 border-pink-500 dark:bg-pink-700 dark:border-pink-800"
@@ -199,13 +210,22 @@ const Alert = ({
       <p>{description_text}</p>
     </div>
   ) : (
-    <div key={key} />
+    <div />
   );
 };
 
-export default function StopPage({ stops, favourites, setFavourites }) {
+export default function StopPage({
+  favourites,
+  setFavourites,
+  bus_stops,
+  train_stations,
+}) {
   const router = useRouter();
   const { sms } = router.query;
+
+  const stopType = checkStopType(sms);
+
+  const stops = stopType === "bus" ? bus_stops : train_stations;
 
   const stop = stops.find((el) => el.stop_id === sms);
 
@@ -225,40 +245,15 @@ export default function StopPage({ stops, favourites, setFavourites }) {
     };
   }, [dateOffset]);
 
-  function useHookWithRefCallback() {
-    const ref = useRef(null);
-    const setRef = useCallback((node) => {
-      if (ref.current) {
-        // Make sure to cleanup any events/references added to the last instance
-      }
-
-      if (node) {
-        // Check if a node is actually passed. Otherwise node would be null.
-        // You can now do what you need to, addEventListeners, measure, etc.
-      }
-
-      // Save a reference to the node
-      ref.current = node;
-    }, []);
-
-    return [setRef];
-  }
-
   const bigTitle = useRef(null);
-
   const [titleVisible, setTitleVisible] = useState(false);
 
   useEffect(() => {
     var intersectionObserver = new IntersectionObserver(
       function (entries) {
-        console.log(entries[0].intersectionRatio);
-        if (entries[0].intersectionRatio <= 0.001) {
-          setTitleVisible(true);
-        } else {
-          setTitleVisible(false);
-        }
+        setTitleVisible(!entries[0].isIntersecting);
       },
-      { rootMargin: "-80px 0px 0px 0px" }
+      { rootMargin: "-65px 0px 0px 0px", threshold: 0.1 }
     );
 
     bigTitle?.current && intersectionObserver.observe(bigTitle.current);
@@ -274,6 +269,8 @@ export default function StopPage({ stops, favourites, setFavourites }) {
 
   useEffect(() => {
     departures != null &&
+      departures !== undefined &&
+      !departures?.error &&
       setGroupedDepartures(
         Object.entries(groupByDepartureDate(departures?.departures, "aimed"))
       );
@@ -289,17 +286,17 @@ export default function StopPage({ stops, favourites, setFavourites }) {
     e.alert.informed_entity.find((f) => f.stop_id === sms)
   );
 
-  const { data: date } = useSWR(`/api/local-time`, {
+  const { data } = useSWR(`/api/local-time`, {
     fetcher: fetcher,
     refreshInterval: 0,
-    revalidateOnFocus: false,
+    revalidateOnFocus: true,
     onSuccess: (d) => {
       let offset = Date.parse(d.date) - Date.parse(time);
       setDateOffset(offset > 10000 ? offset : 0);
     },
   });
 
-  if (error)
+  if (error) {
     return (
       <PageWrapper stop={stop}>
         {stop ? (
@@ -313,24 +310,17 @@ export default function StopPage({ stops, favourites, setFavourites }) {
         )}
       </PageWrapper>
     );
-
-  if (!stop) {
-    <div>
-      <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />;
-    </div>;
   }
 
-  if (stop && (!departures || !routes || !school_routes))
+  if (!stop || !departures || !routes || (!school_routes && stopType === "bus"))
     return (
-      <PageWrapper stop={stop}>
-        <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
-      </PageWrapper>
+      <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
     );
 
   return stop ? (
     <PageWrapper stop={stop}>
       <div className="bg-white dark:bg-gray-800 mb-2 px-5 pb-2 pt-4 flex row justify-between sticky top-0 z-20">
-        <Link href="/">
+        <Link href={stopType === "bus" ? "/" : "/trains"}>
           <a className="titleBarButton">
             <BackArrow width="24" height="24" title="Back." />
           </a>
@@ -387,10 +377,9 @@ export default function StopPage({ stops, favourites, setFavourites }) {
             return (
               <div key={date}>
                 <h2 className="col-span-4 px-5 pt-4 mb-2 bg-white dark:bg-gray-800 sticky top-12 z-10">
-                  {loopDate.getDate() === new Date().getDate() && (
+                  {loopDate.getDate() === new Date().getDate() ? (
                     <span className="font-bold mr-1">Today </span>
-                  )}
-                  {loopDate.getDate() === new Date().getDate() + 1 && (
+                  ) : (
                     <>
                       <span className="font-bold mr-1">Tomorrow </span>
                     </>
@@ -416,6 +405,7 @@ export default function StopPage({ stops, favourites, setFavourites }) {
                       vehicle_id={element.vehicle_id}
                       destination_name={element.destination.name}
                       school={
+                        stopType === "bus" &&
                         routeDetails.type === "school" &&
                         school_routes.find(
                           (el) => el.route_short_name === element.service_id
@@ -425,6 +415,7 @@ export default function StopPage({ stops, favourites, setFavourites }) {
                       aimed={element.departure.aimed}
                       time={time}
                       status={element.status}
+                      stopType={stopType}
                       delay={element.delay}
                       wheelchair_accessible={element.wheelchair_accessible}
                       route_color={routeDetails.color}

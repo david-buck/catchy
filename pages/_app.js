@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 
 import { bus_stops } from "../data/bus_stops";
+import { train_stations } from "../data/train_stations";
 
 import "../styles/globals.css";
 
@@ -132,7 +133,8 @@ function MyApp({ Component, pageProps }) {
         previousPages={previousPages}
         favourites={favourites}
         setFavourites={setFavourites}
-        stops={bus_stops}
+        bus_stops={bus_stops}
+        train_stations={train_stations}
         {...pageProps}
       />
     </>

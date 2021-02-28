@@ -1,7 +1,9 @@
 import { bus_routes } from "../../../data/bus_routes";
+import { train_services } from "../../../data/train_services";
 
 export default function busRouteHandler({ query: { id } }, res) {
-  const filtered = bus_routes.filter((p) => p.route_short_name === id);
+  const all_routes = !isNaN(id) ? bus_routes : train_services;
+  const filtered = all_routes.filter((p) => p.route_short_name === id);
 
   // Route with route_short_name exists
   if (filtered.length > 0) {

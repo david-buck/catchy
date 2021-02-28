@@ -6,21 +6,19 @@ import usevehiclePositions from "../../hooks/useVehiclePositions";
 import useTripUpdates from "../../hooks/useTripUpdates";
 import useStops from "../../hooks/useStops";
 import useRoutes from "../../hooks/useRoutes";
-import useSchoolRoutes from "../../hooks/useSchoolRoutes";
 
 import { useRouter } from "next/router";
 
 import RouteBadge from "../../components/RouteBadge";
 
 import CloseCross from "../../svgs/close-cross.svg";
-import StopMarker from "../../svgs/stop-mono.svg";
 import Clock from "../../svgs/clock.svg";
 
 import Spinner from "../../svgs/spinner.svg";
 
 const getRouteDetails = (id, arr) => {
-  console.log(id);
-  console.log(arr);
+  // console.log(id);
+  // console.log(arr);
   const match = arr.find((e) => e.route_short_name === id);
 
   return match
@@ -40,11 +38,6 @@ export default function BusInfo({ previousPages }) {
   );
   const { data: stops } = useStops();
   const { data: routes } = useRoutes();
-  const { data: school_routes } = useSchoolRoutes();
-
-  const nearestStop = stops?.find(
-    (e) => e.stop_id === tripUpdate?.trip_update?.stop_time_update.stop_id
-  );
 
   const service_id = tripUpdate?.trip_update?.trip.trip_id.split("__")[0];
 
@@ -67,7 +60,7 @@ export default function BusInfo({ previousPages }) {
         <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
           <button
             onClick={() =>
-              previousPages.length > 1 ? router.back() : router.push("/")
+              previousPages.length > 1 ? router.back() : router.push("/trains")
             }
             className="titleBarButton"
           >
@@ -104,6 +97,7 @@ export default function BusInfo({ previousPages }) {
               route_color={routeDetails?.color}
               route_type={routeDetails?.type}
               service_id={service_id}
+              transport_type="train"
               className="mr-3"
             />
             <h1 className="text-xl font-semibold leading-tight mb-2 pt-1">
@@ -150,21 +144,12 @@ export default function BusInfo({ previousPages }) {
               <>on time</>
             )}
           </div>
-          <br />
-          <div className="bg-white dark:bg-gray-800 ml-11 pl-2 pr-4 py-1 rounded-2xl inline-flex">
-            <StopMarker
-              width="16"
-              height="16"
-              className="text-yellow-500 mt-1 ml-0.5 mr-1.5 flex-shrink-0"
-            />
-            Nearby stop: {nearestStop?.stop_name}
-          </div>
         </div>
       </div>
       <Map
         lat={vehiclePosition?.vehicle.position.latitude}
         lng={vehiclePosition?.vehicle.position.longitude}
-        bearing={vehiclePosition?.vehicle.position.bearing}
+        bearing={vehiclePosition?.vehicle.position.bearing + 19}
       />
     </div>
   );

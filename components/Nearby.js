@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import useSWR from "swr";
 
-import BusStopMarker from "../svgs/bus-stop-mono.svg";
+import StopMarker from "../svgs/stop-mono-lg.svg";
 import MyLocation from "../svgs/my-location.svg";
 
 import Spinner from "../svgs/spinner.svg";
@@ -39,7 +39,7 @@ export default function Nearby({ favourites, type }) {
 
   const { data, error } = useSWR(
     lat && long && !cancelled
-      ? `/api/${type === "bus" && "stops"}/${lat}/${long}`
+      ? `/api/${type === "bus" ? "stops" : "stations"}/${lat}/${long}`
       : null,
     fetcher,
     {
@@ -51,7 +51,7 @@ export default function Nearby({ favourites, type }) {
   if (error)
     return (
       <div className="py-2 mx-5 text-lg opacity-60">
-        Unable to load nearby stops.
+        Unable to load nearby {type === "bus" ? "stops" : "stations"}.
       </div>
     );
 
@@ -59,7 +59,7 @@ export default function Nearby({ favourites, type }) {
     return (
       <div className="py-3 text-lg opacity-60 px-5 mb-4 flex">
         <Spinner width="24" height="24" className="text-yellow-500 mx-2" />
-        Finding nearby stops ...
+        Finding nearby {type === "bus" ? "stops" : "stations"} ...
       </div>
     );
 
@@ -73,7 +73,7 @@ export default function Nearby({ favourites, type }) {
           <span className="text-gray-600 dark:text-gray-300 relative top-1.5 mr-3">
             <MyLocation width="16" height="16" />
           </span>
-          Find bus stops near you
+          Find {type === "bus" ? "bus stops" : "train stations"} near you
         </button>
       </div>
     );
@@ -82,7 +82,7 @@ export default function Nearby({ favourites, type }) {
     return (
       <div>
         <h2 className="text-2xl font-semibold mt-5 mb-1 px-5">
-          Stops nearest you
+          {type === "bus" ? "Stops" : "Stations"} nearest you
         </h2>
         <div className="mb-8">
           {data.map((element, key) => {
@@ -91,19 +91,19 @@ export default function Nearby({ favourites, type }) {
                 <Link as={`/stop/${element.stop_id}`} href="/stop/[sms]">
                   <a className="flex flex-nowrap justify-between space-x-3 pl-5 pr-8 py-3 rounded-md transition-colors ease-linear duration-150 hover:bg-gray-400 hover:bg-opacity-10 text-lg">
                     <span className="flex flex-nowrap items-top">
-                      <BusStopMarker
-                        width="10"
-                        height="16"
+                      <StopMarker
+                        width="12"
+                        height="18"
                         className={`${
                           favourites?.includes(element.stop_id)
                             ? "text-yellow-500"
                             : "text-gray-300"
-                        } flex-shrink-0 mt-1 mx-4`}
+                        } text-gray-300 flex-shrink-0 mt-1 mx-4`}
                       />
                       {element.stop_name}
                     </span>
                     <span className="flex-shrink-0 opacity-60">
-                      {element.distance < 1000
+                      {element.distance < 1
                         ? parseInt(element.distance * 1000) + " metres"
                         : parseFloat(element.distance).toFixed(2) + " km"}
                     </span>

@@ -1,10 +1,10 @@
-import Favourites from "../components/Favourites";
 import Search from "../components/Search";
 import Nearby from "../components/Nearby";
+import Favourites from "../components/Favourites";
 
 import Logo from "../svgs/catchy-full-logo.svg";
 
-export default function IndexPage({ favourites, stops }) {
+export default function IndexPage({ favourites, bus_stops: stops }) {
   return (
     <>
       <div className="flex flex-col">
