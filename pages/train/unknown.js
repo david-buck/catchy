@@ -21,6 +21,9 @@ export default function noBus({ previousPages }) {
         Updates are either unavailable for this train, or no train has been
         assigned to your trip yet.
       </p>
+      <p className="mb-4">
+        Unfortunately, updates aren't provided for bus replacement services.
+      </p>
       <p>Try again closer to departure time.</p>
     </div>
   );

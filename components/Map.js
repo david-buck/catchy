@@ -7,7 +7,7 @@ import VehiclePositionMarker from "../svgs/vehicle-position-marker.svg";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY2F0Y2h5LW56IiwiYSI6ImNra2pkNzNyOTA0ZTkyd3BtOTRqenNoZjYifQ.IT8HHxo0QW-IU4jRkhfmEQ";
 
-const Map = ({ lat, lng, bearing }) => {
+const Map = ({ lat, lng, bearing, bearingOffset }) => {
   const mapContainerRef = useRef(null);
   const map = useRef();
   const marker = useRef();
@@ -30,7 +30,7 @@ const Map = ({ lat, lng, bearing }) => {
 
     marker.current = new mapboxgl.Marker({
       anchor: "right",
-      rotation: bearing,
+      rotation: bearing + bearingOffset,
       pitchAlignment: "map",
       rotationAlignment: "map",
       offset: [20, 0],
@@ -49,7 +49,7 @@ const Map = ({ lat, lng, bearing }) => {
 
     marker.current
       .setLngLat([lng, lat])
-      .setRotation(map.current.getBearing() + bearing)
+      .setRotation(bearing + bearingOffset)
       .addTo(map.current);
   }, [lng, lat]);
 

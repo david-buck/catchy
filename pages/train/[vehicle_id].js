@@ -149,7 +149,8 @@ export default function BusInfo({ previousPages }) {
       <Map
         lat={vehiclePosition?.vehicle.position.latitude}
         lng={vehiclePosition?.vehicle.position.longitude}
-        bearing={vehiclePosition?.vehicle.position.bearing + 19}
+        bearing={vehiclePosition?.vehicle.position.bearing}
+        bearingOffset={25}
       />
     </div>
   );
