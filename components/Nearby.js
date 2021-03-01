@@ -68,7 +68,7 @@ export default function Nearby({ favourites, type }) {
       <div className="py-2 text-lg px-5 mb-4">
         <button
           onClick={() => locate()}
-          className="py-1 pl-3 pr-6 text-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100  dark:hover:bg-gray-600 rounded-full flex transition-colors focus:outline-none focus-visible:ring-offset-blue-400 focus-visible:ring"
+          className="py-1 pl-3 pr-6 text-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100  dark:hover:bg-gray-600 rounded-full flex transition-colors focus:outline-none focus-visible:ring-2"
         >
           <span className="text-gray-600 dark:text-gray-300 relative top-1.5 mr-3">
             <MyLocation width="16" height="16" />

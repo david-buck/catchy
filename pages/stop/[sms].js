@@ -214,6 +214,19 @@ const Alert = ({
   );
 };
 
+const SegmentedButton = ({ label, direction, setDirection, directionTo }) => (
+  <button
+    onClick={() => setDirection(directionTo)}
+    className={`flex-1 p-1 dark:bg-gray-700 hover:bg-gray-100  dark:hover:bg-gray-600 rounded-full x focus:outline-none focus:ring-2" ${
+      direction === directionTo
+        ? "font-bold bg-gray-100 rounded-full"
+        : "font-regular"
+    }`}
+  >
+    {label}
+  </button>
+);
+
 export default function StopPage({
   favourites,
   setFavourites,
@@ -232,6 +245,7 @@ export default function StopPage({
   const [time, setTime] = useState(new Date());
   const [groupedDepartures, setGroupedDepartures] = useState(null);
   const [dateOffset, setDateOffset] = useState(0);
+  const [direction, setDirection] = useState("");
 
   const [cancelled, setCancelled] = useState(false);
 
@@ -372,6 +386,32 @@ export default function StopPage({
 
       {departures.departures.length > 0 ? (
         <div>
+          {stopType === "train" && (
+            <div>
+              <h2 className="hidden">Trip direction</h2>
+              <nav className="mx-5 mt-6 mb-2 text-lg rounded-full bg-gray-50 dark:bg-gray-600 flex">
+                <SegmentedButton
+                  label="All trains"
+                  directionTo=""
+                  direction={direction}
+                  setDirection={setDirection}
+                />
+                <SegmentedButton
+                  label="Inbound"
+                  directionTo="inbound"
+                  direction={direction}
+                  setDirection={setDirection}
+                />
+                <SegmentedButton
+                  label="Outbound"
+                  directionTo="outbound"
+                  direction={direction}
+                  setDirection={setDirection}
+                />
+              </nav>
+            </div>
+          )}
+
           {groupedDepartures?.map(([date, departures]) => {
             let loopDate = new Date(date);
             return (
@@ -399,28 +439,30 @@ export default function StopPage({
                     routes
                   );
                   return (
-                    <Expected
-                      key={date + key}
-                      service_id={element.service_id}
-                      vehicle_id={element.vehicle_id}
-                      destination_name={element.destination.name}
-                      school={
-                        stopType === "bus" &&
-                        routeDetails.type === "school" &&
-                        school_routes.find(
-                          (el) => el.route_short_name === element.service_id
-                        ).schools
-                      }
-                      expected={element.departure.expected}
-                      aimed={element.departure.aimed}
-                      time={time}
-                      status={element.status}
-                      stopType={stopType}
-                      delay={element.delay}
-                      wheelchair_accessible={element.wheelchair_accessible}
-                      route_color={routeDetails.color}
-                      route_type={routeDetails.type}
-                    />
+                    (element.direction === direction || !direction) && (
+                      <Expected
+                        key={date + key}
+                        service_id={element.service_id}
+                        vehicle_id={element.vehicle_id}
+                        destination_name={element.destination.name}
+                        school={
+                          stopType === "bus" &&
+                          routeDetails.type === "school" &&
+                          school_routes.find(
+                            (el) => el.route_short_name === element.service_id
+                          ).schools
+                        }
+                        expected={element.departure.expected}
+                        aimed={element.departure.aimed}
+                        time={time}
+                        status={element.status}
+                        stopType={stopType}
+                        delay={element.delay}
+                        wheelchair_accessible={element.wheelchair_accessible}
+                        route_color={routeDetails.color}
+                        route_type={routeDetails.type}
+                      />
+                    )
                   );
                 })}
               </div>
