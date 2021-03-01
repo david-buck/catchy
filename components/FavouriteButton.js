@@ -26,7 +26,7 @@ export default function FavouriteButton({ sms, favourites, setFavourites }) {
           className={
             favourites.includes(sms)
               ? "text-yellow-500"
-              : "text-gray-300 dark:text-gray-600"
+              : "text-gray-400 opacity-60"
           }
           title={
             favourites.includes(sms)

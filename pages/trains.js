@@ -16,7 +16,7 @@ export default function IndexPage({ favourites, train_stations: stops }) {
 
         <Search favourites={favourites} stops={stops} type="train" />
         <Nearby type="train" favourites={favourites} />
-        <Favourites favourites={favourites} stops={stops} />
+        <Favourites favourites={favourites} stops={stops} type="train" />
       </div>
     </>
   );

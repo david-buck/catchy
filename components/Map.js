@@ -30,7 +30,7 @@ const Map = ({ lat, lng, bearing, bearingOffset }) => {
 
     marker.current = new mapboxgl.Marker({
       anchor: "right",
-      rotation: bearing + bearingOffset,
+      rotation: bearing + (bearingOffset ? bearingOffset : 0),
       pitchAlignment: "map",
       rotationAlignment: "map",
       offset: [20, 0],
@@ -49,7 +49,7 @@ const Map = ({ lat, lng, bearing, bearingOffset }) => {
 
     marker.current
       .setLngLat([lng, lat])
-      .setRotation(bearing + bearingOffset)
+      .setRotation(bearing + (bearingOffset ? bearingOffset : 0))
       .addTo(map.current);
   }, [lng, lat]);
 

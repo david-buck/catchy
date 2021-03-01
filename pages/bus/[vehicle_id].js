@@ -19,8 +19,6 @@ import Clock from "../../svgs/clock.svg";
 import Spinner from "../../svgs/spinner.svg";
 
 const getRouteDetails = (id, arr) => {
-  console.log(id);
-  console.log(arr);
   const match = arr.find((e) => e.route_short_name === id);
 
   return match

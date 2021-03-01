@@ -81,7 +81,9 @@ const Search = ({ favourites, stops, type }) => {
               height="18"
               className={`${
                 favourites?.includes(suggestion.stop_id)
-                  ? "text-yellow-500"
+                  ? type === "bus"
+                    ? "text-yellow-500"
+                    : "text-green-500"
                   : "text-gray-300"
               } flex-shrink-0 mt-px mx-4`}
             />
@@ -97,10 +99,10 @@ const Search = ({ favourites, stops, type }) => {
           </span>
         )}
         inputProps={{
-          placeholder:
-            type === "bus"
-              ? "Search stops by name or stop #"
-              : "Search stations by name or station code",
+          placeholder: `Search by ${
+            type === "bus" ? "stop" : "station"
+          } name or number`,
+
           value: value,
           onChange: (_, { newValue, method }) => {
             setValue(newValue);

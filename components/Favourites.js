@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import StopMarker from "../svgs/stop-mono-lg.svg";
 
-export default function Favourites({ favourites, stops }) {
+export default function Favourites({ favourites, stops, type }) {
   return (
     <>
       <h2 className="text-2xl font-semibold mb-1 px-5">Your favourites</h2>
@@ -25,7 +25,9 @@ export default function Favourites({ favourites, stops }) {
                       <StopMarker
                         width="12"
                         height="18"
-                        className="text-yellow-500 flex-shrink-0 mt-1 mx-4"
+                        className={`${
+                          type === "bus" ? "text-yellow-500" : "text-green-500"
+                        } flex-shrink-0 mt-1 mx-4`}
                       />
                       <span>{stop.stop_name}</span>
                     </a>

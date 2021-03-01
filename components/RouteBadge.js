@@ -36,7 +36,7 @@ export default function RouteBadge({
         })
       }
       className={
-        className +
+        (className ? className : "") +
         ` grid place-items-center w-9  font-semibold  flex-shrink-0 ${
           service_id.length > 2 ? "text-base" : "text-lg"
         } ${transport_type !== "train" ? "rounded-full h-9" : "rounded-sm h-7"}`
