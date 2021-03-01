@@ -163,6 +163,7 @@ export default function BusInfo({ previousPages }) {
         lat={vehiclePosition?.vehicle.position.latitude}
         lng={vehiclePosition?.vehicle.position.longitude}
         bearing={vehiclePosition?.vehicle.position.bearing}
+        bearingOffset={0}
       />
     </div>
   );
