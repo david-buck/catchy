@@ -62,6 +62,28 @@ export default function BusInfo({ previousPages }) {
   if (vehicle_id === undefined || tripUpdate.message)
     return (
       <div className="px-5">
+        <Head>
+          <meta name="robots" content="noindex" />
+          <title key="title">Catchy - Waiting for a bus</title>
+
+          <meta name="twitter:text:title" content="Catchy" key="twitterTitle" />
+          <meta
+            name="twitter:text:description"
+            content="Updates unavailable"
+            key="twitterDescription"
+          />
+
+          <meta
+            property="og:title"
+            content="Catchy - Waiting for a bus"
+            key="ogTitle"
+          />
+          <meta
+            name="description"
+            content="Updates unavailable"
+            key="description"
+          />
+        </Head>
         <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
           <button
             onClick={() =>
@@ -84,6 +106,28 @@ export default function BusInfo({ previousPages }) {
 
   return (
     <div>
+      <Head>
+        <meta name="robots" content="noindex" />
+        <title key="title">Catchy - Live bus updates</title>
+
+        <meta name="twitter:text:title" content="Catchy" key="twitterTitle" />
+        <meta
+          name="twitter:text:description"
+          content="Live updates for a bus"
+          key="twitterDescription"
+        />
+
+        <meta
+          property="og:title"
+          content="Catchy – Live bus updates"
+          key="ogTitle"
+        />
+        <meta
+          name="description"
+          content="Live updates for a bus"
+          key="description"
+        />
+      </Head>
       <div className="z-10 absolute bg-gradient-to-b from-white dark:from-gray-800 left-0 mx-auto w-full h-3/5 max-h-96 pointer-events-none">
         <div className="max-w-xl mx-auto px-5 pointer-events-auto">
           <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10 ">

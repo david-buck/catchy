@@ -5,6 +5,28 @@ export default function noBus({ previousPages }) {
   const router = useRouter();
   return (
     <div className="px-5">
+      <Head>
+        <meta name="robots" content="noindex" />
+        <title key="title">Catchy - Waiting for a train</title>
+
+        <meta name="twitter:text:title" content="Catchy" key="twitterTitle" />
+        <meta
+          name="twitter:text:description"
+          content="Updates unavailable"
+          key="twitterDescription"
+        />
+
+        <meta
+          property="og:title"
+          content="Catchy - Waiting for a train"
+          key="ogTitle"
+        />
+        <meta
+          name="description"
+          content="Updates unavailable"
+          key="description"
+        />
+      </Head>
       <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10">
         <button
           onClick={() =>
