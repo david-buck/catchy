@@ -37,16 +37,17 @@ export default function about() {
       <h1 className="text-3xl font-semibold mb-4">About Catchy</h1>
 
       <p className="mb-4">
-        Catchy is a free and independent service for people who know what bus
-        they need to catch and where they catch it from.
+        Catchy is a free and independent service for people who know what bus or
+        train they need to catch and where they catch it from.
       </p>
       <p className="mb-4">
         You can find the stops you use most and add them to a list of your
         favourites.
       </p>
       <p className="mb-4">
-        Catchy helps you see if your bus is running on time and lets you check
-        on where it is by showing you the bus's progress on a map.
+        Catchy helps you see if your bus or train is running on time and lets
+        you check on where it is by showing you the its progress on a map.
+        Updated live(ish).
       </p>
       <p className="font-semibold">Catchy is:</p>
       <ul className="list-inside list-disc mb-4 pl-2">
