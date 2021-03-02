@@ -48,6 +48,8 @@ const groupByDepartureDate = (objectArray, dateProperty) => {
   }, {});
 };
 
+const oneDirectionStops = ["JOHN", "MAST", "MELL", "WAIK", "WELL"];
+
 const PageWrapper = ({ children, stop }) => (
   <div className="relative">
     <Head>
@@ -134,7 +136,7 @@ const Expected = ({
         />
 
         <h3
-          className={`leading-none ${!wheelchair_accessible && "col-span-2"}`}
+          className={`leading-none ${!!!wheelchair_accessible && "col-span-2"}`}
         >
           {routeNamer(destination_name)}
           {school && (
@@ -144,7 +146,7 @@ const Expected = ({
             </span>
           )}
         </h3>
-        {wheelchair_accessible && (
+        {!!wheelchair_accessible && (
           <div>
             <Chair
               width="13"
@@ -217,9 +219,9 @@ const Alert = ({
 const SegmentedButton = ({ label, direction, setDirection, directionTo }) => (
   <button
     onClick={() => setDirection(directionTo)}
-    className={`flex-1 p-1 dark:bg-gray-700 hover:bg-gray-100  dark:hover:bg-gray-600 rounded-full x focus:outline-none focus:ring-2" ${
+    className={`flex-1 p-1  hover:bg-gray-100  dark:hover:bg-gray-700 rounded-full x focus:outline-none focus:ring-2" ${
       direction === directionTo
-        ? "font-bold bg-gray-100 rounded-full"
+        ? "font-bold bg-gray-100 dark:bg-gray-700 rounded-full"
         : "font-regular"
     }`}
   >
@@ -294,11 +296,7 @@ export default function StopPage({
 
   const { data: school_routes } = useSchoolRoutes();
 
-  const { data: service_alerts } = useServiceAlerts();
-
-  const relevantAlerts = service_alerts?.entity.filter((e) =>
-    e.alert.informed_entity.find((f) => f.stop_id === sms)
-  );
+  const { data: service_alerts } = useServiceAlerts(sms);
 
   const { data } = useSWR(`/api/local-time`, {
     fetcher: fetcher,
@@ -372,8 +370,8 @@ export default function StopPage({
         {stop.stop_name}
       </h1>
 
-      {relevantAlerts?.length > 0 &&
-        relevantAlerts.map((e, k) => (
+      {service_alerts?.length > 0 &&
+        service_alerts.map((e, k) => (
           <Alert
             active_period={e.alert.active_period}
             effect={e.effect}
@@ -386,10 +384,10 @@ export default function StopPage({
 
       {departures.departures.length > 0 ? (
         <div>
-          {stopType === "train" && (
+          {stopType === "train" && !oneDirectionStops.includes(sms) && (
             <div>
               <h2 className="hidden">Trip direction</h2>
-              <nav className="mx-5 mt-6 mb-2 text-lg rounded-full bg-gray-50 dark:bg-gray-600 flex">
+              <nav className="mx-5 mt-6 mb-2 text-lg rounded-full bg-gray-50 dark:bg-gray-900 flex">
                 <SegmentedButton
                   label="All trains"
                   directionTo=""
