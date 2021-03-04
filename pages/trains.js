@@ -1,9 +1,9 @@
+import Head from "next/head";
+
 import Nav from "../components/Nav";
 import Search from "../components/Search";
 import Nearby from "../components/Nearby";
 import Favourites from "../components/Favourites";
-
-import Head from "next/head";
 
 import Logo from "../svgs/catchy-full-logo.svg";
 
