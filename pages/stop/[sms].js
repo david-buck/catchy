@@ -377,14 +377,13 @@ export default function StopPage({
           >
             <LocationMarker width="20" height="20" title="View on map." />
           </a>
-          {stopType === "bus" ||
-            (stopType === "train" && (
-              <FavouriteButton
-                sms={sms}
-                favourites={favourites}
-                setFavourites={setFavourites}
-              />
-            ))}
+          {(stopType === "bus" || stopType === "train") && (
+            <FavouriteButton
+              sms={sms}
+              favourites={favourites}
+              setFavourites={setFavourites}
+            />
+          )}
         </div>
       </div>
       <h1 className="text-3xl font-semibold px-5" ref={bigTitle}>
