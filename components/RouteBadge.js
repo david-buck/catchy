@@ -37,7 +37,9 @@ export default function RouteBadge({
           background: route_color,
           color: "white",
           fontSize: "0.875rem",
-        })
+        }) || {
+          color: "inherit",
+        }
       }
       className={
         (className ? className : "") +
