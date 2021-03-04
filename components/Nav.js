@@ -6,10 +6,20 @@ import CableCar from "../svgs/nav/nav-cablecar.svg";
 import Ferry from "../svgs/nav/nav-ferry.svg";
 
 const sections = [
-  { label: "Bus", href: "/", icon: Bus },
-  { label: "Train", href: "/trains", icon: Train },
-  // { label: "Cable Car", href: "/cable-car", icon: CableCar },
-  // { label: "Ferry", href: "/ferry", icon: Ferry },
+  { label: "Bus", href: "/", icon: Bus, className: "text-yellow-500" },
+  {
+    label: "Train",
+    href: "/trains",
+    icon: Train,
+    className: "text-green-600",
+  },
+  // {
+  //   label: "Cable Car",
+  //   href: "/cable-car",
+  //   icon: CableCar,
+  //   className: "text-red-600",
+  // },
+  // { label: "Ferry", href: "/ferry", icon: Ferry, className: "text-blue-600" },
 ];
 
 const SvgIcon = ({ icon }) => {
@@ -27,7 +37,7 @@ export default function Navigation({ current }) {
               <a
                 className={`flex flex-col w-full items-center ${
                   current === el.label.replace(" ", "").toLowerCase()
-                    ? "opacity-100"
+                    ? "opacity-100 " + el.className
                     : "opacity-50"
                 }`}
               >
