@@ -13,12 +13,12 @@ const sections = [
     icon: Train,
     className: "text-green-600",
   },
-  // {
-  //   label: "Cable Car",
-  //   href: "/cable-car",
-  //   icon: CableCar,
-  //   className: "text-red-600",
-  // },
+  {
+    label: "Cable Car",
+    href: "/cable-car",
+    icon: CableCar,
+    className: "text-red-600",
+  },
   // { label: "Ferry", href: "/ferry", icon: Ferry, className: "text-blue-600" },
 ];
 

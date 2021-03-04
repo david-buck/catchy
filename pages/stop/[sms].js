@@ -20,6 +20,15 @@ import LocationMarker from "../../svgs/location-mono.svg";
 
 import Spinner from "../../svgs/spinner.svg";
 
+const oneDirectionStops = ["JOHN", "MAST", "MELL", "WAIK", "WELL"];
+
+const backLinks = {
+  bus: "/",
+  train: "/trains",
+  cableCar: "/cable-car",
+  ferry: "/ferry",
+};
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const getRouteDetails = (id, arr) => {
@@ -48,8 +57,6 @@ const groupByDepartureDate = (objectArray, dateProperty) => {
   }, {});
 };
 
-const oneDirectionStops = ["JOHN", "MAST", "MELL", "WAIK", "WELL"];
-
 const PageWrapper = ({ children, stop }) => (
   <div className="relative">
     <Head>
@@ -57,7 +64,7 @@ const PageWrapper = ({ children, stop }) => (
 
       <meta
         name="twitter:text:title"
-        content={`${stop?.stop_name} bus stop — Catchy`}
+        content={`${stop?.stop_name} — Catchy`}
         key="twitterTitle"
       />
       <meta
@@ -68,7 +75,7 @@ const PageWrapper = ({ children, stop }) => (
 
       <meta
         property="og:title"
-        content={`${stop?.stop_name} bus stop — Catchy`}
+        content={`${stop?.stop_name} — Catchy`}
         key="ogTitle"
       />
       <meta
@@ -88,7 +95,9 @@ const ViewUpdatesLink = ({
   stopType,
   children,
 }) => {
-  if (cancelled) {
+  if (stopType === "cableCar" || stopType === "ferry") {
+    return <div className="pointer-events-none">{children}</div>;
+  } else if (cancelled) {
     return <Link href={`/${stopType}/cancelled`}>{children}</Link>;
   } else if (unknown) {
     return <Link href={`/${stopType}/unknown`}>{children}</Link>;
@@ -136,7 +145,7 @@ const Expected = ({
         />
 
         <h3
-          className={`leading-none ${!!!wheelchair_accessible && "col-span-2"}`}
+          className={`leading-none ${!wheelchair_accessible && "col-span-2"}`}
         >
           {routeNamer(destination_name)}
           {school && (
@@ -234,15 +243,24 @@ export default function StopPage({
   setFavourites,
   bus_stops,
   train_stations,
+  cable_car_stops,
+  ferry_stops,
 }) {
   const router = useRouter();
   const { sms } = router.query;
 
   const stopType = checkStopType(sms);
 
-  const stops = stopType === "bus" ? bus_stops : train_stations;
+  const stopSources = {
+    bus: bus_stops,
+    train: train_stations,
+    cableCar: cable_car_stops,
+    ferry: ferry_stops,
+  };
 
-  const stop = stops.find((el) => el.stop_id === sms);
+  const stops = stopSources[stopType];
+
+  const stop = stops?.find((el) => el.stop_id === sms);
 
   const [time, setTime] = useState(new Date());
   const [groupedDepartures, setGroupedDepartures] = useState(null);
@@ -332,7 +350,7 @@ export default function StopPage({
   return stop ? (
     <PageWrapper stop={stop}>
       <div className="bg-white dark:bg-gray-800 mb-2 px-5 pb-2 pt-4 flex row justify-between sticky top-0 z-20">
-        <Link href={stopType === "bus" ? "/" : "/trains"}>
+        <Link href={backLinks[stopType]}>
           <a className="titleBarButton">
             <BackArrow width="24" height="24" title="Back." />
           </a>
@@ -359,11 +377,14 @@ export default function StopPage({
           >
             <LocationMarker width="20" height="20" title="View on map." />
           </a>
-          <FavouriteButton
-            sms={sms}
-            favourites={favourites}
-            setFavourites={setFavourites}
-          />
+          {stopType === "bus" ||
+            (stopType === "train" && (
+              <FavouriteButton
+                sms={sms}
+                favourites={favourites}
+                setFavourites={setFavourites}
+              />
+            ))}
         </div>
       </div>
       <h1 className="text-3xl font-semibold px-5" ref={bigTitle}>
@@ -469,7 +490,7 @@ export default function StopPage({
         </div>
       ) : (
         <div className="text-lg opacity-60 pt-4 px-5">
-          No buses currently scheduled for this stop.
+          No trips currently scheduled for this stop.
         </div>
       )}
     </PageWrapper>

@@ -8,6 +8,10 @@ export default function RouteBadge({
   return (
     <div
       style={
+        (transport_type === "cableCar" && {
+          background: "#CF112C",
+          color: "#CEB590",
+        }) ||
         (route_type === "frequent" && {
           background: route_color,
           color: "white",
@@ -32,7 +36,7 @@ export default function RouteBadge({
         (transport_type === "train" && {
           background: route_color,
           color: "white",
-          fontSize: "0.875rem ",
+          fontSize: "0.875rem",
         })
       }
       className={
