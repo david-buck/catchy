@@ -6,20 +6,34 @@ import CableCar from "../svgs/nav/nav-cablecar.svg";
 import Ferry from "../svgs/nav/nav-ferry.svg";
 
 const sections = [
-  { label: "Bus", href: "/", icon: Bus, activeColor: "yellow-500" },
+  {
+    label: "Bus",
+    href: "/",
+    icon: Bus,
+    activeColorText: "text-yellow-500",
+    activeColorBackground: "bg-yellow-500",
+  },
   {
     label: "Train",
     href: "/trains",
     icon: Train,
-    activeColor: "green-600",
+    activeColorText: "text-green-600",
+    activeColorBackground: "bg-green-600",
   },
   {
     label: "Cable Car",
     href: "/cable-car",
     icon: CableCar,
-    activeColor: "red-600",
+    activeColorText: "text-red-600",
+    activeColorBackground: "bg-red-600",
   },
-  // { label: "Ferry", href: "/ferry", icon: Ferry, activeColor: "bg-blue-600" },
+  {
+    label: "Ferry",
+    href: "/ferry",
+    icon: Ferry,
+    activeColorText: "text-blue-600",
+    activeColorBackground: "bg-blue-600",
+  },
 ];
 
 const SvgIcon = ({ icon }) => {
@@ -40,7 +54,7 @@ export default function Navigation({ current }) {
                 <a
                   className={`relative flex flex-col w-full items-center ${
                     isCurrent
-                      ? "opacity-100 text-" + el.activeColor
+                      ? "opacity-100 " + el.activeColorText
                       : "opacity-50"
                   }`}
                 >
@@ -50,7 +64,7 @@ export default function Navigation({ current }) {
                     <svg
                       viewBox="0 0 2 2"
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`absolute z-0 -top-4 w-20 opacity-10 text-${el.activeColor}`}
+                      className={`absolute z-0 -top-3 w-12 opacity-10 ${el.activeColorText}`}
                     >
                       <circle cx="1" cy="1" r="1" fill="currentColor" />
                     </svg>
