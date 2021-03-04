@@ -6,47 +6,60 @@ import CableCar from "../svgs/nav/nav-cablecar.svg";
 import Ferry from "../svgs/nav/nav-ferry.svg";
 
 const sections = [
-  { label: "Bus", href: "/", icon: Bus, className: "text-yellow-500" },
+  { label: "Bus", href: "/", icon: Bus, activeColor: "yellow-500" },
   {
     label: "Train",
     href: "/trains",
     icon: Train,
-    className: "text-green-600",
+    activeColor: "green-600",
   },
   {
     label: "Cable Car",
     href: "/cable-car",
     icon: CableCar,
-    className: "text-red-600",
+    activeColor: "red-600",
   },
-  // { label: "Ferry", href: "/ferry", icon: Ferry, className: "text-blue-600" },
+  // { label: "Ferry", href: "/ferry", icon: Ferry, activeColor: "bg-blue-600" },
 ];
 
 const SvgIcon = ({ icon }) => {
   const Icon = icon;
-  return <Icon width={26} height={26} className="mb-1" />;
+  return <Icon width={26} height={26} className="mb-0.5 z-10" />;
 };
 
 export default function Navigation({ current }) {
   return (
-    <nav className="h-20 fixed bottom-0 left-0 w-full text-sm font-semibold bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 border-t">
+    <nav className="h-20 fixed bottom-0 left-0 w-full text-sm font-semibold bg-white dark:bg-gray-800">
+      {/*  border-gray-200 dark:border-gray-600 border-t */}
       <div className="w-full max-w-xl m-auto flex flex-row">
-        {sections.map((el, key) => (
-          <div className="flex-1 grid place-items-center h-20" key={key}>
-            <Link href={el.href}>
-              <a
-                className={`flex flex-col w-full items-center ${
-                  current === el.label.replace(" ", "").toLowerCase()
-                    ? "opacity-100 " + el.className
-                    : "opacity-50"
-                }`}
-              >
-                <SvgIcon icon={el.icon} width="26" height="26" />
-                <div>{el.label}</div>
-              </a>
-            </Link>
-          </div>
-        ))}
+        {sections.map((el, key) => {
+          const isCurrent = current === el.label.replace(" ", "").toLowerCase();
+          return (
+            <div className="flex-1 grid place-items-center h-20" key={key}>
+              <Link href={el.href}>
+                <a
+                  className={`relative flex flex-col w-full items-center ${
+                    isCurrent
+                      ? "opacity-100 text-" + el.activeColor
+                      : "opacity-50"
+                  }`}
+                >
+                  <SvgIcon icon={el.icon} width="26" height="26" />
+                  <div className="z-10 hidden 2xs:block">{el.label}</div>
+                  {isCurrent && (
+                    <svg
+                      viewBox="0 0 2 2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`absolute z-0 -top-4 w-20 opacity-10 text-${el.activeColor}`}
+                    >
+                      <circle cx="1" cy="1" r="1" fill="currentColor" />
+                    </svg>
+                  )}
+                </a>
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </nav>
   );

@@ -1,9 +1,16 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   purge: ["./pages/**/*.js", "./components/**/*.js"],
   darkMode: "media", // or 'media' or 'class'
   theme: {
     fontFamily: {
       body: ["Bus", "sans-serif"],
+    },
+    screens: {
+      "2xs": "400px",
+      xs: "475px",
+      ...defaultTheme.screens,
     },
     extend: {
       gridTemplateColumns: {
