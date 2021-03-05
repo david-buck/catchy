@@ -11,6 +11,7 @@ export default function RouteBadge({
         (transport_type === "cableCar" && {
           background: "#CF112C",
           color: "#CEB590",
+          fontSize: "0.875rem",
         }) ||
         (transport_type === "ferry" && {
           background: "#0EA5E9",
