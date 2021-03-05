@@ -7,7 +7,7 @@ import VehiclePositionMarker from "../svgs/vehicle-position-marker.svg";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY2F0Y2h5LW56IiwiYSI6ImNra2pkNzNyOTA0ZTkyd3BtOTRqenNoZjYifQ.IT8HHxo0QW-IU4jRkhfmEQ";
 
-const Map = ({ lat, lng, bearing, bearingOffset }) => {
+const Map = ({ lat, lng, bearing, bearingOffset, isDark }) => {
   const mapContainerRef = useRef(null);
   const map = useRef();
   const marker = useRef();
@@ -15,7 +15,9 @@ const Map = ({ lat, lng, bearing, bearingOffset }) => {
   useEffect(() => {
     map.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/catchy-nz/ckl34y0vr1yqt17mqd9q74me0",
+      style: isDark
+        ? "mapbox://styles/catchy-nz/cklwsq7120xz317p8fhgcti5s"
+        : "mapbox://styles/catchy-nz/ckl34y0vr1yqt17mqd9q74me0",
       center: [lng, lat],
       pitch: 38,
       maxPitch: 45,

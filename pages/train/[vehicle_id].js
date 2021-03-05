@@ -26,7 +26,7 @@ const getRouteDetails = (id, arr) => {
     : { color: "currentColor", type: "school" };
 };
 
-export default function BusInfo({ previousPages }) {
+export default function BusInfo({ previousPages, isDark }) {
   const router = useRouter();
   const { vehicle_id } = router.query;
   const {
@@ -179,6 +179,7 @@ export default function BusInfo({ previousPages }) {
         lng={vehiclePosition?.vehicle.position.longitude}
         bearing={vehiclePosition?.vehicle.position.bearing}
         bearingOffset={25}
+        isDark={isDark}
       />
     </div>
   );
