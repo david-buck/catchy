@@ -51,8 +51,8 @@ export default function CableCar({ cable_car_stops }) {
         <div className="mb-3 px-5 pt-5">
           <Logo width="157" height="38" title="Catchy" className="-ml-0.5" />
         </div>
-        {cable_car_stops.map((el) => (
-          <StopRow stop_name={el.stop_name} stop_id={el.stop_id} />
+        {cable_car_stops.map((el, key) => (
+          <StopRow stop_name={el.stop_name} stop_id={el.stop_id} key={key} />
         ))}
       </div>
     </>

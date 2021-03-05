@@ -12,6 +12,11 @@ export default function RouteBadge({
           background: "#CF112C",
           color: "#CEB590",
         }) ||
+        (transport_type === "ferry" && {
+          background: "#0EA5E9",
+          color: "#FFFFFF",
+          fontSize: "0.875rem",
+        }) ||
         (route_type === "frequent" && {
           background: route_color,
           color: "white",
