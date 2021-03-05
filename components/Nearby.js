@@ -96,7 +96,9 @@ export default function Nearby({ favourites, type }) {
                         height="18"
                         className={`${
                           favourites?.includes(element.stop_id)
-                            ? "text-yellow-500"
+                            ? type === "bus"
+                              ? "text-yellow-500"
+                              : "text-green-500"
                             : "text-gray-300"
                         } text-gray-300 flex-shrink-0 mt-1 mx-4`}
                       />

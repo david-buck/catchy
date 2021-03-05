@@ -12,7 +12,7 @@ const StopRow = ({ stop_name, stop_id }) => (
         width="12"
         height="18"
         className={`flex-shrink-0 mt-1 mx-4 ${
-          ["9999", "9997"].includes(stop_id) ? "text-blue-500" : "text-blue-200"
+          ["9999", "9997"].includes(stop_id) ? "text-blue-500" : "text-blue-300"
         }`}
       />
       <span>{stop_name}</span>

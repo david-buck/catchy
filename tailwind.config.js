@@ -32,6 +32,8 @@ module.exports = {
     borderColor: ["focus-visible"],
     ringWidth: ["focus-visible"],
     ringColor: ["focus-visible"],
+    ringWidth: ["focus-visible"],
+    ringColor: ["focus-visible"],
   },
   plugins: [require("@tailwindcss/line-clamp")],
 };
