@@ -89,10 +89,10 @@ export default function BusInfo({ previousPages, isDark }) {
             <CloseCross width="24" height="24" title="Back." />
           </button>
         </div>
-        <h1 className="text-3xl font-semibold mb-4">Waiting for a bus</h1>
+        <h1 className="text-3xl font-semibold mb-4">Waiting for a train</h1>
 
         <p className="mb-4">
-          Updates are either unavailable for this bus, or no bus has been
+          Updates are either unavailable for this train, or no train has been
           assigned to your trip yet.
         </p>
         <p>Try again closer to departure time.</p>

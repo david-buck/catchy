@@ -1,9 +1,41 @@
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import CloseCross from "../../svgs/close-cross.svg";
 
-export default function NoBus({ previousPages }) {
+export default function NoTrain({ previousPages }) {
   const router = useRouter();
+
+  useEffect(() => {
+    function goBack(e) {
+      if (e.code === "Escape") {
+        if (previousPages.length > 1) {
+          router.back();
+        } else {
+          router.push("/");
+        }
+      }
+    }
+    document.addEventListener("keyup", goBack);
+
+    return () => document.removeEventListener("keyup", goBack);
+  }, []);
+
+  useEffect(() => {
+    function goBack(e) {
+      if (e.code === "Escape") {
+        if (previousPages.length > 1) {
+          router.back();
+        } else {
+          router.push("/");
+        }
+      }
+    }
+    document.addEventListener("keyup", goBack);
+
+    return () => document.removeEventListener("keyup", goBack);
+  }, []);
+
   return (
     <div className="px-5">
       <Head>

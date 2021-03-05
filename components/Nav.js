@@ -43,8 +43,7 @@ const SvgIcon = ({ icon }) => {
 
 export default function Navigation({ current }) {
   return (
-    <nav className="h-20 fixed bottom-0 left-0 w-full text-sm font-semibold bg-white dark:bg-gray-800">
-      {/*  border-gray-200 dark:border-gray-600 border-t */}
+    <nav className="h-20 fixed bottom-0 left-0 w-full text-sm font-semibold bg-white dark:bg-gray-800 z-20">
       <div className="w-full max-w-xl m-auto flex flex-row">
         {sections.map((el, key) => {
           const isCurrent = current === el.label.replace(" ", "").toLowerCase();
@@ -52,7 +51,7 @@ export default function Navigation({ current }) {
             <div className="flex-1 grid place-items-center h-20" key={key}>
               <Link href={el.href}>
                 <a
-                  className={`relative flex flex-col w-full items-center ${
+                  className={`relative flex flex-col w-full items-center group focus:outline-none ${
                     isCurrent
                       ? "opacity-100 " + el.activeColorText
                       : "opacity-50"
@@ -60,15 +59,17 @@ export default function Navigation({ current }) {
                 >
                   <SvgIcon icon={el.icon} width="26" height="26" />
                   <div className="z-10 hidden 2xs:block">{el.label}</div>
-                  {isCurrent && (
-                    <svg
-                      viewBox="0 0 2 2"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`absolute z-0 -top-3 w-12 opacity-10 ${el.activeColorText}`}
-                    >
-                      <circle cx="1" cy="1" r="1" fill="currentColor" />
-                    </svg>
-                  )}
+
+                  <svg
+                    viewBox="0 0 2 2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`absolute z-0 -top-3 w-12 opacity-0 transition-all ${
+                      !isCurrent &&
+                      "group-hover:opacity-20 group-focus:opacity-20"
+                    } ${el.activeColorText} ${isCurrent && " opacity-10"}`}
+                  >
+                    <circle cx="1" cy="1" r="1" fill="currentColor" />
+                  </svg>
                 </a>
               </Link>
             </div>

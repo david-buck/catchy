@@ -25,10 +25,13 @@ module.exports = {
   variants: {
     extend: {
       borderColor: ["dark"],
+      opacity: ["group-focus"],
     },
     transitionProperty: ["hover", "focus"],
     borderWidth: ["focus-visible"],
     borderColor: ["focus-visible"],
+    ringWidth: ["focus-visible"],
+    ringColor: ["focus-visible"],
     ringWidth: ["focus-visible"],
     ringColor: ["focus-visible"],
   },
