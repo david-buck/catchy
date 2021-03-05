@@ -4,6 +4,7 @@ import Head from "next/head";
 import { bus_stops } from "../data/bus_stops";
 import { train_stations } from "../data/train_stations";
 import { cable_car_stops } from "../data/cable_car_stops";
+import { ferry_stops } from "../data/ferry_stops";
 
 import "../styles/globals.css";
 
@@ -137,6 +138,7 @@ function MyApp({ Component, pageProps }) {
         bus_stops={bus_stops}
         train_stations={train_stations}
         cable_car_stops={cable_car_stops}
+        ferry_stops={ferry_stops}
         {...pageProps}
       />
     </>

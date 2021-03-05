@@ -27,13 +27,13 @@ const sections = [
     activeColorText: "text-red-600",
     activeColorBackground: "bg-red-600",
   },
-  // {
-  //   label: "Ferry",
-  //   href: "/ferry",
-  //   icon: Ferry,
-  //   activeColorText: "text-blue-600",
-  //   activeColorBackground: "bg-blue-600",
-  // },
+  {
+    label: "Ferry",
+    href: "/ferry",
+    icon: Ferry,
+    activeColorText: "text-blue-600",
+    activeColorBackground: "bg-blue-600",
+  },
 ];
 
 const SvgIcon = ({ icon }) => {

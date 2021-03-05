@@ -207,21 +207,16 @@ const Alert = ({
 }) => {
   const epochNow = parseInt(Date.parse(new Date()) / 1000);
 
-  return active_period[0].start < epochNow &&
+  return (
+    active_period[0].start < epochNow &&
     active_period[0].end > epochNow &&
-    effect !== "NO_EFFECT" ? (
-    <div
-      className={`${
-        severity_level === "WARNING"
-          ? "bg-pink-50 border-pink-500 dark:bg-pink-700 dark:border-pink-800"
-          : "bg-blue-50 border-blue-500 dark:bg-blue-700 dark:border-blue-800"
-      } px-4 py-3 border-2 rounded-md mx-5 mt-4 mb-2`}
-    >
-      <h2 className="text-lg font-bold leading-tight mb-2">{header_text}</h2>
-      <p>{description_text}</p>
-    </div>
-  ) : (
-    <div />
+    effect !== "NO_EFFECT" &&
+    severity_level === "WARNING" && (
+      <div className="bg-pink-50 border-pink-500 dark:bg-pink-700 dark:border-pink-800 px-4 py-3 border-2 rounded-md mx-5 mt-4 mb-2">
+        <h2 className="text-lg font-bold leading-tight mb-2">{header_text}</h2>
+        <p>{description_text}</p>
+      </div>
+    )
   );
 };
 
