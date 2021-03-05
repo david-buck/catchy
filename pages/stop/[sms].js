@@ -20,13 +20,29 @@ import LocationMarker from "../../svgs/location-mono.svg";
 
 import Spinner from "../../svgs/spinner.svg";
 
-const oneDirectionStops = ["JOHN", "MAST", "MELL", "WAIK", "WELL"];
+const oneDirectionStops = [
+  "JOHN",
+  "MAST",
+  "MELL",
+  "WAIK",
+  "WELL",
+  "KELB",
+  "LAMB",
+  "9997",
+  "9999",
+];
 
 const backLinks = {
   bus: "/",
   train: "/trains",
   cableCar: "/cable-car",
   ferry: "/ferry",
+};
+
+const segmentedButtonLabels = {
+  train: { all: "Both ways", inbound: "Inbound", outbound: "Outbound" },
+  cableCar: { all: "Both ways", inbound: "Down", outbound: "Up" },
+  ferry: { all: "Both ways", inbound: "To city", outbound: "To Days Bay" },
 };
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -399,24 +415,24 @@ export default function StopPage({
 
       {departures.departures.length > 0 ? (
         <div>
-          {stopType === "train" && !oneDirectionStops.includes(sms) && (
+          {stopType !== "bus" && !oneDirectionStops.includes(sms) && (
             <div>
               <h2 className="hidden">Trip direction</h2>
               <nav className="mx-5 mt-6 mb-2 text-lg rounded-full bg-gray-50 dark:bg-gray-900 flex">
                 <SegmentedButton
-                  label="All trains"
+                  label={segmentedButtonLabels[stopType].all}
                   directionTo=""
                   direction={direction}
                   setDirection={setDirection}
                 />
                 <SegmentedButton
-                  label="Inbound"
+                  label={segmentedButtonLabels[stopType].inbound}
                   directionTo="inbound"
                   direction={direction}
                   setDirection={setDirection}
                 />
                 <SegmentedButton
-                  label="Outbound"
+                  label={segmentedButtonLabels[stopType].outbound}
                   directionTo="outbound"
                   direction={direction}
                   setDirection={setDirection}
@@ -446,38 +462,49 @@ export default function StopPage({
                   </span>
                 </h2>
 
-                {departures.map((element, key) => {
-                  let routeDetails = getRouteDetails(
-                    element.service_id,
-                    routes
-                  );
-                  return (
-                    (element.direction === direction || !direction) && (
-                      <Expected
-                        key={date + key}
-                        service_id={element.service_id}
-                        vehicle_id={element.vehicle_id}
-                        destination_name={element.destination.name}
-                        school={
-                          stopType === "bus" &&
-                          routeDetails.type === "school" &&
-                          school_routes.find(
-                            (el) => el.route_short_name === element.service_id
-                          ).schools
-                        }
-                        expected={element.departure.expected}
-                        aimed={element.departure.aimed}
-                        time={time}
-                        status={element.status}
-                        stopType={stopType}
-                        delay={element.delay}
-                        wheelchair_accessible={element.wheelchair_accessible}
-                        route_color={routeDetails.color}
-                        route_type={routeDetails.type}
-                      />
+                {departures.filter((el) =>
+                  direction !== "" ? el.direction === direction : el
+                ).length > 0 ? (
+                  departures
+                    .filter((el) =>
+                      direction !== "" ? el.direction === direction : el
                     )
-                  );
-                })}
+                    .map((element, key) => {
+                      let routeDetails = getRouteDetails(
+                        element.service_id,
+                        routes
+                      );
+                      return (
+                        <Expected
+                          key={date + key}
+                          service_id={element.service_id}
+                          vehicle_id={element.vehicle_id}
+                          destination_name={element.destination.name}
+                          school={
+                            stopType === "bus" &&
+                            routeDetails.type === "school" &&
+                            school_routes.find(
+                              (el) => el.route_short_name === element.service_id
+                            ).schools
+                          }
+                          expected={element.departure.expected}
+                          aimed={element.departure.aimed}
+                          time={time}
+                          status={element.status}
+                          stopType={stopType}
+                          delay={element.delay}
+                          wheelchair_accessible={element.wheelchair_accessible}
+                          route_color={routeDetails.color}
+                          route_type={routeDetails.type}
+                        />
+                      );
+                    })
+                ) : (
+                  <div className="px-5 pt-4 text-lg opacity-60">
+                    There are no trips scheduled for this stop in this
+                    direction.
+                  </div>
+                )}
               </div>
             );
           })}
