@@ -24,8 +24,6 @@ const Map = ({ lat, lng, bearing, bearingOffset, isDark }) => {
       zoom: 16.9,
       minZoom: 15,
       maxZoom: 18,
-
-      //interactive: false,
     });
 
     map.current.dragRotate.disable();
@@ -40,7 +38,7 @@ const Map = ({ lat, lng, bearing, bearingOffset, isDark }) => {
     });
 
     return () => map.current.remove();
-  }, []);
+  }, [isDark]);
 
   useEffect(() => {
     map.current.flyTo({
@@ -53,7 +51,7 @@ const Map = ({ lat, lng, bearing, bearingOffset, isDark }) => {
       .setLngLat([lng, lat])
       .setRotation(bearing + (bearingOffset ? bearingOffset : 0))
       .addTo(map.current);
-  }, [lng, lat]);
+  }, [lng, lat, isDark]);
 
   return (
     <>
