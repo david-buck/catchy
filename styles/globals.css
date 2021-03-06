@@ -57,7 +57,7 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-.mapboxgl-control-container {
+.mapboxgl-ctrl-bottom-right {
   @apply hidden;
 }
 

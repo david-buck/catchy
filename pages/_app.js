@@ -139,6 +139,7 @@ function MyApp({ Component, pageProps }) {
         train_stations={train_stations}
         cable_car_stops={cable_car_stops}
         ferry_stops={ferry_stops}
+        isDark={isDark}
         {...pageProps}
       />
     </>

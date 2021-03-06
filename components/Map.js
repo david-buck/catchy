@@ -7,7 +7,7 @@ import VehiclePositionMarker from "../svgs/vehicle-position-marker.svg";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY2F0Y2h5LW56IiwiYSI6ImNra2pkNzNyOTA0ZTkyd3BtOTRqenNoZjYifQ.IT8HHxo0QW-IU4jRkhfmEQ";
 
-const Map = ({ lat, lng, bearing, bearingOffset }) => {
+const Map = ({ lat, lng, bearing, bearingOffset, isDark }) => {
   const mapContainerRef = useRef(null);
   const map = useRef();
   const marker = useRef();
@@ -15,15 +15,15 @@ const Map = ({ lat, lng, bearing, bearingOffset }) => {
   useEffect(() => {
     map.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/catchy-nz/ckl34y0vr1yqt17mqd9q74me0",
+      style: isDark
+        ? "mapbox://styles/catchy-nz/cklwsq7120xz317p8fhgcti5s"
+        : "mapbox://styles/catchy-nz/ckl34y0vr1yqt17mqd9q74me0",
       center: [lng, lat],
       pitch: 38,
       maxPitch: 45,
       zoom: 16.9,
       minZoom: 15,
       maxZoom: 18,
-
-      //interactive: false,
     });
 
     map.current.dragRotate.disable();
@@ -34,11 +34,11 @@ const Map = ({ lat, lng, bearing, bearingOffset }) => {
       pitchAlignment: "map",
       rotationAlignment: "map",
       offset: [20, 0],
-      element: document.querySelector("#vehiclePositionMarker"),
+      element: document.querySelector("#vehiclePositionMarker").cloneNode(true),
     });
 
     return () => map.current.remove();
-  }, []);
+  }, [isDark]);
 
   useEffect(() => {
     map.current.flyTo({
@@ -51,7 +51,7 @@ const Map = ({ lat, lng, bearing, bearingOffset }) => {
       .setLngLat([lng, lat])
       .setRotation(bearing + (bearingOffset ? bearingOffset : 0))
       .addTo(map.current);
-  }, [lng, lat]);
+  }, [lng, lat, isDark]);
 
   return (
     <>
@@ -63,7 +63,7 @@ const Map = ({ lat, lng, bearing, bearingOffset }) => {
         id="vehiclePositionMarker"
         width="40"
         height="40"
-        className="text-blue-600"
+        className={!isDark ? "text-blue-600" : "text-blue-500"}
       />
     </>
   );
