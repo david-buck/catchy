@@ -34,7 +34,7 @@ const Map = ({ lat, lng, bearing, bearingOffset, isDark }) => {
       pitchAlignment: "map",
       rotationAlignment: "map",
       offset: [20, 0],
-      element: document.querySelector("#vehiclePositionMarker"),
+      element: document.querySelector("#vehiclePositionMarker").cloneNode(true),
     });
 
     return () => map.current.remove();
