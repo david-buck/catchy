@@ -241,7 +241,7 @@ const SegmentedButton = ({ label, direction, setDirection, directionTo }) => (
     onClick={() => setDirection(directionTo)}
     className={` flex-grow p-1  hover:bg-gray-100  dark:hover:bg-gray-700 rounded-full focus-visible:ring focus:outline-none " ${
       direction === directionTo
-        ? "font-bold bg-gray-100 dark:bg-gray-700 rounded-full border  -z-10 shadow-sm"
+        ? "font-bold bg-gray-100 dark:bg-gray-700 rounded-full border shadow-sm"
         : "font-regular"
     }`}
   >
