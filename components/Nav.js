@@ -10,29 +10,29 @@ const sections = [
     label: "Bus",
     href: "/",
     icon: Bus,
-    activeColorText: "text-yellow-500",
-    activeColorBackground: "bg-yellow-500",
+    activeColorText: "text-yellow-500 ",
+    hoverColorText: "text-yellow-300 dark:text-yellow-700",
   },
   {
     label: "Train",
     href: "/trains",
     icon: Train,
-    activeColorText: "text-green-600",
-    activeColorBackground: "bg-green-600",
+    activeColorText: "text-green-600 ",
+    hoverColorText: "text-green-300 dark:text-green-700",
   },
   {
     label: "Cable Car",
     href: "/cable-car",
     icon: CableCar,
-    activeColorText: "text-red-600",
-    activeColorBackground: "bg-red-600",
+    activeColorText: "text-red-600 ",
+    hoverColorText: "text-red-300 dark:text-red-700",
   },
   {
     label: "Ferry",
     href: "/ferry",
     icon: Ferry,
     activeColorText: "text-blue-600",
-    activeColorBackground: "bg-blue-600",
+    hoverColorText: "text-blue-300 dark:text-blue-700",
   },
 ];
 
@@ -53,8 +53,8 @@ export default function Navigation({ current }) {
                 <a
                   className={`relative flex flex-col w-full items-center group focus:outline-none ${
                     isCurrent
-                      ? "opacity-100 " + el.activeColorText
-                      : "opacity-50"
+                      ? el.activeColorText
+                      : "text-gray-700 dark:text-gray-300"
                   }`}
                 >
                   <SvgIcon icon={el.icon} width="26" height="26" />
@@ -65,8 +65,8 @@ export default function Navigation({ current }) {
                     xmlns="http://www.w3.org/2000/svg"
                     className={`absolute z-0 -top-3 w-12 opacity-0 transition-all ${
                       !isCurrent &&
-                      "group-hover:opacity-20 group-focus:opacity-20"
-                    } ${el.activeColorText} ${isCurrent && " opacity-10"}`}
+                      "group-hover:opacity-60 group-focus:opacity-60"
+                    } ${el.hoverColorText}  ${isCurrent && " opacity-50"}`}
                   >
                     <circle cx="1" cy="1" r="1" fill="currentColor" />
                   </svg>
