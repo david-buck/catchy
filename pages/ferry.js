@@ -12,7 +12,7 @@ const StopRow = ({ stop_name, stop_id }) => (
         width="12"
         height="18"
         className={`flex-shrink-0 mt-1 mx-4 ${
-          ["9999", "9997"].includes(stop_id) ? "text-blue-500" : "text-blue-300"
+          ["9999", "9997"].includes(stop_id) ? "text-blue-500" : "text-blue-400"
         }`}
       />
       <span>{stop_name}</span>
@@ -25,32 +25,33 @@ export default function Ferry({ ferry_stops }) {
     <>
       <Head>
         <title key="title">
-          Catchy - Live timetables and updates for Wellington ferries"
+          Catchy - Schedules and updates for Wellington (East by West) ferries"
         </title>
 
         <meta name="twitter:text:title" content="Catchy" key="twitterTitle" />
         <meta
           name="twitter:text:description"
-          content="Live timetables and updates for Wellington ferries"
+          content="Schedules and updates for Wellington (East by West) ferries"
           key="twitterDescription"
         />
 
         <meta
           property="og:title"
-          content="Catchy - Live timetables and updates for Wellington ferries"
+          content="Catchy - Schedules and updates for Wellington (East by West) ferries"
           key="ogTitle"
         />
         <meta
           name="description"
-          content="Live timetables and updates for Wellington ferries"
+          content="Schedules and updates for Wellington (East by West) ferries"
           key="description"
         />
       </Head>
       <Nav current="ferry" />
       <div className="flex flex-col mb-20">
-        <div className="mb-3 px-5 pt-5">
+        <div className="mb-6 px-5 pt-5">
           <Logo width="157" height="38" title="Catchy" className="-ml-0.5" />
         </div>
+        <h2 class="text-2xl font-semibold mb-1 px-5">All ferry stops</h2>
         {ferry_stops.map((el, key) => (
           <StopRow stop_name={el.stop_name} stop_id={el.stop_id} key={key} />
         ))}

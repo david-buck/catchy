@@ -12,7 +12,7 @@ const StopRow = ({ stop_name, stop_id }) => (
         width="12"
         height="18"
         className={`flex-shrink-0 mt-1 mx-4 ${
-          ["KELB", "LAMB"].includes(stop_id) ? "text-red-500" : "text-red-300"
+          ["KELB", "LAMB"].includes(stop_id) ? "text-red-500" : "text-red-400"
         }`}
       />
       <span>{stop_name}</span>
@@ -25,32 +25,33 @@ export default function CableCar({ cable_car_stops }) {
     <>
       <Head>
         <title key="title">
-          Catchy - Real time updates for Wellington cable cars"
+          Catchy - Schedules and updates for Wellington cable cars"
         </title>
 
         <meta name="twitter:text:title" content="Catchy" key="twitterTitle" />
         <meta
           name="twitter:text:description"
-          content="Real time updates for Wellington cable cars"
+          content="Schedules and updates for Wellington cable cars"
           key="twitterDescription"
         />
 
         <meta
           property="og:title"
-          content="Catchy - Real time updates for Wellington cable cars"
+          content="Catchy - Schedules and updates for Wellington cable car"
           key="ogTitle"
         />
         <meta
           name="description"
-          content="Real time updates for Wellington cable cars"
+          content="Schedules and updates for Wellington cable cars"
           key="description"
         />
       </Head>
       <Nav current="cablecar" />
       <div className="flex flex-col mb-20">
-        <div className="mb-3 px-5 pt-5">
+        <div className="mb-6 px-5 pt-5">
           <Logo width="157" height="38" title="Catchy" className="-ml-0.5" />
         </div>
+        <h2 class="text-2xl font-semibold mb-1 px-5">All cable car stops</h2>
         {cable_car_stops.map((el, key) => (
           <StopRow stop_name={el.stop_name} stop_id={el.stop_id} key={key} />
         ))}
