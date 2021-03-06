@@ -63,7 +63,7 @@ const Map = ({ lat, lng, bearing, bearingOffset, isDark }) => {
         id="vehiclePositionMarker"
         width="40"
         height="40"
-        className="text-blue-600"
+        className={!isDark ? "text-blue-600" : "text-blue-500"}
       />
     </>
   );
