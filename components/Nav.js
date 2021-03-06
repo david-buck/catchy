@@ -10,29 +10,29 @@ const sections = [
     label: "Bus",
     href: "/",
     icon: Bus,
-    activeColorText: "text-yellow-500 ",
-    hoverColorText: "text-yellow-300 dark:text-yellow-700",
+    activeColorText: "text-yellow-500 dark:text-yellow-400",
+    hoverColorText: "text-yellow-100 dark:text-yellow-900",
   },
   {
     label: "Train",
     href: "/trains",
     icon: Train,
-    activeColorText: "text-green-600 ",
-    hoverColorText: "text-green-300 dark:text-green-700",
+    activeColorText: "text-green-600 dark:text-green-400",
+    hoverColorText: "text-green-100 dark:text-green-900",
   },
   {
     label: "Cable Car",
     href: "/cable-car",
     icon: CableCar,
-    activeColorText: "text-red-600 ",
-    hoverColorText: "text-red-300 dark:text-red-700",
+    activeColorText: "text-red-600 dark:text-red-400",
+    hoverColorText: "text-red-100 dark:text-red-900",
   },
   {
     label: "Ferry",
     href: "/ferry",
     icon: Ferry,
-    activeColorText: "text-blue-600",
-    hoverColorText: "text-blue-300 dark:text-blue-700",
+    activeColorText: "text-blue-600 dark:text-blue-400",
+    hoverColorText: "text-blue-100 dark:text-blue-900",
   },
 ];
 
@@ -65,8 +65,8 @@ export default function Navigation({ current }) {
                     xmlns="http://www.w3.org/2000/svg"
                     className={`absolute z-0 -top-3 w-12 opacity-0 transition-all ${
                       !isCurrent &&
-                      "group-hover:opacity-60 group-focus:opacity-60"
-                    } ${el.hoverColorText}  ${isCurrent && " opacity-50"}`}
+                      "group-hover:opacity-100 group-focus:opacity-100"
+                    } ${el.hoverColorText}  ${isCurrent && " opacity-100"}`}
                   >
                     <circle cx="1" cy="1" r="1" fill="currentColor" />
                   </svg>
