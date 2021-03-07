@@ -500,7 +500,7 @@ export default function StopPage({
                       );
                     })
                 ) : (
-                  <div className="px-5 pt-4 text-lg opacity-60">
+                  <div className="px-5 pt-4 mb-4  leading-tight text-lg opacity-60">
                     There are no trips scheduled for this stop in this
                     direction.
                   </div>
