@@ -59,12 +59,14 @@ const Map = ({ lat, lng, bearing, bearingOffset, isDark }) => {
         <div ref={mapContainerRef} className="relative h-screen w-screen" />
       </div>
 
-      <VehiclePositionMarker
-        id="vehiclePositionMarker"
-        width="40"
-        height="40"
-        className={!isDark ? "text-blue-600" : "text-blue-500"}
-      />
+      <div className="invisible">
+        <VehiclePositionMarker
+          id="vehiclePositionMarker"
+          width="40"
+          height="40"
+          className={!isDark ? "text-blue-600" : "text-blue-500"}
+        />
+      </div>
     </>
   );
 };
