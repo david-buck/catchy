@@ -58,7 +58,7 @@ export default function Nearby({ favourites, type }) {
   if (locating)
     return (
       <div className="py-3 text-lg opacity-60 px-5 mb-4 flex">
-        <Spinner width="24" height="24" className="text-yellow-500 mx-2" />
+        <Spinner width="24" height="24" className="text-yellow-500 mx-2 " />
         Finding nearby {type === "bus" ? "stops" : "stations"} ...
       </div>
     );
@@ -73,7 +73,9 @@ export default function Nearby({ favourites, type }) {
           <span className="text-gray-600 dark:text-gray-300 relative top-1.5 mr-3">
             <MyLocation width="16" height="16" />
           </span>
-          Find {type === "bus" ? "bus stops" : "train stations"} near you
+          <span className="overflow-ellipsis line-clamp-1">
+            Find {type === "bus" ? "bus stops" : "train stations"} near you
+          </span>
         </button>
       </div>
     );

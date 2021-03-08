@@ -18,21 +18,21 @@ const sections = [
     href: "/trains",
     icon: Train,
     activeColorText: "text-green-600 dark:text-green-400",
-    hoverColorText: "text-green-100 dark:text-green-900",
+    hoverColorText: "text-green-50 dark:text-green-900",
   },
   {
     label: "Cable Car",
     href: "/cable-car",
     icon: CableCar,
     activeColorText: "text-red-600 dark:text-red-400",
-    hoverColorText: "text-red-100 dark:text-red-900",
+    hoverColorText: "text-red-50 dark:text-red-900",
   },
   {
     label: "Ferry",
     href: "/ferry",
     icon: Ferry,
     activeColorText: "text-blue-600 dark:text-blue-400",
-    hoverColorText: "text-blue-100 dark:text-blue-900",
+    hoverColorText: "text-blue-50 dark:text-blue-900",
   },
 ];
 
