@@ -173,7 +173,7 @@ export default function BusInfo({ previousPages, isDark }) {
 
           <div
             className={`${
-              delayMinutes > 2
+              delayMinutes > 2 || delayMinutes < 1
                 ? "bg-pink-200 dark:bg-pink-700"
                 : "bg-white dark:bg-gray-800"
             } pl-2 pr-4 py-1 rounded-2xl inline-flex mb-2 ml-11`}
@@ -187,6 +187,11 @@ export default function BusInfo({ previousPages, isDark }) {
             {delayMinutes > 0 ? (
               <>
                 {delayMinutes} minute{delayMinutes > 1 && <>s</>} late
+              </>
+            ) : delayMinutes < 0 ? (
+              <>
+                {Math.abs(delayMinutes)} minute{delayMinutes > 1 && <>s</>}{" "}
+                early
               </>
             ) : (
               <>on time</>
