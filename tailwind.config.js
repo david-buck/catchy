@@ -18,7 +18,7 @@ module.exports = {
       },
       inset: { 5.5: "1.375rem" },
       maxHeight: {
-        "suggestions-container": "calc(100vh - 15rem)",
+        "suggestions-container": "calc(100vh - 9rem)",
       },
     },
   },
