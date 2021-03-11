@@ -305,7 +305,7 @@ export default function StopPage({
   }, [bigTitle.current]);
 
   const { data: departures, isValidating, error } = useSWR(
-    sms && !cancelled ? `/proxy/stopdepartures/${sms}` : null,
+    sms && !cancelled ? `/api/stopdepartures/${sms}` : null,
     {
       fetcher: fetcher,
       refreshInterval: 20000,
