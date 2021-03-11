@@ -18,7 +18,12 @@ async function getResponse({ sms }) {
 }
 
 module.exports = async ({ query: sms }, res) => {
-  const departures = await getResponse(sms);
+  const allDepartures = await getResponse(sms);
 
-  res.status(200).json(departures);
+  const filteredDepartures = JSON.parse(allDepartures).departures.map(
+    ({ stop_id, operator, origin, arrival, delay, name, status, ...e }) => e
+  );
+
+  //res.status(200).json(JSON.parse(allDepartures).departures);
+  res.status(200).json(filteredDepartures);
 };

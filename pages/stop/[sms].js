@@ -114,16 +114,24 @@ const ViewUpdatesLink = ({
   if (stopType === "cableCar" || stopType === "ferry") {
     return <div className="pointer-events-none">{children}</div>;
   } else if (cancelled) {
-    return <Link href={`/${stopType}/cancelled`}>{children}</Link>;
+    return (
+      <Link href={`/${stopType}/cancelled`}>
+        <a>{children}</a>
+      </Link>
+    );
   } else if (unknown) {
-    return <Link href={`/${stopType}/unknown`}>{children}</Link>;
+    return (
+      <Link href={`/${stopType}/unknown`}>
+        <a>{children}</a>
+      </Link>
+    );
   } else if (vehicle_id) {
     return (
       <Link
         as={`/${stopType}/${vehicle_id}`}
         href={`/${stopType}/[vehicle_id]`}
       >
-        {children}
+        <a>{children}</a>
       </Link>
     );
   }
@@ -141,6 +149,7 @@ const Expected = ({
   stopType,
   time,
   vehicle_id,
+  monitored,
   wheelchair_accessible,
 }) => {
   let seconds = (Date.parse(expected) - Date.parse(time)) / 1000;
@@ -151,8 +160,9 @@ const Expected = ({
       unknown={!vehicle_id}
       vehicle_id={vehicle_id}
       stopType={stopType}
+      monitored={monitored}
     >
-      <a className="grid grid-cols-stop-row gap-x-3 px-5 py-3 items-center text-lg hover:bg-gray-400 hover:bg-opacity-10 rounded-lg">
+      <div className="grid grid-cols-stop-row gap-x-3 px-5 py-3 items-center text-lg hover:bg-gray-400 hover:bg-opacity-10 rounded-lg">
         <RouteBadge
           route_color={route_color}
           route_type={route_type}
@@ -209,7 +219,7 @@ const Expected = ({
             </span>
           )}
         </div>
-      </a>
+      </div>
     </ViewUpdatesLink>
   );
 };
@@ -317,7 +327,7 @@ export default function StopPage({
       departures !== undefined &&
       !departures?.error &&
       setGroupedDepartures(
-        Object.entries(groupByDepartureDate(departures?.departures, "aimed"))
+        Object.entries(groupByDepartureDate(departures, "aimed"))
       );
   }, [departures]);
 
@@ -413,7 +423,7 @@ export default function StopPage({
           />
         ))}
 
-      {departures.departures.length > 0 ? (
+      {departures.length > 0 ? (
         <div>
           {stopType !== "bus" && !oneDirectionStops.includes(sms) && (
             <div>
@@ -490,9 +500,8 @@ export default function StopPage({
                           expected={element.departure.expected}
                           aimed={element.departure.aimed}
                           time={time}
-                          status={element.status}
                           stopType={stopType}
-                          delay={element.delay}
+                          monitored={element.monitored}
                           wheelchair_accessible={element.wheelchair_accessible}
                           route_color={routeDetails.color}
                           route_type={routeDetails.type}

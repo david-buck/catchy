@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/proxy/:match*",
-      "destination": "https://backend.metlink.org.nz/api/v1/:match*"
-    }
-  ]
-}

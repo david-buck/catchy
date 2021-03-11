@@ -51,7 +51,7 @@ export default function Ferry({ ferry_stops }) {
         <div className="mb-6 px-5 pt-5">
           <Logo width="157" height="38" title="Catchy" className="-ml-0.5" />
         </div>
-        <h2 class="text-2xl font-semibold mb-1 px-5">All ferry stops</h2>
+        <h2 className="text-2xl font-semibold mb-1 px-5">All ferry stops</h2>
         {ferry_stops.map((el, key) => (
           <StopRow stop_name={el.stop_name} stop_id={el.stop_id} key={key} />
         ))}
