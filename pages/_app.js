@@ -9,7 +9,7 @@ import { ferry_stops } from "../data/ferry_stops";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  const [isDark, setIsDark] = useState();
+  const [isDark, setIsDark] = useState(false);
   const [previousPages, setPreviousPages] = useState([]);
 
   useEffect(() => {
@@ -19,15 +19,10 @@ function MyApp({ Component, pageProps }) {
       setIsDark(false);
     }
 
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (event) => {
-        if (event.matches) {
-          setIsDark(true);
-        } else {
-          setIsDark(false);
-        }
-      });
+    //window.matchMedia("(prefers-color-scheme: dark)").addListener("change", (event) => { is correct but Safari < 14 sucks
+    window.matchMedia("(prefers-color-scheme: dark)").addListener((event) => {
+      event.matches ? setIsDark(true) : setIsDark(false);
+    });
   }, []);
 
   useEffect(() => {
@@ -81,7 +76,7 @@ function MyApp({ Component, pageProps }) {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
 
-        <meta name="theme-color" content={isDark ? "#1f2937" : "#FFFFFF"} />
+        <meta name="theme-color" content={!isDark ? "#FFFFFF" : "#1f2937"} />
 
         <meta name="twitter:card" content="summary_large_image" />
 
