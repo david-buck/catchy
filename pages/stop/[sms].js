@@ -11,7 +11,6 @@ import useServiceAlerts from "../../hooks/useServiceAlerts";
 import FavouriteButton from "../../components/FavouriteButton";
 import RouteBadge from "../../components/RouteBadge";
 
-import routeNamer from "../../lib/routeNamer";
 import checkStopType from "../../lib/checkStopType";
 
 import BackArrow from "../../svgs/navigation-left-arrow.svg";
@@ -173,7 +172,7 @@ const Expected = ({
         <h3
           className={`leading-none ${!wheelchair_accessible && "col-span-2"}`}
         >
-          {routeNamer(destination_name)}
+          {destination_name}
           {school && (
             <span className="text-sm opacity-60 leading-none">
               <br />
@@ -489,7 +488,7 @@ export default function StopPage({
                           key={date + key}
                           service_id={element.service_id}
                           vehicle_id={element.vehicle_id}
-                          destination_name={element.destination.name}
+                          destination_name={element.destination_name}
                           school={
                             stopType === "bus" &&
                             routeDetails.type === "school" &&

@@ -43,7 +43,8 @@ export default function RouteBadge({
           background: route_color,
           color: "white",
           fontSize: "0.875rem",
-          margin: ".25rem 0",
+          marginBottom: ".25rem",
+          marginTop: ".25rem",
         }) || {
           color: "inherit",
         }

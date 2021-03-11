@@ -1,4 +1,7 @@
 const got = require("got");
+const routeRenamer = require("../../../lib/routeNamer");
+
+console.log(routeRenamer("Courtenay Pl-Scots"));
 
 async function getResponse({ sms }) {
   try {
@@ -20,9 +23,14 @@ async function getResponse({ sms }) {
 module.exports = async ({ query: sms }, res) => {
   const allDepartures = await getResponse(sms);
 
-  const filteredDepartures = JSON.parse(allDepartures).departures.map(
-    ({ stop_id, operator, origin, arrival, delay, name, status, ...e }) => e
-  );
+  const filteredDepartures = JSON.parse(allDepartures)
+    .departures.map(
+      ({ stop_id, operator, origin, arrival, delay, name, status, ...e }) => e
+    )
+    .map((el) => ({
+      destination_name: routeRenamer(el.destination.name),
+      ...el,
+    }));
 
   //res.status(200).json(JSON.parse(allDepartures).departures);
   res.status(200).json(filteredDepartures);
