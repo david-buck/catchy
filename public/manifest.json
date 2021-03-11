@@ -29,7 +29,7 @@
   ],
   "theme_color": "#FFFFFF",
   "background_color": "#F8D841",
-  "start_url": "/",
+  "start_url": "/?installed",
   "display": "standalone",
   "orientation": "portrait"
 }
