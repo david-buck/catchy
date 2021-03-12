@@ -20,7 +20,10 @@ import Spinner from "../../svgs/spinner.svg";
 
 const getRouteDetails = (id, arr) => {
   const match = arr.find((e) => e.route_short_name === id);
-  return match && { color: "#" + match.route_color, type: match.type };
+
+  return match
+    ? { color: "#" + match.route_color, type: match.type }
+    : { color: "currentColor", type: "school" };
 };
 
 export default function BusInfo({ previousPages, isDark }) {
