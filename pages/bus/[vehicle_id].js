@@ -48,7 +48,7 @@ export default function BusInfo({ previousPages, isDark }) {
   const route = routes?.find((e) => e.route_short_name === service_id);
 
   const routeDetails = route
-    ? getRouteDetails(route.route_short_name, routes)
+    ? getRouteDetails(route?.route_short_name, routes)
     : getRouteDetails(service_id, routes);
 
   let delayMinutes = Math.round(
