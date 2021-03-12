@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 
 import Map from "../../components/Map";
@@ -15,8 +16,40 @@ import RouteBadge from "../../components/RouteBadge";
 import CloseCross from "../../svgs/close-cross.svg";
 import StopMarker from "../../svgs/stop-mono.svg";
 import Clock from "../../svgs/clock.svg";
+import ShareNormal from "../../svgs/share-normal.svg";
+import ShareApple from "../../svgs/share-apple.svg";
 
 import Spinner from "../../svgs/spinner.svg";
+
+function appleChecker() {
+  return (
+    [
+      "iPad Simulator",
+      "iPhone Simulator",
+      "iPod Simulator",
+      "iPad",
+      "iPhone",
+      "iPod",
+      "MacIntel",
+    ].includes(navigator.platform) ||
+    // iPad on iOS 13 detection
+    (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  );
+}
+
+const shareLink = (title, text, url) => {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: title,
+        text: text,
+        url: url,
+      })
+      .catch((error) => {
+        console.error("Share error: ", error);
+      });
+  }
+};
 
 const getRouteDetails = (id, arr) => {
   const match = arr.find((e) => e.route_short_name === id);
@@ -27,6 +60,14 @@ const getRouteDetails = (id, arr) => {
 };
 
 export default function BusInfo({ previousPages, isDark }) {
+  const [canShare, setCanShare] = useState();
+
+  useEffect(() => {
+    if (navigator.share) {
+      setCanShare(true);
+    }
+  }, []);
+
   const router = useRouter();
   const { vehicle_id } = router.query;
   const {
@@ -141,6 +182,29 @@ export default function BusInfo({ previousPages, isDark }) {
             >
               <CloseCross width="24" height="24" title="Back." />
             </button>
+            {canShare && (
+              <button
+                onClick={() =>
+                  shareLink(
+                    "Route " + service_id + " | Catchy",
+                    routeDetails?.type !== "school"
+                      ? tripUpdate?.trip_update.trip.trip_id.split("__")[1] ===
+                        "1"
+                        ? route?.route_long_name
+                        : route?.route_desc
+                      : "School Bus",
+                    document.location.href
+                  )
+                }
+                className="titleBarButton"
+              >
+                {appleChecker() ? (
+                  <ShareApple width="24" height="24" title="Share." />
+                ) : (
+                  <ShareNormal width="24" height="24" title="Share." />
+                )}
+              </button>
+            )}
           </div>
 
           <div className="flex">
