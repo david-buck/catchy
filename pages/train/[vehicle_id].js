@@ -92,11 +92,13 @@ export default function BusInfo({ previousPages, isDark }) {
 
   if (!vehiclePosition || !tripUpdate)
     return (
-      <Spinner
-        width="24"
-        height="24"
-        className="text-yellow-500 mt-6 ml-5 animate-spin"
-      />
+      <div className="place-items-center grid w-9 h-9 ml-6 mt-4">
+        <Spinner
+          width="24"
+          height="24"
+          className="text-green-500 animate-spin"
+        />
+      </div>
     );
 
   if (vehicle_id === undefined || tripUpdate.message)

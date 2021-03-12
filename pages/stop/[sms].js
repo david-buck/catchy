@@ -72,6 +72,20 @@ const groupByDepartureDate = (objectArray, dateProperty) => {
   }, {});
 };
 
+const TripStatusIndicator = ({ vehicle_id, monitored }) => {
+  return vehicle_id ? (
+    <svg
+      viewBox="0 0 2 2"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`absolute z-10 bottom-0 right-0 w-3 ${
+        monitored ? "text-green-500" : "text-yellow-500"
+      } `}
+    >
+      <circle cx="1" cy="1" r="1" fill="currentColor" />
+    </svg>
+  ) : null;
+};
+
 const PageWrapper = ({ children, stop }) => (
   <div className="relative">
     <Head>
@@ -162,12 +176,15 @@ const Expected = ({
       monitored={monitored}
     >
       <div className="grid grid-cols-stop-row gap-x-3 px-5 py-3 items-center text-lg hover:bg-gray-400 hover:bg-opacity-10 rounded-lg">
-        <RouteBadge
-          route_color={route_color}
-          route_type={route_type}
-          service_id={service_id}
-          transport_type={stopType}
-        />
+        <div className="relative">
+          <RouteBadge
+            route_color={route_color}
+            route_type={route_type}
+            service_id={service_id}
+            transport_type={stopType}
+          />
+          {/* <TripStatusIndicator vehicle_id={vehicle_id} monitored={monitored} /> */}
+        </div>
 
         <h3
           className={`leading-none ${!wheelchair_accessible && "col-span-2"}`}
@@ -364,11 +381,13 @@ export default function StopPage({
 
   if (!stop || !departures || !routes || (!school_routes && stopType === "bus"))
     return (
-      <Spinner
-        width="24"
-        height="24"
-        className="text-yellow-500 mt-6 ml-5 animate-spin"
-      />
+      <div className="place-items-center grid w-9 h-9 ml-3.5 mt-4">
+        <Spinner
+          width="24"
+          height="24"
+          className="text-yellow-500 animate-spin"
+        />
+      </div>
     );
 
   return stop ? (
