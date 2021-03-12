@@ -364,7 +364,11 @@ export default function StopPage({
 
   if (!stop || !departures || !routes || (!school_routes && stopType === "bus"))
     return (
-      <Spinner width="24" height="24" className="text-yellow-500 mt-6 ml-5" />
+      <Spinner
+        width="24"
+        height="24"
+        className="text-yellow-500 mt-6 ml-5 animate-spin"
+      />
     );
 
   return stop ? (
@@ -385,7 +389,11 @@ export default function StopPage({
         <div className="flex space-x-1">
           {isValidating && (
             <div className="place-items-center grid w-9 h-9 mr-1">
-              <Spinner width="22" height="22" className="text-yellow-500" />
+              <Spinner
+                width="22"
+                height="22"
+                className="text-yellow-500 animate-spin"
+              />
             </div>
           )}
           <a

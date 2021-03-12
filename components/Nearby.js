@@ -58,7 +58,11 @@ export default function Nearby({ favourites, type }) {
   if (locating)
     return (
       <div className="py-3 text-lg opacity-60 px-5 mb-4 flex">
-        <Spinner width="24" height="24" className="text-yellow-500 mx-2 " />
+        <Spinner
+          width="24"
+          height="24"
+          className="text-yellow-500 mx-2 animate-spin"
+        />
         Finding nearby {type === "bus" ? "stops" : "stations"} ...
       </div>
     );
