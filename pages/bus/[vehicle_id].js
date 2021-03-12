@@ -20,9 +20,7 @@ import Spinner from "../../svgs/spinner.svg";
 
 const getRouteDetails = (id, arr) => {
   const match = arr.find((e) => e.route_short_name === id);
-  return match
-    ? { color: "#" + match.route_color, type: match.type }
-    : { color: "currentColor", type: "school" };
+  return match && { color: "#" + match.route_color, type: match.type };
 };
 
 export default function BusInfo({ previousPages, isDark }) {
@@ -48,8 +46,8 @@ export default function BusInfo({ previousPages, isDark }) {
   const route = routes?.find((e) => e.route_short_name === service_id);
 
   const routeDetails = route
-    ? getRouteDetails(route?.route_short_name, routes)
-    : getRouteDetails(service_id, routes);
+    ? getRouteDetails(route.route_short_name, routes)
+    : { color: "currentColor", type: "school" };
 
   let delayMinutes = Math.round(
     tripUpdate?.trip_update?.stop_time_update.arrival.delay / 60
