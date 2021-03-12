@@ -169,7 +169,9 @@ export default function BusInfo({ previousPages, isDark }) {
           <div className="mb-2 pb-2 pt-4 flex row justify-between sticky top-0 z-10 ">
             <button
               onClick={() =>
-                previousPages.length > 1 ? router.back() : router.push("/")
+                previousPages.length > 1
+                  ? router.back()
+                  : router.push("/trains")
               }
               className="titleBarButton"
             >
